@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Spring-Kapcb-AOP" />
+        <module name="Spring-Kapcb-SSM" />
+        <module name="Spring-Kapcb-IoC" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spring-Kapcb-AOP" target="1.5" />
+      <module name="Spring-Kapcb-IoC" target="1.5" />
+      <module name="Spring-Kapcb-SSM" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

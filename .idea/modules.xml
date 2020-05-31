@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Kapcb.iml" filepath="$PROJECT_DIR$/.idea/Spring-Kapcb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-IoC/Spring-Kapcb-IoC.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-IoC/Spring-Kapcb-IoC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-SSM/Spring-Kapcb-SSM.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-SSM/Spring-Kapcb-SSM.iml" />
+    </modules>
+  </component>
+</project>

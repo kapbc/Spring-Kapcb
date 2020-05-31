@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car" class="com.kapcb.ccc.bean.Car">
+        <property name="carName" value="宝马"></property>
+        <property name="price" value="100"></property>
+        <property name="color" value="红色"></property>
+    </bean>
+
+    <!--为Person里面的自定义类型赋值-->
+    <bean id="person" class="com.kapcb.ccc.bean.Person" autowire="byName"></bean>
+
+
+    <bean id="person10" class="com.kapcb.ccc.bean.Person">
+        <!--运算符-->
+        <property name="age" value="#{1+2+12}"></property>
+        <!--引用其他在属性-->
+        <property name="car" value="#{car}"></property>
+        <!--引用其他属性的属性值-->
+        <property name="lastName" value="#{car.carName}"></property>
+        <!--调用静态方法-->
+        <property name="email" value="#{T(java.util.UUID).randomUUID().toString().substring(0,5)}"></property>
+        <!--调用非静态方法-->
+        <property name="gender" value="#{car.getCarName()}"></property>
+    </bean>
+</beans>

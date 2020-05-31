@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--注册一个Person对象，Spring会自动创建这个对象-->
+    <!--一个bean标签可以注册一个组件或者一个对象、类
+        class:写要注册的组件的全类名
+        id：注册组件的唯一标识
+    -->
+    <bean id="person01" class="com.kapcb.ccc.bean.Person">
+        <!--使用property标签对Person对象进行属性赋值 name为指定属性名 value为这个属性赋的值-->
+        <property name="age" value="18"></property>
+        <property name="gender" value="男"></property>
+        <property name="lastName" value="kapcb"></property>
+        <property name="email" value="eircccallroot@163.com"></property>
+    </bean>
+    <bean id="person02" class="com.kapcb.ccc.bean.Person">
+        <property name="lastName" value="hahaha"></property>
+    </bean>
+
+    <!--使用有参构造器进行注入-->
+<!--    <bean id="person03" class="com.kapcb.ccc.bean.Person">
+        <constructor-arg name="age" value="17"></constructor-arg>
+        <constructor-arg name="gender" value="男"></constructor-arg>
+        <constructor-arg name="lastName" value="小明"></constructor-arg>
+        <constructor-arg name="email" value="eircccallroot@163.com"></constructor-arg>
+    </bean>-->
+    <!--使用有参构造器不指定name进行注册-->
+<!--
+    <bean id="person04" class="com.kapcb.ccc.bean.Person">
+        <constructor-arg value="17" index="3"></constructor-arg>
+        <constructor-arg value="女"></constructor-arg>
+        <constructor-arg value="123456@qq.com"></constructor-arg>
+        <constructor-arg value="小黄" index="0"></constructor-arg>
+    </bean>
+-->
+
+
+
+</beans>

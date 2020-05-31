@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--通过注解分别创建Dao Service Controller-->
+    <!--通过给Bean上添加注解可以快速的将Bean加入到IoC容器中-->
+    <!--Spring中提供的四个注解
+    @Controller 控制器：推荐给控制器层(Servlet)组件使用的注解
+    @Service 业务逻辑：推荐给业务逻辑层(Service)组件使用的注解
+    @Repository 给数据库层 / 持久化层(Dao)组件使用的注解
+    @Component 给不属于以上三层的组件使用的注解
+    -->
+
+    <!--base-package:基础扫描包，把基础包以及其下所有的包的所有类-->
+    <context:component-scan base-package="com.kapcb.ccc" use-default-filters="false">
+        <!--使用context:include-filter指定扫描包时包含的类-->
+        <!--type="annotation":指定排除规则，按照注解进行排除,标识标注了指定注解的组件不要扫描-->
+        <!--type="assignable":指定排除某个具体的类按照类排除-->
+        <!--type="aspectj":aspectj表达式(不常用)-->
+        <!--type="regex":正则表达式(不常用)-->
+        <!--type="custom":自定义实现TypeFilter接口，在实现类中指定不需要的组件(不常用)-->
+        <!--expression="":注解的全类名-->
+        <!--<context:exclude-filter type="assignable" expression="org.springframework.stereotype.Controller" />-->
+
+        <!--<context:include-filter /> 首先要在<context:component-scan></context:component-scan>标签体中使用use-default-filters="false"
+         禁用掉默认过滤规则才能使用
+         -->
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    </context:component-scan>
+</beans>
