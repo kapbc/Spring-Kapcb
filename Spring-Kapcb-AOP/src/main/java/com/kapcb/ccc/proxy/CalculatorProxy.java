@@ -1,6 +1,9 @@
 package com.kapcb.ccc.proxy;
 
 import com.kapcb.ccc.calculator.Calculator;
+import com.kapcb.ccc.util.LogUtil;
+import org.springframework.stereotype.Component;
+import sun.rmi.runtime.Log;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -54,14 +57,15 @@ public class CalculatorProxy {
                  *
                  * result目标方法执行后的返回值
                  */
+                Object result = null;
 
-                String name = method.getName();
-                List<Object> arg = Arrays.asList(args);
-                System.out.println("[" + name + "]" + "方法开始执行了，参数列表为" + "[" + arg + "]");
+                try {
 
-                Object result = method.invoke(calculator, args);
-
-                System.out.println("[" + name + "]" + "方法执行完成，结果为" + "[" + result + "]");
+                    result = method.invoke(calculator, args);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                }
                 /**
                  * 返回值必须返回出去，外部才能拿到方法的结果
                  */

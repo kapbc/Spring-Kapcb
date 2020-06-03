@@ -1,0 +1,38 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kapcb.ccc.mapper.UserMapper">
+
+    <select id="findUserById" resultType="com.kapcb.ccc.domain.User">
+        SELECT * FROM t_user WHERE id = #{id}
+    </select>
+
+    <!--
+    useGeneratedKeys="true"：使用自动生成的主键
+    keyProperty="id"：将自增的主键赋值给id
+    -->
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        <!--order="BEFORE":在核心SQL语句之前运行-->
+        <selectKey order="BEFORE">
+            SELECT CAST (RANDOM()*100 AS INTEGER ) a from t_user
+        </selectKey>
+
+        INSERT INTO t_user
+        (username,gender,email,login_account)
+        VALUES
+        (#{username},#{gender},#{email},#{loginAccount})
+    </insert>
+
+    <insert id="insertRandomIdUser">
+        <!--order="BEFORE":在核心SQL语句之前运行-->
+        <!--随机生成一个任意数-->
+        <selectKey order="BEFORE" resultType="integer" keyProperty="id">
+            SELECT MAX(id)+1 from t_user
+        </selectKey>
+
+        INSERT INTO t_user
+        (username,gender,email,login_account)
+        VALUES
+        (#{username},#{gender},#{email},#{loginAccount})
+    </insert>
+</mapper>

@@ -2,9 +2,7 @@ package com.kapcb.ccc;
 
 import com.kapcb.ccc.bean.Person;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
  * <a>Title:Test</a>

@@ -6,14 +6,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Spring-Kapcb-AOP" />
         <module name="Spring-Kapcb-SSM" />
         <module name="Spring-Kapcb-IoC" />
+        <module name="Spring-Kapcb-AOP-XML" />
+        <module name="Spring-Kapcb-MyBatis-Configure" />
+        <module name="Spring-Kapcb-MyBatis-Param" />
+        <module name="Spring-Kapcb-IoC-Bean" />
+        <module name="Spring-Kapcb-AOP" />
+        <module name="Spring-Kapcb-MyBatis-SQL" />
+        <module name="Spring-Kapcb-MyBatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Spring-Kapcb-AOP" target="1.5" />
+      <module name="Spring-Kapcb-AOP-XML" target="1.5" />
       <module name="Spring-Kapcb-IoC" target="1.5" />
+      <module name="Spring-Kapcb-IoC-Bean" target="1.5" />
+      <module name="Spring-Kapcb-MyBatis" target="1.5" />
+      <module name="Spring-Kapcb-MyBatis-Configure" target="1.5" />
+      <module name="Spring-Kapcb-MyBatis-Param" target="1.5" />
+      <module name="Spring-Kapcb-MyBatis-SQL" target="1.5" />
       <module name="Spring-Kapcb-SSM" target="1.5" />
     </bytecodeTargetLevel>
   </component>

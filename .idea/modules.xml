@@ -4,7 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Kapcb.iml" filepath="$PROJECT_DIR$/.idea/Spring-Kapcb.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP-XML/Spring-Kapcb-AOP-XML.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP-XML/Spring-Kapcb-AOP-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-IoC/Spring-Kapcb-IoC.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-IoC/Spring-Kapcb-IoC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-IoC-Bean/Spring-Kapcb-IoC-Bean.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-IoC-Bean/Spring-Kapcb-IoC-Bean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis/Spring-Kapcb-MyBatis.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis/Spring-Kapcb-MyBatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-Configure/Spring-Kapcb-MyBatis-Configure.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-Configure/Spring-Kapcb-MyBatis-Configure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-Param/Spring-Kapcb-MyBatis-Param.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-Param/Spring-Kapcb-MyBatis-Param.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-SQL/Spring-Kapcb-MyBatis-SQL.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-SQL/Spring-Kapcb-MyBatis-SQL.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-SSM/Spring-Kapcb-SSM.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-SSM/Spring-Kapcb-SSM.iml" />
     </modules>
   </component>

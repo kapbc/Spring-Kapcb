@@ -1,0 +1,46 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kapcb.ccc.mapper.UserMapper">
+
+
+    <select id="getAllUser" resultType="com.kapcb.ccc.domain.User">
+        SELECT * FROM t_user
+    </select>
+
+
+
+    <!--    public User findUserById(Integer id);
+
+        public User findUserByIdAndUsername(Integer id, String username);
+
+        public boolean insertUser(User user);-->
+
+    <select id="findUserById" resultType="com.kapcb.ccc.domain.User">
+        SELECT * FROM t_user WHERE id = #{id}
+    </select>
+    <!--取值-->
+    <!--SELECT * FROM t_user WHERE id = #{arg0} AND username = #{arg1}-->
+    <!--SELECT * FROM t_user WHERE id = #{param1} AND username = #{param2}-->
+    <select id="findUserByIdAndUsername" resultType="com.kapcb.ccc.domain.User">
+        SELECT * FROM t_user WHERE id = #{param1} AND username = #{param2}
+    </select>
+
+    <!--注解-->
+    <select id="findUserByIdAndGender" resultType="com.kapcb.ccc.domain.User">
+        SELECT * FROM t_user WHERE id = #{id} AND gender = #{gender}
+    </select>
+
+    <!--map-->
+    <select id="findUserByIdAndEmail" resultType="com.kapcb.ccc.domain.User">
+        SELECT * FROM t_user WHERE id = #{id} AND email = #{email}
+    </select>
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_user
+            (username,gender,email,loginAccount)
+        VALUES
+            (#{username},#{gender},#{email},#{login_account})
+
+    </insert>
+</mapper>

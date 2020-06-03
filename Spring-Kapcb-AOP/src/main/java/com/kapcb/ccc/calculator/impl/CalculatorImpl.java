@@ -1,6 +1,7 @@
 package com.kapcb.ccc.calculator.impl;
 
 import com.kapcb.ccc.calculator.Calculator;
+import org.springframework.stereotype.Service;
 
 /**
  * <a>Title:CalculatorImpl</a>
@@ -11,6 +12,7 @@ import com.kapcb.ccc.calculator.Calculator;
  * @version 1.0.0
  * @date 2020/5/31 19:30
  */
+@Service
 public class CalculatorImpl implements Calculator {
 
 
