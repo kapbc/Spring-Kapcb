@@ -1,30 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <properties resource="mybatis.properties"></properties>
 
-    <settings>
-        <setting name="mapUnderscoreToCamelCase" value="true"/>
-    </settings>
-
-    <typeAliases>
-        <typeAlias type="com.kapcb.ccc.domain.User" alias="User"></typeAlias>
-    </typeAliases>
+    <properties resource="mybatisConfigure.properties" ></properties>
 
     <environments default="dev">
         <environment id="dev">
             <transactionManager type="JDBC"></transactionManager>
             <dataSource type="POOLED">
+                <property name="root" value="${jdbc.root}"/>
+                <property name="password" value="${jdbc.password}"/>
                 <property name="driver" value="${jdbc.driver}"/>
                 <property name="url" value="${jdbc.url}"/>
-                <property name="username" value="${jdbc.username}"/>
-                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
 
-    <mappers>
-        <mapper resource="mapper\UserMapper.xml"></mapper>
-    </mappers>
+
+
 
 </configuration>
