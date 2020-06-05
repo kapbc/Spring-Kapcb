@@ -1,10 +1,68 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="">
+<mapper namespace="com.kapcb.ccc.mapper.KeyMapper">
+
+    <resultMap id="demo" type="key">
+        <id property="id" column="id"/>
+        <result property="keyName" column="keyname"/>
+        <result property="lock.id" column="id"/>
+        <result property="lock.lockName" column="lockname"/>
+    </resultMap>
+
+    <resultMap id="acc" type="key">
+        <id property="id" column="id"/>
+        <result property="keyName" column="keyname"/>
+        <!--级联对象属性-->
+        <!--自定义对象的封装规则，联合一个对象-->
+        <!--javaType=""：指定属性类型，推荐全类名-->
+        <association property="lock" javaType="com.kapcb.ccc.domain.Lock">
+            <!--封装Lock对象的属性-->
+            <id property="id" column="lid"/>
+            <result property="lockName" column="lockName"/>
+        </association>
+    </resultMap>
 
 
+    <resultMap id="col" type="Lock">
+        <id property="id" column="id"/>
+        <result property="lockName" column="lockname"/>
+        <!--定义集合元素的封装-->
+        <!--property：指定哪个属性是集合类型-->
+        <!--ofType=""：指定集合元素类型，全类名-->
+        <collection property="keys" ofType="com.kapcb.ccc.domain.Key">
+            <!--指定集合中的封装规则-->
+            <id property="id" column="kid"/>
+            <result property="keyName" column="keyname"/>
+        </collection>
+
+    </resultMap>
 
 
+    <select id="getLockById" resultMap="col">
+        SELECT
+            l.* ,k.id kid,k.keyname, k.lockid
+        FROM
+            t_lock l
+        LEFT JOIN
+            t_key k
+        ON
+            l.id = k.lockid
+        WHERE
+            l.id=#{id}
+    </select>
+
+
+    <select id="getKeyById" resultMap="acc">
+        SELECT
+        k.*,
+        l.id lid,l.lockname lockName
+        FROM
+            t_key k
+        LEFT JOIN
+            t_lock l
+        ON k.lockid = l.id
+        WHERE k.id = #{id}
+    </select>
 
 </mapper>
