@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/Spring-Kapcb-MyBatis-SQL/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Kapcb-MyBatis-Param/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Kapcb-MyBatis-Cascade/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-Kapcb-MyBatis-DynamicSQL/pom.xml" />
       </list>
     </option>
   </component>

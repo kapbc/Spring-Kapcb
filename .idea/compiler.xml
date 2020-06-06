@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Spring-Kapcb-MyBatis-DynamicSQL" />
         <module name="Spring-Kapcb-SSM" />
         <module name="Spring-Kapcb-MyBatis-Cascade" />
         <module name="Spring-Kapcb-AOP-XML" />
@@ -26,6 +27,7 @@
       <module name="Spring-Kapcb-MyBatis" target="1.5" />
       <module name="Spring-Kapcb-MyBatis-Cascade" target="1.5" />
       <module name="Spring-Kapcb-MyBatis-Configure" target="1.5" />
+      <module name="Spring-Kapcb-MyBatis-DynamicSQL" target="8" />
       <module name="Spring-Kapcb-MyBatis-Param" target="1.5" />
       <module name="Spring-Kapcb-MyBatis-SQL" target="1.5" />
       <module name="Spring-Kapcb-SSM" target="1.5" />

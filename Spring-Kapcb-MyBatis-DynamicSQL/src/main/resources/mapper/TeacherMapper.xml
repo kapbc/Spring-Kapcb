@@ -1,0 +1,53 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kapcb.ccc.mapper.TeacherMapper">
+    <resultMap id="demo" type="Teacher">
+        <id property="id" column="id"/>
+        <result property="name" column="teachername"/>
+        <result property="className" column="class"/>
+        <result property="address" column="address"/>
+        <result property="birth" column="birth"/>
+    </resultMap>
+
+    <select id="getTeacherById" resultMap="demo">
+        SELECT * FROM t_teacher WHERE id = #{id}
+    </select>
+
+    <!--if标签：判断-->
+    <select id="getTeacherByQuery" resultMap="demo">
+        SELECT * FROM t_teacher
+        WHERE 1=1
+        <if test="name != null and name != ''">
+            AND teachername LIKE CONCAT('%',#{name},'%')
+        </if>
+        <if test="address != null and address != ''">
+            AND address LIKE CONCAT('%',#{address},'%')
+        </if>
+    </select>
+
+    <select id="getTeacherByOne" resultMap="demo">
+        SELECT * FROM t_teacher
+        WHERE 1=1
+        <choose>
+            <when test="name !=null and name != ''">
+                AND teachername = #{name}
+            </when>
+            <when test="address != null and address != ''">
+                AND address LIKE CONCAT('%',#{adderss},'%')
+            </when>
+            <otherwise>
+
+            </otherwise>
+
+        </choose>
+    </select>
+
+
+    <select id="getAllTeacherByQueryId" resultMap="demo">
+        SELECT * FROM t_teacher WHERE id IN
+        <foreach collection="list" item="id" index="index" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+</mapper>
