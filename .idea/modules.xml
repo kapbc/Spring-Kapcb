@@ -14,6 +14,8 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-Param/Spring-Kapcb-MyBatis-Param.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-Param/Spring-Kapcb-MyBatis-Param.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-SQL/Spring-Kapcb-MyBatis-SQL.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-SQL/Spring-Kapcb-MyBatis-SQL.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-SSM/Spring-Kapcb-SSM.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-SSM/Spring-Kapcb-SSM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Annotations/SpringMVC-Kapcb-Annotations.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Annotations/SpringMVC-Kapcb-Annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld/SpringMVC-Kapcb-HelloWorld.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld/SpringMVC-Kapcb-HelloWorld.iml" />
     </modules>
   </component>
 </project>

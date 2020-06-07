@@ -11,7 +11,9 @@
         <module name="Spring-Kapcb-MyBatis-Cascade" />
         <module name="Spring-Kapcb-AOP-XML" />
         <module name="Spring-Kapcb-MyBatis-Configure" />
+        <module name="SpringMVC-Kapcb-HelloWorld" />
         <module name="Spring-Kapcb-MyBatis-Param" />
+        <module name="SpringMVC-Kapcb-Annotations" />
         <module name="Spring-Kapcb-IoC-Bean" />
         <module name="Spring-Kapcb-MyBatis" />
         <module name="Spring-Kapcb-AOP" />
@@ -30,7 +32,12 @@
       <module name="Spring-Kapcb-MyBatis-DynamicSQL" target="8" />
       <module name="Spring-Kapcb-MyBatis-Param" target="1.5" />
       <module name="Spring-Kapcb-MyBatis-SQL" target="1.5" />
+      <module name="Spring-Kapcb-SpringMVC" target="1.5" />
+      <module name="Spring-Kapcb-SpringMVC-HelloWorld" target="1.5" />
       <module name="Spring-Kapcb-SSM" target="1.5" />
+      <module name="SpringMVC-Kapcb-Annotations" target="1.8" />
+      <module name="SpringMVC-Kapcb-HelloWorld" target="1.8" />
+      <module name="SpringMVC-Kapcb-HelloWorld-Demo" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
