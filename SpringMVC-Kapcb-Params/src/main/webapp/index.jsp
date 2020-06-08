@@ -51,6 +51,42 @@
 
 <%--使用 ServletAPI 对象作为方法参数 --%>
 <a href="/account/servletAPI">测试访问 ServletAPI</a><br/>
+
+
+<%--测试返回 ModeAndView--%>
+<a href="/ModeAndView/ModeAndViewTest">测试返回 ModeAndView</a><br/>
+
+<%--forward请求转发--%>
+<a href="/forWard">forward请求转发</a>
+
+<%--redirect重定向--%>
+<a href="/redirect">redirect重定向</a>
+
+<%--使用@RequestBody获取请求体数据--%>
+<input type="submit" id="btn" value="TestJson">
+
 </body>
+
+<script type="text/javascript">
+
+    $(function () {
+        // 绑定点击事件
+        $("#btn").click(function () {
+            $.ajax({
+                url: "user/testJson",
+                contentType: "application/json;charset=UTF-8",
+                data: '{"addressName":"aa","addressNum":100}',
+                dataType: "json",
+                type: "post",
+                success: function (data) {
+                    alert(data);
+                    alert(data.addressName);
+                }
+            });
+        });
+    });
+
+
+</script>
 </html>
 

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Annotations" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Exception" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-FileUpLoad" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld-Demo" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Interceptor" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Params" />
   </component>
   <component name="JavaScriptSettings">
@@ -27,6 +30,9 @@
         <option value="$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Annotations/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Params/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-Kapcb-FileUpLoad/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Exception/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Interceptor/pom.xml" />
       </list>
     </option>
   </component>

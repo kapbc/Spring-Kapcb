@@ -14,12 +14,15 @@
         <module name="Spring-Kapcb-MyBatis-Cascade" />
         <module name="Spring-Kapcb-AOP-XML" />
         <module name="SpringMVC-Kapcb-Params" />
+        <module name="SpringMVC-Kapcb-Interceptor" />
         <module name="SpringMVC-Kapcb-Annotations" />
         <module name="Spring-Kapcb-MyBatis-DynamicSQL" />
+        <module name="Spring-Kapcb-IoC" />
         <module name="Spring-Kapcb-IoC-Bean" />
+        <module name="SpringMVC-Kapcb-Exception" />
         <module name="Spring-Kapcb-MyBatis-Param" />
         <module name="SpringMVC-Kapcb-HelloWorld" />
-        <module name="Spring-Kapcb-IoC" />
+        <module name="SpringMVC-Kapcb-FileUpLoad" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -37,8 +40,11 @@
       <module name="Spring-Kapcb-SpringMVC-HelloWorld" target="1.5" />
       <module name="Spring-Kapcb-SSM" target="1.5" />
       <module name="SpringMVC-Kapcb-Annotations" target="1.8" />
+      <module name="SpringMVC-Kapcb-Exception" target="1.8" />
+      <module name="SpringMVC-Kapcb-FileUpLoad" target="1.8" />
       <module name="SpringMVC-Kapcb-HelloWorld" target="1.8" />
       <module name="SpringMVC-Kapcb-HelloWorld-Demo" target="1.7" />
+      <module name="SpringMVC-Kapcb-Interceptor" target="1.8" />
       <module name="SpringMVC-Kapcb-Params" target="1.8" />
     </bytecodeTargetLevel>
   </component>

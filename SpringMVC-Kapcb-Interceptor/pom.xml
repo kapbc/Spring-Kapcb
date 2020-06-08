@@ -5,12 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.kapcb</groupId>
-  <artifactId>SpringMVC-Kapcb-Params</artifactId>
+  <artifactId>SpringMVC-Kapcb-Interceptor</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>SpringMVC-Kapcb-Params Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
+  <name>SpringMVC-Kapcb-Interceptor Maven Webapp</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,21 +44,6 @@
       <version>3.1.0</version>
       <scope>provided</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
-
-    <!-- JSTL标签库 -->
-    <dependency>
-      <groupId>jstl</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.2</version>
-    </dependency>
-    <dependency>
-      <groupId>taglibs</groupId>
-      <artifactId>standard</artifactId>
-      <version>1.1.2</version>
-    </dependency>
-
-
 
     <!-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
     <dependency>
@@ -71,7 +55,7 @@
   </dependencies>
 
   <build>
-    <finalName>SpringMVC-Kapcb-Params</finalName>
+    <finalName>SpringMVC-Kapcb-Interceptor</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>

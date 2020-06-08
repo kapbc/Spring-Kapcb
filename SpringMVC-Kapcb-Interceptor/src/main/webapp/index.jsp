@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: ccc
   Date: 2020/6/8
-  Time: 11:15
+  Time: 20:02
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,8 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-<h1>测试成功!</h1>
 
-${requestScope.username}
+<a href="/test/test01">测试拦截方法</a>
+
+<a href="/test/test02">测试不拦截方法</a>
+
 </body>
 </html>
