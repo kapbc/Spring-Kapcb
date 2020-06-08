@@ -67,5 +67,25 @@
 
 <%--ModelAttribute 注解的基本使用--%>
 <a href="/SpringMVC/testModelAttribute?username=test">测试 modelattribute</a><br/>
+
+
+<%--@ModelAttribute测试--%>
+<form action="/SpringMVC/updateUser" method="post">
+    用户名称:<input type="text" name="username">
+    用户密码:<input type="password" name="password">
+    <input type="submit" value="保存">
+</form>
+
+
+<%--@SessionAttributes测试--%>
+<a href="/sessionAttribute/testPut">存入值到SessionAttributes中</a><br/>
+
+<a href="/sessionAttribute/testGet">获取SessionAttributes中的值</a><br/>
+
+<a href="/sessionAttribute/testClean">清除SessionAttributes中的值</a><br/>
+
+<a href="/sessionAttribute/testGet">获取清楚后的SessionAttributes中的值</a><br/>
+
+
 </body>
 </html>

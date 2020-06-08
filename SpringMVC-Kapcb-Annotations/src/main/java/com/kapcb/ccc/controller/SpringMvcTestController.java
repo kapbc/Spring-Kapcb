@@ -4,6 +4,8 @@ import com.kapcb.ccc.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 /**
  * <a>Title:RequestParamController</a>
  * <a>Author：ccc<a>
@@ -150,6 +152,34 @@ public class SpringMvcTestController {
     @RequestMapping(value = "testModelAttribute")
     public String testModelAttribute(User user) {
         System.out.println("执行了控制器的方法" + user.getUsername());
+        return "success";
+    }
+
+    /**
+     * ModelAttribute 作用于无返回值的方法
+     *
+     * @param username username
+     * @param map      map
+     */
+    @ModelAttribute
+    public void showUser(String username, Map<String, Object> map) {
+        System.out.println("执行了showUser");
+        //模拟查询数据
+        User user = new User();
+        user.setUsername("kapcb");
+        user.setPassword("123456");
+        map.put("abc", user);
+    }
+
+    /**
+     * ModelAttribute 作用于参数
+     *
+     * @param user user
+     * @return success
+     */
+    @RequestMapping(path = "updateUser")
+    public String updateUserTest(@ModelAttribute(value = "abc") User user) {
+        System.out.println(user);
         return "success";
     }
 

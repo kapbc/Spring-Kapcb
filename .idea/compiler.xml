@@ -6,18 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Spring-Kapcb-MyBatis-DynamicSQL" />
+        <module name="Spring-Kapcb-MyBatis" />
+        <module name="Spring-Kapcb-MyBatis-SQL" />
+        <module name="Spring-Kapcb-AOP" />
+        <module name="Spring-Kapcb-MyBatis-Configure" />
         <module name="Spring-Kapcb-SSM" />
         <module name="Spring-Kapcb-MyBatis-Cascade" />
         <module name="Spring-Kapcb-AOP-XML" />
-        <module name="Spring-Kapcb-MyBatis-Configure" />
-        <module name="SpringMVC-Kapcb-HelloWorld" />
-        <module name="Spring-Kapcb-MyBatis-Param" />
+        <module name="SpringMVC-Kapcb-Params" />
         <module name="SpringMVC-Kapcb-Annotations" />
+        <module name="Spring-Kapcb-MyBatis-DynamicSQL" />
         <module name="Spring-Kapcb-IoC-Bean" />
-        <module name="Spring-Kapcb-MyBatis" />
-        <module name="Spring-Kapcb-AOP" />
-        <module name="Spring-Kapcb-MyBatis-SQL" />
+        <module name="Spring-Kapcb-MyBatis-Param" />
+        <module name="SpringMVC-Kapcb-HelloWorld" />
         <module name="Spring-Kapcb-IoC" />
       </profile>
     </annotationProcessing>
@@ -38,6 +39,7 @@
       <module name="SpringMVC-Kapcb-Annotations" target="1.8" />
       <module name="SpringMVC-Kapcb-HelloWorld" target="1.8" />
       <module name="SpringMVC-Kapcb-HelloWorld-Demo" target="1.7" />
+      <module name="SpringMVC-Kapcb-Params" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

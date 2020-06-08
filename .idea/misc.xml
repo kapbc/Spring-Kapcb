@@ -4,6 +4,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Annotations" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld-Demo" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Params" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -25,6 +26,7 @@
         <option value="$PROJECT_DIR$/SpringMvc-Kapcb-HelloWorld/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Annotations/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Params/pom.xml" />
       </list>
     </option>
   </component>
