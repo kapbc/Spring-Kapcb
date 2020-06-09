@@ -63,7 +63,16 @@
 <a href="/redirect">redirect重定向</a>
 
 <%--使用@RequestBody获取请求体数据--%>
-<input type="submit" id="btn" value="TestJson">
+<input type="submit" id="btn" value="TestJson"> <br/>
+
+<%--测试map携带参数输出--%>
+<a href="/param/map">测试map携带参数输出</a><br/>
+
+<%--测试model携带参数输出--%>
+<a href="/param/model">测试model携带参数输出</a><br/>
+
+<%--测试modelMap携带参数输出--%>
+<a href="/param/modelMap">测试modelMap携带参数输出</a><br/>
 
 </body>
 

@@ -1,9 +1,13 @@
 package com.kapcb.ccc.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Map;
 
 /**
  * <a>Title:ParamController</a>
@@ -43,5 +47,41 @@ public class ParamController {
         return "success";
     }
 
+
+    /**
+     * map 携带参数输出
+     *
+     * @param map Map<String, Object>
+     * @return success
+     */
+    @RequestMapping(value = "map")
+    public String mapTest(Map<String, Object> map) {
+        map.put("message", "你好Kapcb");
+        return "success";
+    }
+
+    /**
+     * interface Model携带参数输出
+     *
+     * @param model Model
+     * @return success
+     */
+    @RequestMapping(value = "model")
+    public String modelTest(Model model) {
+        model.addAttribute("message", "你好棒");
+        return "success";
+    }
+
+    /**
+     * ModelMap 参数携带 LinkedHashMap
+     *
+     * @param modelMap ModelMap
+     * @return success
+     */
+    @RequestMapping(value = "modelMap")
+    public String modelMapTest(ModelMap modelMap) {
+        modelMap.addAttribute("message", "你好强");
+        return "success";
+    }
 
 }
