@@ -20,6 +20,8 @@
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld/SpringMVC-Kapcb-HelloWorld.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld/SpringMVC-Kapcb-HelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Interceptor/SpringMVC-Kapcb-Interceptor.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Interceptor/SpringMVC-Kapcb-Interceptor.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Params/SpringMVC-Kapcb-Params.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Params/SpringMVC-Kapcb-Params.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis/SpringMVC-Kapcb-Spring-MyBatis.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis/SpringMVC-Kapcb-Spring-MyBatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Demo/SpringMVC-Kapcb-Spring-MyBatis-Demo.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Demo/SpringMVC-Kapcb-Spring-MyBatis-Demo.iml" />
     </modules>
   </component>
 </project>

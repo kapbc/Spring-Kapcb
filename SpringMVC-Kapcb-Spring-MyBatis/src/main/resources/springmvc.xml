@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--加载配置属性文件-->
+    <context:property-placeholder ignore-unresolvable="true" location="classpath:system.properties"/>
+
+    <!--配置创建 spring 容器要扫描的包-->
+    <context:component-scan base-package="com.kapcb.ccc">
+        <!--制定扫包规则 ,只扫描使用@Controller 注解的 JAVA 类-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="${web.view.prefix}"/>
+        <property name="suffix" value="${web.view.suffix}"/>
+    </bean>
+
+    <!--SpringMVC注解支持-->
+    <mvc:annotation-driven/>
+
+    <!--静态资源映射-->
+    <mvc:resources mapping="/static/**" location="/static/" cache-period="31536000"/>
+
+    <!--上传文件拦截，设置最大上传文件大小 10M = 10*1024*1024(B) = 10485760-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="${web.maxUploadSize}"/>
+    </bean>
+</beans>

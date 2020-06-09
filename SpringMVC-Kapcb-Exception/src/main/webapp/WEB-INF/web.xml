@@ -5,9 +5,17 @@
          id="WebApp_ID" version="3.1">
     <display-name>Archetype Created Web Application</display-name>
 
+    <!--前端控制器-->
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--加载springmvc.xml配置文件-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc.xml</param-value>
+        </init-param>
+        <!--加载优先级-->
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>

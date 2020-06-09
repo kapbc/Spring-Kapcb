@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kapcb.ccc.mapper.UserMapper">
+
+    <resultMap id="demo" type="User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="gender" column="gender"/>
+        <result property="email" column="email"/>
+        <result property="loginAccount" column="login_account"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="demo">
+        SELECT * FROM t_user
+    </select>
+</mapper>

@@ -8,6 +8,8 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld-Demo" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Interceptor" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Params" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Demo" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -33,6 +35,8 @@
         <option value="$PROJECT_DIR$/SpringMVC-Kapcb-FileUpLoad/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Exception/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Demo/pom.xml" />
       </list>
     </option>
   </component>
