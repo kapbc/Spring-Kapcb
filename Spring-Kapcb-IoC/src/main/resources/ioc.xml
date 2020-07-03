@@ -19,22 +19,21 @@
     </bean>
 
     <!--使用有参构造器进行注入-->
-<!--    <bean id="person03" class="com.kapcb.ccc.bean.Person">
-        <constructor-arg name="age" value="17"></constructor-arg>
-        <constructor-arg name="gender" value="男"></constructor-arg>
-        <constructor-arg name="lastName" value="小明"></constructor-arg>
-        <constructor-arg name="email" value="eircccallroot@163.com"></constructor-arg>
-    </bean>-->
+    <!--    <bean id="person03" class="com.kapcb.ccc.bean.Person">
+            <constructor-arg name="age" value="17"></constructor-arg>
+            <constructor-arg name="gender" value="男"></constructor-arg>
+            <constructor-arg name="lastName" value="小明"></constructor-arg>
+            <constructor-arg name="email" value="eircccallroot@163.com"></constructor-arg>
+        </bean>-->
     <!--使用有参构造器不指定name进行注册-->
-<!--
-    <bean id="person04" class="com.kapcb.ccc.bean.Person">
-        <constructor-arg value="17" index="3"></constructor-arg>
-        <constructor-arg value="女"></constructor-arg>
-        <constructor-arg value="123456@qq.com"></constructor-arg>
-        <constructor-arg value="小黄" index="0"></constructor-arg>
-    </bean>
--->
-
+    <!--
+        <bean id="person04" class="com.kapcb.ccc.bean.Person">
+            <constructor-arg value="17" index="3"></constructor-arg>
+            <constructor-arg value="女"></constructor-arg>
+            <constructor-arg value="123456@qq.com"></constructor-arg>
+            <constructor-arg value="小黄" index="0"></constructor-arg>
+        </bean>
+    -->
 
 
 </beans>

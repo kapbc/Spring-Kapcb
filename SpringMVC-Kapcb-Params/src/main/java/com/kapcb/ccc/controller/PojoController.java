@@ -71,9 +71,10 @@ public class PojoController {
 
     /**
      * 使用 ServletAPI 对象作为方法参数
-     * @param request HttpServletRequest
+     *
+     * @param request  HttpServletRequest
      * @param response HttpServletResponse
-     * @param session HttpSession
+     * @param session  HttpSession
      * @return success
      */
     @RequestMapping("servletAPI")

@@ -13,7 +13,7 @@
 <body>
 
 <h3>SpringMVC</h3>
-<a href="hello" >你也要来一发吗？</a>
+<a href="hello">你也要来一发吗？</a>
 
 </body>
 </html>

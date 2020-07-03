@@ -18,6 +18,6 @@ public class Test {
     public static void main(String[] args) {
         ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
         Calculator bean = ioc.getBean(Calculator.class);
-        bean.add(1,2);
+        bean.add(1, 2);
     }
 }

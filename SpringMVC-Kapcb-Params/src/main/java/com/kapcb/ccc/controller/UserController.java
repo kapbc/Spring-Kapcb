@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
 
     /**
-     *获取请求体的数据
+     * 获取请求体的数据
+     *
      * @param user user
      */
     @RequestMapping(value = "testJson")

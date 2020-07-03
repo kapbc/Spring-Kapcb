@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="Spring-Kapcb-Dubbo-Provider"/>
+    <dubbo:registry protocol="zookeeper" address="39.105.95.62:2181"/>
+    <dubbo:protocol name="dubbo" port="20880"/>
+    <dubbo:service interface="com.kapcb.ccc.service.IUserService" ref="iUserServiceImpl"/>
+    <bean id="iUserServiceImpl" class="com.kapcb.ccc.impl.IUserServiceImpl"/>
+
+</beans>

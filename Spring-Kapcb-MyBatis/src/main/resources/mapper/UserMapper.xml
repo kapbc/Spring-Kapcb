@@ -12,22 +12,22 @@
     <!--MyBatis会自动判断，如果是数字就会返回多少行,如果是boolean(影响0行就封装为false，否则true)-->
     <insert id="addUser" parameterType="com.kapcb.ccc.domain.User">
         INSERT INTO
-            t_user(username,gender,email)
+        t_user(username,gender,email)
         VALUES(#{username},#{gender},#{email})
     </insert>
 
     <!--#{属性名}：从传入的参数中对象中中取出对应的属性的值-->
     <update id="updateUser">
         UPDATE t_user SET
-            username = #{username},
-            gender = #{gender},
-            email = #{email}
+        username = #{username},
+        gender = #{gender},
+        email = #{email}
         WHERE
-            id = #{id}
+        id = #{id}
     </update>
 
     <delete id="deleteUser">
-        DELETE  FROM t_user WHERE id = #{id}
+        DELETE FROM t_user WHERE id = #{id}
     </delete>
 
 

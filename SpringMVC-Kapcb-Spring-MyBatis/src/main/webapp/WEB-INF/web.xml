@@ -46,7 +46,7 @@
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:springmvc.xml</param-value>
-        <!--加载优先级-->
+            <!--加载优先级-->
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

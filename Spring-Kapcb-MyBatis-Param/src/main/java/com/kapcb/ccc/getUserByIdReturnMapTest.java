@@ -38,7 +38,7 @@ public class getUserByIdReturnMapTest {
                 System.out.println(value);
             }
         } finally {
-          sqlSession.close();
+            sqlSession.close();
         }
     }
 }

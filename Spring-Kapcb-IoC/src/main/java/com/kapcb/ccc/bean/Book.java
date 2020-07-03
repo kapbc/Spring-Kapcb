@@ -14,10 +14,11 @@ public class Book {
     private String bookName;
     private String author;
 
-    public void myInit(){
+    public void myInit() {
         System.out.println("这是图书的初始化方法····");
     }
-    public void myDestroy(){
+
+    public void myDestroy() {
         System.out.println("这是图书的销毁方法····");
     }
 

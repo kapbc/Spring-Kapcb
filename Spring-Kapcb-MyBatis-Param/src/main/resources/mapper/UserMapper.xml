@@ -73,9 +73,9 @@
 
     <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO t_user
-            (username,gender,email,loginAccount)
+        (username,gender,email,loginAccount)
         VALUES
-            (#{username},#{gender},#{email},#{login_account})
+        (#{username},#{gender},#{email},#{login_account})
 
     </insert>
 </mapper>

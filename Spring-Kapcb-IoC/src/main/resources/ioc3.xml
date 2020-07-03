@@ -3,11 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-        <!--静态工厂-->
-        <!--静态工厂不需要创建工厂本身-->
-        <!--class：指定静态工厂全类名 factory-method：指定工厂方法 constructor-arg：传参-->
-        <!--如果只写factory-method="getAirPlane"会飘红，因为当前方法需要传参，可以使用构造器进行传参-->
-    <bean id="airPlaneStatic" class="com.kapcb.ccc.factory.AirPlaneStaticFactory" factory-method="getAirPlane" >
+    <!--静态工厂-->
+    <!--静态工厂不需要创建工厂本身-->
+    <!--class：指定静态工厂全类名 factory-method：指定工厂方法 constructor-arg：传参-->
+    <!--如果只写factory-method="getAirPlane"会飘红，因为当前方法需要传参，可以使用构造器进行传参-->
+    <bean id="airPlaneStatic" class="com.kapcb.ccc.factory.AirPlaneStaticFactory" factory-method="getAirPlane">
         <!--可以为方法指定参数-->
         <constructor-arg name="name" value="kapcb"></constructor-arg>
     </bean>
@@ -18,7 +18,8 @@
     <!--创建 airPlane 的bean-->
     <!--factory-bean="airPlaneInstanceFactory" 指定当前对象创建使用哪个工厂-->
     <!--factory-method="getAirplane" 指定工厂的方法-->
-    <bean id="airPlaneInstance" class="com.kapcb.ccc.bean.AirPlane" factory-bean="airPlaneInstanceFactory" factory-method="getAirplane">
+    <bean id="airPlaneInstance" class="com.kapcb.ccc.bean.AirPlane" factory-bean="airPlaneInstanceFactory"
+          factory-method="getAirplane">
         <!--constructor-arg 传参-->
         <constructor-arg value="ccc"></constructor-arg>
     </bean>

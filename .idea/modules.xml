@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Kapcb.iml" filepath="$PROJECT_DIR$/.idea/Spring-Kapcb.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP-XML/Spring-Kapcb-AOP-XML.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP-XML/Spring-Kapcb-AOP-XML.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Consumer/Spring-Kapcb-Dubbo-Consumer.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Consumer/Spring-Kapcb-Dubbo-Consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Interface/Spring-Kapcb-Dubbo-Interface.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Interface/Spring-Kapcb-Dubbo-Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Provider/Spring-Kapcb-Dubbo-Provider.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Provider/Spring-Kapcb-Dubbo-Provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-IoC/Spring-Kapcb-IoC.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-IoC/Spring-Kapcb-IoC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-IoC-Bean/Spring-Kapcb-IoC-Bean.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-IoC-Bean/Spring-Kapcb-IoC-Bean.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis/Spring-Kapcb-MyBatis.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis/Spring-Kapcb-MyBatis.iml" />
@@ -13,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-DynamicSQL/Spring-Kapcb-MyBatis-DynamicSQL.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-DynamicSQL/Spring-Kapcb-MyBatis-DynamicSQL.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-Param/Spring-Kapcb-MyBatis-Param.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-Param/Spring-Kapcb-MyBatis-Param.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-SQL/Spring-Kapcb-MyBatis-SQL.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-SQL/Spring-Kapcb-MyBatis-SQL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Quartz/Spring-Kapcb-Quartz.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Quartz/Spring-Kapcb-Quartz.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-SSM/Spring-Kapcb-SSM.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-SSM/Spring-Kapcb-SSM.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Annotations/SpringMVC-Kapcb-Annotations.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Annotations/SpringMVC-Kapcb-Annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Exception/SpringMVC-Kapcb-Exception.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Exception/SpringMVC-Kapcb-Exception.iml" />

@@ -41,15 +41,15 @@
 
     <select id="getLockById" resultMap="col">
         SELECT
-            l.* ,k.id kid,k.keyname, k.lockid
+        l.* ,k.id kid,k.keyname, k.lockid
         FROM
-            t_lock l
+        t_lock l
         LEFT JOIN
-            t_key k
+        t_key k
         ON
-            l.id = k.lockid
+        l.id = k.lockid
         WHERE
-            l.id=#{id}
+        l.id=#{id}
     </select>
 
 
@@ -58,9 +58,9 @@
         k.*,
         l.id lid,l.lockname lockName
         FROM
-            t_key k
+        t_key k
         LEFT JOIN
-            t_lock l
+        t_lock l
         ON k.lockid = l.id
         WHERE k.id = #{id}
     </select>

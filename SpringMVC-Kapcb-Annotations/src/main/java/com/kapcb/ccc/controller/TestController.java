@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TestController {
 
     @RequestMapping("/hello")
-    public String TestMethod(){
+    public String TestMethod() {
         System.out.println("接收到请求");
         return "success";
     }

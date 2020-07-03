@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MyFirstController {
 
     @RequestMapping(value = "/hello")
-    public String MyFirstHandler(){
+    public String MyFirstHandler() {
         System.out.println("请求已收到");
         return "success";
     }

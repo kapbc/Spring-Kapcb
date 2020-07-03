@@ -18,6 +18,6 @@ public class MyFactoryBeanTest {
         Object myFactoryBean = ioc.getBean("myFactoryBean");
         Object myFactoryBean01 = ioc.getBean("myFactoryBean");
         System.out.println("myFactoryBean = " + myFactoryBean);
-        System.out.println(myFactoryBean==myFactoryBean01);
+        System.out.println(myFactoryBean == myFactoryBean01);
     }
 }

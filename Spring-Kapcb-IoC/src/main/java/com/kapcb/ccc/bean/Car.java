@@ -15,7 +15,7 @@ public class Car {
     private String price;
     private String color;
 
-    public Car(){
+    public Car() {
         System.out.println("Car的无参构造器被调用");
     }
 

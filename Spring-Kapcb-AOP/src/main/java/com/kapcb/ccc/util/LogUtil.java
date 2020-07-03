@@ -29,6 +29,7 @@ public class LogUtil {
     @Pointcut("execution(public int com.kapcb.ccc.calculator.impl.CalculatorImpl.*(int,int ))")
     public void hahaPoint() {
     }
+
     /**
      * [普通前置]
      * {
