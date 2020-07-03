@@ -12,7 +12,7 @@
     <context:component-scan base-package="com.kapcb.ccc.impl"/>
 
     <dubbo:application name="Spring-Kapcb-Dubbo-Consumer"/>
-    <dubbo:registry address="zookeeper://39.105.95.62:2181"/>
+    <dubbo:registry address="zookeeper://${your.server.address}:2181"/>
     <dubbo:reference interface="com.kapcb.ccc.service.IUserService" id="iUserService"/>
 
 </beans>

@@ -7,7 +7,7 @@
        http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
     <dubbo:application name="Spring-Kapcb-Dubbo-Provider"/>
-    <dubbo:registry protocol="zookeeper" address="39.105.95.62:2181"/>
+    <dubbo:registry protocol="zookeeper" address="${your.server.address}:2181"/>
     <dubbo:protocol name="dubbo" port="20880"/>
     <dubbo:service interface="com.kapcb.ccc.service.IUserService" ref="iUserServiceImpl"/>
     <bean id="iUserServiceImpl" class="com.kapcb.ccc.impl.IUserServiceImpl"/>
