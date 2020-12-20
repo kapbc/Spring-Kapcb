@@ -2,6 +2,7 @@ package com.kapcb.ccc;
 
 import com.kapcb.ccc.domain.Person;
 import org.junit.Test;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -20,7 +21,8 @@ public class PersonTest {
     public void testSpringIoC() {
         // 加载Spring的配置文件
         String configuration = "bean.xml";
-        ApplicationContext ioc = new ClassPathXmlApplicationContext(configuration);
+        BeanFactory ioc = new ClassPathXmlApplicationContext(configuration);
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(configuration);
 
         // 获取配置创建的对象    args: 第一个值为配置文件中bean对应的id属性, 第二个为获取对象的class
         Person person = ioc.getBean("person", Person.class);
