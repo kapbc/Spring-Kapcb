@@ -1,7 +1,6 @@
 package com.kapcb.ccc;
 
 import com.kapcb.ccc.service.Calculator;
-import com.kapcb.ccc.service.impl.CalculatorImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

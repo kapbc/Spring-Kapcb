@@ -1,15 +1,10 @@
 package com.kapcb.ccc.proxy;
 
 import com.kapcb.ccc.calculator.Calculator;
-import com.kapcb.ccc.util.LogUtil;
-import org.springframework.stereotype.Component;
-import sun.rmi.runtime.Log;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * <a>Title:CalculatorProxy</a>
