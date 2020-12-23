@@ -18,7 +18,7 @@ public class HelloWorldController {
     @RequestMapping("/")
     public String projectIntiHandler() {
         System.out.println("The Project Init Success");
-        return "email_template";
+        return "email/email_template";
     }
 
     @RequestMapping("/hello")
