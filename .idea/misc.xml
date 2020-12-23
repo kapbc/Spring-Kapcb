@@ -13,6 +13,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Params" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Demo" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Email" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -45,6 +46,7 @@
         <option value="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Consumer/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Interface/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Kapcb-QuickStart/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Email/pom.xml" />
       </list>
     </option>
   </component>

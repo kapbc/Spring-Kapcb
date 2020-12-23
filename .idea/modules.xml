@@ -27,6 +27,7 @@
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Params/SpringMVC-Kapcb-Params.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Params/SpringMVC-Kapcb-Params.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis/SpringMVC-Kapcb-Spring-MyBatis.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis/SpringMVC-Kapcb-Spring-MyBatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Demo/SpringMVC-Kapcb-Spring-MyBatis-Demo.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Demo/SpringMVC-Kapcb-Spring-MyBatis-Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Email/SpringMVC-Kapcb-Spring-MyBatis-Email.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Email/SpringMVC-Kapcb-Spring-MyBatis-Email.iml" />
     </modules>
   </component>
 </project>

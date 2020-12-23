@@ -8,28 +8,29 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Spring-Kapcb-MyBatis-SQL" />
+        <module name="SpringMVC-Kapcb-Spring-MyBatis-Email" />
         <module name="Spring-Kapcb-Dubbo-Consumer" />
-        <module name="Spring-Kapcb-QuickStart" />
         <module name="Spring-Kapcb-AOP" />
+        <module name="Spring-Kapcb-SSM" />
         <module name="Spring-Kapcb-MyBatis" />
+        <module name="SpringMVC-Kapcb-FileUpLoad" />
         <module name="SpringMVC-Kapcb-Spring-MyBatis" />
         <module name="Spring-Kapcb-MyBatis-Cascade" />
         <module name="Spring-Kapcb-AOP-XML" />
-        <module name="SpringMVC-Kapcb-Exception" />
+        <module name="SpringMVC-Kapcb-HelloWorld" />
         <module name="Spring-Kapcb-Dubbo-Interface" />
-        <module name="Spring-Kapcb-MyBatis-Configure" />
+        <module name="Spring-Kapcb-QuickStart" />
         <module name="SpringMVC-Kapcb-Params" />
         <module name="SpringMVC-Kapcb-Interceptor" />
         <module name="SpringMVC-Kapcb-Annotations" />
         <module name="Spring-Kapcb-MyBatis-DynamicSQL" />
-        <module name="Spring-Kapcb-IoC" />
-        <module name="Spring-Kapcb-IoC-Bean" />
+        <module name="Spring-Kapcb-MyBatis-Configure" />
         <module name="SpringMVC-Kapcb-Spring-MyBatis-Demo" />
-        <module name="Spring-Kapcb-SSM" />
+        <module name="SpringMVC-Kapcb-Exception" />
         <module name="Spring-Kapcb-MyBatis-Param" />
         <module name="Spring-Kapcb-Quartz" />
-        <module name="SpringMVC-Kapcb-FileUpLoad" />
-        <module name="SpringMVC-Kapcb-HelloWorld" />
+        <module name="Spring-Kapcb-IoC" />
+        <module name="Spring-Kapcb-IoC-Bean" />
         <module name="Spring-Kapcb-Dubbo-Provider" />
       </profile>
     </annotationProcessing>
@@ -65,6 +66,7 @@
       <module name="SpringMVC-Kapcb-Params" target="1.8" />
       <module name="SpringMVC-Kapcb-Spring-MyBatis" target="1.8" />
       <module name="SpringMVC-Kapcb-Spring-MyBatis-Demo" target="1.8" />
+      <module name="SpringMVC-Kapcb-Spring-MyBatis-Email" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
