@@ -3,6 +3,7 @@ package com.kapcb.ccc.cache.impl;
 import com.kapcb.ccc.cache.ICache;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 /**
  * <a>Title: CacheMap </a>
@@ -33,7 +34,10 @@ public class CacheMap implements ICache {
 
     @Override
     public void put(long id, Object value) {
-
+        if (shouldBeClear(id) || isMaxSize()) {
+            clear();
+        }
+        store.put(id, value);
     }
 
 
@@ -61,6 +65,10 @@ public class CacheMap implements ICache {
     @Override
     public boolean shouldBeClear(long id) {
         return false;
+    }
+
+    public boolean isMaxSize() {
+
     }
 
 
