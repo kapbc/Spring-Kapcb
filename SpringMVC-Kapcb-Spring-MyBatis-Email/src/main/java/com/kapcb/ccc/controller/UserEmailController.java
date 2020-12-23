@@ -15,4 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/kapcb")
 public class UserEmailController {
+
+    public static void main(String[] args) {
+
+    }
 }
