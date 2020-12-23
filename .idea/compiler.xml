@@ -66,7 +66,7 @@
       <module name="SpringMVC-Kapcb-Params" target="1.8" />
       <module name="SpringMVC-Kapcb-Spring-MyBatis" target="1.8" />
       <module name="SpringMVC-Kapcb-Spring-MyBatis-Demo" target="1.8" />
-      <module name="SpringMVC-Kapcb-Spring-MyBatis-Email" target="1.5" />
+      <module name="SpringMVC-Kapcb-Spring-MyBatis-Email" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
