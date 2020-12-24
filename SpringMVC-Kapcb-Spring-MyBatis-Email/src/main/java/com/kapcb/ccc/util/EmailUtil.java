@@ -19,7 +19,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -173,18 +172,17 @@ public class EmailUtil {
     public static void sendHTMLFormatterEmail() throws EmailException, MalformedURLException {
         // 需要使用HtmlEmail创建一个email对象
         HtmlEmail email = new HtmlEmail();
-        System.out.println("hostname = " + hostname);
-        email.setHostName(hostname);
-        email.setAuthenticator(new DefaultAuthenticator(emailAddress, password));
+        email.setHostName("smtp.163.com");
+        email.setAuthenticator(new DefaultAuthenticator("eircccallroot@163.com", ""));
         email.setSSLOnConnect(true);
-        email.addTo(emailTo, name);
-        email.setFrom(emailFrom);
+        email.addTo("eircccallroot@yeah.net", "ccc");
+        email.setFrom("eircccallroot@163.com");
         email.setSubject("Test The Email With inline image");
-        email.setMsg("The Apache Logo!");
+        email.setMsg("The Email Template!");
 
         // 嵌入图像并获取内容id,虽然案例这样写，但我感觉直接在html内容里面写图片网络地址也可以
         // URL url = new URL("http://www.apache.org/images/asf_logo_wide.gif");
-        URL url = new URL("http://localhost:8080/kapcb/send/email?userId=4000000000017");
+        URL url = new URL("http://127.0.0.1:8080/kapcb/send/email?userId=4000000000017");
         String imageId = email.embed(url, "Email Template!");
 
         // 设置html内容
