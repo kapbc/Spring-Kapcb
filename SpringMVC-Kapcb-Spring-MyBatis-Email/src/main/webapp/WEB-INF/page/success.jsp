@@ -11,6 +11,22 @@
     <title>success</title>
 </head>
 <body>
-    <h1>请求成功!</h1>
+<h1>点击发送邮件</h1>
+<button id="email_send_email">Click To Send Email</button>
 </body>
+<script>
+    let button = document.getElementById('email_send_email');
+    button.onclick = function () {
+        let xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open("post", "/", true);
+        xmlHttpRequest.send()
+        xmlHttpRequest.onreadystatechange = function () {
+            if (xmlHttpRequest.status == 200 && xmlHttpRequest.readyState == 4) {
+                console.log("请求发送成功");
+            }
+        }
+
+    }
+
+</script>
 </html>

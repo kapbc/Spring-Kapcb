@@ -12,6 +12,6 @@
 </head>
 <body>
 <h3>SpringMVC</h3>
-<a href="hello.do" style="text-decoration: none">你也要来一发吗</a>
+<h3>Hello This is The Java Program Send Email!!!</h3>
 </body>
 </html>
