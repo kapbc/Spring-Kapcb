@@ -2,9 +2,11 @@ package com.kapcb.ccc.controller;
 
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
+import com.kapcb.ccc.util.EmailUtil;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +19,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -28,18 +31,19 @@ import java.util.stream.Collectors;
  * @version 1.0.0
  * @date 2020/12/23 - 21:21
  */
-@Slf4j
 @Controller
 @RequestMapping("/kapcb")
 @RequiredArgsConstructor
 public class UserEmailController {
+
+    private static final Logger logger = Logger.getLogger(String.valueOf(UserEmailController.class));
 
     private final IUserService userService;
 
     @ResponseBody
     @RequestMapping(value = "/onlineEmail.do", method = RequestMethod.POST)
     public ModelAndView execute() {
-        log.warn("---Come into the email send execute method---");
+        logger.warning("---Come into the email send execute method---");
         try {
             List<User> userListForEmail = userService.getUserListForEmail();
             userListForEmail.stream()
@@ -47,28 +51,35 @@ public class UserEmailController {
                     .filter(s -> isPrevWeekUpdate(s.getLastUpdateDate()))
                     .collect(Collectors.toList())
                     .forEach(System.out::println);
-
+            EmailUtil.sendHTMLFormatterEmail();
         } catch (Exception e) {
-            log.warn("execute the email send error : " + e.getMessage());
+            logger.warning("execute the email send error : " + e.getMessage());
         }
-        log.warn("---email send execute method end---");
+        logger.warning("---email send execute method end---");
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("");
+        modelAndView.setViewName("email/sendSuccess");
         return modelAndView;
     }
 
     @RequestMapping(value = "/send/email.do", method = RequestMethod.GET)
-    public ModelAndView handlerTheEmail(@RequestParam(value = "userId", required = false) Long userId) {
+    public ModelAndView handlerTheEmail(@RequestParam(value = "userId", required = false) Long userId, Model model) {
         if (userId == null || userId <= 0) {
             throw new RuntimeException("userId is required!!!");
         }
-
+        User userInfoByUserId = userService.getUserInfoByUserId(userId);
+        System.out.println("userInfoByUserId ================= " + userInfoByUserId);
+        model.addAttribute("username", userInfoByUserId.getFirstName());
+        model.addAttribute("totalPoint", userInfoByUserId.getTotalPoints());
+        model.addAttribute("lastUpdateDate", userInfoByUserId.getLastUpdateDate());
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("email/email_template");
+        return modelAndView;
     }
 
     private boolean isPrevWeekUpdate(LocalDateTime lastUpdateDate) {
         Date time = getScheduleTime();
         LocalDateTime currentDateTime = time.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-        log.warn("currentDateTime:::" + currentDateTime);
+        logger.warning("currentDateTime:::" + currentDateTime);
         return lastUpdateDate.isAfter(currentDateTime);
     }
 

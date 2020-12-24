@@ -18,12 +18,6 @@ public class HelloWorldController {
     @RequestMapping("/")
     public String projectIntiHandler() {
         System.out.println("The Project Init Success");
-        return "email/email_template";
-    }
-
-    @RequestMapping("/hello")
-    public String controllerHandler() {
-        System.out.println("请求已收到");
         return "success";
     }
 }

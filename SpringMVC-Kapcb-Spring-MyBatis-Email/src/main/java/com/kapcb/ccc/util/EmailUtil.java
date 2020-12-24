@@ -108,7 +108,7 @@ public class EmailUtil {
         email.setSSLOnConnect(true);
         email.addTo(emailTo, name);
         email.setFrom(emailFrom);
-        email.setSubject("Pictures");
+        email.setSubject("图片");
         email.setMsg("Test Pictures!");
 
         // 将附件添加到邮件
@@ -163,11 +163,12 @@ public class EmailUtil {
         email.setMsg("The Apache Logo!");
 
         // 嵌入图像并获取内容id,虽然案例这样写，但我感觉直接在html内容里面写图片网络地址也可以
-        URL url = new URL("http://www.apache.org/images/asf_logo_wide.gif");
-        String imageId = email.embed(url, "Apache logo!");
+        // URL url = new URL("http://www.apache.org/images/asf_logo_wide.gif");
+        URL url = new URL("/kapcb/send/email.do?userId=4000000000017");
+        String imageId = email.embed(url, "Email Template!");
 
         // 设置html内容
-        email.setHtmlMsg("<html>The apache logo - <img src=\\\"imageId:\" + imageId + \"\\\"></html>");
+        email.setHtmlMsg(imageId);
         email.setTextMsg("您的邮箱客户端不支持html邮件!");
         email.send();
     }
