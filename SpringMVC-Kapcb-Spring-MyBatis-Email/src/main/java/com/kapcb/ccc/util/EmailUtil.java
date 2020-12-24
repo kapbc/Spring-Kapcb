@@ -92,14 +92,14 @@ public class EmailUtil {
         EmailAttachment emailAttachment = new EmailAttachment();
 
         // 设置上传附件的地址
-        emailAttachment.setPath("");
+        emailAttachment.setPath("E:\\download\\psb (1).jpg");
         emailAttachment.setDisposition(EmailAttachment.ATTACHMENT);
 
         // 附件描述
         emailAttachment.setDescription("Test Email");
 
         // 这个名称要注意和文件格式一致,这将是接收人下载下来的文件名称
-        emailAttachment.setName("");
+        emailAttachment.setName("psb (1).jpg");
 
         // 因为要上传附件，所以用MultiPartEmail()方法创建一个email对象，固定步骤都是一样的
         MultiPartEmail email = new MultiPartEmail();
@@ -108,7 +108,7 @@ public class EmailUtil {
         email.setSSLOnConnect(true);
         email.addTo(emailTo, name);
         email.setFrom(emailFrom);
-        email.setSubject("图片");
+        email.setSubject("Pictures");
         email.setMsg("Test Pictures!");
 
         // 将附件添加到邮件

@@ -68,7 +68,7 @@ public class CacheMap implements ICache {
     }
 
     public boolean isMaxSize() {
-
+        return false;
     }
 
 
