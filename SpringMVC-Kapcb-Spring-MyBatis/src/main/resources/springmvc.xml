@@ -16,7 +16,7 @@
     <!--配置创建 spring 容器要扫描的包-->
     <context:component-scan base-package="com.kapcb.ccc">
         <!--制定扫包规则 ,只扫描使用@Controller 注解的 JAVA 类-->
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
     <!--视图解析器-->

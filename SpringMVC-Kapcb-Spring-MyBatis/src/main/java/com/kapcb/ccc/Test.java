@@ -32,7 +32,7 @@ public class Test {
 
         try {
             List<User> all = mapper.findAll();
-            all.stream().forEach(System.out::println);
+            all.forEach(System.out::println);
         } finally {
             sqlSession.close();
         }

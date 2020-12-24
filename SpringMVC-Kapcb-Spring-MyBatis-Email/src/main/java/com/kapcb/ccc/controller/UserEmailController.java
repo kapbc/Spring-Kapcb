@@ -5,6 +5,7 @@ import com.kapcb.ccc.service.IUserService;
 import com.kapcb.ccc.util.EmailUtil;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,19 +34,19 @@ import java.util.stream.Collectors;
  */
 @Controller
 @RequestMapping("/kapcb")
-@RequiredArgsConstructor
 public class UserEmailController {
 
     private static final Logger logger = Logger.getLogger(String.valueOf(UserEmailController.class));
 
-    private final IUserService userService;
+    @Autowired
+    private IUserService IUserService;
 
     @ResponseBody
-    @RequestMapping(value = "/onlineEmail.do", method = RequestMethod.POST)
+    @RequestMapping(value = "/onlineEmail", method = RequestMethod.POST)
     public ModelAndView execute() {
         logger.warning("---Come into the email send execute method---");
         try {
-            List<User> userListForEmail = userService.getUserListForEmail();
+            List<User> userListForEmail = IUserService.getUserListForEmail();
             userListForEmail.stream()
                     .filter(s -> isShouldBeSendEmail(s.getPrevWeekAddPoint(), s.getPrevWeekConsumerPoint()))
                     .filter(s -> isPrevWeekUpdate(s.getLastUpdateDate()))
@@ -61,12 +62,12 @@ public class UserEmailController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/send/email.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/send/email", method = RequestMethod.GET)
     public ModelAndView handlerTheEmail(@RequestParam(value = "userId", required = false) Long userId, Model model) {
         if (userId == null || userId <= 0) {
             throw new RuntimeException("userId is required!!!");
         }
-        User userInfoByUserId = userService.getUserInfoByUserId(userId);
+        User userInfoByUserId = IUserService.getUserInfoByUserId(userId);
         System.out.println("userInfoByUserId ================= " + userInfoByUserId);
         model.addAttribute("username", userInfoByUserId.getFirstName());
         model.addAttribute("totalPoint", userInfoByUserId.getTotalPoints());
