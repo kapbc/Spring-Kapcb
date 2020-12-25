@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Spring-Annotation-Configuration/Spring-Annotation-Configuration.iml" filepath="$PROJECT_DIR$/Spring-Annotation-Configuration/Spring-Annotation-Configuration.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Kapcb.iml" filepath="$PROJECT_DIR$/.idea/Spring-Kapcb.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP-XML/Spring-Kapcb-AOP-XML.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP-XML/Spring-Kapcb-AOP-XML.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Configuration/Spring-Kapcb-Configuration.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Configuration/Spring-Kapcb-Configuration.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Consumer/Spring-Kapcb-Dubbo-Consumer.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Consumer/Spring-Kapcb-Dubbo-Consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Interface/Spring-Kapcb-Dubbo-Interface.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Interface/Spring-Kapcb-Dubbo-Interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Provider/Spring-Kapcb-Dubbo-Provider.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Provider/Spring-Kapcb-Dubbo-Provider.iml" />

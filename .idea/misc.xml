@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Configuration" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Configuration" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Zookeeper" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Quartz" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-QuickStart" />
@@ -15,6 +15,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Demo" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Email" />
+    <type id="Spring" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
