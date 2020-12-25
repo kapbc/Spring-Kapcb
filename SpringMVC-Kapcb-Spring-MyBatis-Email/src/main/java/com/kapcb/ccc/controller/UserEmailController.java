@@ -52,7 +52,6 @@ public class UserEmailController {
                     .filter(s -> isPrevWeekUpdate(s.getLastUpdateDate()))
                     .collect(Collectors.toList())
                     .forEach(System.out::println);
-            EmailUtil.sendHTMLFormatterEmail();
         } catch (Exception e) {
             logger.warning("execute the email send error : " + e.getMessage());
         }

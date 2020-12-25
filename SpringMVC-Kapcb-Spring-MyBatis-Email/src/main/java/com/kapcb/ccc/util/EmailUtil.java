@@ -13,6 +13,8 @@ import org.apache.commons.mail.resolver.DataSourceCompositeResolver;
 import org.apache.commons.mail.resolver.DataSourceFileResolver;
 import org.apache.commons.mail.resolver.DataSourceUrlResolver;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -33,39 +35,32 @@ import java.util.Properties;
 public class EmailUtil {
 
     @Value("email.send.host.name")
-    private static String hostname;
+    private String hostname;
 
     @Value("email.send.email")
-    private static String emailAddress;
+    private String emailAddress;
 
     @Value("email.send.password")
-    private static String password;
+    private String password;
 
     @Value("email.send..email.to")
-    private static String emailTo;
+    private String emailTo;
 
     @Value("email.send.name.to")
-    private static String name;
+    private String name;
 
     @Value("email.send.email.from")
-    private static String emailFrom;
-
-    private Properties getValueFromProperties() {
-        Properties properties = null;
-        try (FileInputStream fileInputStream = new FileInputStream("email.properties")) {
-            properties = new Properties();
-            properties.load(fileInputStream);
-            return properties;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
+    private String emailFrom;
 
     private EmailUtil() {
+    }
+
+    public static EmailUtil getInstance() {
+        return LazyHold.EMAIL_UTIL;
+    }
+
+    private static final class LazyHold {
+        public static final EmailUtil EMAIL_UTIL = new EmailUtil();
     }
 
     /**
@@ -73,7 +68,7 @@ public class EmailUtil {
      *
      * @throws EmailException EmailException
      */
-    public static void sendSimpleTextEmail() throws EmailException {
+    public void sendSimpleTextEmail() throws EmailException {
         Email simpleEmail = new SimpleEmail();
 
         // 设置主机名,QQ邮箱是"smtp.qq.com",网易邮箱是"smtp.163.com"
@@ -105,7 +100,7 @@ public class EmailUtil {
      *
      * @throws EmailException EmailException
      */
-    public static void sendEmailsWithAttachments() throws EmailException {
+    public void sendEmailsWithAttachments() throws EmailException {
         // 创建一个attachment（附件）对象
         EmailAttachment emailAttachment = new EmailAttachment();
 
@@ -142,7 +137,7 @@ public class EmailUtil {
      * @throws EmailException        EmailException
      * @throws MalformedURLException MalformedURLException
      */
-    public static void sendEmailsWithOnlineAttachments() throws EmailException, MalformedURLException {
+    public void sendEmailsWithOnlineAttachments() throws EmailException, MalformedURLException {
         EmailAttachment emailAttachment = new EmailAttachment();
 
         // 设置在线资源路径，和上传本地附件的唯一区别
@@ -169,7 +164,7 @@ public class EmailUtil {
      * @throws EmailException        EmailException
      * @throws MalformedURLException MalformedURLException
      */
-    public static void sendHTMLFormatterEmail() throws EmailException, MalformedURLException {
+    public void sendHTMLFormatterEmail() throws EmailException, MalformedURLException {
         // 需要使用HtmlEmail创建一个email对象
         HtmlEmail email = new HtmlEmail();
         email.setHostName("smtp.163.com");
@@ -197,7 +192,7 @@ public class EmailUtil {
      * @throws EmailException        EmailException
      * @throws MalformedURLException MalformedURLException
      */
-    public static void sendHTMLFormatterEmailWithEmbeddedImages() throws EmailException, MalformedURLException {
+    public void sendHTMLFormatterEmailWithEmbeddedImages() throws EmailException, MalformedURLException {
         String htmlEmailTemplate = "<img src=\"http://www.conti.com/images/1.jpg\">";
         DataSourceResolver[] dataSourceResolvers = {new DataSourceFileResolver(), new DataSourceUrlResolver(new URL("http://"))};
         ImageHtmlEmail email = new ImageHtmlEmail();
