@@ -2,14 +2,21 @@ package com.kapcb.ccc.service.impl;
 
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
-import lombok.RequiredArgsConstructor;
+import com.sun.jndi.toolkit.ctx.StringHeadTail;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * <a>Title: IUserServiceImpl </a>
@@ -23,11 +30,16 @@ import java.util.NoSuchElementException;
 @Service("IUserService")
 public class IUserServiceImpl implements IUserService {
 
+    private static final Logger logger = Logger.getLogger(IUserServiceImpl.class);
+
+    private static final Path path = Paths.get("test.txt");
     private static final DateTimeFormatter dataTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
+
 
     @Override
     public List<User> getUserListForEmail() {
-        return getAssumeData();
+        logger.warn("---come into getUserListForEmail---");
+        return getAssumeDataFromStream();
     }
 
     @Override
@@ -35,6 +47,28 @@ public class IUserServiceImpl implements IUserService {
         List<User> assumeData = getAssumeData();
         return assumeData.stream().filter(s -> userId.equals(s.getUserId())).findAny().orElseThrow(NoSuchElementException::new);
     }
+
+
+    private List<User> getAssumeDataFromStream() {
+        try (Stream<String> lines = Files.lines(path)) {
+            List<User> userList = lines.map(s -> s.split(", ")).map(s -> new User(
+                    Long.valueOf(s[0]),
+                    s[1],
+                    s[2],
+                    s[3],
+                    Integer.valueOf(s[4]),
+                    Integer.valueOf(s[5]),
+                    Integer.valueOf(s[6]),
+                    LocalDateTime.parse(s[7], dataTimeFormatter)
+            )).collect(Collectors.toList());
+            return userList;
+        } catch (IOException e) {
+            logger.error("get assume data from stream error", e);
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     private List<User> getAssumeData() {
         ArrayList<User> assumeDataUserList = new ArrayList<>();

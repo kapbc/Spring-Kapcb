@@ -13,15 +13,9 @@ import org.apache.commons.mail.resolver.DataSourceCompositeResolver;
 import org.apache.commons.mail.resolver.DataSourceFileResolver;
 import org.apache.commons.mail.resolver.DataSourceUrlResolver;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Properties;
 
 /**
  * <a>Title: EmailUtil </a>

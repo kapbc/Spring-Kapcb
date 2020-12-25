@@ -2,9 +2,8 @@ package com.kapcb.ccc.controller;
 
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
-import com.kapcb.ccc.util.EmailUtil;
-import lombok.RequiredArgsConstructor;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +19,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -36,7 +34,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/kapcb")
 public class UserEmailController {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(UserEmailController.class));
+    private static final Logger logger = Logger.getLogger(UserEmailController.class);
 
     @Autowired
     private IUserService IUserService;
@@ -44,7 +42,7 @@ public class UserEmailController {
     @ResponseBody
     @RequestMapping(value = "/onlineEmail", method = RequestMethod.POST)
     public ModelAndView execute() {
-        logger.warning("---Come into the email send execute method---");
+        logger.warn("---Come into the email send execute method---");
         try {
             List<User> userListForEmail = IUserService.getUserListForEmail();
             userListForEmail.stream()
@@ -53,9 +51,9 @@ public class UserEmailController {
                     .collect(Collectors.toList())
                     .forEach(System.out::println);
         } catch (Exception e) {
-            logger.warning("execute the email send error : " + e.getMessage());
+            logger.warn("execute the email send error : " + e.getMessage());
         }
-        logger.warning("---email send execute method end---");
+        logger.warn("---email send execute method end---");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("email/sendSuccess");
         return modelAndView;
@@ -79,7 +77,7 @@ public class UserEmailController {
     private boolean isPrevWeekUpdate(LocalDateTime lastUpdateDate) {
         Date time = getScheduleTime();
         LocalDateTime currentDateTime = time.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-        logger.warning("currentDateTime:::" + currentDateTime);
+        logger.warn("currentDateTime:::" + currentDateTime);
         return lastUpdateDate.isAfter(currentDateTime);
     }
 
