@@ -4,19 +4,19 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="ApplicationContext" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/../Spring-Kapcb-AOP-XML/src/main/resources/applicationContext.xml</file>
         </fileset>
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
-    <output url="file://$MODULE_DIR$/target/classes" />
-    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <output url="file://$MODULE_DIR$/../Spring-Kapcb-AOP-XML/target/classes" />
+    <output-test url="file://$MODULE_DIR$/../Spring-Kapcb-AOP-XML/target/test-classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/target" />
+      <sourceFolder url="file://$MODULE_DIR$/../Spring-Kapcb-AOP-XML/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../Spring-Kapcb-AOP-XML/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
