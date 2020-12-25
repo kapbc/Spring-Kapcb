@@ -12,7 +12,6 @@ import org.apache.commons.mail.SimpleEmail;
 import org.apache.commons.mail.resolver.DataSourceCompositeResolver;
 import org.apache.commons.mail.resolver.DataSourceFileResolver;
 import org.apache.commons.mail.resolver.DataSourceUrlResolver;
-import org.springframework.beans.factory.annotation.Value;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -28,22 +27,16 @@ import java.net.URL;
  */
 public class EmailUtil {
 
-    @Value("email.send.host.name")
-    private String hostname;
+    public String hostname;
 
-    @Value("email.send.email")
     private String emailAddress;
 
-    @Value("email.send.password")
     private String password;
 
-    @Value("email.send..email.to")
     private String emailTo;
 
-    @Value("email.send.name.to")
     private String name;
 
-    @Value("email.send.email.from")
     private String emailFrom;
 
     private EmailUtil() {

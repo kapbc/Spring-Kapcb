@@ -3,7 +3,6 @@ package com.kapcb.ccc;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

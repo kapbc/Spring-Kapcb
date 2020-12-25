@@ -23,4 +23,6 @@
 
     <!--开始SpringMVC框架注解支持-->
     <mvc:annotation-driven/>
+
+    <context:property-placeholder location="classpath:*.properties"/>
 </beans>

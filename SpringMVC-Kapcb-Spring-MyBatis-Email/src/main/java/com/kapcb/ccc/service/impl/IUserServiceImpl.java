@@ -32,7 +32,7 @@ public class IUserServiceImpl implements IUserService {
 
     private static final Logger logger = Logger.getLogger(IUserServiceImpl.class);
 
-    private static final Path path = Paths.get("test.txt");
+    private static final Path path = Paths.get("D:\\Develop-Tools\\IDEA\\IDEA-workspace\\Spring-Kapcb\\SpringMVC-Kapcb-Spring-MyBatis-Email\\src\\main\\resources\\test.txt");
     private static final DateTimeFormatter dataTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
 
 

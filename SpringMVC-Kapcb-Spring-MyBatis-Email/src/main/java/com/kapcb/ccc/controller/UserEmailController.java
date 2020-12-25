@@ -3,8 +3,10 @@ package com.kapcb.ccc.controller;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 
+import com.kapcb.ccc.util.EmailUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,6 +41,9 @@ public class UserEmailController {
     @Autowired
     private IUserService IUserService;
 
+    @Value("${email.send.host.name}")
+    private String name;
+
     @ResponseBody
     @RequestMapping(value = "/onlineEmail", method = RequestMethod.POST)
     public ModelAndView execute() {
@@ -50,6 +55,9 @@ public class UserEmailController {
                     .filter(s -> isPrevWeekUpdate(s.getLastUpdateDate()))
                     .collect(Collectors.toList())
                     .forEach(System.out::println);
+
+            System.out.println("name = " + name);
+            System.out.println("EmailUtil.getInstance().hostname = " + EmailUtil.getInstance().hostname);
         } catch (Exception e) {
             logger.warn("execute the email send error : " + e.getMessage());
         }
