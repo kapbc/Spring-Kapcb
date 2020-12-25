@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Configuration" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Zookeeper" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Quartz" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-QuickStart" />
@@ -47,6 +48,7 @@
         <option value="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Interface/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Kapcb-QuickStart/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Email/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-Kapcb-Configuration/pom.xml" />
       </list>
     </option>
   </component>
