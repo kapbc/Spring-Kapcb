@@ -1,5 +1,7 @@
 package com.kapcb.ccc.domain;
 
+import org.springframework.stereotype.Component;
+
 /**
  * <a>Title: User </a>
  * <a>Author: kapcb <a>
@@ -9,6 +11,7 @@ package com.kapcb.ccc.domain;
  * @version 1.0.0
  * @date 2020/12/25 - 17:28
  */
+@Component
 public class User {
 
     private String username;

@@ -20,6 +20,7 @@
         <fileset id="fileset" name="ApplicationContext" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
           <file>file://$MODULE_DIR$/src/main/java/com/kapcb/ccc/configure/TestSpringConfigurationForXml.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/kapcb/ccc/configure/TestSpringConfigurationForNest.java</file>
         </fileset>
       </configuration>
     </facet>
