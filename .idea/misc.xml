@@ -50,6 +50,9 @@
         <option value="$PROJECT_DIR$/Spring-Kapcb-QuickStart/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Email/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Kapcb-Configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-AOP/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-AOP-XML/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-IoC/pom.xml" />
       </list>
     </option>
   </component>

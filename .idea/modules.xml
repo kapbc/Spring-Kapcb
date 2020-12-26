@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Spring-AOP/Spring-AOP.iml" filepath="$PROJECT_DIR$/Spring-AOP/Spring-AOP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-AOP-XML/Spring-AOP-XML.iml" filepath="$PROJECT_DIR$/Spring-AOP-XML/Spring-AOP-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Annotation-Configuration/Spring-Annotation-Configuration.iml" filepath="$PROJECT_DIR$/Spring-Annotation-Configuration/Spring-Annotation-Configuration.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-IoC/Spring-IoC.iml" filepath="$PROJECT_DIR$/Spring-IoC/Spring-IoC.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Kapcb.iml" filepath="$PROJECT_DIR$/.idea/Spring-Kapcb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP-XML/Spring-Kapcb-AOP-XML.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP-XML/Spring-Kapcb-AOP-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Consumer/Spring-Kapcb-Dubbo-Consumer.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Consumer/Spring-Kapcb-Dubbo-Consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Interface/Spring-Kapcb-Dubbo-Interface.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Interface/Spring-Kapcb-Dubbo-Interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Provider/Spring-Kapcb-Dubbo-Provider.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Provider/Spring-Kapcb-Dubbo-Provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-IoC/Spring-Kapcb-IoC.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-IoC/Spring-Kapcb-IoC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-IoC-Bean/Spring-Kapcb-IoC-Bean.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-IoC-Bean/Spring-Kapcb-IoC-Bean.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis/Spring-Kapcb-MyBatis.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis/Spring-Kapcb-MyBatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-Cascade/Spring-Kapcb-MyBatis-Cascade.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-Cascade/Spring-Kapcb-MyBatis-Cascade.iml" />
