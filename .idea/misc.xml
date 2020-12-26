@@ -3,6 +3,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Configuration" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Enable" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Value" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Zookeeper" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Quartz" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-QuickStart" />
@@ -55,7 +56,13 @@
         <option value="$PROJECT_DIR$/Spring-AOP-XML/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-IoC/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Annotation-Enable/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-Annotation-Value/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Spring-Annotation-Enable/Spring-Annotation-Value/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">

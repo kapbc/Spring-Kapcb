@@ -5,13 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.kapcb.ccc</groupId>
-  <artifactId>Spring-Annotation-Enable</artifactId>
+  <artifactId>Spring-Annotation-Value</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>Spring-Annotation-Value</module>
-  </modules>
-  <packaging>pom</packaging>
-
+  <packaging>war</packaging>
 
   <dependencies>
     <dependency>
@@ -21,12 +17,12 @@
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
+      <artifactId>spring-beans</artifactId>
       <version>5.2.10.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-beans</artifactId>
+      <artifactId>spring-core</artifactId>
       <version>5.2.10.RELEASE</version>
     </dependency>
     <dependency>
