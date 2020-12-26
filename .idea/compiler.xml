@@ -32,12 +32,14 @@
         <module name="Spring-Kapcb-MyBatis-Param" />
         <module name="Spring-Kapcb-Quartz" />
         <module name="SpringMVC-Kapcb-FileUpLoad" />
+        <module name="Spring-Annotation-Enable" />
         <module name="Spring-Kapcb-MyBatis-Configure" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HttpClient" target="1.5" />
       <module name="Spring-Annotation-Configuration" target="1.5" />
+      <module name="Spring-Annotation-Enable" target="1.5" />
       <module name="Spring-AOP" target="1.5" />
       <module name="Spring-AOP-XML" target="1.5" />
       <module name="Spring-IoC" target="1.5" />

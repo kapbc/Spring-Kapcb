@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Configuration" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Enable" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Zookeeper" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Quartz" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-QuickStart" />
@@ -53,6 +54,7 @@
         <option value="$PROJECT_DIR$/Spring-AOP/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-AOP-XML/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-IoC/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-Annotation-Enable/pom.xml" />
       </list>
     </option>
   </component>
