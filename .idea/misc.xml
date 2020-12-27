@@ -8,6 +8,7 @@
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Zookeeper" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Quartz" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-QuickStart" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring-SpringMVC-MyBatis" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Annotations" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-Exception" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC-Kapcb-FileUpLoad" />
@@ -59,6 +60,7 @@
         <option value="$PROJECT_DIR$/Spring-Annotation-Enable/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Annotation-Value/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-IoC-XmlBean/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-SpringMVC-MyBatis/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
