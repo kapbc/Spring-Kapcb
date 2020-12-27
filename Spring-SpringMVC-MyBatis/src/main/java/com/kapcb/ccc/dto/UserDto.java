@@ -21,4 +21,5 @@ import lombok.ToString;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class UserDto {
+    private String username;
 }
