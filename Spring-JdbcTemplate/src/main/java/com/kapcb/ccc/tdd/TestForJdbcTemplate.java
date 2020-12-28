@@ -35,7 +35,7 @@ public class TestForJdbcTemplate {
 //        resultMap.put("mgr", "1234");
 //        resultMap.put("available", "1");
 //        resultMap.put("orderNum", "1");
-//        resultMap.put("tyoe", "11111");
+//        resultMap.put("type", "11111");
 //        resultMap.put("imagePath", "22222");
 //        resultMap.put("salt", "3333");
 //        JdbcRowMapper instance = JdbcRowMapper.getInstance();
