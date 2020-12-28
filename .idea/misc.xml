@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Enable" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Value" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-IoC-XmlBean" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring-JdbcTemplate" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Zookeeper" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Quartz" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-QuickStart" />
@@ -61,6 +62,7 @@
         <option value="$PROJECT_DIR$/Spring-Annotation-Value/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-IoC-XmlBean/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-SpringMVC-MyBatis/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-JdbcTemplate/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

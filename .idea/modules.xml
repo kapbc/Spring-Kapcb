@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-Annotation-Enable/Spring-Annotation-Enable.iml" filepath="$PROJECT_DIR$/Spring-Annotation-Enable/Spring-Annotation-Enable.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Annotation-Value/Spring-Annotation-Value.iml" filepath="$PROJECT_DIR$/Spring-Annotation-Value/Spring-Annotation-Value.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-IoC-XmlBean/Spring-IoC-XmlBean.iml" filepath="$PROJECT_DIR$/Spring-IoC-XmlBean/Spring-IoC-XmlBean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-JdbcTemplate/Spring-JdbcTemplate.iml" filepath="$PROJECT_DIR$/Spring-JdbcTemplate/Spring-JdbcTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Kapcb.iml" filepath="$PROJECT_DIR$/.idea/Spring-Kapcb.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP-XML/Spring-Kapcb-AOP-XML.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP-XML/Spring-Kapcb-AOP-XML.iml" />
