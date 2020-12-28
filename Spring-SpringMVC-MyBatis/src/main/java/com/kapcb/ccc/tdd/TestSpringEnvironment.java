@@ -1,6 +1,5 @@
 package com.kapcb.ccc.tdd;
 
-import com.kapcb.ccc.service.IUserService;
 import com.kapcb.ccc.service.impl.IUserServiceImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;

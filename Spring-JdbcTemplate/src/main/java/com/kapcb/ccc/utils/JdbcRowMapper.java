@@ -7,10 +7,8 @@ import org.apache.log4j.Logger;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Objects;
 
 /**
@@ -22,7 +20,7 @@ import java.util.Objects;
  * @version 1.0.0
  * @date 2020/12/28 - 21:29
  */
-public class JdbcRowMapper {
+public class JdbcRowMapper<T> {
 
     private static final Logger logger = Logger.getLogger(JdbcRowMapper.class);
 
@@ -40,11 +38,11 @@ public class JdbcRowMapper {
         private static final JdbcRowMapper JDBC_ROW_MAPPER = new JdbcRowMapper();
     }
 
-    public static void getResultMap(Class<?> clazz, ResultSet resultSet) {
+    public T getResultMap(Class<?> clazz, ResultSet resultSet) {
         String annotationName = "";
-        Object bean = null;
         try {
-            bean = clazz.newInstance();
+            @SuppressWarnings("unchecked")
+            T bean = (T) clazz.getConstructor().newInstance();
             Field[] declaredFields = clazz.getDeclaredFields();
             if (ArrayUtils.isNotEmpty(declaredFields)) {
                 for (Field declaredField : declaredFields) {
@@ -68,12 +66,14 @@ public class JdbcRowMapper {
                     setValue(bean, method, annotationName, simpleName, resultSet);
                 }
             }
+            return bean;
         } catch (Exception e) {
             logger.error("getResultMap error::: " + e.getMessage(), e);
+            return null;
         }
     }
 
-    private static void setValue(Object bean, Method method, String annotationName, String simpleName, ResultSet resultSet) throws Exception {
+    private void setValue(Object bean, Method method, String annotationName, String simpleName, ResultSet resultSet) throws Exception {
         switch (simpleName) {
             case "String":
                 method.invoke(bean, resultSet.getString(annotationName));

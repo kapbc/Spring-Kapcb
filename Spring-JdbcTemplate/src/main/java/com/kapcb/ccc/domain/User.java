@@ -61,7 +61,7 @@ public class User {
     @Column(name = "orderNum")
     private Integer orderNumber;
 
-    @Column(name = "tyoe")
+    @Column(name = "type")
     private Integer type;
 
     @Column(name = "imagePath")
