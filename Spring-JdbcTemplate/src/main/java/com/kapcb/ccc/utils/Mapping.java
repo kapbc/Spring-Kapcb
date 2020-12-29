@@ -1,6 +1,6 @@
 package com.kapcb.ccc.utils;
 
-
+import com.kapcb.ccc.annotation.Column;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
@@ -21,7 +21,7 @@ import java.util.Objects;
  * @version 1.0.0
  * @date 2020/12/28-13:57
  */
-public class JdbcRowMapper {
+public class Mapping {
 
     private static final Logger logger = Logger.getLogger(JdbcRowMapper.class);
 
