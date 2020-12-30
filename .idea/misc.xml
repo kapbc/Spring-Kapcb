@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../Spring-API-ThreadPool" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Configuration" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Enable" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Value" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring-Api-ThreadPool" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-IoC-XmlBean" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-JdbcTemplate" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Zookeeper" />
@@ -63,6 +65,7 @@
         <option value="$PROJECT_DIR$/Spring-IoC-XmlBean/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-SpringMVC-MyBatis/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-JdbcTemplate/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-Api-ThreadPool/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
