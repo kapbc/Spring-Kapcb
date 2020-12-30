@@ -1,14 +1,17 @@
 package com.kapcb.ccc.utils;
 
 import com.kapcb.ccc.annotation.Column;
-import org.apache.commons.lang3.ArrayUtils;
+import lombok.SneakyThrows;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.lang.NonNull;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Objects;
 
 /**
@@ -20,80 +23,85 @@ import java.util.Objects;
  * @version 1.0.0
  * @date 2020/12/28 - 21:29
  */
-public class JdbcRowMapper<T> {
+public class JdbcRowMapper<T> implements RowMapper<T> {
 
     private static final Logger logger = Logger.getLogger(JdbcRowMapper.class);
 
-    private JdbcRowMapper() {
-        if (LazyHold.JDBC_ROW_MAPPER != null) {
-            throw new RuntimeException("Unable to create more than one singleton case!");
-        }
+    private final Class<? extends T> clazz;
+
+    public JdbcRowMapper(Class<? extends T> clazz) {
+        this.clazz = clazz;
     }
 
-    public static final JdbcRowMapper getInstance() {
-        return LazyHold.JDBC_ROW_MAPPER;
-    }
-
-    private static class LazyHold {
-        private static final JdbcRowMapper JDBC_ROW_MAPPER = new JdbcRowMapper();
-    }
-
-    public T getResultMap(Class<?> clazz, ResultSet resultSet) {
-        String annotationName = "";
+    @SneakyThrows
+    @NonNull
+    @Override
+    public T mapRow(ResultSet resultSet, int i) throws SQLException {
+        logger.warn("---Come Into The JdbcRowMapper mapRow---");
+        T bean = null;
         try {
-            @SuppressWarnings("unchecked")
-            T bean = (T) clazz.getConstructor().newInstance();
+            bean = clazz.getConstructor().newInstance();
             Field[] declaredFields = clazz.getDeclaredFields();
-            if (ArrayUtils.isNotEmpty(declaredFields)) {
-                for (Field declaredField : declaredFields) {
-                    Annotation[] annotations = declaredField.getAnnotations();
-                    if (ArrayUtils.isNotEmpty(annotations)) {
-                        for (Annotation annotation : annotations) {
-                            if (annotation instanceof Column) {
-                                Column column = (Column) annotation;
-                                annotationName = column.name();
-                                logger.warn("annotationName::: " + annotationName);
-                            }
-                        }
+            for (Field field : Objects.requireNonNull(declaredFields)) {
+                String annotationName = null;
+                Annotation[] annotations = field.getAnnotations();
+                for (Annotation annotation : annotations) {
+                    if (annotation instanceof Column) {
+                        Column column = (Column) annotation;
+                        annotationName = column.name();
+                        logger.warn("annotationName ::: " + annotationName);
                     }
-                    String simpleName = declaredField.getType().getSimpleName();
-                    String columnName = declaredField.getName();
-                    logger.warn("SimpleName::: " + simpleName);
-                    logger.warn("columnName::: " + columnName);
-                    String setMethodName = parseSetMethodName(columnName);
-                    Method method = clazz.getMethod(Objects.requireNonNull(setMethodName), declaredField.getType());
-                    logger.warn("method::: " + method);
-                    setValue(bean, method, annotationName, simpleName, resultSet);
                 }
+
+                String fieldType = field.getType().getSimpleName();
+                logger.warn("fieldType ::: " + fieldType);
+                String fieldName = field.getName();
+                logger.warn("fieldName ::: " + fieldName);
+                String setMethodName = parseSetMethodName(fieldName);
+                logger.warn("setMethodName ::: " + setMethodName);
+                Method setMethod = clazz.getMethod(fieldName, field.getType());
+                logger.warn("setMethod ::: " + setMethodName);
+                setValue(bean, setMethod, annotationName, fieldType, resultSet);
+                logger.warn("---Process The Data Mapping Convert Success---");
             }
-            return bean;
-        } catch (Exception e) {
-            logger.error("getResultMap error::: " + e.getMessage(), e);
-            return null;
+        } catch (InstantiationException e) {
+            logger.error("JdbcRowMapper Convert Data Error ::: " + e.getMessage(), e);
         }
+        return Objects.equals(bean, null) ? clazz.newInstance() : bean;
     }
 
-    private void setValue(Object bean, Method method, String annotationName, String simpleName, ResultSet resultSet) throws Exception {
-        switch (simpleName) {
-            case "String":
-                method.invoke(bean, resultSet.getString(annotationName));
-                break;
-            case "Int":
-            case "Integer":
-                method.invoke(bean, resultSet.getInt(annotationName));
-                break;
-            case "Long":
-                method.invoke(bean, resultSet.getLong(annotationName));
-                break;
-            case "Float":
-            case "Double":
-                method.invoke(bean, resultSet.getDouble(annotationName));
-                break;
-            case "LocalDataTime":
-                method.invoke(bean, resultSet.getTimestamp(annotationName).toLocalDateTime());
-                break;
-            default:
-                break;
+    private void setValue(Object bean, Method method, String annotationName, String simpleName, ResultSet resultSet) {
+        try {
+            if (Objects.equals(null, resultSet.getObject(annotationName))) {
+                logger.warn("The Column ::: " + annotationName + " from resultMap is null");
+                return;
+            }
+            switch (simpleName) {
+                case "String":
+                    method.invoke(bean, resultSet.getString(annotationName));
+                    break;
+                case "int":
+                case "Integer":
+                    method.invoke(bean, resultSet.getInt(annotationName));
+                    break;
+                case "long":
+                case "Long":
+                    method.invoke(bean, resultSet.getLong(annotationName));
+                    break;
+                case "float":
+                case "double":
+                case "Float":
+                case "Double":
+                    method.invoke(bean, resultSet.getDouble(annotationName));
+                    break;
+                case "LocalDataTime":
+                    method.invoke(bean, resultSet.getTimestamp(annotationName).toLocalDateTime());
+                    break;
+                default:
+                    break;
+            }
+        } catch (Exception e) {
+            logger.error("Convert The Data From ResultMap error ::: " + e.getMessage(), e);
         }
     }
 
