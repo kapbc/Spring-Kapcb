@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Configuration" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Enable" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Value" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring-Api" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Api-ThreadPool" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-IoC-XmlBean" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-JdbcTemplate" />
@@ -66,6 +67,7 @@
         <option value="$PROJECT_DIR$/Spring-SpringMVC-MyBatis/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-JdbcTemplate/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Api-ThreadPool/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-Api/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
