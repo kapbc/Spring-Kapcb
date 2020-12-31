@@ -48,7 +48,7 @@
       <module name="Spring-Annotation-Value" target="1.5" />
       <module name="Spring-AOP" target="1.5" />
       <module name="Spring-AOP-XML" target="1.5" />
-      <module name="Spring-Api" target="1.5" />
+      <module name="Spring-Api" target="8" />
       <module name="Spring-Api-ThreadPool" target="8" />
       <module name="Spring-API-ThreadPool" target="1.5" />
       <module name="Spring-IoC" target="1.5" />
