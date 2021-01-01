@@ -1,8 +1,10 @@
 package com.kapcb.ccc.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NonNull;
+import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
@@ -17,6 +19,8 @@ import java.time.LocalDateTime;
  * @date 2021/1/1 1:15
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @NotNull(message = "The UserId Is Required Not Null!")
@@ -27,9 +31,10 @@ public class User {
     private String username;
 
     @NotNull(message = "Email Required Not Null!")
+    @Email(message = "Email Formatter Is Not Available!")
     private String email;
 
-    @Size(min = 1, max = 1, message = "Flag Required One ")
+    @Size(min = 1, max = 1, message = "Flag Required One")
     private String flag;
 
     private Integer totalPoint;
