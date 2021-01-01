@@ -1,5 +1,7 @@
 package com.kapcb.ccc.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.constraints.NotNull;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -38,8 +42,11 @@ public class UserApiController {
 
     private final IUserService userService;
 
-    @PostMapping(name = "/getUserInfo/{userId}", produces = "application/json,charset=UTF-8")
+    @PostMapping(name = "/getUserInfo/{userId}", produces = "application/json; charset=UTF-8")
     public String getUserInfo(@NotNull(message = "required") @PathVariable String userId) {
+        ObjectMapper mapper = new ObjectMapper();
+        String result;
+        Map<String, Object> map = new HashMap<>();
         ThreadFactory threadFactory = new CustomizableThreadFactory("Kapcb-Thread-Pool-");
         BlockingDeque<Runnable> deque = new LinkedBlockingDeque<>(20);
         ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 5, 50, TimeUnit.MILLISECONDS, deque, threadFactory);
@@ -49,9 +56,21 @@ public class UserApiController {
         });
         try {
             User user = future.get(2, TimeUnit.SECONDS);
+            map.put("data", user);
+            map.put("StatusCode", "200");
+            map.put("StatusMessage", "SUCCESS");
         } catch (Exception e) {
             future.cancel(true);
             logger.error("---request process time out---" + e.getMessage());
+            map.put("StatusCode", "408");
+            map.put("StatusMessage", "REQUEST TIME OUT");
         }
+        try {
+            result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(map);
+            return result;
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

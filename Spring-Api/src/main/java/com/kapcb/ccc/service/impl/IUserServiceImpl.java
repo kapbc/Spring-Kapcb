@@ -4,6 +4,8 @@ import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 /**
  * <a>Title: IUserServiceImpl </a>
  * <a>Author: kapcb <a>
@@ -17,6 +19,13 @@ import org.springframework.stereotype.Service;
 public class IUserServiceImpl implements IUserService {
     @Override
     public User getUserInfo(String userId) {
-        new User("")
+        User user = new User();
+        user.setUserId(123456L);
+        user.setUsername("kapcb");
+        user.setEmail("eircccallroot@yeah.net");
+        user.setFlag("Y");
+        user.setTotalPoint(15590);
+        user.setBirthday(LocalDateTime.now());
+        return user;
     }
 }
