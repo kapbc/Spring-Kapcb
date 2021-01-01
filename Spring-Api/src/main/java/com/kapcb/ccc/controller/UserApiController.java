@@ -2,6 +2,8 @@ package com.kapcb.ccc.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kapcb.ccc.common.Result;
+import com.kapcb.ccc.common.ResultInfo;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import lombok.RequiredArgsConstructor;
@@ -46,7 +48,6 @@ public class UserApiController {
     public String getUserInfo(@NotNull(message = "required") @PathVariable String userId) {
         ObjectMapper mapper = new ObjectMapper();
         String result;
-        Map<String, Object> map = new HashMap<>();
         ThreadFactory threadFactory = new CustomizableThreadFactory("Kapcb-Thread-Pool-");
         BlockingDeque<Runnable> deque = new LinkedBlockingDeque<>(20);
         ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 5, 50, TimeUnit.MILLISECONDS, deque, threadFactory);
@@ -56,21 +57,15 @@ public class UserApiController {
         });
         try {
             User user = future.get(2, TimeUnit.SECONDS);
-            map.put("data", user);
-            map.put("StatusCode", "200");
-            map.put("StatusMessage", "SUCCESS");
+            Result<User> userResult = new Result<>(ResultInfo.REQUEST_SUCCESS, user);
+            result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(userResult);
         } catch (Exception e) {
             future.cancel(true);
             logger.error("---request process time out---" + e.getMessage());
-            map.put("StatusCode", "408");
-            map.put("StatusMessage", "REQUEST TIME OUT");
+            Result<Object> objectResult = new Result<>(ResultInfo.REQUEST_FAIL);
+            result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(objectResult);
         }
-        try {
-            result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(map);
-            return result;
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
+
         return null;
     }
 }
