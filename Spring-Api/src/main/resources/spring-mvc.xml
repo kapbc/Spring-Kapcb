@@ -9,12 +9,11 @@
        https://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/cache
        http://www.springframework.org/schema/cache/spring-cache.xsd">
-
     <context:component-scan base-package="com.kapcb.ccc">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <bean id="internalResourceView" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean id="intervalResourcesView" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/page/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
