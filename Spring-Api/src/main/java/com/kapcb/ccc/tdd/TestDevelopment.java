@@ -33,8 +33,7 @@ public class TestDevelopment {
 
         Result<User> bean = ConvertJsonFromApi.convertStringToObjectByTryCatch(result, new User());
         System.out.println("bean = " + bean);
-        User data = bean.getData();
-        System.out.println("data.getBirthday() = " + data.getUsername());
+        System.out.println("bean.getData() = " + bean.getData());
 
         String[] split = result.split(",");
         for (int i = 0; i < split.length; i++) {

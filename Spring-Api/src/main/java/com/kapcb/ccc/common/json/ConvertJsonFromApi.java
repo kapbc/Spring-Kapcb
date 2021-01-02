@@ -6,10 +6,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.kapcb.ccc.common.Result;
-
-import java.util.HashMap;
-import java.util.Map;
-
+import org.apache.log4j.Logger;
 
 /**
  * <a>Title: ConvertJsonFromApi </a>
@@ -22,8 +19,7 @@ import java.util.Map;
  */
 public class ConvertJsonFromApi {
 
-    //private static final Logger logger = org.apache.log4j.Logger.getLogger(ConvertJsonFromApi.class);
-    private static final Map<String, String> JSON_MAP = new HashMap<>(4);
+    private static final Logger logger = org.apache.log4j.Logger.getLogger(ConvertJsonFromApi.class);
 
     private ConvertJsonFromApi() {
     }
@@ -41,7 +37,7 @@ public class ConvertJsonFromApi {
         try {
             convertResult = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(result);
         } catch (JsonProcessingException e) {
-            // logger.error("Convert Json To String By Try Catch Error ::: " + e.getMessage(), e);
+            logger.error("Convert Json To String By Try Catch Error ::: " + e.getMessage(), e);
         }
         return convertResult;
     }
@@ -64,8 +60,10 @@ public class ConvertJsonFromApi {
         try {
             convertResult = objectMapper.readValue(jsonString, convertResult.getClass());
         } catch (JsonProcessingException e) {
-            //logger.error("Convert String To Object By Try Catch Error ::: " + e.getMessage(), e);
+            logger.error("Convert String To Object By Try Catch Error ::: " + e.getMessage(), e);
         }
         return convertResult;
     }
+
+
 }
