@@ -55,9 +55,13 @@ public class ConvertJsonFromApi {
      */
     public static <T> Result<T> convertStringToObjectByTryCatch(String jsonString, T data) {
         ObjectMapper objectMapper = new ObjectMapper();
+        //在反序列化时忽略在 json 中存在但 Java 对象不存在的属性
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        //在序列化时日期格式默认为 yyyy-MM-dd'T'HH:mm:ss.SSSZ
         objectMapper.configure(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS, false);
+        //在序列化时忽略值为 null 的属性
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        //忽略值为默认值的属性
         objectMapper.setDefaultPropertyInclusion(JsonInclude.Include.NON_DEFAULT);
         Result<T> convertResult = new Result(data);
         try {

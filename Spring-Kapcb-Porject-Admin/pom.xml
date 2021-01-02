@@ -7,6 +7,18 @@
   <groupId>com.kapcb.ccc</groupId>
   <artifactId>Spring-Kapcb-Project-Admin</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
   <dependencies>
     <!--Spring BASE 5.2.10.RELEASE start -->
@@ -56,6 +68,17 @@
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
     </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+    <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-log4j12</artifactId>
+    <version>1.7.25</version>
+    <scope>test</scope>
+    </dependency>
     <!--log4j end -->
 
     <!--lombok start -->
@@ -83,6 +106,12 @@
       <version>2.11.0</version>
     </dependency>
     <!--jackson 2.11.0 end -->
+
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.1.5.Final</version>
+    </dependency>
 
   </dependencies>
 </project>
