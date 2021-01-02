@@ -4,7 +4,6 @@ import com.kapcb.ccc.common.result.Result;
 import com.kapcb.ccc.common.result.ResultInfo;
 import com.kapcb.ccc.common.json.ConvertJsonFromApi;
 import com.kapcb.ccc.domain.User;
-import org.springframework.beans.BeanUtils;
 
 import java.time.LocalDateTime;
 

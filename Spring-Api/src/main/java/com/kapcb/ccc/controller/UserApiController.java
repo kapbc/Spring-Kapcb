@@ -1,6 +1,7 @@
 package com.kapcb.ccc.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kapcb.ccc.common.json.ConvertJsonFromApi;
 import com.kapcb.ccc.common.result.Result;
 import com.kapcb.ccc.common.result.ResultInfo;
 import com.kapcb.ccc.domain.User;
@@ -45,24 +46,21 @@ public class UserApiController {
     public String getUserInfo(@NotNull(message = "required") @PathVariable String userId) {
         ObjectMapper mapper = new ObjectMapper();
         String result;
+        Result<User> userResult = null;
         ThreadFactory threadFactory = new CustomizableThreadFactory("Kapcb-Thread-Pool-");
         BlockingDeque<Runnable> deque = new LinkedBlockingDeque<>(20);
         ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 5, 50, TimeUnit.MILLISECONDS, deque, threadFactory);
-        Future<User> future = executor.submit(() -> {
-            User userInfo = userService.getUserInfo(userId);
-            return userInfo;
-        });
+        Future<User> future = executor.submit(() -> userService.getUserInfo(userId));
         try {
             User user = future.get(2, TimeUnit.SECONDS);
-            Result<User> userResult = new Result<>(ResultInfo.REQUEST_SUCCESS, user);
-            result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(userResult);
+            userResult = new Result<>(ResultInfo.REQUEST_SUCCESS, user);
         } catch (Exception e) {
             future.cancel(true);
             logger.error("---request process time out---" + e.getMessage());
             Result<Object> objectResult = new Result<>(ResultInfo.REQUEST_FAIL);
             // result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(objectResult);
         }
+        return ConvertJsonFromApi.convertObjectToJsonByTryCatch(userResult);
 
-        return null;
     }
 }
