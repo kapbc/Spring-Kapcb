@@ -1,9 +1,14 @@
 package com.kapcb.ccc.common.json;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.kapcb.ccc.common.Result;
-import org.apache.log4j.Logger;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -17,15 +22,50 @@ import org.apache.log4j.Logger;
  */
 public class ConvertJsonFromApi {
 
-    private static final Logger logger = org.apache.log4j.Logger.getLogger(ConvertJsonFromApi.class);
+    //private static final Logger logger = org.apache.log4j.Logger.getLogger(ConvertJsonFromApi.class);
+    private static final Map<String, String> JSON_MAP = new HashMap<>(4);
 
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+    private ConvertJsonFromApi() {
+    }
 
-    public <T> String convertJsonByTryCatch(Result<T> result) {
+    /**
+     * Convert Object Result Bean To Json String
+     *
+     * @param result Result<T>
+     * @param <T>    T
+     * @return String
+     */
+    public static <T> String convertObjectToJsonByTryCatch(Result<T> result) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String convertResult = null;
         try {
-            OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(result);
+            convertResult = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(result);
         } catch (JsonProcessingException e) {
-            logger.error("Convert Json To String By Try Catch Error ::: " + e.getMessage());
+            // logger.error("Convert Json To String By Try Catch Error ::: " + e.getMessage(), e);
         }
+        return convertResult;
+    }
+
+    /**
+     * Convert Json String To Object Bean
+     *
+     * @param jsonString String
+     * @param
+     * @param <T>        T
+     * @return T
+     */
+    public static <T> Result<T> convertStringToObjectByTryCatch(String jsonString, T data) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS, false);
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        objectMapper.setDefaultPropertyInclusion(JsonInclude.Include.NON_DEFAULT);
+        Result<T> convertResult = new Result(data);
+        try {
+            convertResult = objectMapper.readValue(jsonString, convertResult.getClass());
+        } catch (JsonProcessingException e) {
+            //logger.error("Convert String To Object By Try Catch Error ::: " + e.getMessage(), e);
+        }
+        return convertResult;
     }
 }

@@ -38,4 +38,8 @@ public class Result<T> implements Serializable {
         this.statusCode = resultInfo.getStatusCode();
         this.data = data;
     }
+
+    public Result(T data) {
+        this.data = data;
+    }
 }

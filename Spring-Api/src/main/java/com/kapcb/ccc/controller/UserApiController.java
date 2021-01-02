@@ -63,7 +63,7 @@ public class UserApiController {
             future.cancel(true);
             logger.error("---request process time out---" + e.getMessage());
             Result<Object> objectResult = new Result<>(ResultInfo.REQUEST_FAIL);
-            result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(objectResult);
+            // result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(objectResult);
         }
 
         return null;
