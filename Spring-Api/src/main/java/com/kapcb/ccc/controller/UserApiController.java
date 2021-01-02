@@ -1,9 +1,8 @@
 package com.kapcb.ccc.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kapcb.ccc.common.Result;
-import com.kapcb.ccc.common.ResultInfo;
+import com.kapcb.ccc.common.result.Result;
+import com.kapcb.ccc.common.result.ResultInfo;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import lombok.RequiredArgsConstructor;
@@ -16,8 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.constraints.NotNull;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;

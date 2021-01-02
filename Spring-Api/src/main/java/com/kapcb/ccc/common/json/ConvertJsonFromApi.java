@@ -5,8 +5,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.kapcb.ccc.common.Result;
+import com.kapcb.ccc.common.result.Result;
 import org.apache.log4j.Logger;
+import org.springframework.beans.BeanUtils;
+
+import java.util.Objects;
 
 /**
  * <a>Title: ConvertJsonFromApi </a>
@@ -46,7 +49,7 @@ public class ConvertJsonFromApi {
      * Convert Json String To Object Bean
      *
      * @param jsonString String
-     * @param
+     * @param data       T
      * @param <T>        T
      * @return T
      */
@@ -64,6 +67,4 @@ public class ConvertJsonFromApi {
         }
         return convertResult;
     }
-
-
 }

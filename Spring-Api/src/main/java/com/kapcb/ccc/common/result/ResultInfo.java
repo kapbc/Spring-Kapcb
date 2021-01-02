@@ -1,6 +1,5 @@
-package com.kapcb.ccc.common;
+package com.kapcb.ccc.common.result;
 
-import lombok.Data;
 
 /**
  * <a>Title: ResultInfo </a>
@@ -47,15 +46,7 @@ public enum ResultInfo {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
     public Integer getStatusCode() {
         return statusCode;
-    }
-
-    public void setStatusCode(Integer statusCode) {
-        this.statusCode = statusCode;
     }
 }

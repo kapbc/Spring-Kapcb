@@ -1,4 +1,4 @@
-package com.kapcb.ccc.common;
+package com.kapcb.ccc.common.result;
 
 import lombok.Data;
 import lombok.ToString;
@@ -27,6 +27,10 @@ public class Result<T> implements Serializable {
     private Result() {
     }
 
+    public Result(T data) {
+        this.data = data;
+    }
+
     public Result(ResultInfo resultInfo) {
         this.message = resultInfo.getMessage();
         this.statusCode = resultInfo.getStatusCode();
@@ -39,7 +43,4 @@ public class Result<T> implements Serializable {
         this.data = data;
     }
 
-    public Result(T data) {
-        this.data = data;
-    }
 }

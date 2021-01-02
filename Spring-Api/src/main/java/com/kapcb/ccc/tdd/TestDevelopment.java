@@ -1,12 +1,12 @@
 package com.kapcb.ccc.tdd;
 
-import com.kapcb.ccc.common.Result;
-import com.kapcb.ccc.common.ResultInfo;
+import com.kapcb.ccc.common.result.Result;
+import com.kapcb.ccc.common.result.ResultInfo;
 import com.kapcb.ccc.common.json.ConvertJsonFromApi;
 import com.kapcb.ccc.domain.User;
+import org.springframework.beans.BeanUtils;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
 
 /**
  * <a>Title: TestDevelopment </a>
@@ -29,15 +29,9 @@ public class TestDevelopment {
         user.setBirthday(LocalDateTime.now());
         Result<User> userResult = new Result<>(ResultInfo.REQUEST_SUCCESS, user);
         String result = ConvertJsonFromApi.convertObjectToJsonByTryCatch(userResult);
-        System.out.println("result = " + result);
 
         Result<User> bean = ConvertJsonFromApi.convertStringToObjectByTryCatch(result, new User());
         System.out.println("bean = " + bean);
-        System.out.println("bean.getData() = " + bean.getData());
 
-        String[] split = result.split(",");
-        for (int i = 0; i < split.length; i++) {
-//            System.out.println("split[i] = " + split[i]);
-        }
     }
 }
