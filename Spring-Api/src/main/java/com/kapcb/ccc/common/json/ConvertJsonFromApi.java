@@ -6,10 +6,9 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.kapcb.ccc.common.result.Result;
-import org.apache.log4j.Logger;
-import org.springframework.beans.BeanUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.util.Objects;
 
 /**
  * <a>Title: ConvertJsonFromApi </a>
@@ -22,7 +21,7 @@ import java.util.Objects;
  */
 public class ConvertJsonFromApi {
 
-    private static final Logger logger = org.apache.log4j.Logger.getLogger(ConvertJsonFromApi.class);
+    private static final Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
 
     private ConvertJsonFromApi() {
     }

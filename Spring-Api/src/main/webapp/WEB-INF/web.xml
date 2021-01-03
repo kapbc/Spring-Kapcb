@@ -6,18 +6,16 @@
          id="WebApp_ID" version="3.1">
 
     <display-name>Archetype Created Web Application</display-name>
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
-    <context-param>
-        <param-name>configLocation</param-name>
-        <param-value>classpath:spring.xml</param-value>
-    </context-param>
 
     <!--log4j-->
     <listener>
         <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
     </listener>
+    <context-param>
+        <param-name>log4j2ConfigLocation</param-name>
+        <param-value>classpath:log4j2.xml</param-value>
+    </context-param>
+    <!-- Log4j的监听器要放在spring监听器前面 -->
     <filter>
         <filter-name>log4jServletFilter</filter-name>
         <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
@@ -31,6 +29,14 @@
         <dispatcher>ERROR</dispatcher>
         <dispatcher>ASYNC</dispatcher>
     </filter-mapping>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>configLocation</param-name>
+        <param-value>classpath:spring.xml</param-value>
+    </context-param>
 
     <filter>
         <filter-name>characterEncodingFilter</filter-name>

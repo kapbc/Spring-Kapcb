@@ -7,7 +7,8 @@ import com.kapcb.ccc.common.result.ResultInfo;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import lombok.RequiredArgsConstructor;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.scheduling.concurrent.CustomizableThreadFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
@@ -38,7 +39,7 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping(value = "/kapcb/api/v1")
 public class UserApiController {
 
-    private static final Logger logger = Logger.getLogger(UserApiController.class);
+    private static final Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
 
     private final IUserService userService;
 
