@@ -12,9 +12,11 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.scheduling.concurrent.CustomizableThreadFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.constraints.NotNull;
 import java.util.concurrent.BlockingDeque;
@@ -43,8 +45,16 @@ public class UserApiController {
 
     private final IUserService userService;
 
-    @PostMapping(name = "/getUserInfo/{userId}", produces = "application/json; charset=UTF-8")
+    @ResponseBody
+    @GetMapping(path = "/a/{userId}")
+    public void get(@PathVariable String userId) {
+        System.out.println("获取到路径参数" + userId);
+    }
+
+    @ResponseBody
+    @GetMapping(path = "/getUserInfo/{userId}", produces = "application/json; charset=UTF-8")
     public String getUserInfo(@NotNull(message = "required") @PathVariable String userId) {
+        System.out.println("0000000000000");
         ObjectMapper mapper = new ObjectMapper();
         String result;
         Result<User> userResult = null;
@@ -62,6 +72,5 @@ public class UserApiController {
             // result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(objectResult);
         }
         return ConvertJsonFromApi.convertObjectToJsonByTryCatch(userResult);
-
     }
 }
