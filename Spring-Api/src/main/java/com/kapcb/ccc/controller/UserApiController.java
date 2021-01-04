@@ -14,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -54,7 +53,7 @@ public class UserApiController {
     @ResponseBody
     @GetMapping(path = "/getUserInfo/{userId}", produces = "application/json; charset=UTF-8")
     public String getUserInfo(@NotNull(message = "required") @PathVariable String userId) {
-        System.out.println("0000000000000");
+        logger.warn("--- Into The Api Call---");
         ObjectMapper mapper = new ObjectMapper();
         String result;
         Result<User> userResult = null;
@@ -68,8 +67,7 @@ public class UserApiController {
         } catch (Exception e) {
             future.cancel(true);
             logger.error("---request process time out---" + e.getMessage());
-            Result<Object> objectResult = new Result<>(ResultInfo.REQUEST_FAIL);
-            // result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(objectResult);
+            userResult = new Result<>(ResultInfo.REQUEST_FAIL);
         }
         return ConvertJsonFromApi.convertObjectToJsonByTryCatch(userResult);
     }
