@@ -3,7 +3,8 @@ package com.kapcb.ccc.controller;
 import com.kapcb.ccc.domain.Person;
 import com.kapcb.ccc.service.IApiThreadPoolService;
 import lombok.RequiredArgsConstructor;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.scheduling.concurrent.CustomizableThreadFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,6 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.concurrent.atomic.AtomicReference;
 
 
 /**
@@ -35,7 +35,7 @@ import java.util.concurrent.atomic.AtomicReference;
 @RequestMapping(value = "/api/v1")
 public class ThreadPoolController {
 
-    private static final Logger logger = Logger.getLogger(ThreadPoolExecutor.class);
+    private static final Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
 
     private final IApiThreadPoolService apiThreadPoolService;
 
@@ -45,15 +45,11 @@ public class ThreadPoolController {
         ThreadFactory threadFactory = new CustomizableThreadFactory("Kapcb-Thread-Pool-");
         ArrayBlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(20);
         ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 5, 500, TimeUnit.MILLISECONDS, queue, threadFactory);
-        AtomicReference<String> result = new AtomicReference<>("");
-        Future<?> future = executor.submit(() -> {
-            Person person = apiThreadPoolService.getPersonById(id);
-            if (person != null) {
-                result.set("success");
-            }
-        });
+        logger.warn("---Begin to process---");
+        Future<?> future = executor.submit(() -> apiThreadPoolService.getPersonById(id));
         try {
             future.get(5, TimeUnit.SECONDS);
+            logger.warn("---Process Success---");
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
             logger.error("---Future Process Error---" + e.getMessage());
             future.cancel(true);
