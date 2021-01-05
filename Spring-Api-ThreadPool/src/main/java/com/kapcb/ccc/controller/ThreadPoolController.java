@@ -1,6 +1,5 @@
 package com.kapcb.ccc.controller;
 
-import com.kapcb.ccc.domain.Person;
 import com.kapcb.ccc.service.IApiThreadPoolService;
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
@@ -40,8 +39,9 @@ public class ThreadPoolController {
     private final IApiThreadPoolService apiThreadPoolService;
 
     @ResponseBody
-    @PostMapping(value = "/getPersonById/{id}", produces = "application/json,charset=UTF-8")
-    public void execute(@PathVariable Long id) {
+    @PostMapping(path = "/getPersonById/{id}", produces = "application/json; charset=UTF-8")
+    public String execute(@PathVariable Long id) {
+        logger.warn("Path Variable is ::: " + id);
         ThreadFactory threadFactory = new CustomizableThreadFactory("Kapcb-Thread-Pool-");
         ArrayBlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(20);
         ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 5, 500, TimeUnit.MILLISECONDS, queue, threadFactory);
@@ -54,5 +54,6 @@ public class ThreadPoolController {
             logger.error("---Future Process Error---" + e.getMessage());
             future.cancel(true);
         }
+        return "process success";
     }
 }
