@@ -11,8 +11,8 @@
         <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
     </listener>
     <context-param>
-        <param-name>log4jConfigLocation</param-name>
-        <param-value>classpath:/config/log4j2.xml</param-value>
+        <param-name>log4j2ConfigLocation</param-name>
+        <param-value>classpath:log4j2.xml</param-value>
     </context-param>
     <filter>
         <filter-name>log4jServletFilter</filter-name>
@@ -47,7 +47,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:config/spring.xml</param-value>
+        <param-value>classpath:/config/spring.xml</param-value>
     </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
