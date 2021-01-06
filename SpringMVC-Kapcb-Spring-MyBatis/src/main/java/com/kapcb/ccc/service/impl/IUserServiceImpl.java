@@ -3,7 +3,6 @@ package com.kapcb.ccc.service.impl;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.mapper.UserMapper;
 import com.kapcb.ccc.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
