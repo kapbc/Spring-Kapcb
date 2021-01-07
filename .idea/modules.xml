@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Spring-Api/Spring-Api.iml" filepath="$PROJECT_DIR$/Spring-Api/Spring-Api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Api-ThreadPool/Spring-Api-ThreadPool.iml" filepath="$PROJECT_DIR$/Spring-Api-ThreadPool/Spring-Api-ThreadPool.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-JdbcTemplate/Spring-JdbcTemplate.iml" filepath="$PROJECT_DIR$/Spring-JdbcTemplate/Spring-JdbcTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Kapcb.iml" filepath="$PROJECT_DIR$/.idea/Spring-Kapcb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Consumer/Spring-Kapcb-Dubbo-Consumer.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Consumer/Spring-Kapcb-Dubbo-Consumer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Interface/Spring-Kapcb-Dubbo-Interface.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Interface/Spring-Kapcb-Dubbo-Interface.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Provider/Spring-Kapcb-Dubbo-Provider.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Provider/Spring-Kapcb-Dubbo-Provider.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis/Spring-Kapcb-MyBatis.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis/Spring-Kapcb-MyBatis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-Cascade/Spring-Kapcb-MyBatis-Cascade.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-Cascade/Spring-Kapcb-MyBatis-Cascade.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-Configure/Spring-Kapcb-MyBatis-Configure.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-Configure/Spring-Kapcb-MyBatis-Configure.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-DynamicSQL/Spring-Kapcb-MyBatis-DynamicSQL.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-DynamicSQL/Spring-Kapcb-MyBatis-DynamicSQL.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-Param/Spring-Kapcb-MyBatis-Param.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-Param/Spring-Kapcb-MyBatis-Param.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-MyBatis-SQL/Spring-Kapcb-MyBatis-SQL.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-MyBatis-SQL/Spring-Kapcb-MyBatis-SQL.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Porject-Admin/Spring-Kapcb-Porject-Admin.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Porject-Admin/Spring-Kapcb-Porject-Admin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Quartz/Spring-Kapcb-Quartz.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Quartz/Spring-Kapcb-Quartz.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-QuickStart/Spring-Kapcb-QuickStart.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-QuickStart/Spring-Kapcb-QuickStart.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-SSM/Spring-Kapcb-SSM.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-SSM/Spring-Kapcb-SSM.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-SpringMVC-MyBatis/Spring-SpringMVC-MyBatis.iml" filepath="$PROJECT_DIR$/Spring-SpringMVC-MyBatis/Spring-SpringMVC-MyBatis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Utils/Spring-Utils.iml" filepath="$PROJECT_DIR$/Spring-Utils/Spring-Utils.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-task/Spring-task.iml" filepath="$PROJECT_DIR$/Spring-task/Spring-task.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis/SpringMVC-Kapcb-Spring-MyBatis.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis/SpringMVC-Kapcb-Spring-MyBatis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Demo/SpringMVC-Kapcb-Spring-MyBatis-Demo.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Demo/SpringMVC-Kapcb-Spring-MyBatis-Demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Email/SpringMVC-Kapcb-Spring-MyBatis-Email.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Email/SpringMVC-Kapcb-Spring-MyBatis-Email.iml" />
       <module fileurl="file://$PROJECT_DIR$/[001]Spring-IoC-XML/[001]Spring-IoC-XML.iml" filepath="$PROJECT_DIR$/[001]Spring-IoC-XML/[001]Spring-IoC-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/[002]Spring-IoC-XML/[002]Spring-IoC-XML.iml" filepath="$PROJECT_DIR$/[002]Spring-IoC-XML/[002]Spring-IoC-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/[003]Spring-AOP/[003]Spring-AOP.iml" filepath="$PROJECT_DIR$/[003]Spring-AOP/[003]Spring-AOP.iml" />
@@ -38,6 +16,26 @@
       <module fileurl="file://$PROJECT_DIR$/[013]SpringMVC-Exception/[013]SpringMVC-Exception.iml" filepath="$PROJECT_DIR$/[013]SpringMVC-Exception/[013]SpringMVC-Exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/[014]SpringMVC-Interceptor/[014]SpringMVC-Interceptor.iml" filepath="$PROJECT_DIR$/[014]SpringMVC-Interceptor/[014]SpringMVC-Interceptor.iml" />
       <module fileurl="file://$PROJECT_DIR$/[015]SpringMVC-FileUpLoad/[015]SpringMVC-FileUpLoad.iml" filepath="$PROJECT_DIR$/[015]SpringMVC-FileUpLoad/[015]SpringMVC-FileUpLoad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[020]Spring-MyBatis-Cascade/[020]Spring-MyBatis-Cascade.iml" filepath="$PROJECT_DIR$/[020]Spring-MyBatis-Cascade/[020]Spring-MyBatis-Cascade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[021]Spring-MyBatis-Param/[021]Spring-MyBatis-Param.iml" filepath="$PROJECT_DIR$/[021]Spring-MyBatis-Param/[021]Spring-MyBatis-Param.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[022]Spring-MyBatis-SQL/[022]Spring-MyBatis-SQL.iml" filepath="$PROJECT_DIR$/[022]Spring-MyBatis-SQL/[022]Spring-MyBatis-SQL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[023]Spring-MyBatis-Configure/[023]Spring-MyBatis-Configure.iml" filepath="$PROJECT_DIR$/[023]Spring-MyBatis-Configure/[023]Spring-MyBatis-Configure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[024]Spring-MyBatis-DynamicSQL/[024]Spring-MyBatis-DynamicSQL.iml" filepath="$PROJECT_DIR$/[024]Spring-MyBatis-DynamicSQL/[024]Spring-MyBatis-DynamicSQL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[025]Spring-MyBatis-CRUD/[025]Spring-MyBatis-CRUD.iml" filepath="$PROJECT_DIR$/[025]Spring-MyBatis-CRUD/[025]Spring-MyBatis-CRUD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[028]SSM-QuickStart/[028]SSM-QuickStart.iml" filepath="$PROJECT_DIR$/[028]SSM-QuickStart/[028]SSM-QuickStart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[029]SSM-Base/[029]SSM-Base.iml" filepath="$PROJECT_DIR$/[029]SSM-Base/[029]SSM-Base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[030]SSM-Test/[030]SSM-Test.iml" filepath="$PROJECT_DIR$/[030]SSM-Test/[030]SSM-Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[031]SSM-Demo/[031]SSM-Demo.iml" filepath="$PROJECT_DIR$/[031]SSM-Demo/[031]SSM-Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[032]SSM-Email/[032]SSM-Email.iml" filepath="$PROJECT_DIR$/[032]SSM-Email/[032]SSM-Email.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[034]Spring-Resultful/[034]Spring-Resultful.iml" filepath="$PROJECT_DIR$/[034]Spring-Resultful/[034]Spring-Resultful.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[035]Spring-Resultful-ThreadPool/[035]Spring-Resultful-ThreadPool.iml" filepath="$PROJECT_DIR$/[035]Spring-Resultful-ThreadPool/[035]Spring-Resultful-ThreadPool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[036]Spring-JdbcTemplate/[036]Spring-JdbcTemplate.iml" filepath="$PROJECT_DIR$/[036]Spring-JdbcTemplate/[036]Spring-JdbcTemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[037]Spring-Schedule-Task/[037]Spring-Schedule-Task.iml" filepath="$PROJECT_DIR$/[037]Spring-Schedule-Task/[037]Spring-Schedule-Task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[038]Spring-Schedule-Quartz/[038]Spring-Schedule-Quartz.iml" filepath="$PROJECT_DIR$/[038]Spring-Schedule-Quartz/[038]Spring-Schedule-Quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[050]Spring-Dubbo-Consumer/[050]Spring-Dubbo-Consumer.iml" filepath="$PROJECT_DIR$/[050]Spring-Dubbo-Consumer/[050]Spring-Dubbo-Consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[051]Spring-Dubbo-Interface/[051]Spring-Dubbo-Interface.iml" filepath="$PROJECT_DIR$/[051]Spring-Dubbo-Interface/[051]Spring-Dubbo-Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[052]Spring-Dubbo-Provider/[052]Spring-Dubbo-Provider.iml" filepath="$PROJECT_DIR$/[052]Spring-Dubbo-Provider/[052]Spring-Dubbo-Provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[099]Spring-Utils/[099]Spring-Utils.iml" filepath="$PROJECT_DIR$/[099]Spring-Utils/[099]Spring-Utils.iml" />
     </modules>
   </component>
 </project>

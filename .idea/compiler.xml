@@ -7,40 +7,38 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Spring-Api-ThreadPool" />
-        <module name="Spring-task" />
-        <module name="Spring-Kapcb-MyBatis-Configure" />
-        <module name="Spring-Kapcb-MyBatis" />
-        <module name="SpringMVC-Kapcb-Spring-MyBatis-Demo" />
-        <module name="Spring-Kapcb-Porject-Admin" />
+        <module name="[032]SSM-Email" />
         <module name="[003]Spring-AOP" />
-        <module name="Spring-Kapcb-SSM" />
+        <module name="[038]Spring-Schedule-Quartz" />
+        <module name="[024]Spring-MyBatis-DynamicSQL" />
+        <module name="[037]Spring-Schedule-Task" />
+        <module name="[031]SSM-Demo" />
+        <module name="[023]Spring-MyBatis-Configure" />
         <module name="[011]SpringMVC-Params" />
+        <module name="[051]Spring-Dubbo-Interface" />
         <module name="[010]SpringMVC-HelloWorld" />
-        <module name="Spring-Kapcb-MyBatis-Cascade" />
-        <module name="Spring-Kapcb-Quartz" />
+        <module name="[036]Spring-JdbcTemplate" />
+        <module name="[034]Spring-Resultful" />
+        <module name="[052]Spring-Dubbo-Provider" />
         <module name="[005]Spring-Annotation-Configuration" />
-        <module name="Spring-Kapcb-MyBatis-SQL" />
-        <module name="Spring-Kapcb-Dubbo-Interface" />
-        <module name="SpringMVC-Kapcb-Spring-MyBatis-Email" />
+        <module name="[022]Spring-MyBatis-SQL" />
+        <module name="[030]SSM-Test" />
+        <module name="[021]Spring-MyBatis-Param" />
         <module name="[012]SpringMVC-Annotations" />
-        <module name="Spring-Utils" />
-        <module name="Spring-SpringMVC-MyBatis" />
-        <module name="Spring-Kapcb-Dubbo-Provider" />
-        <module name="Spring-Kapcb-QuickStart" />
-        <module name="Spring-Kapcb-MyBatis-DynamicSQL" />
-        <module name="Spring-Kapcb-Dubbo-Consumer" />
+        <module name="[025]Spring-MyBatis-CRUD" />
+        <module name="[020]Spring-MyBatis-Cascade" />
+        <module name="[029]SSM-Base" />
         <module name="[013]SpringMVC-Exception" />
         <module name="[002]Spring-IoC-XML" />
+        <module name="[050]Spring-Dubbo-Consumer" />
         <module name="[006]Spring-Annotation-Value" />
         <module name="[001]Spring-IoC-XML" />
         <module name="[004]Spring-AOP-XML" />
-        <module name="Spring-Kapcb-MyBatis-Param" />
-        <module name="Spring-Api" />
+        <module name="[028]SSM-QuickStart" />
+        <module name="[035]Spring-Resultful-ThreadPool" />
+        <module name="[099]Spring-Utils" />
         <module name="[014]SpringMVC-Interceptor" />
         <module name="[015]SpringMVC-FileUpLoad" />
-        <module name="SpringMVC-Kapcb-Spring-MyBatis" />
-        <module name="Spring-JdbcTemplate" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -57,41 +55,41 @@
       <module name="[013]SpringMVC-Exception" target="1.8" />
       <module name="[014]SpringMVC-Interceptor" target="1.8" />
       <module name="[015]SpringMVC-FileUpLoad" target="1.8" />
+      <module name="[020]Spring-MyBatis-Cascade" target="1.5" />
+      <module name="[021]Spring-MyBatis-Param" target="1.5" />
+      <module name="[022]Spring-MyBatis-SQL" target="1.5" />
+      <module name="[023]Spring-MyBatis-Configure" target="1.5" />
+      <module name="[024]Spring-MyBatis-DynamicSQL" target="8" />
+      <module name="[025]Spring-MyBatis-CRUD" target="1.5" />
+      <module name="[028]SSM-QuickStart" target="1.5" />
+      <module name="[029]SSM-Base" target="8" />
+      <module name="[030]SSM-Test" target="1.8" />
+      <module name="[031]SSM-Demo" target="1.8" />
+      <module name="[032]SSM-Email" target="8" />
+      <module name="[034]Spring-Resultful" target="8" />
+      <module name="[035]Spring-Resultful-ThreadPool" target="8" />
+      <module name="[036]Spring-JdbcTemplate" target="8" />
+      <module name="[037]Spring-Schedule-Task" target="8" />
+      <module name="[038]Spring-Schedule-Quartz" target="8" />
+      <module name="[050]Spring-Dubbo-Consumer" target="1.5" />
+      <module name="[051]Spring-Dubbo-Interface" target="1.5" />
+      <module name="[052]Spring-Dubbo-Provider" target="1.5" />
+      <module name="[099]Spring-Utils" target="8" />
       <module name="HttpClient" target="1.5" />
       <module name="Spring-AOP" target="1.5" />
       <module name="Spring-AOP-XML" target="1.5" />
-      <module name="Spring-Api" target="8" />
-      <module name="Spring-Api-ThreadPool" target="8" />
       <module name="Spring-API-ThreadPool" target="1.5" />
       <module name="Spring-IoC" target="1.5" />
       <module name="Spring-IoC-XmlBean" target="1.5" />
-      <module name="Spring-JdbcTemplate" target="8" />
-      <module name="Spring-Kapcb-Dubbo-Consumer" target="1.5" />
-      <module name="Spring-Kapcb-Dubbo-Interface" target="1.5" />
-      <module name="Spring-Kapcb-Dubbo-Provider" target="1.5" />
       <module name="Spring-Kapcb-Dubbo-Zookeeper" target="1.7" />
       <module name="Spring-Kapcb-IoC-Bean" target="1.5" />
-      <module name="Spring-Kapcb-MyBatis" target="1.5" />
-      <module name="Spring-Kapcb-MyBatis-Cascade" target="1.5" />
-      <module name="Spring-Kapcb-MyBatis-Configure" target="1.5" />
-      <module name="Spring-Kapcb-MyBatis-DynamicSQL" target="8" />
-      <module name="Spring-Kapcb-MyBatis-Param" target="1.5" />
-      <module name="Spring-Kapcb-MyBatis-SQL" target="1.5" />
       <module name="Spring-Kapcb-Porject-Admin" target="8" />
-      <module name="Spring-Kapcb-Quartz" target="8" />
       <module name="Spring-Kapcb-QuickStart" target="1.5" />
       <module name="Spring-Kapcb-SpringMVC" target="1.5" />
       <module name="Spring-Kapcb-SpringMVC-HelloWorld" target="1.5" />
-      <module name="Spring-Kapcb-SSM" target="1.5" />
-      <module name="Spring-SpringMVC-MyBatis" target="8" />
-      <module name="Spring-task" target="8" />
-      <module name="Spring-Utils" target="8" />
       <module name="springboot-helloworld" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />
       <module name="SpringMVC-Kapcb-HelloWorld-Demo" target="1.7" />
-      <module name="SpringMVC-Kapcb-Spring-MyBatis" target="1.8" />
-      <module name="SpringMVC-Kapcb-Spring-MyBatis-Demo" target="1.8" />
-      <module name="SpringMVC-Kapcb-Spring-MyBatis-Email" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
