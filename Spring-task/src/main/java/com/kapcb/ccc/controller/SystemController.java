@@ -1,7 +1,5 @@
 package com.kapcb.ccc.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.kapcb.ccc.common.constants.ResultInfo;
 import com.kapcb.ccc.common.dto.Result;
 import com.kapcb.ccc.domain.TestUser;
