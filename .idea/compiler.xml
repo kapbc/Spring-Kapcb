@@ -34,7 +34,6 @@
         <module name="[002]Spring-IoC-XML" />
         <module name="Spring-Annotation-Value" />
         <module name="[001]Spring-IoC-XML" />
-        <module name="Spring-Kapcb-IoC-Bean" />
         <module name="Spring-Kapcb-MyBatis-Param" />
         <module name="Spring-IoC-XmlBean" />
         <module name="SpringMVC-Kapcb-Annotations" />

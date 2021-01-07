@@ -4,12 +4,28 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--Bean jndi-->
-    <!--一个bean标签可以注册一个组件或者一个对象、类-->
+    <!--一个bean标签可以注册一个组件或者一个对象、类 id 为这个bean的唯一标识, class为这个bean对象的全路径-->
     <bean id="bean" class="com.kapcb.ccc.domain.Bean">
         <property name="username" value="kapcb"/>
         <property name="email" value="eircccallroot@163.com"/>
         <property name="address" value="China"/>
         <property name="age" value="18"/>
+    </bean>
+
+    <!--使用构造器注入, 如果未指定每个属性的索引顺序, 则必须按照构造器中参数列表的顺序进行注入属性-->
+    <bean id="beanAllArgsConstructor" class="com.kapcb.ccc.domain.Bean">
+        <constructor-arg name="username" value="ccc"/>
+        <constructor-arg name="email" value="eircccallroot@yeah.net"/>
+        <constructor-arg name="address" value="China"/>
+        <constructor-arg name="age" value="18"/>
+    </bean>
+
+    <!--使用有参构造器, 不适用name指定属性进行注入-->
+    <bean id="beanAllArgsConstructorWithOutName" class="com.kapcb.ccc.domain.Bean">
+        <constructor-arg index="1" value="eircccallroot@126.com" type="java.lang.String"/>
+        <constructor-arg index="0" value="kapcb nb" type="java.lang.String"/>
+        <constructor-arg index="3" value="18" type="int"/>
+        <constructor-arg index="2" value="China" type="java.lang.String"/>
     </bean>
 
 </beans>

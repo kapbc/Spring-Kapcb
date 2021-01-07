@@ -23,9 +23,11 @@ public class Bean {
     private int age;
 
     public Bean() {
+        System.out.println("Use NoArgsConstructor JNDI");
     }
 
     public Bean(String username, String email, String address, int age) {
+        System.out.println("Use AllArgsConstructor JNDI");
         this.username = username;
         this.email = email;
         this.address = address;
@@ -41,6 +43,7 @@ public class Bean {
     }
 
     public void setUsername(String username) {
+        System.out.println("Spring use setter JNDI");
         this.username = username;
     }
 
