@@ -13,12 +13,12 @@
         <module name="Spring-Kapcb-MyBatis-Configure" />
         <module name="Spring-Kapcb-MyBatis" />
         <module name="SpringMVC-Kapcb-Spring-MyBatis-Demo" />
-        <module name="Spring-Kapcb-AOP" />
-        <module name="SpringMVC-Kapcb-HelloWorld" />
+        <module name="Spring-Kapcb-Porject-Admin" />
         <module name="Spring-Kapcb-SSM" />
-        <module name="Spring-JdbcTemplate" />
+        <module name="SpringMVC-Kapcb-Interceptor" />
         <module name="Spring-Kapcb-MyBatis-Cascade" />
         <module name="Spring-Kapcb-Quartz" />
+        <module name="Spring-Kapcb-MyBatis-SQL" />
         <module name="Spring-Kapcb-Dubbo-Interface" />
         <module name="SpringMVC-Kapcb-Spring-MyBatis-Email" />
         <module name="SpringMVC-Kapcb-Exception" />
@@ -26,21 +26,21 @@
         <module name="Spring-Annotation-Configuration" />
         <module name="Spring-SpringMVC-MyBatis" />
         <module name="Spring-Kapcb-AOP-XML" />
+        <module name="Spring-Kapcb-Dubbo-Provider" />
         <module name="Spring-Kapcb-QuickStart" />
         <module name="Spring-Kapcb-MyBatis-DynamicSQL" />
-        <module name="Spring-Kapcb-MyBatis-SQL" />
+        <module name="Spring-Kapcb-AOP" />
         <module name="Spring-Kapcb-Dubbo-Consumer" />
-        <module name="SpringMVC-Kapcb-Params" />
         <module name="Spring-Annotation-Value" />
         <module name="Spring-Kapcb-IoC-Bean" />
         <module name="Spring-Kapcb-MyBatis-Param" />
-        <module name="SpringMVC-Kapcb-Spring-MyBatis" />
-        <module name="SpringMVC-Kapcb-Annotations" />
-        <module name="Spring-Kapcb-Dubbo-Provider" />
-        <module name="Spring-Api" />
-        <module name="SpringMVC-Kapcb-Interceptor" />
         <module name="Spring-IoC-XmlBean" />
-        <module name="Spring-Kapcb-Porject-Admin" />
+        <module name="SpringMVC-Kapcb-Annotations" />
+        <module name="SpringMVC-Kapcb-HelloWorld" />
+        <module name="Spring-Api" />
+        <module name="SpringMVC-Kapcb-Params" />
+        <module name="SpringMVC-Kapcb-Spring-MyBatis" />
+        <module name="Spring-JdbcTemplate" />
         <module name="Spring-Kapcb-IoC" />
       </profile>
     </annotationProcessing>
@@ -72,14 +72,14 @@
       <module name="Spring-Kapcb-MyBatis-Param" target="1.5" />
       <module name="Spring-Kapcb-MyBatis-SQL" target="1.5" />
       <module name="Spring-Kapcb-Porject-Admin" target="8" />
-      <module name="Spring-Kapcb-Quartz" target="1.8" />
+      <module name="Spring-Kapcb-Quartz" target="8" />
       <module name="Spring-Kapcb-QuickStart" target="1.5" />
       <module name="Spring-Kapcb-SpringMVC" target="1.5" />
       <module name="Spring-Kapcb-SpringMVC-HelloWorld" target="1.5" />
       <module name="Spring-Kapcb-SSM" target="1.5" />
       <module name="Spring-SpringMVC-MyBatis" target="8" />
       <module name="Spring-task" target="8" />
-      <module name="Spring-Utils" target="1.5" />
+      <module name="Spring-Utils" target="8" />
       <module name="springboot-helloworld" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />
       <module name="SpringMVC-Kapcb-Annotations" target="1.8" />

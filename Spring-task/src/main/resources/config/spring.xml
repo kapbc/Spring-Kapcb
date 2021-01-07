@@ -22,7 +22,7 @@
     http://www.springframework.org/schema/task/spring-task-3.0.xsd
     -->
     <task:scheduled-tasks>
-        <task:scheduled ref="testTask" method="jobTaskOne" cron="0 * * * * ?"/>
+        <task:scheduled ref="testTask" method="jobTaskOne" cron="0/10 * * * * ?"/>
     </task:scheduled-tasks>
 
     <!--注解方式的配置, 理论上这些配置都是非必须的, 直接使用<task:annotation-driven />这句配置就可以了-->
