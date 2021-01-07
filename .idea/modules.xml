@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Spring-Annotation-Configuration/Spring-Annotation-Configuration.iml" filepath="$PROJECT_DIR$/Spring-Annotation-Configuration/Spring-Annotation-Configuration.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Annotation-Enable/Spring-Annotation-Enable.iml" filepath="$PROJECT_DIR$/Spring-Annotation-Enable/Spring-Annotation-Enable.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Annotation-Value/Spring-Annotation-Value.iml" filepath="$PROJECT_DIR$/Spring-Annotation-Value/Spring-Annotation-Value.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Api/Spring-Api.iml" filepath="$PROJECT_DIR$/Spring-Api/Spring-Api.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Api-ThreadPool/Spring-Api-ThreadPool.iml" filepath="$PROJECT_DIR$/Spring-Api-ThreadPool/Spring-Api-ThreadPool.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-IoC-XmlBean/Spring-IoC-XmlBean.iml" filepath="$PROJECT_DIR$/Spring-IoC-XmlBean/Spring-IoC-XmlBean.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-JdbcTemplate/Spring-JdbcTemplate.iml" filepath="$PROJECT_DIR$/Spring-JdbcTemplate/Spring-JdbcTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Kapcb.iml" filepath="$PROJECT_DIR$/.idea/Spring-Kapcb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP/Spring-Kapcb-AOP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-AOP-XML/Spring-Kapcb-AOP-XML.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-AOP-XML/Spring-Kapcb-AOP-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Consumer/Spring-Kapcb-Dubbo-Consumer.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Consumer/Spring-Kapcb-Dubbo-Consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Interface/Spring-Kapcb-Dubbo-Interface.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Interface/Spring-Kapcb-Dubbo-Interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Provider/Spring-Kapcb-Dubbo-Provider.iml" filepath="$PROJECT_DIR$/Spring-Kapcb-Dubbo-Provider/Spring-Kapcb-Dubbo-Provider.iml" />
@@ -28,17 +22,22 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-SpringMVC-MyBatis/Spring-SpringMVC-MyBatis.iml" filepath="$PROJECT_DIR$/Spring-SpringMVC-MyBatis/Spring-SpringMVC-MyBatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-Utils/Spring-Utils.iml" filepath="$PROJECT_DIR$/Spring-Utils/Spring-Utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-task/Spring-task.iml" filepath="$PROJECT_DIR$/Spring-task/Spring-task.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Annotations/SpringMVC-Kapcb-Annotations.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Annotations/SpringMVC-Kapcb-Annotations.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Exception/SpringMVC-Kapcb-Exception.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Exception/SpringMVC-Kapcb-Exception.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-FileUpLoad/SpringMVC-Kapcb-FileUpLoad.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-FileUpLoad/SpringMVC-Kapcb-FileUpLoad.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld/SpringMVC-Kapcb-HelloWorld.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-HelloWorld/SpringMVC-Kapcb-HelloWorld.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Interceptor/SpringMVC-Kapcb-Interceptor.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Interceptor/SpringMVC-Kapcb-Interceptor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Params/SpringMVC-Kapcb-Params.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Params/SpringMVC-Kapcb-Params.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis/SpringMVC-Kapcb-Spring-MyBatis.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis/SpringMVC-Kapcb-Spring-MyBatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Demo/SpringMVC-Kapcb-Spring-MyBatis-Demo.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Demo/SpringMVC-Kapcb-Spring-MyBatis-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Email/SpringMVC-Kapcb-Spring-MyBatis-Email.iml" filepath="$PROJECT_DIR$/SpringMVC-Kapcb-Spring-MyBatis-Email/SpringMVC-Kapcb-Spring-MyBatis-Email.iml" />
       <module fileurl="file://$PROJECT_DIR$/[001]Spring-IoC-XML/[001]Spring-IoC-XML.iml" filepath="$PROJECT_DIR$/[001]Spring-IoC-XML/[001]Spring-IoC-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/[002]Spring-IoC-XML/[002]Spring-IoC-XML.iml" filepath="$PROJECT_DIR$/[002]Spring-IoC-XML/[002]Spring-IoC-XML.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[003]Spring-AOP/[003]Spring-AOP.iml" filepath="$PROJECT_DIR$/[003]Spring-AOP/[003]Spring-AOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[004]Spring-AOP-XML/[004]Spring-AOP-XML.iml" filepath="$PROJECT_DIR$/[004]Spring-AOP-XML/[004]Spring-AOP-XML.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[005]Spring-Annotation-Configuration/[005]Spring-Annotation-Configuration.iml" filepath="$PROJECT_DIR$/[005]Spring-Annotation-Configuration/[005]Spring-Annotation-Configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[006]Spring-Annotation-Value/[006]Spring-Annotation-Value.iml" filepath="$PROJECT_DIR$/[006]Spring-Annotation-Value/[006]Spring-Annotation-Value.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[007]Spring-Annotation-Enable/[007]Spring-Annotation-Enable.iml" filepath="$PROJECT_DIR$/[007]Spring-Annotation-Enable/[007]Spring-Annotation-Enable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[010]SpringMVC-HelloWorld/[010]SpringMVC-HelloWorld.iml" filepath="$PROJECT_DIR$/[010]SpringMVC-HelloWorld/[010]SpringMVC-HelloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[011]SpringMVC-Params/[011]SpringMVC-Params.iml" filepath="$PROJECT_DIR$/[011]SpringMVC-Params/[011]SpringMVC-Params.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[012]SpringMVC-Annotations/[012]SpringMVC-Annotations.iml" filepath="$PROJECT_DIR$/[012]SpringMVC-Annotations/[012]SpringMVC-Annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[013]SpringMVC-Exception/[013]SpringMVC-Exception.iml" filepath="$PROJECT_DIR$/[013]SpringMVC-Exception/[013]SpringMVC-Exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[014]SpringMVC-Interceptor/[014]SpringMVC-Interceptor.iml" filepath="$PROJECT_DIR$/[014]SpringMVC-Interceptor/[014]SpringMVC-Interceptor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[015]SpringMVC-FileUpLoad/[015]SpringMVC-FileUpLoad.iml" filepath="$PROJECT_DIR$/[015]SpringMVC-FileUpLoad/[015]SpringMVC-FileUpLoad.iml" />
     </modules>
   </component>
 </project>

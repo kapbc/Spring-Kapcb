@@ -7,39 +7,38 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SpringMVC-Kapcb-FileUpLoad" />
         <module name="Spring-Api-ThreadPool" />
         <module name="Spring-task" />
         <module name="Spring-Kapcb-MyBatis-Configure" />
         <module name="Spring-Kapcb-MyBatis" />
         <module name="SpringMVC-Kapcb-Spring-MyBatis-Demo" />
         <module name="Spring-Kapcb-Porject-Admin" />
+        <module name="[003]Spring-AOP" />
         <module name="Spring-Kapcb-SSM" />
-        <module name="SpringMVC-Kapcb-Interceptor" />
+        <module name="[011]SpringMVC-Params" />
+        <module name="[010]SpringMVC-HelloWorld" />
         <module name="Spring-Kapcb-MyBatis-Cascade" />
         <module name="Spring-Kapcb-Quartz" />
+        <module name="[005]Spring-Annotation-Configuration" />
         <module name="Spring-Kapcb-MyBatis-SQL" />
         <module name="Spring-Kapcb-Dubbo-Interface" />
         <module name="SpringMVC-Kapcb-Spring-MyBatis-Email" />
-        <module name="SpringMVC-Kapcb-Exception" />
+        <module name="[012]SpringMVC-Annotations" />
         <module name="Spring-Utils" />
-        <module name="Spring-Annotation-Configuration" />
         <module name="Spring-SpringMVC-MyBatis" />
-        <module name="Spring-Kapcb-AOP-XML" />
         <module name="Spring-Kapcb-Dubbo-Provider" />
         <module name="Spring-Kapcb-QuickStart" />
         <module name="Spring-Kapcb-MyBatis-DynamicSQL" />
-        <module name="Spring-Kapcb-AOP" />
         <module name="Spring-Kapcb-Dubbo-Consumer" />
+        <module name="[013]SpringMVC-Exception" />
         <module name="[002]Spring-IoC-XML" />
-        <module name="Spring-Annotation-Value" />
+        <module name="[006]Spring-Annotation-Value" />
         <module name="[001]Spring-IoC-XML" />
+        <module name="[004]Spring-AOP-XML" />
         <module name="Spring-Kapcb-MyBatis-Param" />
-        <module name="Spring-IoC-XmlBean" />
-        <module name="SpringMVC-Kapcb-Annotations" />
-        <module name="SpringMVC-Kapcb-HelloWorld" />
         <module name="Spring-Api" />
-        <module name="SpringMVC-Kapcb-Params" />
+        <module name="[014]SpringMVC-Interceptor" />
+        <module name="[015]SpringMVC-FileUpLoad" />
         <module name="SpringMVC-Kapcb-Spring-MyBatis" />
         <module name="Spring-JdbcTemplate" />
       </profile>
@@ -47,10 +46,18 @@
     <bytecodeTargetLevel>
       <module name="[001]Spring-IoC-XML" target="8" />
       <module name="[002]Spring-IoC-XML" target="1.5" />
+      <module name="[003]Spring-AOP" target="1.5" />
+      <module name="[004]Spring-AOP-XML" target="1.5" />
+      <module name="[005]Spring-Annotation-Configuration" target="1.5" />
+      <module name="[006]Spring-Annotation-Value" target="1.5" />
+      <module name="[007]Spring-Annotation-Enable" target="1.5" />
+      <module name="[010]SpringMVC-HelloWorld" target="1.8" />
+      <module name="[011]SpringMVC-Params" target="1.8" />
+      <module name="[012]SpringMVC-Annotations" target="1.8" />
+      <module name="[013]SpringMVC-Exception" target="1.8" />
+      <module name="[014]SpringMVC-Interceptor" target="1.8" />
+      <module name="[015]SpringMVC-FileUpLoad" target="1.8" />
       <module name="HttpClient" target="1.5" />
-      <module name="Spring-Annotation-Configuration" target="1.5" />
-      <module name="Spring-Annotation-Enable" target="1.5" />
-      <module name="Spring-Annotation-Value" target="1.5" />
       <module name="Spring-AOP" target="1.5" />
       <module name="Spring-AOP-XML" target="1.5" />
       <module name="Spring-Api" target="8" />
@@ -59,8 +66,6 @@
       <module name="Spring-IoC" target="1.5" />
       <module name="Spring-IoC-XmlBean" target="1.5" />
       <module name="Spring-JdbcTemplate" target="8" />
-      <module name="Spring-Kapcb-AOP" target="1.5" />
-      <module name="Spring-Kapcb-AOP-XML" target="1.5" />
       <module name="Spring-Kapcb-Dubbo-Consumer" target="1.5" />
       <module name="Spring-Kapcb-Dubbo-Interface" target="1.5" />
       <module name="Spring-Kapcb-Dubbo-Provider" target="1.5" />
@@ -83,13 +88,7 @@
       <module name="Spring-Utils" target="8" />
       <module name="springboot-helloworld" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />
-      <module name="SpringMVC-Kapcb-Annotations" target="1.8" />
-      <module name="SpringMVC-Kapcb-Exception" target="1.8" />
-      <module name="SpringMVC-Kapcb-FileUpLoad" target="1.8" />
-      <module name="SpringMVC-Kapcb-HelloWorld" target="1.8" />
       <module name="SpringMVC-Kapcb-HelloWorld-Demo" target="1.7" />
-      <module name="SpringMVC-Kapcb-Interceptor" target="1.8" />
-      <module name="SpringMVC-Kapcb-Params" target="1.8" />
       <module name="SpringMVC-Kapcb-Spring-MyBatis" target="1.8" />
       <module name="SpringMVC-Kapcb-Spring-MyBatis-Demo" target="1.8" />
       <module name="SpringMVC-Kapcb-Spring-MyBatis-Email" target="8" />

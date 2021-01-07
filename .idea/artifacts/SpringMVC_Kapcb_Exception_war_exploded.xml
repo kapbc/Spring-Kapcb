@@ -11,7 +11,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="SpringMVC-Kapcb-Exception" />
+          <element id="module-output" name="[013]SpringMVC-Exception" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.6.RELEASE" />
@@ -25,9 +25,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/SpringMVC-Kapcb-Exception/target/SpringMVC-Kapcb-Exception/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/[013]SpringMVC-Exception/target/SpringMVC-Kapcb-Exception/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="SpringMVC-Kapcb-Exception/web/Web" />
+      <element id="javaee-facet-resources" facet="[013]SpringMVC-Exception/web/Web" />
     </root>
   </artifact>
 </component>
