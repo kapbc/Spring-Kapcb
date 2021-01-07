@@ -1,5 +1,6 @@
 package com.kapcb.ccc.tdd;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -22,6 +23,7 @@ import java.util.List;
  * @version 1.0.0
  * @date 2021/1/7-17:01
  */
+@Slf4j
 public class HttpPostTest {
 
     private static final String REQUEST_URL = "";
@@ -48,20 +50,20 @@ public class HttpPostTest {
             String result = EntityUtils.toString(entity);
             System.out.println("result = " + result);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(" do http post request error : " + e.getMessage(), e);
         } finally {
             if (aDefault != null) {
                 try {
                     aDefault.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    log.error("close http client error : " + e.getMessage());
                 }
             }
             if (httpResponse != null) {
                 try {
                     httpResponse.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    log.error("close http response error : " + e.getMessage());
                 }
             }
         }
