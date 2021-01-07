@@ -12,6 +12,12 @@
     <file type="web" url="file://$PROJECT_DIR$/[013]SpringMVC-Exception" />
     <file type="web" url="file://$PROJECT_DIR$/[014]SpringMVC-Interceptor" />
     <file type="web" url="file://$PROJECT_DIR$/[015]SpringMVC-FileUpLoad" />
+    <file type="web" url="file://$PROJECT_DIR$/[020]Spring-MyBatis-Cascade" />
+    <file type="web" url="file://$PROJECT_DIR$/[021]Spring-MyBatis-Param" />
+    <file type="web" url="file://$PROJECT_DIR$/[022]Spring-MyBatis-SQL" />
+    <file type="web" url="file://$PROJECT_DIR$/[023]Spring-MyBatis-Configure" />
+    <file type="web" url="file://$PROJECT_DIR$/[025]Spring-MyBatis-CRUD" />
+    <file type="web" url="file://$PROJECT_DIR$/[028]SSM-QuickStart" />
     <file type="web" url="file://$PROJECT_DIR$/[029]SSM-Base" />
     <file type="web" url="file://$PROJECT_DIR$/[030]SSM-Test" />
     <file type="web" url="file://$PROJECT_DIR$/[031]SSM-Demo" />
@@ -73,6 +79,38 @@
         <option value="$PROJECT_DIR$/Spring-Annotation-Configuration/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-task/pom.xml" />
         <option value="$PROJECT_DIR$/[001]Spring-IoC-XML/pom.xml" />
+        <option value="$PROJECT_DIR$/[002]Spring-IoC-XML/pom.xml" />
+        <option value="$PROJECT_DIR$/[003]Spring-AOP/pom.xml" />
+        <option value="$PROJECT_DIR$/[004]Spring-AOP-XML/pom.xml" />
+        <option value="$PROJECT_DIR$/[005]Spring-Annotation-Configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/[006]Spring-Annotation-Value/pom.xml" />
+        <option value="$PROJECT_DIR$/[007]Spring-Annotation-Enable/pom.xml" />
+        <option value="$PROJECT_DIR$/[010]SpringMVC-HelloWorld/pom.xml" />
+        <option value="$PROJECT_DIR$/[011]SpringMVC-Params/pom.xml" />
+        <option value="$PROJECT_DIR$/[012]SpringMVC-Annotations/pom.xml" />
+        <option value="$PROJECT_DIR$/[013]SpringMVC-Exception/pom.xml" />
+        <option value="$PROJECT_DIR$/[014]SpringMVC-Interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/[015]SpringMVC-FileUpLoad/pom.xml" />
+        <option value="$PROJECT_DIR$/[020]Spring-MyBatis-Cascade/pom.xml" />
+        <option value="$PROJECT_DIR$/[021]Spring-MyBatis-Param/pom.xml" />
+        <option value="$PROJECT_DIR$/[022]Spring-MyBatis-SQL/pom.xml" />
+        <option value="$PROJECT_DIR$/[023]Spring-MyBatis-Configure/pom.xml" />
+        <option value="$PROJECT_DIR$/[024]Spring-MyBatis-DynamicSQL/pom.xml" />
+        <option value="$PROJECT_DIR$/[025]Spring-MyBatis-CRUD/pom.xml" />
+        <option value="$PROJECT_DIR$/[028]SSM-QuickStart/pom.xml" />
+        <option value="$PROJECT_DIR$/[029]SSM-Base/pom.xml" />
+        <option value="$PROJECT_DIR$/[030]SSM-Test/pom.xml" />
+        <option value="$PROJECT_DIR$/[031]SSM-Demo/pom.xml" />
+        <option value="$PROJECT_DIR$/[032]SSM-Email/pom.xml" />
+        <option value="$PROJECT_DIR$/[034]Spring-Resultful/pom.xml" />
+        <option value="$PROJECT_DIR$/[035]Spring-Resultful-ThreadPool/pom.xml" />
+        <option value="$PROJECT_DIR$/[036]Spring-JdbcTemplate/pom.xml" />
+        <option value="$PROJECT_DIR$/[037]Spring-Schedule-Task/pom.xml" />
+        <option value="$PROJECT_DIR$/[038]Spring-Schedule-Quartz/pom.xml" />
+        <option value="$PROJECT_DIR$/[050]Spring-Dubbo-Consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/[051]Spring-Dubbo-Interface/pom.xml" />
+        <option value="$PROJECT_DIR$/[052]Spring-Dubbo-Provider/pom.xml" />
+        <option value="$PROJECT_DIR$/[099]Spring-Utils/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

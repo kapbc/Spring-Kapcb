@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kapcb.ccc</groupId>
-    <artifactId>Spring-Kapcb-Quartz</artifactId>
+    <artifactId>[038]Spring-Schedule-Quartz</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <build>
@@ -21,8 +21,6 @@
             </plugin>
         </plugins>
     </build>
-    <name>Spring-Kapcb-Quartz Maven Webapp</name>
-
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -5,11 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kapcb</groupId>
-    <artifactId>SpringMVC-Kapcb-Spring-MyBatis</artifactId>
+    <artifactId>[030]SSM-Test</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-
-    <name>SpringMVC-Kapcb-Spring-MyBatis Maven Webapp</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

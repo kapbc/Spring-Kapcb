@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Spring-Kapcb-AOP-XML</artifactId>
+    <artifactId>[004]Spring-AOP-XML</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>

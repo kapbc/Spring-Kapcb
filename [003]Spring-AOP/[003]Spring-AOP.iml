@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
-    <output url="file://$MODULE_DIR$/../Spring-Kapcb-AOP/target/classes" />
-    <output-test url="file://$MODULE_DIR$/../Spring-Kapcb-AOP/target/test-classes" />
+    <output url="file://$MODULE_DIR$/../[003]Spring-AOP/target/classes" />
+    <output-test url="file://$MODULE_DIR$/../[003]Spring-AOP/target/test-classes" />
     <content url="file://$MODULE_DIR$/../[003]Spring-AOP">
       <sourceFolder url="file://$MODULE_DIR$/../[003]Spring-AOP/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../[003]Spring-AOP/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/../Spring-AOP/target" />
       <excludeFolder url="file://$MODULE_DIR$/../Spring-Kapcb-AOP/target" />
+      <excludeFolder url="file://$MODULE_DIR$/../[003]Spring-AOP/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
