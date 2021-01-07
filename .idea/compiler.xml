@@ -26,6 +26,7 @@
         <module name="[001]Spring-IoC-XML" />
         <module name="[024]Spring-MyBatis-DynamicSQL" />
         <module name="[023]Spring-MyBatis-Configure" />
+        <module name="[039]Spring-Shiro" />
         <module name="[025]Spring-MyBatis-CRUD" />
         <module name="[036]Spring-JdbcTemplate" />
         <module name="[050]Spring-Dubbo-Consumer" />
@@ -72,6 +73,7 @@
       <module name="[036]Spring-JdbcTemplate" target="8" />
       <module name="[037]Spring-Schedule-Task" target="8" />
       <module name="[038]Spring-Schedule-Quartz" target="8" />
+      <module name="[039]Spring-Shiro" target="1.5" />
       <module name="[050]Spring-Dubbo-Consumer" target="1.5" />
       <module name="[051]Spring-Dubbo-Interface" target="1.5" />
       <module name="[052]Spring-Dubbo-Provider" target="1.5" />
