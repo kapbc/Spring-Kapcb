@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+        " default-lazy-init="false">
+
+    <context:component-scan base-package="com.kapcb.ccc">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--1 定时任务作业, 工作配置类-->
+    <bean id="jobOne" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="JobClass" value="com.kapcb.ccc.task.JobOne"/>
+        <property name="jobDataAsMap">
+            <map>
+                <!--调度工厂中的 timeOut属性, 5秒后启用调度-->
+                <entry key="timeOut" value="5"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="jobTwo" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="jobClass" value="com.kapcb.ccc.task.JobTwo"/>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="timeOut" value="15"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--不继承基类的方式-->
+    <bean id="methodInvokeJobDetailOne"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <!--两种注入方式都可进行注入-->
+
+        <!--原始方式进行注入-->
+        <property name="targetObject">
+            <bean class="com.kapcb.ccc.task.UnExtendJobOne"/>
+        </property>
+
+        <!--使用Spring注解@Service标记任务类进行注入, 在UnExtendJobOne中使用@Service注解-->
+        <!--        <property name="targetObject" ref="unExtendJobOne"/>-->
+
+        <property name="targetMethod" value="doJobOne"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+
+    <bean id="methodInvokeJobDetailTwo"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="UnExtendJobTwo"/>
+        </property>
+        <property name="targetMethod">
+            <value>doJobTwo</value>
+        </property>
+        <property name="concurrent">
+            <value>false</value>
+        </property>
+    </bean>
+
+
+    <!--2 作业调度触发器-->
+    <bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+        <!--注入步骤1 中的工作类-->
+        <property name="jobDetail" ref="jobOne"/>
+        <!--调度工厂实例化之后,经过0秒开始执行调度-->
+        <property name="startDelay" value="0"/>
+        <!--每10秒调度一次-->
+        <property name="repeatInterval" value="10000"/>
+    </bean>
+
+    <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="jobTwo"/>
+        <property name="cronExpression" value="0/10 * * * * ?"/>
+    </bean>
+
+    <!--不继承基类方式的触发器-->
+    <bean id="simpleTriggerTwo" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+        <property name="jobDetail" ref="methodInvokeJobDetailOne"/>
+        <property name="startDelay" value="25"/>
+        <property name="repeatInterval" value="3000"/>
+        <!--重复次数不算 第一次执行, 就是说 如果想执行某一个任务10次,只需要设置9次重复即可-->
+        <property name="repeatCount" value="9"/>
+    </bean>
+
+    <bean id="cronTriggerTwo" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="methodInvokeJobDetailTwo"/>
+        </property>
+        <property name="cronExpression">
+            <!--每10秒执行一次-->
+            <value>0/10 * * * * ?</value>
+        </property>
+    </bean>
+
+    <!--3 配置调度工厂-->
+    <bean id="scheduleFactoryBeanOne" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" autowire="no">
+        <property name="triggers">
+            <list>
+                <!--注入作业调度触发器-->
+                <ref bean="simpleTrigger"/>
+                <ref bean="cronTrigger"/>
+                <ref bean="simpleTriggerTwo"/>
+                <ref bean="cronTriggerTwo"/>
+            </list>
+        </property>
+        <property name="autoStartup" value="true"/>
+    </bean>
+
+</beans>
