@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/../Spring-API-ThreadPool" />
+    <file type="web" url="file://$PROJECT_DIR$/[001]Spring-IoC-XML" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Configuration" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Enable" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Annotation-Value" />
@@ -75,6 +76,7 @@
         <option value="$PROJECT_DIR$/Spring-Kapcb-Porject-Admin/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Annotation-Configuration/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-task/pom.xml" />
+        <option value="$PROJECT_DIR$/[001]Spring-IoC-XML/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
