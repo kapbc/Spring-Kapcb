@@ -1,5 +1,6 @@
 package com.kapcb.ccc.domain;
 
+import com.kapcb.ccc.common.annotation.VoMapping;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,12 +20,20 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User implements Serializable {
-    private static final long serialVersionUID = 3729465563549435839L;
+public class User {
 
+    @VoMapping(value = "userName")
     private String userName;
+
+    @VoMapping(value = "userId")
     private Long userId;
+
+    @VoMapping(value = "emailAddress")
     private String emailAddress;
+
+    @VoMapping(value = "age")
     private int age;
+
+    @VoMapping(value = "birthday")
     private LocalDateTime birthday;
 }
