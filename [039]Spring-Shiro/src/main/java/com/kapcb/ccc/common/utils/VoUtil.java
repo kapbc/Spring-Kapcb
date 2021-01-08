@@ -59,7 +59,9 @@ public class VoUtil<T> {
                     String fieldName = field.getName();
                     String setMethodName = getSetMethodName(fieldName);
                     Method method = clazz.getMethod(setMethodName, field.getType());
-                    invokeSetter(fieldType, annotationValue, )
+
+                    // TODO GET VO Mapping
+                    // invokeSetter(fieldType, annotationValue, )
                 }
             }
         } catch (InstantiationException | IllegalAccessException e) {
