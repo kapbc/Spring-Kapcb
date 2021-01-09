@@ -11,7 +11,7 @@
     <title>Login Page</title>
 </head>
 <body>
-<form id="loginForm" action="/kapcb/test/login" method="post">
+<form id="loginForm" action="/kapcb/shiro/test/login" method="post">
     <label>Username: </label>
     <input type="text" name="username" placeholder="Please type your username"/> <br/>
     <label>Password: </label>
@@ -19,14 +19,30 @@
 </form>
 <button id="LoginButton" type="button">Login in</button>
 <button type="reset">Reset</button>
-<button></button>
 </body>
 <script>
     let loginButton = document.getElementById('LoginButton');
     let form = document.getElementById('loginForm');
     let targetUrl = form['action'];
-    console.log("targetUrl = " + targetUrl);
+
+    /**
+     * get param of login form
+     * @returns {string}
+     */
+    function getRequestParams() {
+        let inputElements = form.getElementsByTagName('input');
+        let len = inputElements.length;
+        console.log("the input value is : " + inputElements[0].value);
+        let data = [];
+        for (let i = 0; i < len; i++) {
+            data.push(inputElements[i].name + '=' + inputElements[i].value);
+        }
+        return data.join('&');
+    };
+
     loginButton.onclick = function () {
+        let requestParams = getRequestParams();
+        console.log(requestParams);
         // 创建一个 XMLHttpRequest 异步对象兼容模式
         let xmlHttpRequest;
         /**
@@ -50,12 +66,12 @@
         /**
          * POST请求需要设置头文件, get请求不需要此步骤
          */
-        xmlHttpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
         /**
          * 发送请求
          */
-        xmlHttpRequest.send();
+        xmlHttpRequest.send(requestParams);
 
         /**
          * 监听状态变化
@@ -70,14 +86,24 @@
             /**
              * xmlHttpRequest.readyState === 4 代表请求已经处理完成, 服务器返回状态码 有一个特殊状态码 304 代表返回的是本地缓存文件
              * , 返回 本地缓存文件也代表成功
+             *
+             * statusText
              */
-            if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.statusText === 200) {
+            if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
                 /**
-                 * 获取返回的数据
+                 * 获取返回的 JSON 数据
                  * @type {string}
                  */
                 let data = xmlHttpRequest.responseText;
-
+                /**
+                 * 将JSON数据转换为对象
+                 */
+                let parse = JSON.parse(data);
+                if (parse.code === "200") {
+                    alert("登录成功!");
+                    return;
+                }
+                alert("登录失败");
                 /**
                  * 获取返回的xml
                  * @type {Document}

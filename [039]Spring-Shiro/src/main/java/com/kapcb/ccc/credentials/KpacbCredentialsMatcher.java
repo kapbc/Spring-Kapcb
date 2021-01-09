@@ -1,5 +1,6 @@
 package com.kapcb.ccc.credentials;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
@@ -18,6 +19,7 @@ import java.util.Objects;
  * @version 1.0.0
  * @date 2021/1/9 12:23
  */
+@Slf4j
 public class KpacbCredentialsMatcher extends SimpleCredentialsMatcher {
 
     /**
@@ -36,6 +38,7 @@ public class KpacbCredentialsMatcher extends SimpleCredentialsMatcher {
         // 从数据库获取的加密数据
         SimpleByteSource simpleByteSourceFromDataBase = new SimpleByteSource((char[]) info.getCredentials());
 
+        log.warn("Login Count Compare Result is : " + Objects.equals(simpleByteSourceFromDataBase, simpleByteSourceFromFontDesk));
         // 返回对比结果
         return Objects.equals(simpleByteSourceFromDataBase, simpleByteSourceFromFontDesk);
     }

@@ -10,7 +10,7 @@
     <!--1、安全管理器-->
     <!--首先声明SecurityManager，用于管理所有的 Subject，在SecurityManager中需要引用Realm，
     也就是权限数据的来源，通过自定义的Realm告诉SecurityManager有哪些数据权限需要管理-->
-    <bean id="securityManager" class="org.apache.shiro.mgt.DefaultSecurityManager">
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="userRealm"/>
     </bean>
 
@@ -50,10 +50,10 @@
             <value>
                 /index.jsp=anon
                 /unauthorized.jsp = anon
-                /test/login = anon
-                /test/logout = anon
-                /test/** = anon
-                /test/getUserInfo = authc
+                /kapcb/shiro/test/login = anon
+                /kapcb/shiro/test/logout = anon
+                /kapcb/shiro/test/** = anon
+                /kapcb/shiro/test/getUserInfo = authc
             </value>
         </property>
         <property name="successUrl" value="/WEB-INF/page/success.jsp"/>

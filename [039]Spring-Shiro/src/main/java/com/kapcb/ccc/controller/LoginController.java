@@ -35,15 +35,22 @@ import java.util.Objects;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-@RequestMapping(path = "/kapcb")
+@RequestMapping(path = "/kapcb/shiro")
 public class LoginController {
 
     private final UserService userService;
 
+    @GetMapping(path = "/transmissionDoor")
+    public String transmissionDoor() {
+        log.warn("come to login page");
+        return "kapcb";
+    }
+
     @ResponseBody
-    @PostMapping(path = "/test/login", produces = "application/json;charset=UTF-8")
+    @PostMapping(path = "/test/login", produces = "application/json; charset=UTF-8")
     public String testLogin(@RequestParam(name = "username", required = true) String username,
                             @RequestParam(name = "password", required = true) String password) {
+        log.warn("username is : " + username + " password is : " + password);
         if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
             log.warn("username or password is null");
             return JsonUtil.convertObjectBeanToJsonString(null);
@@ -53,6 +60,8 @@ public class LoginController {
             log.warn("usernamePasswordToken is : " + usernamePasswordToken);
             Subject subject = SecurityUtils.getSubject();
             subject.login(usernamePasswordToken);
+            log.warn("process login success!");
+            log.warn("return String result is : " + JsonUtil.convertObjectBeanToJsonString(new ResultBean<>(ResultInfo.LOGIN_SUCCESS)));
             return JsonUtil.convertObjectBeanToJsonString(new ResultBean<>(ResultInfo.LOGIN_SUCCESS));
         } catch (Exception e) {
             log.error("process login fail, the error exception is : " + e.getMessage(), e);
@@ -85,4 +94,5 @@ public class LoginController {
         List<User> userInfo = userService.getUserInfo();
         return JsonUtil.convertObjectBeanToJsonString(Objects.equals(null, userInfo) ? null : new ResultBean<>(ResultInfo.SUCCESS, userInfo));
     }
+
 }
