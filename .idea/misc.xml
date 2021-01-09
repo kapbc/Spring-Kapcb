@@ -28,6 +28,8 @@
     <file type="web" url="file://$PROJECT_DIR$/[037]Spring-Schedule-Task" />
     <file type="web" url="file://$PROJECT_DIR$/[038]Spring-Schedule-Quartz" />
     <file type="web" url="file://$PROJECT_DIR$/[039]Spring-Shiro" />
+    <file type="web" url="file://$PROJECT_DIR$/[040]Spring-Log4j2" />
+    <file type="web" url="file://$PROJECT_DIR$/[041]Spring-Log4j2" />
     <file type="web" url="file://$PROJECT_DIR$/[099]Spring-Utils" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-IoC-XmlBean" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Zookeeper" />
@@ -113,6 +115,8 @@
         <option value="$PROJECT_DIR$/[052]Spring-Dubbo-Provider/pom.xml" />
         <option value="$PROJECT_DIR$/[099]Spring-Utils/pom.xml" />
         <option value="$PROJECT_DIR$/[039]Spring-Shiro/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-Log4j2/pom.xml" />
+        <option value="$PROJECT_DIR$/[041]Spring-Log4j2/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
