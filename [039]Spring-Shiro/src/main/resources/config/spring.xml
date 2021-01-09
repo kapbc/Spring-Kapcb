@@ -6,4 +6,47 @@
     <context:component-scan base-package="com.kapcb.ccc">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
+
+    <!--安全管理器-->
+    <bean id="securityManager" class="org.apache.shiro.mgt.DefaultSecurityManager">
+        <property name="realm" ref="userRealm"/>
+    </bean>
+
+    <!--自定义域-->
+    <bean id="userRealm" class="com.kapcb.ccc.realm.UserRealm">
+        <property name="userService" ref="userService"/>
+        <property name="credentialsMatcher" ref="kpacbCredentialsMatcher"/>
+        <property name="cachingEnabled" value="true"/>
+    </bean>
+
+    <!--自定义凭证(密码)匹配器-->
+    <bean id="kpacbCredentialsMatcher" class="com.kapcb.ccc.credentials.KpacbCredentialsMatcher"/>
+
+    <!--自定义登录验证过滤器-->
+    <bean id="loginCheckPermissionFilter" class="com.kapcb.ccc.filter.LoginCheckPermissionFilter"/>
+
+    <!--Shiro的web过滤器-->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="unauthorizedUrl" value="/index.jsp"/>
+        <property name="filters">
+            <map>
+                <entry key="authc" value-ref="loginCheckPermissionFilter"/>
+            </map>
+        </property>
+        <property name="filterChainDefinitions">
+            <!--anno表示不需要权限控制即可访问-->
+            <!--authc表示需要登陆后后才能访问-->
+            <!--/pubApi/**表示URL路径中u才能在pubApi关键字的,都不需要权限控制-->
+            <value>
+                /index.jso=anon
+                /unauthorized.jsp = anon
+                /user/checkLogin = anon
+                /user/logout = anon
+                /pubApi/** = anon
+                /user/queryUserInfo = authc
+            </value>
+        </property>
+        <property name="successUrl" value="/WEB-INF/page/success.jsp"/>
+    </bean>
 </beans>
