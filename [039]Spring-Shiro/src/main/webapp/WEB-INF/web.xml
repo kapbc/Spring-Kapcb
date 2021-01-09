@@ -5,6 +5,23 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          id="WebApp_ID" version="3.1">
     <display-name>Kapcb Awesome Man</display-name>
+
+    <!--Shiro Filter Start-->
+    <filter>
+        <filter-name>shiroFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetFilterLifecycle</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>shiroFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!--Shiro Filter End-->
+
+    <!--Character Encoding Filter Start-->
     <filter>
         <filter-name>characterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -21,7 +38,9 @@
         <filter-name>characterEncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <!--Character Encoding Filter End-->
 
+    <!--Log4j2 Listener Start-->
     <listener>
         <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
     </listener>
@@ -42,7 +61,9 @@
         <dispatcher>ERROR</dispatcher>
         <dispatcher>ASYNC</dispatcher>
     </filter-mapping>
+    <!--Log4j2 Listener End-->
 
+    <!--Spring Context Listener Start-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
@@ -50,7 +71,9 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:config/spring.xml</param-value>
     </context-param>
+    <!--Spring Context Listener End-->
 
+    <!--Spring-MVC Context Listener End-->
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -64,4 +87,5 @@
         <servlet-name>dispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <!--Spring-MVC Context Listener End-->
 </web-app>

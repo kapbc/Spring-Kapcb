@@ -7,12 +7,16 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <!--安全管理器-->
+    <!--1、安全管理器-->
+    <!--首先声明SecurityManager，用于管理所有的 Subject，在SecurityManager中需要引用Realm，
+    也就是权限数据的来源，通过自定义的Realm告诉SecurityManager有哪些数据权限需要管理-->
     <bean id="securityManager" class="org.apache.shiro.mgt.DefaultSecurityManager">
         <property name="realm" ref="userRealm"/>
     </bean>
 
-    <!--自定义域-->
+    <!--2、自定义域-->
+    <!--自定义Realm，注入UserService，通过UserService获得用户信息，如用户名及密码，另外还自定义
+    了凭证(密码)匹配规则credentialsMatcher-->
     <bean id="userRealm" class="com.kapcb.ccc.realm.UserRealm">
         <property name="userService" ref="userService"/>
         <property name="credentialsMatcher" ref="kpacbCredentialsMatcher"/>
@@ -20,12 +24,16 @@
     </bean>
 
     <!--自定义凭证(密码)匹配器-->
+    <!--自定义登录验证过滤器loginCheckPermissionFilter，登录校验的核心过滤器，哪些服务需要登录才
+    能访问，就通过此过滤器控制-->
     <bean id="kpacbCredentialsMatcher" class="com.kapcb.ccc.credentials.KpacbCredentialsMatcher"/>
 
-    <!--自定义登录验证过滤器-->
+    <!--3、自定义登录验证过滤器-->
     <bean id="loginCheckPermissionFilter" class="com.kapcb.ccc.filter.LoginCheckPermissionFilter"/>
 
-    <!--Shiro的web过滤器-->
+    <!--4、Shiro的web过滤器-->
+    <!--声明Shiro的WEB过滤器，必须引入securityManager，否则启动报错，WEB过滤器主要用于URL的访问控制
+    ，控制哪些URL需要权限控制，哪些不需要权限控制，如-->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
         <property name="unauthorizedUrl" value="/index.jsp"/>
