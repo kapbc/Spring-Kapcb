@@ -18,7 +18,6 @@
     <!--自定义Realm，注入UserService，通过UserService获得用户信息，如用户名及密码，另外还自定义
     了凭证(密码)匹配规则credentialsMatcher-->
     <bean id="userRealm" class="com.kapcb.ccc.realm.UserRealm">
-        <property name="userService" ref="userService"/>
         <property name="credentialsMatcher" ref="kpacbCredentialsMatcher"/>
         <property name="cachingEnabled" value="true"/>
     </bean>
@@ -29,7 +28,9 @@
     <bean id="kpacbCredentialsMatcher" class="com.kapcb.ccc.credentials.KpacbCredentialsMatcher"/>
 
     <!--3、自定义登录验证过滤器-->
-    <bean id="loginCheckPermissionFilter" class="com.kapcb.ccc.filter.LoginCheckPermissionFilter"/>
+    <bean id="loginCheckPermissionFilter" class="com.kapcb.ccc.filter.LoginCheckPermissionFilter">
+        <property name="loginUrl" value="/kapcb.jsp"/>
+    </bean>
 
     <!--4、Shiro的web过滤器-->
     <!--声明Shiro的WEB过滤器，必须引入securityManager，否则启动报错，WEB过滤器主要用于URL的访问控制
@@ -47,12 +48,12 @@
             <!--authc表示需要登陆后后才能访问-->
             <!--/pubApi/**表示URL路径中u才能在pubApi关键字的,都不需要权限控制-->
             <value>
-                /index.jso=anon
+                /index.jsp=anon
                 /unauthorized.jsp = anon
-                /user/checkLogin = anon
-                /user/logout = anon
-                /pubApi/** = anon
-                /user/queryUserInfo = authc
+                /test/login = anon
+                /test/logout = anon
+                /test/** = anon
+                /test/getUserInfo = authc
             </value>
         </property>
         <property name="successUrl" value="/WEB-INF/page/success.jsp"/>

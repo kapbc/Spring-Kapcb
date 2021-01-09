@@ -64,4 +64,9 @@ public class LoginCheckPermissionFilter extends AuthorizationFilter {
         saveRequestAndRedirectToLogin(request, response);
         return false;
     }
+
+    @Override
+    public void setLoginUrl(String loginUrl) {
+        super.setLoginUrl(loginUrl);
+    }
 }

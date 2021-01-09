@@ -2,6 +2,8 @@ package com.kapcb.ccc.service;
 
 import com.kapcb.ccc.domain.User;
 
+import java.util.List;
+
 /**
  * <a>Title: UserService </a>
  * <a>Author: kapcb <a>
@@ -28,4 +30,11 @@ public interface UserService {
      * @return User
      */
     User getUserByUsername(String userName);
+
+    /**
+     * get user info
+     *
+     * @return List<User>
+     */
+    List<User> getUserInfo();
 }

@@ -15,7 +15,11 @@ public enum ResultInfo {
      * result status code and message for api data
      */
     SUCCESS("success", "200"),
-    FAIL("fail", "201");
+    FAIL("fail", "201"),
+    LOGIN_FAIL("login fail", "202"),
+    LOGIN_SUCCESS("login success", "203"),
+    LOGOUT_SUCCESS("logout success", "204"),
+    LOGIN_PASSWORD_ERROR("password error", "205");
 
     private String message;
     private String code;
