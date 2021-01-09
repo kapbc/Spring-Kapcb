@@ -20,4 +20,12 @@ public interface UserService {
      * @return User
      */
     User getUserByUserId(String userId);
+
+    /**
+     * get user by user name
+     *
+     * @param userName String
+     * @return User
+     */
+    User getUserByUsername(String userName);
 }

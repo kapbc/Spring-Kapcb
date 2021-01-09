@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /**
  * <a>Title: UserServiceImpl </a>
@@ -22,14 +23,25 @@ import java.time.LocalDateTime;
 public class UserServiceImpl implements UserService {
     @Override
     public User getUserByUserId(String userId) {
+        User user = new User();
         if (StringUtils.isNotBlank(userId)) {
-            User user = new User();
             user.setUserId(12345L);
             user.setUserName("kapcb");
             user.setAge(18);
             user.setBirthday(LocalDateTime.now());
-            return user;
         }
-        return new User();
+        return user;
+    }
+
+    @Override
+    public User getUserByUsername(String userName) {
+        User user = new User();
+        if (StringUtils.isNotBlank(userName) && Objects.equals("kapcb", userName)) {
+            user.setUserId(12345L);
+            user.setUserName("kapcb");
+            user.setAge(18);
+            user.setBirthday(LocalDateTime.now());
+        }
+        return user;
     }
 }

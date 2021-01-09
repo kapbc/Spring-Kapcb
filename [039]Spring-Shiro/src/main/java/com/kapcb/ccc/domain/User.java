@@ -28,6 +28,8 @@ public class User {
     @VoMapping(value = "userId")
     private Long userId;
 
+    private String passWord;
+
     @VoMapping(value = "emailAddress")
     private String emailAddress;
 
