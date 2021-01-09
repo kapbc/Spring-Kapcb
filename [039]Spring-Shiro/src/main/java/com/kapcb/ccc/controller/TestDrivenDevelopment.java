@@ -34,7 +34,7 @@ public class TestDrivenDevelopment {
 
     @ResponseBody
     @PostMapping(path = "/test/{userId}", produces = "application/json;charset=UTF-8")
-    public String testDrivenDevelopment(@PathVariable String userId) {
+    public String testDrivenDevelopment( @PathVariable String userId) {
         log.warn("userId is : " + userId);
         User result = userService.getUserByUserId(userId);
         if (Objects.equals(null, result)) {
