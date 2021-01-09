@@ -99,7 +99,7 @@
                  * 将JSON数据转换为对象
                  */
                 let parse = JSON.parse(data);
-                if (parse.code === "200") {
+                if (parse.code === "203") {
                     alert("登录成功!");
                     return;
                 }
