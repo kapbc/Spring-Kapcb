@@ -7,6 +7,8 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
+
+
     <!--1、安全管理器-->
     <!--首先声明SecurityManager，用于管理所有的 Subject，在SecurityManager中需要引用Realm，
     也就是权限数据的来源，通过自定义的Realm告诉SecurityManager有哪些数据权限需要管理-->
@@ -18,19 +20,17 @@
     <!--自定义Realm，注入UserService，通过UserService获得用户信息，如用户名及密码，另外还自定义
     了凭证(密码)匹配规则credentialsMatcher-->
     <bean id="userRealm" class="com.kapcb.ccc.realm.UserRealm">
-        <property name="credentialsMatcher" ref="kpacbCredentialsMatcher"/>
+        <property name="credentialsMatcher" ref="kapcbCredentialsMatcher"/>
         <property name="cachingEnabled" value="true"/>
     </bean>
 
     <!--自定义凭证(密码)匹配器-->
     <!--自定义登录验证过滤器loginCheckPermissionFilter，登录校验的核心过滤器，哪些服务需要登录才
     能访问，就通过此过滤器控制-->
-    <bean id="kpacbCredentialsMatcher" class="com.kapcb.ccc.credentials.KpacbCredentialsMatcher"/>
+    <bean id="kapcbCredentialsMatcher" class="com.kapcb.ccc.credentials.KpacbCredentialsMatcher"/>
 
     <!--3、自定义登录验证过滤器-->
-    <bean id="loginCheckPermissionFilter" class="com.kapcb.ccc.filter.LoginCheckPermissionFilter">
-        <property name="loginUrl" value="/kapcb.jsp"/>
-    </bean>
+    <bean id="loginCheckPermissionFilter" class="com.kapcb.ccc.filter.LoginCheckPermissionFilter"/>
 
     <!--4、Shiro的web过滤器-->
     <!--声明Shiro的WEB过滤器，必须引入securityManager，否则启动报错，WEB过滤器主要用于URL的访问控制
@@ -43,19 +43,27 @@
                 <entry key="authc" value-ref="loginCheckPermissionFilter"/>
             </map>
         </property>
+        <property name="loginUrl" value="kapcb"/>
         <property name="filterChainDefinitions">
             <!--anno表示不需要权限控制即可访问-->
             <!--authc表示需要登陆后后才能访问-->
             <!--/pubApi/**表示URL路径中u才能在pubApi关键字的,都不需要权限控制-->
             <value>
-                /index.jsp=anon
-                /unauthorized.jsp = anon
+                /index.jsp = anon
                 /kapcb/shiro/test/login = anon
                 /kapcb/shiro/test/logout = anon
                 /kapcb/shiro/test/** = anon
                 /kapcb/shiro/test/getUserInfo = authc
             </value>
         </property>
-        <property name="successUrl" value="/WEB-INF/page/success.jsp"/>
+        <property name="successUrl" value="success"/>
+    </bean>
+    <!--保证实现了Shiro内部lifecycle函数的bean执行-->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+    <!-- 生成代理，通过代理进行控制 -->
+    <bean id="defaultAdvisorAutoProxyCreator"
+          class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifecycleBeanPostProcessor">
+        <property name="proxyTargetClass" value="true"/>
     </bean>
 </beans>

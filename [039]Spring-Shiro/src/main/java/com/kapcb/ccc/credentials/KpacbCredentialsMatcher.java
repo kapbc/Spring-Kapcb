@@ -6,8 +6,6 @@ import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
 import org.apache.shiro.util.SimpleByteSource;
 
-import java.util.Objects;
-
 /**
  * <a>Title: KpacbCredentialsMatcher </a>
  * <a>Author: kapcb <a>
@@ -38,8 +36,8 @@ public class KpacbCredentialsMatcher extends SimpleCredentialsMatcher {
         // 从数据库获取的加密数据
         SimpleByteSource simpleByteSourceFromDataBase = new SimpleByteSource((char[]) info.getCredentials());
 
-        log.warn("Login Count Compare Result is : " + Objects.equals(simpleByteSourceFromDataBase, simpleByteSourceFromFontDesk));
+        log.warn("Login Count Compare Result is : " + equals(simpleByteSourceFromDataBase, simpleByteSourceFromFontDesk));
         // 返回对比结果
-        return Objects.equals(simpleByteSourceFromDataBase, simpleByteSourceFromFontDesk);
+        return equals(simpleByteSourceFromDataBase, simpleByteSourceFromFontDesk);
     }
 }

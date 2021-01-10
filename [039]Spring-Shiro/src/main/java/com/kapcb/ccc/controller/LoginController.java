@@ -79,18 +79,31 @@ public class LoginController {
         return JsonUtil.convertObjectBeanToJsonString(null);
     }
 
+    /**
+     * http://localhost:8080/kapcb/shiro/test/logout
+     *
+     * @return
+     */
     @ResponseBody
     @GetMapping(path = "/test/logout", produces = "application/json;charset=UTF-8")
     public String logout() {
         Subject subject = SecurityUtils.getSubject();
+        log.warn("subject for logout is : " + subject);
         if (subject.isAuthenticated()) {
             subject.logout();
         }
         return JsonUtil.convertObjectBeanToJsonString(new ResultBean<>(ResultInfo.LOGOUT_SUCCESS));
     }
 
+    /**
+     * http://localhost:8080/kapcb/shiro/test/getUserInfo
+     *
+     * @return
+     */
+    @ResponseBody
     @GetMapping(path = "/test/getUserInfo", produces = "application/json;charset=UTF-8")
     public String getUserInfo() {
+        log.warn("process get user info");
         List<User> userInfo = userService.getUserInfo();
         return JsonUtil.convertObjectBeanToJsonString(Objects.equals(null, userInfo) ? null : new ResultBean<>(ResultInfo.SUCCESS, userInfo));
     }

@@ -37,11 +37,12 @@ public class LoginCheckPermissionFilter extends AuthorizationFilter {
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) throws Exception {
         HttpServletRequest req = (HttpServletRequest) request;
         String requestUri = req.getRequestURI();
+        log.warn("requestUri is : " + requestUri);
         try {
             Subject subject = SecurityUtils.getSubject();
             return subject.isPermitted(requestUri);
         } catch (Exception e) {
-            log.error("check request permission error : " + e.getMessage(), e);
+            log.error("check request permission error : " + e.getMessage());
         }
         return false;
     }
@@ -58,15 +59,13 @@ public class LoginCheckPermissionFilter extends AuthorizationFilter {
     @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws IOException {
         Subject subject = getSubject(request, response);
-        if (!Objects.equals(subject.getPrincipal(), null)) {
+        log.warn("subject is : " + subject);
+        if (Objects.equals(null, subject.getPrincipal())) {
+            saveRequestAndRedirectToLogin(request, response);
+        } else {
             return true;
         }
-        saveRequestAndRedirectToLogin(request, response);
         return false;
     }
 
-    @Override
-    public void setLoginUrl(String loginUrl) {
-        super.setLoginUrl(loginUrl);
-    }
 }
