@@ -90,6 +90,7 @@ public class LoginController {
         Subject subject = SecurityUtils.getSubject();
         log.warn("subject for logout is : " + subject);
         if (subject.isAuthenticated()) {
+            log.warn("I am already Login. So I can logout!");
             subject.logout();
         }
         return JsonUtil.convertObjectBeanToJsonString(new ResultBean<>(ResultInfo.LOGOUT_SUCCESS));

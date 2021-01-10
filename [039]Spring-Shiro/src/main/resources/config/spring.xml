@@ -8,7 +8,6 @@
     </context:component-scan>
 
 
-
     <!--1、安全管理器-->
     <!--首先声明SecurityManager，用于管理所有的 Subject，在SecurityManager中需要引用Realm，
     也就是权限数据的来源，通过自定义的Realm告诉SecurityManager有哪些数据权限需要管理-->
@@ -30,7 +29,10 @@
     <bean id="kapcbCredentialsMatcher" class="com.kapcb.ccc.credentials.KpacbCredentialsMatcher"/>
 
     <!--3、自定义登录验证过滤器-->
-    <bean id="loginCheckPermissionFilter" class="com.kapcb.ccc.filter.LoginCheckPermissionFilter"/>
+    <bean id="loginCheckPermissionFilter" class="com.kapcb.ccc.filter.LoginCheckPermissionFilter">
+        <!--设置登录的页面路径, 如果访问的资源需要登陆后访问, 会先跳转到该页面-->
+        <property name="loginUrl" value="/kapcb/shiro/transmissionDoor"/>
+    </bean>
 
     <!--4、Shiro的web过滤器-->
     <!--声明Shiro的WEB过滤器，必须引入securityManager，否则启动报错，WEB过滤器主要用于URL的访问控制
@@ -43,17 +45,19 @@
                 <entry key="authc" value-ref="loginCheckPermissionFilter"/>
             </map>
         </property>
-        <property name="loginUrl" value="kapcb"/>
+        <!--需要登录访问的资源,如果未登录, 则会将其重定向到这个URL的页面, 这个URL的页面在这个项目中为登陆页面-->
+        <!--        <property name="loginUrl" value="/kapcb/shiro/transmissionDoor"/>-->
         <property name="filterChainDefinitions">
             <!--anno表示不需要权限控制即可访问-->
             <!--authc表示需要登陆后后才能访问-->
-            <!--/pubApi/**表示URL路径中u才能在pubApi关键字的,都不需要权限控制-->
+            <!--/kapcb/shiro/test/**表示URL路径中包含在/kapcb/shiro/test/关键字的,都不需要权限控制-->
+            <!--注意, 最大级别的统配符需要写在最后面, 否则可能会导致在最大级别通配符后的细粒度拦截失效-->
             <value>
                 /index.jsp = anon
                 /kapcb/shiro/test/login = anon
                 /kapcb/shiro/test/logout = anon
-                /kapcb/shiro/test/** = anon
                 /kapcb/shiro/test/getUserInfo = authc
+                /kapcb/shiro/test/** = anon
             </value>
         </property>
         <property name="successUrl" value="success"/>

@@ -68,4 +68,9 @@ public class LoginCheckPermissionFilter extends AuthorizationFilter {
         return false;
     }
 
+    @Override
+    public void setLoginUrl(String loginUrl) {
+        log.warn("login url is : " + loginUrl);
+        super.setLoginUrl(loginUrl);
+    }
 }
