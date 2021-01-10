@@ -21,9 +21,58 @@
 <button type="reset">Reset</button>
 </body>
 <script>
+
     let loginButton = document.getElementById('LoginButton');
     let form = document.getElementById('loginForm');
     let targetUrl = form['action'];
+
+    /**
+     *
+     * try to get more elegant code beagin
+     */
+    loginButton.onclick = function () {
+        let ajaxUrl = formElement['action'];
+
+        let ajaxParams = getAjaxParams(formElement);
+        console.log("the ajax params is : " + ajaxParams);
+
+        let xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open(form.method, targetUrl, true);
+        xmlHttpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlHttpRequest.send(ajaxParams);
+        xmlHttpRequest.onreadystatechange = function () {
+            if (xmlHttpRequest.readyState === 4) {
+                if (xmlHttpRequest.status === 200) {
+                    let ajaxCallData = xmlHttpRequest.responseText;
+                    let objectData = JSON.parse(ajaxCallData);
+                    if (objectData.code === "200") {
+                        alert("login success!");
+                        return;
+                    }
+                    alert("login fail : " + objectData.message);
+                }
+            }
+        }
+    }
+
+    function getAjaxParams(element) {
+        let inputElements = element.getElementsByTagName('input');
+        let data = [];
+        inputElements.forEach(s => {
+            if (s.value == null) {
+                alert("Please Type The " + s.name + " First!");
+                return;
+            }
+            data.push(s.name + "=" + s.value);
+        });
+        return data.join("&");
+    };
+
+    /**
+     *
+     * try to get more elegant code end
+     */
+
 
     /**
      * get param of login form
