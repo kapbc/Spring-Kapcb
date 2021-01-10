@@ -31,7 +31,7 @@
      * try to get more elegant code beagin
      */
     loginButton.onclick = function () {
-        let ajaxUrl = formElement['action'];
+        let ajaxUrl = form['action'];
 
         let ajaxParams = getAjaxParams(formElement);
         console.log("the ajax params is : " + ajaxParams);
