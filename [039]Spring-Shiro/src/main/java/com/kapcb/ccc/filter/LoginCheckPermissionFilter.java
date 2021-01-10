@@ -15,6 +15,7 @@ import java.util.Objects;
  * <a>Title: LoginCheckPermissionFilter </a>
  * <a>Author: kapcb <a>
  * <a>Description: <a>
+ * 自定义授权过过滤器
  *
  * @author kapcb
  * @version 1.0.0

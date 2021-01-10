@@ -81,6 +81,7 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--Shiro Start-->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
@@ -106,6 +107,7 @@
             <artifactId>shiro-quartz</artifactId>
             <version>${shiro.quartz.version}</version>
         </dependency>
+        <!--Shiro End-->
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
