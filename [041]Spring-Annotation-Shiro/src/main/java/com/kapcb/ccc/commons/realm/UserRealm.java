@@ -13,6 +13,7 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.stereotype.Component;
 import sun.security.provider.MD5;
 
 import java.util.Objects;
@@ -27,6 +28,7 @@ import java.util.Objects;
  * @date 2021/1/10 21:53
  */
 @Slf4j
+@Component
 @RequiredArgsConstructor
 public class UserRealm extends AuthorizingRealm {
 
