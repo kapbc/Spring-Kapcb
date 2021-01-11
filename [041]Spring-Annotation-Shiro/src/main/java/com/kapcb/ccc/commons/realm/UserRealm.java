@@ -1,5 +1,6 @@
 package com.kapcb.ccc.commons.realm;
 
+import com.kapcb.ccc.commons.credentials.KapcbCredentialsMatcher;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -11,14 +12,12 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationInfo;
-import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.stereotype.Component;
-import sun.security.provider.MD5;
 
+import javax.annotation.PostConstruct;
 import java.util.Objects;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * <a>Title: UserRealm </a>
@@ -35,6 +34,14 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class UserRealm extends AuthorizingRealm {
 
     private final UserService userService;
+
+    private final KapcbCredentialsMatcher kapcbCredentialsMatcher;
+
+    @PostConstruct
+    public void initConfig() {
+        setCredentialsMatcher(kapcbCredentialsMatcher);
+        setCachingEnabled(true);
+    }
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
