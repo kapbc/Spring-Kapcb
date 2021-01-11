@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Component;
 import sun.security.provider.MD5;
 
 import java.util.Objects;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * <a>Title: UserRealm </a>
@@ -41,12 +43,14 @@ public class UserRealm extends AuthorizingRealm {
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
+        log.warn("process Authentication");
         UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) token;
         String username = usernamePasswordToken.getUsername();
         User user = userService.getUserByUserName(username);
-        if (Objects.equals(null, user) && Objects.equals(null, user.getPassword())) {
-
+        if (!Objects.equals(null, user) && Objects.equals(null, user.getPassword())) {
+            log.warn("username or password error or target user is not exist");
+            throw new IncorrectCredentialsException("the username of user is not exist");
         }
-        return new SimpleAuthenticationInfo(user.getUsername(), user.getPassword(), new Md5Hash(user.getPassword(), "salt", 2), getName());
+        return new SimpleAuthenticationInfo(user.getUsername(), user.getPassword().toCharArray(), getName());
     }
 }

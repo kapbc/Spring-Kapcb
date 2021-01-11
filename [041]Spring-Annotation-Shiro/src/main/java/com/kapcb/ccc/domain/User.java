@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 /**
  * <a>Title: User </a>
  * <a>Author: kapcb <a>
@@ -20,4 +22,6 @@ public class User {
 
     private String username;
     private String password;
+    private Long id;
+    private LocalDateTime birthday;
 }
