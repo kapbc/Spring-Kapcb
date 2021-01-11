@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authz.AuthorizationFilter;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -21,6 +22,7 @@ import java.util.Objects;
  * @date 2021/1/10 21:44
  */
 @Slf4j
+@Component
 public class LoginAuthorizationFilter extends AuthorizationFilter {
 
     @Override
