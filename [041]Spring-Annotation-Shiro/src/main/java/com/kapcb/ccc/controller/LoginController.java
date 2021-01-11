@@ -88,7 +88,7 @@ public class LoginController {
     }
 
     @ResponseBody
-    @PostMapping(path = "getUserInfo", produces = "application/json; charset=UTF-8")
+    @GetMapping(path = "getUserInfo", produces = "application/json; charset=UTF-8")
     public String getUserInfo() {
         log.warn("process getUserInfo");
         List<User> userInfo = userService.getUserInfo();

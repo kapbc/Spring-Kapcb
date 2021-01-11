@@ -47,8 +47,11 @@
 
     function getRequestParams(inputElements) {
         let data = [];
-        inputElements.forEach(s => data.push(s.name + ":" + s.value));
-        return data.join(",");
+        console.log(typeof inputElements);
+        for (let i = 0; i < inputElements.length; i++) {
+            data.push(inputElements[i].name + "=" + inputElements[i].value)
+        }
+        return data.join("&");
     };
 
 </script>

@@ -54,7 +54,7 @@ public class UserRealm extends AuthorizingRealm {
         UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) token;
         String username = usernamePasswordToken.getUsername();
         User user = userService.getUserByUserName(username);
-        if (!Objects.equals(null, user) && Objects.equals(null, user.getPassword())) {
+        if (Objects.equals(null, user) || Objects.equals(null, user.getPassword())) {
             log.warn("username or password error or target user is not exist");
             throw new IncorrectCredentialsException("the username of user is not exist");
         }

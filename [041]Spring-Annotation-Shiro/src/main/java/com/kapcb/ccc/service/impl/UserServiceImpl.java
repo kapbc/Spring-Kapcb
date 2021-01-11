@@ -31,6 +31,7 @@ public class UserServiceImpl implements UserService {
             user.setUsername("kapcb");
             user.setPassword("123456");
             user.setBirthday(LocalDateTime.now());
+            return user;
         }
         return null;
     }
