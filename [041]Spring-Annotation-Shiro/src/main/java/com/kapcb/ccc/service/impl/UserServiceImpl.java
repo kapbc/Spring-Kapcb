@@ -7,6 +7,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <a>Title: UserServiceImpl </a>
@@ -31,5 +33,14 @@ public class UserServiceImpl implements UserService {
             user.setBirthday(LocalDateTime.now());
         }
         return null;
+    }
+
+    @Override
+    public List<User> getUserInfo() {
+        List<User> list = new ArrayList<>();
+        list.add(new User("kapcb", "123456", 123456L, LocalDateTime.of(2020, 1, 11, 23, 59, 59), "eircccallroot@yeah.net"));
+        list.add(new User("ccc", "123456", 123456L, LocalDateTime.of(2020, 1, 11, 23, 59, 59), "eircccallroot@yeah.net"));
+        list.add(new User("eee", "123456", 123456L, LocalDateTime.of(2020, 1, 11, 23, 59, 59), "eircccallroot@yeah.net"));
+        return list;
     }
 }
