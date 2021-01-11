@@ -12,5 +12,13 @@
 </head>
 <body>
 <h1>this is login page</h1>
+<form action="/kapcb/shiro/v1/login" method="post">
+    <label>username:</label>
+    <input type="text" name="username" placeholder="Please type your username"><br>
+    <label>password:</label>
+    <input type="password" name="password" placeholder="Please type your password">
+</form>
+<button type="button" id="submitButton">login</button>
+<button type="reset">reset</button>
 </body>
 </html>

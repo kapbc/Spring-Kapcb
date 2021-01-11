@@ -34,7 +34,7 @@ public class LoginController {
     private final UserService userService;
 
     @ResponseBody
-    @PostMapping(path = "login", produces = "application/json; charset=UTF-8")
+    @PostMapping(path = "/login", produces = "application/json; charset=UTF-8")
     public String login(@NotNull(message = "{required}") @RequestParam(name = "username", required = false) String username,
                         @NotNull(message = "{required}") @RequestParam(name = "password", required = false) String password) {
         log.warn("username is : " + username + " password is : " + password);
