@@ -1,9 +1,20 @@
 package com.kapcb.ccc.common.config;
 
+import com.kapcb.ccc.common.filter.KapcbLoginFilter;
+import com.kapcb.ccc.common.realm.UserRealm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+
+import javax.servlet.Filter;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * <a>Title: ShiroConfiguration </a>
@@ -20,5 +31,43 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class ShiroConfiguration {
 
+    private static final int INITIAL_CAPACITY = 4;
+    private static final String AUTHC = "authc";
+    private static final String ANON = "anon";
+    private static final String LOGIN_URL = "/kapcb/shiro/v2/login";
+    private static final String LOGOUT_URL = "/kapcb/shiro/v2/logout";
+    private static final String USER_INFO_URL = "/kapcb/shiro/v2/getUserInfo";
+    private static final String UN_LOGIN_URL = "/kapcb/shiro/v2/**";
+    private static final String LOGIN_PAGE_URL = "/kapcb/shiro/v2/page";
+    private static final String UN_AUTHOR_URL = "/kapcb/shiro/v2/";
+    private static final String LOGIN_SUCCESS_URL = "/kapcb/shiro/v2/see";
+
+    private final KapcbLoginFilter kapcbLoginFilter;
+
+    @Bean(name = "shiroFilter")
+    public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager) {
+        ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
+        shiroFilterFactoryBean.setSecurityManager(securityManager);
+        shiroFilterFactoryBean.setLoginUrl(LOGIN_PAGE_URL);
+        shiroFilterFactoryBean.setUnauthorizedUrl(UN_AUTHOR_URL);
+        shiroFilterFactoryBean.setSuccessUrl(LOGIN_SUCCESS_URL);
+        Map<String, Filter> filterHashMap = new HashMap<>(INITIAL_CAPACITY);
+        filterHashMap.put(AUTHC, kapcbLoginFilter);
+        shiroFilterFactoryBean.setFilters(filterHashMap);
+        Map<String, String> filterChainMap = new LinkedHashMap<>();
+        filterChainMap.put(LOGIN_URL, ANON);
+        filterChainMap.put(LOGOUT_URL, ANON);
+        filterChainMap.put(USER_INFO_URL, AUTHC);
+        filterChainMap.put(UN_LOGIN_URL, ANON);
+        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainMap);
+        return shiroFilterFactoryBean;
+    }
+
+    @Bean
+    public SecurityManager securityManager(UserRealm userRealm) {
+        DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
+        securityManager.setRealm(userRealm);
+        return securityManager;
+    }
 
 }
