@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path = "/kapcb/shiro")
 public class SystemController {
 
-    @GetMapping("/v2/page")
+    @RequestMapping(path = "/v2/page")
     public String toLoginPage() {
         log.warn("come to login page");
         return "login";

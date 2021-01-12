@@ -17,9 +17,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * @date 2021/1/12 20:39
  */
 @Slf4j
-@Component
-@Configuration
-@Import(ShiroConfiguration.class)
 public class ContextConfiguration {
 
 //    @Bean
