@@ -22,11 +22,11 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Import(ShiroConfiguration.class)
 public class ContextConfiguration {
 
-    @Bean
-    public InternalResourceViewResolver internalResourceViewResolver() {
-        InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
-        internalResourceViewResolver.setPrefix("/WEB-INF/page/");
-        internalResourceViewResolver.setSuffix(".jsp");
-        return internalResourceViewResolver;
-    }
+//    @Bean
+//    public InternalResourceViewResolver internalResourceViewResolver() {
+//        InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
+//        internalResourceViewResolver.setPrefix("/WEB-INF/page/");
+//        internalResourceViewResolver.setSuffix(".jsp");
+//        return internalResourceViewResolver;
+//    }
 }

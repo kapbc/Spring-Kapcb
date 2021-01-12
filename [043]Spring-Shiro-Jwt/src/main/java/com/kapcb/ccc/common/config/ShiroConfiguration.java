@@ -55,6 +55,7 @@ public class ShiroConfiguration {
         filterHashMap.put(AUTHC, kapcbLoginFilter);
         shiroFilterFactoryBean.setFilters(filterHashMap);
         Map<String, String> filterChainMap = new LinkedHashMap<>();
+        filterChainMap.put("/index.jsp", ANON);
         filterChainMap.put(LOGIN_URL, ANON);
         filterChainMap.put(LOGOUT_URL, ANON);
         filterChainMap.put(USER_INFO_URL, AUTHC);
