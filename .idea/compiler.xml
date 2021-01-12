@@ -8,19 +8,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="[010]SpringMVC-HelloWorld" />
+        <module name="[039]Spring-Shiro" />
         <module name="[003]Spring-AOP" />
         <module name="[038]Spring-Schedule-Quartz" />
         <module name="[022]Spring-MyBatis-SQL" />
         <module name="[024]Spring-MyBatis-DynamicSQL" />
+        <module name="[043]Spring-Shiro-Jwt" />
         <module name="[037]Spring-Schedule-Task" />
         <module name="[031]SSM-Demo" />
+        <module name="[023]Spring-MyBatis-Configure" />
         <module name="[011]SpringMVC-Params" />
-        <module name="[041]Spring-Annotation-Shiro" />
         <module name="[036]Spring-JdbcTemplate" />
         <module name="[050]Spring-Dubbo-Consumer" />
+        <module name="[034]Spring-Resultful" />
         <module name="[014]SpringMVC-Interceptor" />
         <module name="[020]Spring-MyBatis-Cascade" />
-        <module name="[028]SSM-QuickStart" />
         <module name="[005]Spring-Annotation-Configuration" />
         <module name="[052]Spring-Dubbo-Provider" />
         <module name="[007]Spring-Annotation-Enable" />
@@ -29,20 +31,19 @@
         <module name="[002]Spring-IoC-XML" />
         <module name="[025]Spring-MyBatis-CRUD" />
         <module name="[032]SSM-Email" />
-        <module name="[001]Spring-IoC-XML" />
-        <module name="[029]SSM-Base" />
+        <module name="[041]Spring-Annotation-Shiro" />
         <module name="[013]SpringMVC-Exception" />
         <module name="[099]Spring-Utils" />
         <module name="[051]Spring-Dubbo-Interface" />
         <module name="[006]Spring-Annotation-Value" />
-        <module name="[023]Spring-MyBatis-Configure" />
+        <module name="[001]Spring-IoC-XML" />
         <module name="[004]Spring-AOP-XML" />
-        <module name="[034]Spring-Resultful" />
+        <module name="[028]SSM-QuickStart" />
         <module name="[035]Spring-Resultful-ThreadPool" />
-        <module name="[042]Spring-Log4j2" />
         <module name="[015]SpringMVC-FileUpLoad" />
-        <module name="[039]Spring-Shiro" />
+        <module name="[029]SSM-Base" />
         <module name="[030]SSM-Test" />
+        <module name="[042]Spring-Log4j2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -79,6 +80,7 @@
       <module name="[040]Spring-Log4j2" target="1.5" />
       <module name="[041]Spring-Annotation-Shiro" target="8" />
       <module name="[042]Spring-Log4j2" target="8" />
+      <module name="[043]Spring-Shiro-Jwt" target="8" />
       <module name="[050]Spring-Dubbo-Consumer" target="1.5" />
       <module name="[051]Spring-Dubbo-Interface" target="1.5" />
       <module name="[052]Spring-Dubbo-Provider" target="1.5" />

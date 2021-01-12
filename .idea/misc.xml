@@ -31,6 +31,7 @@
     <file type="web" url="file://$PROJECT_DIR$/[040]Spring-Log4j2" />
     <file type="web" url="file://$PROJECT_DIR$/[041]Spring-Annotation-Shiro" />
     <file type="web" url="file://$PROJECT_DIR$/[042]Spring-Log4j2" />
+    <file type="web" url="file://$PROJECT_DIR$/[043]Spring-Shiro-Jwt" />
     <file type="web" url="file://$PROJECT_DIR$/[099]Spring-Utils" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-IoC-XmlBean" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Zookeeper" />
@@ -120,6 +121,8 @@
         <option value="$PROJECT_DIR$/[041]Spring-Log4j2/pom.xml" />
         <option value="$PROJECT_DIR$/[041]Spring-Annotation-Shiro/pom.xml" />
         <option value="$PROJECT_DIR$/[042]Spring-Log4j2/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-Shiro-Jwt/pom.xml" />
+        <option value="$PROJECT_DIR$/[043]Spring-Shiro-Jwt/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
