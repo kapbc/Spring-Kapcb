@@ -5,8 +5,11 @@ import com.kapcb.ccc.common.realm.UserRealm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.spring.LifecycleBeanPostProcessor;
+import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -44,6 +47,46 @@ public class ShiroConfiguration {
 
     private final KapcbLoginFilter kapcbLoginFilter;
 
+    @Bean
+    public SecurityManager securityManager(UserRealm userRealm) {
+        DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
+        securityManager.setRealm(userRealm);
+        return securityManager;
+    }
+
+    /**
+     * 交由 Spring 来自动管理 Shiro-Bean 的生命周期
+     *
+     * @return LifecycleBeanProcessor
+     */
+    @Bean
+    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
+        return new LifecycleBeanPostProcessor();
+    }
+
+    /**
+     * 为Shiro-Bean开启对Shiro的注解支持
+     *
+     * @return AuthorizationAttributeSourceAdvisor
+     */
+    @Bean
+    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor() {
+        return new AuthorizationAttributeSourceAdvisor();
+    }
+
+    /**
+     * 生产代理, 通过代理进行控制
+     *
+     * @return DefaultAdvisorAutoProxyCreator
+     */
+    @Bean
+    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
+        DefaultAdvisorAutoProxyCreator proxyCreator = new DefaultAdvisorAutoProxyCreator();
+        proxyCreator.setProxyTargetClass(true);
+        return proxyCreator;
+    }
+
+
     @Bean(name = "shiroFilter")
     public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
@@ -62,13 +105,6 @@ public class ShiroConfiguration {
         filterChainMap.put(UN_LOGIN_URL, ANON);
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainMap);
         return shiroFilterFactoryBean;
-    }
-
-    @Bean
-    public SecurityManager securityManager(UserRealm userRealm) {
-        DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        securityManager.setRealm(userRealm);
-        return securityManager;
     }
 
 }
