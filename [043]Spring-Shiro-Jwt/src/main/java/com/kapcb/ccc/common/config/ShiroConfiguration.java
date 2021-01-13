@@ -4,7 +4,11 @@ import com.kapcb.ccc.common.filter.KapcbLoginFilter;
 import com.kapcb.ccc.common.realm.UserRealm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authc.pam.FirstSuccessfulStrategy;
+import org.apache.shiro.authc.pam.ModularRealmAuthenticator;
+import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
 import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.mgt.SessionStorageEvaluator;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -105,6 +109,31 @@ public class ShiroConfiguration {
         filterChainMap.put(UN_LOGIN_URL, ANON);
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainMap);
         return shiroFilterFactoryBean;
+    }
+
+    /**
+     * 配置 ModularRealmAuthenticator
+     *
+     * @return ModularRealmAuthenticator
+     */
+    @Bean
+    public ModularRealmAuthenticator authenticator() {
+        ModularRealmAuthenticator modularRealmAuthenticator = new ModularRealmAuthenticator();
+        FirstSuccessfulStrategy firstSuccessfulStrategy = new FirstSuccessfulStrategy();
+        modularRealmAuthenticator.setAuthenticationStrategy(firstSuccessfulStrategy);
+        return modularRealmAuthenticator;
+    }
+
+    /**
+     * 禁用Session
+     *
+     * @return SessionStorageEvaluator
+     */
+    @Bean
+    protected SessionStorageEvaluator sessionStorageEvaluator() {
+        DefaultSessionStorageEvaluator defaultSessionStorageEvaluator = new DefaultSessionStorageEvaluator();
+        defaultSessionStorageEvaluator.setSessionStorageEnabled(false);
+        return defaultSessionStorageEvaluator;
     }
 
 }
