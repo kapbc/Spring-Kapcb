@@ -11,6 +11,7 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.springframework.stereotype.Component;
 
 import java.util.Calendar;
@@ -128,6 +129,13 @@ public class JwtUtil {
         return jwt.getIssuedAt().before(now);
     }
 
+    /**
+     * 刷新token的过期时间
+     *
+     * @param token        String
+     * @param confidential String
+     * @return String
+     */
     public static String refreshTokenExpireTime(String token, String confidential) {
         DecodedJWT jwt = JWT.decode(token);
         Map<String, Claim> claims = jwt.getClaims();
@@ -143,6 +151,18 @@ public class JwtUtil {
             log.error("Jwt create error, the exception is : " + e.getMessage());
             return null;
         }
+    }
+
+    /**
+     * 生成16为随机盐值
+     *
+     * @return String
+     */
+    public static String generateSalt() {
+        SecureRandomNumberGenerator secureRandomNumberGenerator = new SecureRandomNumberGenerator();
+        String salt = secureRandomNumberGenerator.nextBytes(16).toHex();
+        log.warn("the generator salt is : " + salt);
+        return salt;
     }
 
 }
