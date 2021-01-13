@@ -1,7 +1,6 @@
 package com.kapcb.ccc.common.utils;
 
 import com.auth0.jwt.JWT;
-import com.auth0.jwt.JWTCreator;
 import com.auth0.jwt.JWTCreator.Builder;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -17,7 +16,6 @@ import org.springframework.stereotype.Component;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
-import java.util.stream.Stream;
 
 /**
  * <a>Title: JwtUtil </a>
@@ -164,5 +162,4 @@ public class JwtUtil {
         log.warn("the generator salt is : " + salt);
         return salt;
     }
-
 }

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -21,9 +22,18 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = -8897577837153106414L;
+
+    @NotNull(message = "{required}")
+    private Long userId;
+
     @NotNull(message = "{required}")
     private String username;
+
+    @NotNull(message = "{required}")
+    private String nickName;
 
     @NotNull(message = "{required}")
     @JsonIgnore
