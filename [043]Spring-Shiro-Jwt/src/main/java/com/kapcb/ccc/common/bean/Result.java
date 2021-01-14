@@ -22,9 +22,16 @@ public class Result<T> {
     public Result() {
     }
 
+    public Result(String message, String code) {
+        this.message = message;
+        this.code = code;
+        this.data = null;
+    }
+
     public Result(ResultInfo resultInfo) {
         this.message = resultInfo.getMessage();
         this.code = resultInfo.getCode();
+        this.data = null;
     }
 
     public Result(ResultInfo resultInfo, T data) {

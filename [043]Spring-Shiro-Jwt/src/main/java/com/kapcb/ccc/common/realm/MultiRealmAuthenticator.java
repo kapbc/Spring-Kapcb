@@ -53,7 +53,7 @@ public class MultiRealmAuthenticator extends ModularRealmAuthenticator {
                 log.debug("Realm [{}] does not support token {}.  Skipping realm.", realm, token);
             }
         }
-        if (Objects.equals(null, authenticationException)) {
+        if (!Objects.equals(null, authenticationException)) {
             throw authenticationException;
         }
         aggregate = strategy.afterAllAttempts(token, aggregate);
