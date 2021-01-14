@@ -1,6 +1,6 @@
 package com.kapcb.ccc.common.realm;
 
-import com.kapcb.ccc.common.credentials.KapcbCredentialsMatchers;
+import com.kapcb.ccc.common.credentials.JwtCredentialsMatchers;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import lombok.RequiredArgsConstructor;
@@ -35,7 +35,7 @@ import java.util.Objects;
 public class UserRealm extends AuthorizingRealm {
 
     private final IUserService userService;
-    private final KapcbCredentialsMatchers kapcbCredentialsMatchers;
+    private final JwtCredentialsMatchers kapcbCredentialsMatchers;
 
     @PostConstruct
     public void initConfig() {

@@ -37,11 +37,11 @@ public class JwtUtil {
     /**
      * 密钥
      */
-    private static final String CONFIDENTIAL = "kapcb";
+    public static final String CONFIDENTIAL = "kapcb";
     /**
      * 请求头
      */
-    private static final String AUTH_HEADER = "X-Authorization-With";
+    public static final String AUTH_HEADER = "X-Authorization-With";
 
     /**
      * 验证token是否正确
