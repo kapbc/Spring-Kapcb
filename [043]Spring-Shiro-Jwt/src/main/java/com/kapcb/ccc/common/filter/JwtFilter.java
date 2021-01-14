@@ -53,15 +53,23 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
         return super.preHandle(servletRequest, servletResponse);
     }
 
+    /**
+     * 后置处理
+     *
+     * @param request  ServletRequest
+     * @param response ServletResponse
+     * @throws Exception Exception
+     */
     @Override
     protected void postHandle(ServletRequest request, ServletResponse response) throws Exception {
+        this.fillCorsHeader(WebUtils.toHttp(request), WebUtils.toHttp(response));
     }
 
 
     /**
      * 过滤器拦截请求的入口方法
-     * 返回 true 循序访问
-     * 返回 false 禁止访问, 会进入 nAccessDenied()
+     * 返回 true 允许访问
+     * 返回 false 禁止访问, 会进入 onAccessDenied()
      *
      * @param request     ServletRequest
      * @param response    ServletResponse
@@ -100,7 +108,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     }
 
     /**
-     * 身份验证, 检查 JWT token 是否hefa
+     * 身份验证, 检查 JWT token 是否合法
      *
      * @param request  ServletRequest
      * @param response ServletResponse
@@ -144,6 +152,14 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
         return new JwtToken(authorization);
     }
 
+    /**
+     * isAccessAllowed() 方法返回 false , 会进入该方法, 表示拒绝访问
+     *
+     * @param request  ServletRequest
+     * @param response ServletResponse
+     * @return boolean
+     * @throws Exception Exception
+     */
     @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
         HttpServletResponse httpServletResponse = WebUtils.toHttp(response);
@@ -152,10 +168,57 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
         httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
         PrintWriter writer = httpServletResponse.getWriter();
         writer.write("{\"errCode\": 401, \"msg\": \"UNAUTHORIZED\"}");
-
-        return super.onAccessDenied(request, response);
+        fillCorsHeader(WebUtils.toHttp(request), httpServletResponse);
+        return false;
     }
 
+    /**
+     * Shiro 利用 Jwt token 登录成功, 会进入该方法
+     *
+     * @param token    AuthenticationToken
+     * @param subject  Subject
+     * @param request  ServletRequest
+     * @param response ServletResponse
+     * @return boolean
+     * @throws Exception Exception
+     */
+    @Override
+    protected boolean onLoginSuccess(AuthenticationToken token, Subject subject, ServletRequest request, ServletResponse response) throws Exception {
+        HttpServletResponse httpServletResponse = WebUtils.toHttp(response);
+        String newToken = null;
+        if (token instanceof JwtToken) {
+            newToken = JwtUtil.refreshTokenExpireTime(token.getPrincipal().toString(), JwtUtil.CONFIDENTIAL);
+        }
+        if (!Objects.equals(null, newToken)) {
+            httpServletResponse.setHeader(JwtUtil.AUTH_HEADER, newToken);
+        }
+        return true;
+    }
+
+
+    /**
+     * Shiro 利用 Jwt token 登录失败, 会进入该方法
+     *
+     * @param token    AuthenticationToken
+     * @param e        AuthenticationException
+     * @param request  ServletRequest
+     * @param response ServletResponse
+     * @return boolean
+     */
+    @Override
+    protected boolean onLoginFailure(AuthenticationToken token, AuthenticationException e, ServletRequest request, ServletResponse response) {
+        /**
+         * 此处直接返回 false ，交给后面的  onAccessDenied()方法进行处理
+         */
+        return false;
+    }
+
+    /**
+     * 添加跨域支持
+     *
+     * @param request  HttpServletRequest
+     * @param response HttpServletResponse
+     */
     protected void fillCorsHeader(HttpServletRequest request, HttpServletResponse response) {
         response.setHeader("Access-control-Allow-Origin", request.getHeader("Origin"));
         response.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS,HEAD");
