@@ -1,9 +1,9 @@
 package com.kapcb.ccc.common.config;
 
-import com.kapcb.ccc.common.credentials.JwtCredentialsMatchers;
+import com.kapcb.ccc.common.shiro.JwtCredentialsMatchers;
 import com.kapcb.ccc.common.filter.KapcbLoginFilter;
-import com.kapcb.ccc.common.realm.JwtRealm;
-import com.kapcb.ccc.common.realm.UserRealm;
+import com.kapcb.ccc.common.shiro.JwtRealm;
+import com.kapcb.ccc.common.shiro.UserRealm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.credential.CredentialsMatcher;

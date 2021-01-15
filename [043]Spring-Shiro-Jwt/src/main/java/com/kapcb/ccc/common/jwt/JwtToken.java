@@ -1,6 +1,6 @@
-package com.kapcb.ccc.common.bean;
+package com.kapcb.ccc.common.jwt;
 
-import com.kapcb.ccc.common.utils.JwtUtil;
+import com.kapcb.ccc.common.jwt.JwtUtil;
 import org.apache.shiro.authc.AuthenticationToken;
 
 /**

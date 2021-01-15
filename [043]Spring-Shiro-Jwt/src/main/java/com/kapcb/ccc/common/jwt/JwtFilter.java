@@ -1,7 +1,5 @@
-package com.kapcb.ccc.common.filter;
+package com.kapcb.ccc.common.jwt;
 
-import com.kapcb.ccc.common.bean.JwtToken;
-import com.kapcb.ccc.common.utils.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;

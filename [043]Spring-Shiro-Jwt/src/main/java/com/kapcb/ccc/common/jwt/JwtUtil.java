@@ -1,4 +1,4 @@
-package com.kapcb.ccc.common.utils;
+package com.kapcb.ccc.common.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator.Builder;

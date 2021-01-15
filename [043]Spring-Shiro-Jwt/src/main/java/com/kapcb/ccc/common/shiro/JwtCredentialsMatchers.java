@@ -1,15 +1,14 @@
-package com.kapcb.ccc.common.credentials;
+package com.kapcb.ccc.common.shiro;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.kapcb.ccc.common.utils.JwtUtil;
+import com.kapcb.ccc.common.jwt.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
-import org.apache.shiro.util.SimpleByteSource;
 import org.springframework.stereotype.Component;
 
 /**

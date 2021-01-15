@@ -1,10 +1,9 @@
-package com.kapcb.ccc.common.realm;
+package com.kapcb.ccc.common.shiro;
 
-import com.kapcb.ccc.common.bean.JwtToken;
-import com.kapcb.ccc.common.credentials.JwtCredentialsMatchers;
+import com.kapcb.ccc.common.jwt.JwtToken;
+import com.kapcb.ccc.common.shiro.JwtCredentialsMatchers;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AccountException;
