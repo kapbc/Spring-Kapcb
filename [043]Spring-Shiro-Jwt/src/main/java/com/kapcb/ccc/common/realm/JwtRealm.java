@@ -1,6 +1,7 @@
 package com.kapcb.ccc.common.realm;
 
 import com.kapcb.ccc.common.bean.JwtToken;
+import com.kapcb.ccc.common.credentials.JwtCredentialsMatchers;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +18,10 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -34,10 +37,17 @@ import java.util.Set;
  */
 @Slf4j
 @Component
-@RequiredArgsConstructor
 public class JwtRealm extends AuthorizingRealm {
 
-    private final IUserService userService;
+    @Autowired
+    private IUserService userService;
+    @Autowired
+    private JwtCredentialsMatchers jwtCredentialsMatchers;
+
+    @PostConstruct
+    public void initConfig() {
+        setCredentialsMatcher(jwtCredentialsMatchers);
+    }
 
     /**
      * 限定这个 Realm 只处理定义的 JwtToken

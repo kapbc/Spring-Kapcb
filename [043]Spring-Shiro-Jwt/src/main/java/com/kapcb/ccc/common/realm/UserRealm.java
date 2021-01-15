@@ -15,9 +15,9 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.util.Objects;
 
 /**
@@ -31,17 +31,10 @@ import java.util.Objects;
  */
 @Slf4j
 @Component
-@RequiredArgsConstructor
 public class UserRealm extends AuthorizingRealm {
 
-    private final IUserService userService;
-    private final JwtCredentialsMatchers kapcbCredentialsMatchers;
-
-    @PostConstruct
-    public void initConfig() {
-        setCredentialsMatcher(kapcbCredentialsMatchers);
-        setCachingEnabled(true);
-    }
+    @Autowired
+    private IUserService userService;
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {

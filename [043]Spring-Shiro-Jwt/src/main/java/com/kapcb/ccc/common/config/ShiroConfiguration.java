@@ -1,9 +1,13 @@
 package com.kapcb.ccc.common.config;
 
+import com.kapcb.ccc.common.credentials.JwtCredentialsMatchers;
 import com.kapcb.ccc.common.filter.KapcbLoginFilter;
+import com.kapcb.ccc.common.realm.JwtRealm;
 import com.kapcb.ccc.common.realm.UserRealm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authc.credential.CredentialsMatcher;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authc.pam.FirstSuccessfulStrategy;
 import org.apache.shiro.authc.pam.ModularRealmAuthenticator;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
@@ -52,9 +56,9 @@ public class ShiroConfiguration {
     private final KapcbLoginFilter kapcbLoginFilter;
 
     @Bean
-    public SecurityManager securityManager(UserRealm userRealm) {
+    public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        securityManager.setRealm(userRealm);
+        securityManager.setRealm(userRealm());
         return securityManager;
     }
 
@@ -119,6 +123,9 @@ public class ShiroConfiguration {
     @Bean
     public ModularRealmAuthenticator authenticator() {
         ModularRealmAuthenticator modularRealmAuthenticator = new ModularRealmAuthenticator();
+        /**
+         * 设置多 Realm的认证策略，默认 AtLeastOneSuccessfulStrategy
+         */
         FirstSuccessfulStrategy firstSuccessfulStrategy = new FirstSuccessfulStrategy();
         modularRealmAuthenticator.setAuthenticationStrategy(firstSuccessfulStrategy);
         return modularRealmAuthenticator;
@@ -136,4 +143,44 @@ public class ShiroConfiguration {
         return defaultSessionStorageEvaluator;
     }
 
+    /**
+     * JwtRealm 配置，需实现 Realm 接口
+     *
+     * @return
+     */
+    @Bean
+    public JwtRealm jwtRealm() {
+        JwtRealm jwtRealm = new JwtRealm();
+        /**
+         * 设置加密算法
+         */
+        CredentialsMatcher credentialsMatcher = new JwtCredentialsMatchers();
+        /**
+         * 设置加密次数
+         */
+        jwtRealm.setCredentialsMatcher(credentialsMatcher);
+        return jwtRealm;
+
+    }
+
+    /**
+     * JwtRealm 配置，需实现 Realm 接口
+     *
+     * @return
+     */
+    @Bean
+    public UserRealm userRealm() {
+        UserRealm userRealm = new UserRealm();
+        /**
+         * 设置加密算法
+         */
+        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher("SHA-1");
+
+        /**
+         * 设置加密次数
+         */
+        hashedCredentialsMatcher.setHashIterations(16);
+        userRealm.setCredentialsMatcher(hashedCredentialsMatcher);
+        return userRealm;
+    }
 }
