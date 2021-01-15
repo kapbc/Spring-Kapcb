@@ -1,7 +1,6 @@
 package com.kapcb.ccc.controller;
 
 import com.kapcb.ccc.common.bean.Result;
-import com.kapcb.ccc.common.constants.ResultInfo;
 import com.kapcb.ccc.common.utils.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.ShiroException;
