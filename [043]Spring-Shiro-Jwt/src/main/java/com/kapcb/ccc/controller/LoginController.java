@@ -77,8 +77,8 @@ public class LoginController {
         Subject subject = SecurityUtils.getSubject();
         if (subject.isAuthenticated()) {
             subject.logout();
-            return JsonUtil.convertObjectToJsonString(new Result<>(ResultInfo.SUCCESS));
+            return JsonUtil.convertObjectToJsonString(new Result<>(ResultInfo.LOGOUT_SUCCESS));
         }
-        return JsonUtil.convertObjectToJsonString(new Result<>(ResultInfo.FAIL));
+        return JsonUtil.convertObjectToJsonString(new Result<>(ResultInfo.UN_LOGIN_LOGOUT));
     }
 }

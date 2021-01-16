@@ -19,7 +19,9 @@ public enum ResultInfo {
     LOGIN_FAIL("login fail", "202"),
     LOGIN_ERROR("username or password error", "203"),
     LOGIN_EXCEPTION("account login exception", "204"),
-    LOGIN_LOCKED("account locked", "205");
+    LOGIN_LOCKED("account locked", "205"),
+    LOGOUT_SUCCESS("logout success", "206"),
+    UN_LOGIN_LOGOUT("please login first", "207");
 
     private String message;
     private String code;

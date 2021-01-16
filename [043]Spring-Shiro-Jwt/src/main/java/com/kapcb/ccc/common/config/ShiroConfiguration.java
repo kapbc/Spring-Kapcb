@@ -1,5 +1,6 @@
 package com.kapcb.ccc.common.config;
 
+import com.kapcb.ccc.common.jwt.JwtFilter;
 import com.kapcb.ccc.common.shiro.JwtCredentialsMatchers;
 import com.kapcb.ccc.common.filter.KapcbLoginFilter;
 import com.kapcb.ccc.common.shiro.JwtRealm;
@@ -11,8 +12,10 @@ import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authc.pam.FirstSuccessfulStrategy;
 import org.apache.shiro.authc.pam.ModularRealmAuthenticator;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
+import org.apache.shiro.mgt.DefaultSubjectDAO;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.mgt.SessionStorageEvaluator;
+import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -23,8 +26,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.Filter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -45,22 +50,15 @@ public class ShiroConfiguration {
     private static final int INITIAL_CAPACITY = 4;
     private static final String AUTHC = "authc";
     private static final String ANON = "anon";
-    private static final String LOGIN_URL = "/kapcb/shiro/v2/login";
-    private static final String LOGOUT_URL = "/kapcb/shiro/v2/logout";
-    private static final String USER_INFO_URL = "/kapcb/shiro/v2/getUserInfo";
-    private static final String UN_LOGIN_URL = "/kapcb/shiro/v2/**";
-    private static final String LOGIN_PAGE_URL = "/kapcb/shiro/v2/page";
-    private static final String UN_AUTHOR_URL = "/kapcb/shiro/v2/";
-    private static final String LOGIN_SUCCESS_URL = "/kapcb/shiro/v2/see";
+    private static final String LOGIN_URL = "/kapcb/shiro/login";
+    private static final String LOGOUT_URL = "/kapcb/shiro/logout";
+    private static final String USER_INFO_URL = "/kapcb/shiro/getUserInfo";
+    private static final String UN_LOGIN_URL = "/kapcb/shiro/**";
+    private static final String LOGIN_PAGE_URL = "/kapcb/shiro/page";
+    private static final String UN_AUTHOR_URL = "/kapcb/shiro/";
+    private static final String LOGIN_SUCCESS_URL = "/kapcb/shiro/see";
 
     private final KapcbLoginFilter kapcbLoginFilter;
-
-    @Bean
-    public SecurityManager securityManager() {
-        DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        securityManager.setRealm(userRealm());
-        return securityManager;
-    }
 
     /**
      * 交由 Spring 来自动管理 Shiro-Bean 的生命周期
@@ -78,8 +76,10 @@ public class ShiroConfiguration {
      * @return AuthorizationAttributeSourceAdvisor
      */
     @Bean
-    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor() {
-        return new AuthorizationAttributeSourceAdvisor();
+    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager) {
+        AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
+        authorizationAttributeSourceAdvisor.setSecurityManager(securityManager);
+        return authorizationAttributeSourceAdvisor;
     }
 
     /**
@@ -94,7 +94,17 @@ public class ShiroConfiguration {
         return proxyCreator;
     }
 
+    public JwtFilter jwtFilter() {
+        return new JwtFilter();
+    }
 
+
+    /**
+     * 配置访问资源需要的权限
+     *
+     * @param securityManager SecurityManager
+     * @return ShiroFilterFactoryBean
+     */
     @Bean(name = "shiroFilter")
     public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
@@ -146,7 +156,7 @@ public class ShiroConfiguration {
     /**
      * JwtRealm 配置，需实现 Realm 接口
      *
-     * @return
+     * @return JwtRealm
      */
     @Bean
     public JwtRealm jwtRealm() {
@@ -164,9 +174,9 @@ public class ShiroConfiguration {
     }
 
     /**
-     * JwtRealm 配置，需实现 Realm 接口
+     * UserRealm 配置，需实现 Realm 接口
      *
-     * @return
+     * @return UserRealm
      */
     @Bean
     public UserRealm userRealm() {
@@ -182,5 +192,29 @@ public class ShiroConfiguration {
         hashedCredentialsMatcher.setHashIterations(16);
         userRealm.setCredentialsMatcher(hashedCredentialsMatcher);
         return userRealm;
+    }
+
+    @Bean
+    public SecurityManager securityManager() {
+        DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
+        /**
+         * Authenticator
+         */
+        securityManager.setAuthenticator(authenticator());
+
+        /**
+         * Realm
+         */
+        List<Realm> realms = new ArrayList<>(16);
+        realms.add(jwtRealm());
+        realms.add(userRealm());
+        securityManager.setRealms(realms);
+
+        /**
+         * 关闭 Shiro 自带的 Session
+         */
+        DefaultSubjectDAO defaultSubjectDAO = new DefaultSubjectDAO();
+        defaultSubjectDAO.setSessionStorageEvaluator(sessionStorageEvaluator());
+        return securityManager;
     }
 }
