@@ -19,8 +19,8 @@ public class JwtToken implements AuthenticationToken {
     /**
      * 加密之后的 token 串
      */
-    private String token;
-    private String username;
+    private final String token;
+    private final String username;
 
     public JwtToken(String token) {
         this.token = token;

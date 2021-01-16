@@ -21,6 +21,7 @@ import java.util.Objects;
  * <a>Title: JwtFilter </a>
  * <a>Author: kapcb <a>
  * <a>Description: <a>
+ * <p>
  * 自定义的认证过滤器，用来拦截Header中携带 JWT token的请求
  *
  * @author kapcb
@@ -60,6 +61,9 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
      */
     @Override
     protected void postHandle(ServletRequest request, ServletResponse response) throws Exception {
+        /**
+         * 添加跨域支持
+         */
         this.fillCorsHeader(WebUtils.toHttp(request), WebUtils.toHttp(response));
     }
 
@@ -76,6 +80,9 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
      */
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
+        /**
+         * 原用来判断是否是登录请求，在本例中不会拦截登录请求，用来检测Header中是否包含 JWT token 字段
+         */
         if (this.isLoginAttempt(request, response)) {
             return false;
         }

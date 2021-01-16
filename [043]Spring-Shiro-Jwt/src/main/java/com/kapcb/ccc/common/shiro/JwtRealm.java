@@ -1,7 +1,6 @@
 package com.kapcb.ccc.common.shiro;
 
 import com.kapcb.ccc.common.jwt.JwtToken;
-import com.kapcb.ccc.common.shiro.JwtCredentialsMatchers;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +19,6 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -40,13 +38,6 @@ public class JwtRealm extends AuthorizingRealm {
 
     @Autowired
     private IUserService userService;
-    @Autowired
-    private JwtCredentialsMatchers jwtCredentialsMatchers;
-
-    @PostConstruct
-    public void initConfig() {
-        setCredentialsMatcher(jwtCredentialsMatchers);
-    }
 
     /**
      * 限定这个 Realm 只处理定义的 JwtToken
@@ -61,13 +52,13 @@ public class JwtRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        String primaryPrincipal = (String) principalCollection.getPrimaryPrincipal();
-        if (StringUtils.isBlank(primaryPrincipal)) {
+        User user = (User) principalCollection.getPrimaryPrincipal();
+        if (Objects.equals(null, user)) {
             throw new UnknownAccountException("user is not login");
         }
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
-        Set<String> roles = new HashSet<>();
-        Set<String> permissions = new HashSet<>();
+        Set<String> roles = ShiroRealm.roleMap.get(user.getUsername());
+        Set<String> permissions = ShiroRealm.permissionMap.get(user.getUsername());
         simpleAuthorizationInfo.setRoles(roles);
         simpleAuthorizationInfo.setStringPermissions(permissions);
         return simpleAuthorizationInfo;
