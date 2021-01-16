@@ -2,10 +2,8 @@ package com.kapcb.ccc.common.config;
 
 import com.kapcb.ccc.common.jwt.JwtFilter;
 import com.kapcb.ccc.common.shiro.JwtCredentialsMatchers;
-import com.kapcb.ccc.common.filter.KapcbLoginFilter;
 import com.kapcb.ccc.common.shiro.JwtRealm;
-import com.kapcb.ccc.common.shiro.UserRealm;
-import lombok.RequiredArgsConstructor;
+import com.kapcb.ccc.common.shiro.ShiroRealm;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
@@ -44,7 +42,6 @@ import java.util.Map;
 @Slf4j
 @Component
 @Configuration
-@RequiredArgsConstructor
 public class ShiroConfiguration {
 
     private static final int INITIAL_CAPACITY = 4;
@@ -57,8 +54,6 @@ public class ShiroConfiguration {
     private static final String LOGIN_PAGE_URL = "/kapcb/shiro/page";
     private static final String UN_AUTHOR_URL = "/kapcb/shiro/";
     private static final String LOGIN_SUCCESS_URL = "/kapcb/shiro/see";
-
-    private final KapcbLoginFilter kapcbLoginFilter;
 
     /**
      * 交由 Spring 来自动管理 Shiro-Bean 的生命周期
@@ -94,10 +89,10 @@ public class ShiroConfiguration {
         return proxyCreator;
     }
 
+
     public JwtFilter jwtFilter() {
         return new JwtFilter();
     }
-
 
     /**
      * 配置访问资源需要的权限
@@ -113,7 +108,7 @@ public class ShiroConfiguration {
         shiroFilterFactoryBean.setUnauthorizedUrl(UN_AUTHOR_URL);
         shiroFilterFactoryBean.setSuccessUrl(LOGIN_SUCCESS_URL);
         Map<String, Filter> filterHashMap = new HashMap<>(INITIAL_CAPACITY);
-        filterHashMap.put(AUTHC, kapcbLoginFilter);
+        filterHashMap.put("jwtFilter", jwtFilter());
         shiroFilterFactoryBean.setFilters(filterHashMap);
         Map<String, String> filterChainMap = new LinkedHashMap<>();
         filterChainMap.put("/index.jsp", ANON);
@@ -179,8 +174,8 @@ public class ShiroConfiguration {
      * @return UserRealm
      */
     @Bean
-    public UserRealm userRealm() {
-        UserRealm userRealm = new UserRealm();
+    public ShiroRealm shiroRealm() {
+        ShiroRealm shiroRealm = new ShiroRealm();
         /**
          * 设置加密算法
          */
@@ -190,8 +185,8 @@ public class ShiroConfiguration {
          * 设置加密次数
          */
         hashedCredentialsMatcher.setHashIterations(16);
-        userRealm.setCredentialsMatcher(hashedCredentialsMatcher);
-        return userRealm;
+        shiroRealm.setCredentialsMatcher(hashedCredentialsMatcher);
+        return shiroRealm;
     }
 
     @Bean
@@ -207,7 +202,7 @@ public class ShiroConfiguration {
          */
         List<Realm> realms = new ArrayList<>(16);
         realms.add(jwtRealm());
-        realms.add(userRealm());
+        realms.add(shiroRealm());
         securityManager.setRealms(realms);
 
         /**
