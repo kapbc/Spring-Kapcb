@@ -89,7 +89,6 @@ public class ShiroConfiguration {
         return proxyCreator;
     }
 
-
     public JwtFilter jwtFilter() {
         return new JwtFilter();
     }

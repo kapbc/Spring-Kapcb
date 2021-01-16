@@ -82,7 +82,7 @@ public class JwtRealm extends AuthorizingRealm {
          * 从 JwtToken中获取当前用户
          */
         String username = jwtToken.getPrincipal().toString();
-        User user = userService.getUserByUsername(username);
+        User user = ShiroRealm.userMap.get(username);
         if (Objects.equals(null, user)) {
             throw new UnknownAccountException("Account is not exist");
         }
