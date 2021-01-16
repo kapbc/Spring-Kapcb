@@ -3,6 +3,7 @@ package com.kapcb.ccc.common.shiro;
 import com.kapcb.ccc.domain.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -11,8 +12,10 @@ import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.stereotype.Component;
 
@@ -84,12 +87,34 @@ public class ShiroRealm extends AuthorizingRealm {
 
     /**
      * 询数据库，将获取到的用户的角色及权限信息返回
+     *
      * @param principalCollection PrincipalCollection
      * @return AuthorizationInfo
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        return null;
+        /**
+         * 获取当前用户
+         */
+        Subject subject = SecurityUtils.getSubject();
+
+        /**
+         * User currentUser = (User) principalCollection.getPrimaryPrincipal();
+         */
+        User currentUser = (User) subject.getPrincipal();
+
+        /**
+         * 查询数据库，获取用户的角色信息
+         */
+        Set<String> roles = roleMap.get(currentUser.getUsername());
+        /**
+         * 查询数据库，获取用户的权限信息
+         */
+        Set<String> permissions = permissionMap.get(currentUser.getUsername());
+        SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
+        simpleAuthorizationInfo.setRoles(roles);
+        simpleAuthorizationInfo.setStringPermissions(permissions);
+        return simpleAuthorizationInfo;
     }
 
     /**
