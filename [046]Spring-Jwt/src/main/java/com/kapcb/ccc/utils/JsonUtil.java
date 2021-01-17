@@ -21,8 +21,11 @@ import java.util.Objects;
 @Slf4j
 public class JsonUtil {
 
+    private JsonUtil() {
+    }
+
     @SneakyThrows(JsonProcessingException.class)
-    public <T> String convertBeanToString(Result<T> result) {
+    public static <T> String convertBeanToString(Result<T> result) {
         result = Objects.equals(null, result) ? new Result<>(ResultInfo.FAIL) : result;
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(result);

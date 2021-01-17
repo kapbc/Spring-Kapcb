@@ -3,6 +3,7 @@ package com.kapcb.ccc.commons.config;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  */
 @Slf4j
 @Configuration
+@Import(WebConfiguration.class)
 public class ContextConfiguration {
 
     @Bean
@@ -25,4 +27,5 @@ public class ContextConfiguration {
         internalResourceViewResolver.setSuffix(".jsp");
         return internalResourceViewResolver;
     }
+
 }
