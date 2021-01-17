@@ -35,6 +35,7 @@
     <file type="web" url="file://$PROJECT_DIR$/[044]Spring-Validation" />
     <file type="web" url="file://$PROJECT_DIR$/[099]Spring-Utils" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-IoC-XmlBean" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring-Jwt" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Dubbo-Zookeeper" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-Porject-Admin" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Kapcb-QuickStart" />
@@ -126,6 +127,7 @@
         <option value="$PROJECT_DIR$/[043]Spring-Shiro-Jwt/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Validation/pom.xml" />
         <option value="$PROJECT_DIR$/[044]Spring-Validation/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-Jwt/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
