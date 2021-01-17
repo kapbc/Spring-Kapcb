@@ -7,7 +7,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="[045]Spring-Jwt" />
         <module name="[010]SpringMVC-HelloWorld" />
         <module name="[003]Spring-AOP" />
         <module name="[038]Spring-Schedule-Quartz" />
@@ -28,6 +27,7 @@
         <module name="[021]Spring-MyBatis-Param" />
         <module name="[012]SpringMVC-Annotations" />
         <module name="[002]Spring-IoC-XML" />
+        <module name="[046]Spring-Jwt" />
         <module name="[025]Spring-MyBatis-CRUD" />
         <module name="[020]Spring-MyBatis-Cascade" />
         <module name="[032]SSM-Email" />
@@ -85,6 +85,7 @@
       <module name="[043]Spring-Shiro-Jwt" target="8" />
       <module name="[044]Spring-Validation" target="8" />
       <module name="[045]Spring-Jwt" target="1.5" />
+      <module name="[046]Spring-Jwt" target="1.7" />
       <module name="[050]Spring-Dubbo-Consumer" target="1.5" />
       <module name="[051]Spring-Dubbo-Interface" target="1.5" />
       <module name="[052]Spring-Dubbo-Provider" target="1.5" />
