@@ -89,6 +89,7 @@ public class ShiroConfiguration {
         return proxyCreator;
     }
 
+    @Bean
     public JwtFilter jwtFilter() {
         return new JwtFilter();
     }
