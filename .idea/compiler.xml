@@ -85,7 +85,7 @@
       <module name="[043]Spring-Shiro-Jwt" target="8" />
       <module name="[044]Spring-Validation" target="8" />
       <module name="[045]Spring-Jwt" target="1.5" />
-      <module name="[046]Spring-Jwt" target="1.7" />
+      <module name="[046]Spring-Jwt" target="8" />
       <module name="[050]Spring-Dubbo-Consumer" target="1.5" />
       <module name="[051]Spring-Dubbo-Interface" target="1.5" />
       <module name="[052]Spring-Dubbo-Provider" target="1.5" />
