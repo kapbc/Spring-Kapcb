@@ -3,7 +3,6 @@ package com.kapcb.ccc.controller;
 import com.kapcb.ccc.commons.bean.Result;
 import com.kapcb.ccc.commons.bean.ResultInfo;
 import com.kapcb.ccc.commons.jwt.JwtUtil;
-import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import com.kapcb.ccc.utils.JsonUtil;
 import lombok.RequiredArgsConstructor;
@@ -32,12 +31,14 @@ public class LoginController {
     private final IUserService userService;
 
     @ResponseBody
-    @PostMapping(path = "/login", produces = "appliction/json;charset=UTF-8")
+    @PostMapping(path = "/login", produces = "application/json;charset=UTF-8")
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password) {
-        if (userService.getUserByUsername(username,password)) {
+        log.warn("username is : " + username + "; password is : " + password);
+        if (userService.getUserByUsername(username, password)) {
             // 生成token
             String token = JwtUtil.getToken("1", "Jersey-Security-Basic", username);
+            log.warn("token is : " + token);
             // 向浏览器返回token，客户端受到此token后存入cookie中，或者h5的本地存储中
             return JsonUtil.convertBeanToString(new Result<>(ResultInfo.SUCCESS, token));
         }
