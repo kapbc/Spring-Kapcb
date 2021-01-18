@@ -30,6 +30,13 @@ public class LoginController {
 
     private final IUserService userService;
 
+    /**
+     * http://localhost:8080/kapcb/login?username=kapcb&password=123456
+     *
+     * @param username String
+     * @param password String
+     * @return String
+     */
     @ResponseBody
     @PostMapping(path = "/login", produces = "application/json;charset=UTF-8")
     public String login(@RequestParam("username") String username,
