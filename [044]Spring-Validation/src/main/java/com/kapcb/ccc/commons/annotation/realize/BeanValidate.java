@@ -85,7 +85,7 @@ public class BeanValidate<T> {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("get");
-        sb.append(Character.toLowerCase(filedName.charAt(0)));
+        sb.append(Character.toUpperCase(filedName.charAt(0)));
         sb.append(filedName.substring(1));
         log.warn("the get method name is : " + sb.toString());
         return sb.toString();
