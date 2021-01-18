@@ -104,15 +104,15 @@ public class ShiroConfiguration {
     public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
-        shiroFilterFactoryBean.setLoginUrl(LOGIN_PAGE_URL);
         shiroFilterFactoryBean.setUnauthorizedUrl(UN_AUTHOR_URL);
+        shiroFilterFactoryBean.setLoginUrl(LOGIN_URL);
         shiroFilterFactoryBean.setSuccessUrl(LOGIN_SUCCESS_URL);
         Map<String, Filter> filterHashMap = new HashMap<>(INITIAL_CAPACITY);
         filterHashMap.put("jwtFilter", jwtFilter());
         shiroFilterFactoryBean.setFilters(filterHashMap);
         Map<String, String> filterChainMap = new LinkedHashMap<>();
         filterChainMap.put("/index.jsp", ANON);
-        filterChainMap.put(LOGIN_URL, ANON);
+        filterChainMap.put(LOGIN_URL, "jwtFilter");
         filterChainMap.put(LOGOUT_URL, ANON);
         filterChainMap.put(USER_INFO_URL, AUTHC);
         filterChainMap.put(UN_LOGIN_URL, ANON);
