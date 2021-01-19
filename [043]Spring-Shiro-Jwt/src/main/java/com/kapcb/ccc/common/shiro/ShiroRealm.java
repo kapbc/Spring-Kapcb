@@ -48,13 +48,13 @@ public class ShiroRealm extends AuthorizingRealm {
     public static Map<String, Set<String>> permissionMap = new HashMap<>(16);
 
     static {
-        User kapcb = new User(1L, "kapcb", "ccc", "123456", "eircccallroot@163.com", LocalDateTime.now(), 18, "N");
+        User kapcb = new User(1L, "graython", "ccc", "dd524c4c66076d1fa07e1fa1c94a91233772d132", "eircccallroot@163.com", LocalDateTime.now(), 18, "N");
         User ccc = new User(2L, "eric", "1234", "123456", "eircccallroot@126.com", LocalDateTime.now(), 18, "N");
 
-        userMap.put("kapcb", kapcb);
+        userMap.put("graython", kapcb);
         userMap.put("ccc", ccc);
 
-        roleMap.put("kapcb", new HashSet<String>() {
+        roleMap.put("graython", new HashSet<String>() {
             {
                 add("admin");
             }
@@ -102,6 +102,7 @@ public class ShiroRealm extends AuthorizingRealm {
          * User currentUser = (User) principalCollection.getPrimaryPrincipal();
          */
         User currentUser = (User) subject.getPrincipal();
+        log.warn("username is : " + currentUser.getUsername());
 
         /**
          * 查询数据库，获取用户的角色信息
@@ -134,7 +135,7 @@ public class ShiroRealm extends AuthorizingRealm {
          * 查询数据库获取用户信息, 此处使用 userMap 来模拟查询数据库
          */
         User user = userMap.get(username);
-
+        log.warn("current user's name is : " + user.getUsername());
         /**
          * 用户不存在
          */
