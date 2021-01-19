@@ -44,9 +44,26 @@ public class LoginController {
                         HttpServletResponse response) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+        boolean isAllowedLogin = false;
+        Result<Object> objectResult = null;
         try {
             subject.login(token);
+            isAllowedLogin = true;
             log.warn("login success");
+        } catch (UnknownAccountException e) {
+            log.error("The Login Account Is Not Exist", e);
+            objectResult = new Result<>(ResultInfo.LOGIN_ERROR);
+        } catch (IncorrectCredentialsException e) {
+            log.error("The Login Account Username Or Password error, the exception is : " + e.getMessage(), e);
+            objectResult = new Result<>(ResultInfo.LOGIN_ERROR);
+        } catch (LockedAccountException e) {
+            log.error("The Login Account is Locked, the exception is : " + e.getMessage(), e);
+            objectResult = new Result<>(ResultInfo.LOGIN_LOCKED);
+        } catch (AuthenticationException e) {
+            log.error("The Login Account is Login exception, the exception is : " + e.getMessage(), e);
+            objectResult = new Result<>(ResultInfo.LOGIN_EXCEPTION);
+        }
+        if (isAllowedLogin) {
             /**
              * 登录成功后签发 token
              */
@@ -55,20 +72,9 @@ public class LoginController {
              * 签发的 JWT token 设置到 HttpServletResponse 的 Header 中
              */
             response.setHeader(JwtUtil.AUTH_HEADER, jwtToken);
-            return JsonUtil.convertObjectToJsonString(new Result<>(ResultInfo.SUCCESS));
-        } catch (UnknownAccountException e) {
-            log.error("The Login Account Is Not Exist", e);
-            return JsonUtil.convertObjectToJsonString(new Result<>(ResultInfo.LOGIN_ERROR));
-        } catch (IncorrectCredentialsException e) {
-            log.error("The Login Account Username Or Password error, the exception is : " + e.getMessage(), e);
-            return JsonUtil.convertObjectToJsonString(new Result<>(ResultInfo.LOGIN_ERROR));
-        } catch (LockedAccountException e) {
-            log.error("The Login Account is Locked, the exception is : " + e.getMessage(), e);
-            return JsonUtil.convertObjectToJsonString(new Result<>(ResultInfo.LOGIN_LOCKED));
-        } catch (AuthenticationException e) {
-            log.error("The Login Account is Login exception, the exception is : " + e.getMessage(), e);
-            return JsonUtil.convertObjectToJsonString(new Result<>(ResultInfo.LOGIN_EXCEPTION));
+            objectResult = new Result<>(ResultInfo.SUCCESS);
         }
+        return JsonUtil.convertObjectToJsonString(objectResult);
     }
 
     @ResponseBody
