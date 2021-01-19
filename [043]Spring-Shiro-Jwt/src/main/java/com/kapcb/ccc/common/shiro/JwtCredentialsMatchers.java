@@ -8,6 +8,7 @@ import com.kapcb.ccc.common.jwt.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
 import org.springframework.stereotype.Component;
 
@@ -22,7 +23,7 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-public class JwtCredentialsMatchers extends SimpleCredentialsMatcher {
+public class JwtCredentialsMatchers implements CredentialsMatcher {
 
     /**
      * JwtCredentialsMatcher只需验证JwtToken内容是否合法
@@ -34,8 +35,8 @@ public class JwtCredentialsMatchers extends SimpleCredentialsMatcher {
     @Override
     public boolean doCredentialsMatch(AuthenticationToken authenticationToken, AuthenticationInfo authenticationInfo) {
         log.warn("process do credentials match");
-        String token = authenticationToken.getPrincipal().toString();
-        String username = authenticationInfo.getPrincipals().toString();
+        String token = authenticationToken.getCredentials().toString();
+        String username = authenticationToken.getPrincipal().toString();
         try {
             Algorithm algorithm = Algorithm.HMAC256(JwtUtil.CONFIDENTIAL);
             JWTVerifier verifier = JWT.require(algorithm).withClaim("username", username).build();

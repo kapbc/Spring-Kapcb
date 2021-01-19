@@ -172,7 +172,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
         httpServletResponse.setContentType("application/json; charset = UTF-8");
         httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
         PrintWriter writer = httpServletResponse.getWriter();
-        writer.write("{\"errCode\": 401, \"msg\": \"UNAUTHORIZED\"}");
+        writer.write("{\"code\": 401, \"message\": \"unauthorized\"}");
         fillCorsHeader(WebUtils.toHttp(request), httpServletResponse);
         return false;
     }
@@ -180,19 +180,19 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     /**
      * Shiro 利用 Jwt token 登录成功, 会进入该方法
      *
-     * @param token    AuthenticationToken
-     * @param subject  Subject
-     * @param request  ServletRequest
-     * @param response ServletResponse
+     * @param authenticationToken AuthenticationToken
+     * @param subject             Subject
+     * @param request             ServletRequest
+     * @param response            ServletResponse
      * @return boolean
      * @throws Exception Exception
      */
     @Override
-    protected boolean onLoginSuccess(AuthenticationToken token, Subject subject, ServletRequest request, ServletResponse response) throws Exception {
+    protected boolean onLoginSuccess(AuthenticationToken authenticationToken, Subject subject, ServletRequest request, ServletResponse response) throws Exception {
         HttpServletResponse httpServletResponse = WebUtils.toHttp(response);
         String newToken = null;
-        if (token instanceof JwtToken) {
-            newToken = JwtUtil.refreshTokenExpireTime(token.getPrincipal().toString(), JwtUtil.CONFIDENTIAL);
+        if (authenticationToken instanceof JwtToken) {
+            newToken = JwtUtil.refreshTokenExpireTime(authenticationToken.getCredentials().toString(), JwtUtil.CONFIDENTIAL);
         }
         if (!Objects.equals(null, newToken)) {
             httpServletResponse.setHeader(JwtUtil.AUTH_HEADER, newToken);
