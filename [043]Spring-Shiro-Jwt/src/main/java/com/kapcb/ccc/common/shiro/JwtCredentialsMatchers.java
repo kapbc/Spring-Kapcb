@@ -39,6 +39,7 @@ public class JwtCredentialsMatchers extends SimpleCredentialsMatcher {
         try {
             Algorithm algorithm = Algorithm.HMAC256(JwtUtil.CONFIDENTIAL);
             JWTVerifier verifier = JWT.require(algorithm).withClaim("username", username).build();
+            log.warn("the Jwt verifier is : " + verifier);
             verifier.verify(token);
             return true;
         } catch (JWTVerificationException e) {

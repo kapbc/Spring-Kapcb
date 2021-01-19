@@ -67,7 +67,7 @@ public class ShiroPasswordUtil {
     }
 
     public static void main(String[] args) {
-        ByteSource kapcb = ByteSource.Util.bytes("kapcb");
+        ByteSource kapcb = ByteSource.Util.bytes("eric");
         String s = ShiroPasswordUtil.passwordEncrypt("123456", kapcb);
         System.out.println("s = " + s);
         System.out.println(s.equals("1aa6a09b31689ae5f1cb3203a6abc68176336861"));

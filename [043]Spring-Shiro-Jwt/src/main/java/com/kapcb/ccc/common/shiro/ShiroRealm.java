@@ -52,7 +52,7 @@ public class ShiroRealm extends AuthorizingRealm {
      */
     static {
         User kapcb = new User(1L, "kapcb", "ccc", "1aa6a09b31689ae5f1cb3203a6abc68176336861", "eircccallroot@163.com", LocalDateTime.now(), 18, "N");
-        User ccc = new User(2L, "eric", "1234", "123456", "eircccallroot@126.com", LocalDateTime.now(), 18, "N");
+        User ccc = new User(2L, "eric", "1234", "466d290316e5d4fd47aa585069ad7b8e172d0ad3", "eircccallroot@126.com", LocalDateTime.now(), 18, "N");
 
         userMap.put("kapcb", kapcb);
         userMap.put("ccc", ccc);
@@ -63,7 +63,7 @@ public class ShiroRealm extends AuthorizingRealm {
             }
         });
 
-        roleMap.put("ccc", new HashSet<String>() {
+        roleMap.put("eric", new HashSet<String>() {
             {
                 add("guest");
             }
