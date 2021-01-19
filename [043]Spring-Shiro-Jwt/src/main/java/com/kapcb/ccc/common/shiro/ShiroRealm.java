@@ -47,14 +47,17 @@ public class ShiroRealm extends AuthorizingRealm {
     public static Map<String, Set<String>> roleMap = new HashMap<>(16);
     public static Map<String, Set<String>> permissionMap = new HashMap<>(16);
 
+    /**
+     * password : 123456
+     */
     static {
-        User kapcb = new User(1L, "graython", "ccc", "dd524c4c66076d1fa07e1fa1c94a91233772d132", "eircccallroot@163.com", LocalDateTime.now(), 18, "N");
+        User kapcb = new User(1L, "kapcb", "ccc", "1aa6a09b31689ae5f1cb3203a6abc68176336861", "eircccallroot@163.com", LocalDateTime.now(), 18, "N");
         User ccc = new User(2L, "eric", "1234", "123456", "eircccallroot@126.com", LocalDateTime.now(), 18, "N");
 
-        userMap.put("graython", kapcb);
+        userMap.put("kapcb", kapcb);
         userMap.put("ccc", ccc);
 
-        roleMap.put("graython", new HashSet<String>() {
+        roleMap.put("kapcb", new HashSet<String>() {
             {
                 add("admin");
             }
@@ -66,7 +69,7 @@ public class ShiroRealm extends AuthorizingRealm {
             }
         });
 
-        permissionMap.put("pulm", new HashSet<String>() {
+        permissionMap.put("eric", new HashSet<String>() {
             {
                 add("article:read");
             }
