@@ -2,7 +2,6 @@ package com.kapcb.ccc.common.shiro;
 
 import com.kapcb.ccc.common.jwt.JwtToken;
 import com.kapcb.ccc.domain.User;
-import com.kapcb.ccc.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AccountException;
@@ -16,10 +15,8 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -35,9 +32,6 @@ import java.util.Set;
 @Slf4j
 @Component
 public class JwtRealm extends AuthorizingRealm {
-
-    @Autowired
-    private IUserService userService;
 
     /**
      * 限定这个 Realm 只处理定义的 JwtToken
@@ -89,6 +83,6 @@ public class JwtRealm extends AuthorizingRealm {
         if (StringUtils.equals("Y", user.getStatus())) {
             throw new LockedAccountException("The account is locked, login reject");
         }
-        return new SimpleAuthenticationInfo(user.getUsername(), user.getPassword(), getName());
+        return new SimpleAuthenticationInfo(user, username, getName());
     }
 }

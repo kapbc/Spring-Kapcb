@@ -48,8 +48,8 @@ public class ShiroRealm extends AuthorizingRealm {
     public static Map<String, Set<String>> permissionMap = new HashMap<>(16);
 
     static {
-        User kapcb = new User(1L, "graython", "ccc", "dd524c4c66076d1fa07e1fa1c94a91233772d132", "eircccallroot@163.com", LocalDateTime.now(), 18, "N");
-        User ccc = new User(1L, "kapcb", "ccc", "cce369436bbb9f0325689a3a6d5d6b9b8a3f39a0", "eircccallroot@126.com", LocalDateTime.now(), 18, "N");
+        User kapcb = new User(1L, "kapcb", "ccc", "123456", "eircccallroot@163.com", LocalDateTime.now(), 18, "N");
+        User ccc = new User(2L, "eric", "1234", "123456", "eircccallroot@126.com", LocalDateTime.now(), 18, "N");
 
         userMap.put("kapcb", kapcb);
         userMap.put("ccc", ccc);
@@ -153,6 +153,7 @@ public class ShiroRealm extends AuthorizingRealm {
          * 使用用户名作为盐值
          */
         ByteSource credentialsSalt = ByteSource.Util.bytes(username);
+        log.warn("the credentialsSalt is : " + credentialsSalt);
 
         /**
          * 将获取到的用户数据封装成 AuthenticationInfo 对象返回，此处封装为 SimpleAuthenticationInfo 对象。

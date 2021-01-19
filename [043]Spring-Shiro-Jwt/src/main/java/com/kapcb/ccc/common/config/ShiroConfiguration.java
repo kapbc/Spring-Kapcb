@@ -89,7 +89,6 @@ public class ShiroConfiguration {
         return proxyCreator;
     }
 
-    @Bean
     public JwtFilter jwtFilter() {
         return new JwtFilter();
     }
@@ -105,17 +104,15 @@ public class ShiroConfiguration {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         shiroFilterFactoryBean.setUnauthorizedUrl(UN_AUTHOR_URL);
-        shiroFilterFactoryBean.setLoginUrl(LOGIN_URL);
+        shiroFilterFactoryBean.setLoginUrl("/kapcb/shiro/login");
         shiroFilterFactoryBean.setSuccessUrl(LOGIN_SUCCESS_URL);
         Map<String, Filter> filterHashMap = new HashMap<>(INITIAL_CAPACITY);
         filterHashMap.put("jwtFilter", jwtFilter());
         shiroFilterFactoryBean.setFilters(filterHashMap);
         Map<String, String> filterChainMap = new LinkedHashMap<>();
-        filterChainMap.put("/index.jsp", ANON);
-        filterChainMap.put(LOGIN_URL, "jwtFilter");
-        filterChainMap.put(LOGOUT_URL, ANON);
-        filterChainMap.put(USER_INFO_URL, AUTHC);
-        filterChainMap.put(UN_LOGIN_URL, ANON);
+        filterChainMap.put("/kapcb/shiro/login", "anon");
+        filterChainMap.put("/kapcb/shiro/logout", "anon");
+        filterChainMap.put("/kapcb/shiro/**", "jwtFilter,authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainMap);
         return shiroFilterFactoryBean;
     }
@@ -210,6 +207,7 @@ public class ShiroConfiguration {
          */
         DefaultSubjectDAO defaultSubjectDAO = new DefaultSubjectDAO();
         defaultSubjectDAO.setSessionStorageEvaluator(sessionStorageEvaluator());
+        securityManager.setSubjectDAO(defaultSubjectDAO);
         return securityManager;
     }
 }
