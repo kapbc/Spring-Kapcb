@@ -20,6 +20,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.Objects;
 import java.util.Set;
 
@@ -40,6 +41,13 @@ public class JwtRealm extends AuthorizingRealm {
     private final IUserService userService;
     private final IRoleService roleService;
     private final IPermissionService permissionService;
+    private final JwtCredentialsMatchers credentialsMatchers;
+
+    @PostConstruct
+    public void initConfig() {
+        setCredentialsMatcher(credentialsMatchers);
+        setCachingEnabled(true);
+    }
 
     @Override
     public boolean supports(AuthenticationToken token) {
