@@ -17,8 +17,9 @@ public enum Constant {
     JWT_USERNAME("username", "constant of the jwt claim"),
     JWT_AUTHORIZATION_HEARD("X-Authorization-With", "the key of the jwt heard"),
     JWT_SECRET("kapcb", "the secret key of the jwt"),
-    HTTP_RESPONSE_CONTENT_TYPE("application/json; charset = UTF-8", "http response content type");
+    HTTP_RESPONSE_CONTENT_TYPE("application/json; charset = UTF-8", "http response content type"),
 
+    SIXTEEN(16, "constant of 16");
 
     private String stringCode;
     private int intCode;
