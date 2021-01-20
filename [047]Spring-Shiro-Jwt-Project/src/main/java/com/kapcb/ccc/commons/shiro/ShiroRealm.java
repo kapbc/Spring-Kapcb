@@ -23,6 +23,7 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.Objects;
 import java.util.Set;
 
@@ -43,6 +44,11 @@ public class ShiroRealm extends AuthorizingRealm {
     private final IUserService userService;
     private final IRoleService roleService;
     private final IPermissionService permissionService;
+
+    @PostConstruct
+    public void initConfig() {
+        setCachingEnabled(true);
+    }
 
     @Override
     public boolean supports(AuthenticationToken token) {
