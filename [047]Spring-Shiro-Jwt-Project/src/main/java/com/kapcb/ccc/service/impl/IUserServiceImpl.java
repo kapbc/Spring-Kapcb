@@ -34,7 +34,7 @@ public class IUserServiceImpl implements IUserService {
 
     @Override
     public User getUserByUsername(String username) {
-        User user = USER_LIST.stream().filter(s -> Objects.equals(s.getUsername(), username)).findAny().orElseThrow(NoSuchElementException::new);
+        User user = USER_LIST.stream().filter(s -> Objects.equals(s.getUsername(), username)).findAny().orElseGet(User::new);
         log.warn("get the user of the username : " + username + " is : " + user);
         return user;
     }

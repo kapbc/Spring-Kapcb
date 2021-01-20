@@ -19,7 +19,9 @@ public enum Constant {
     JWT_SECRET("kapcb", "the secret key of the jwt"),
     HTTP_RESPONSE_CONTENT_TYPE("application/json; charset = UTF-8", "http response content type"),
 
-    SIXTEEN(16, "constant of 16");
+    Y("Y", "user account flag"),
+
+    SIXTEEN(16,"constant of 16");
 
     private String stringCode;
     private int intCode;
