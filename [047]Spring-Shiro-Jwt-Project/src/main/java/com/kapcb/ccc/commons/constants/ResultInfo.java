@@ -38,7 +38,7 @@ public enum ResultInfo {
         return this.message;
     }
 
-    public String code() {
+    public String getCode() {
         return this.code;
     }
 }
