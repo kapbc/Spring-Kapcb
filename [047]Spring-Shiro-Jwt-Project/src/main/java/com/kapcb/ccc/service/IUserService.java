@@ -37,4 +37,12 @@ public interface IUserService {
      * @return boolean
      */
     boolean deleteUserByUserId(String userId);
+
+    /**
+     * update user info by user id
+     *
+     * @param userId String
+     * @return boolean
+     */
+    boolean updateUserInfoByUserId(String userId);
 }
