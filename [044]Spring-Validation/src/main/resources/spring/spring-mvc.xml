@@ -10,4 +10,27 @@
     </context:component-scan>
 
     <mvc:annotation-driven/>
+
+    <!--配置基于注解的处理器适配器与处理器映射器-->
+    <mvc:annotation-driven conversion-service="conversionService" validator="validator"/>
+
+    <!--配置校验器-->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+        <property name="validationMessageSource" ref="messageSource"/>
+    </bean>
+
+    <!--校验错误信息配置-->
+    <!--加载错误信息定义的资源文件的类为ReloadableResourceBundleMessageSource，需要为其指定资源文件名beannames、资源文件编码格式fileEncodings，
+    以及资源文件内容的缓存时间cacheSeconds（单位为s）。可以在beannames配置中添加多个资源文件的配置信息，这里添加的是classpath下的名为“LoginValidationMessage”
+    的属性文件。文件编码格式设置为“utf-8”，而内容缓存时间设置为120s。-->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>classpath:properties/validation.properties</value>
+            </list>
+        </property>
+        <property name="fileEncodings" value="UTF-8"/>
+        <property name="cacheSeconds" value="120"/>
+    </bean>
 </beans>
