@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
@@ -28,8 +27,8 @@ public class IUserServiceImpl implements IUserService {
     private static final List<User> USER_LIST = new ArrayList<>(Constant.SIXTEEN.getInt());
 
     static {
-        USER_LIST.add(new User("kapcb", "", "eircccallroot@163.com", LocalDateTime.of(2021, 3, 11, 23, 59, 59), "Y"));
-        USER_LIST.add(new User("eirc", "", "eircccallroot@126.com", LocalDateTime.of(2022, 3, 11, 23, 59, 59), "Y"));
+        USER_LIST.add(new User(66666L, "kapcb", "", "eircccallroot@163.com", LocalDateTime.of(2021, 3, 11, 23, 59, 59), "Y"));
+        USER_LIST.add(new User(88888L, "eirc", "", "eircccallroot@126.com", LocalDateTime.of(2022, 3, 11, 23, 59, 59), "Y"));
     }
 
     @Override
@@ -37,5 +36,15 @@ public class IUserServiceImpl implements IUserService {
         User user = USER_LIST.stream().filter(s -> Objects.equals(s.getUsername(), username)).findAny().orElseGet(User::new);
         log.warn("get the user of the username : " + username + " is : " + user);
         return user;
+    }
+
+    @Override
+    public List<User> getUserInfoList() {
+        return USER_LIST;
+    }
+
+    @Override
+    public boolean deleteUserByUserId(String userId) {
+        return USER_LIST.stream().map(User::getUserId).anyMatch(Long.valueOf(userId)::equals);
     }
 }
