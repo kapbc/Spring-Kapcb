@@ -1,10 +1,13 @@
 package com.kapcb.ccc.domain;
 
-import com.kapcb.ccc.commons.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -24,23 +27,29 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 3729465563549435839L;
 
-    @Nullable
+    @NotNull(message = "{user.id.not.null}")
+    @Size(min = 4, max = 8, message = "{user.id.out.of.bound}")
     private Long userId;
 
-    @Nullable
+    @NotNull(message = "{user.name.not.null}")
+    @Size(min = 4, max = 6, message = "{user.name.out.of.bound}")
     private String username;
 
-    @Nullable
+    @NotNull(message = "{user.password.not.null}")
+    @Size(max = 4, min = 12, message = "{password.out.of.bound}")
     private String password;
 
-    @Nullable
+    @NotNull(message = "{user.email.not.null}")
+    @Email(message = "{email.illegal.formatter}")
     private String email;
 
-    @Nullable
+    @NotNull(message = "{user.age.not.null}")
+    @Size(min = 1, max = 4, message = "{user.age.out.of.bound}")
     private int age;
 
-    @Nullable
-
+    @NotNull(message = "{user.status.not.null}")
+    @Max(value = 1, message = "{user.status.out.of.bound}")
     private String status;
+
     private LocalDateTime birthday;
 }
