@@ -46,7 +46,7 @@ public class LoginController {
         log.warn("username is : " + username + "; password is : " + password);
         UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, password);
         boolean isAllowLogin = false;
-        Result<Object> result = null;
+        Result<Object> result = new Result<>(ResultInfo.LOGIN_FAIL);
         try {
             Subject subject = SecurityUtils.getSubject();
             subject.login(usernamePasswordToken);
@@ -67,6 +67,7 @@ public class LoginController {
         }
         log.warn("the flag of is allow login is : " + isAllowLogin);
         if (isAllowLogin) {
+            result = new Result<>(ResultInfo.LOGIN_SUCCESS);
             String sign = JwtUtil.sign(username, Constant.JWT_SECRET.getString());
             responses.setHeader(Constant.JWT_AUTHORIZATION_HEARD.getString(), sign);
         }
