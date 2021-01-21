@@ -43,8 +43,29 @@ public class IUserServiceImpl implements IUserService {
         return USER_LIST;
     }
 
+    /**
+     * JUST FOR TEST THE DATA
+     * just for simulation the data form DB
+     * if is the real development scene, no need to convert the Type of arguments userId
+     *
+     * @param userId String
+     * @return boolean
+     */
     @Override
     public boolean deleteUserByUserId(String userId) {
+        return USER_LIST.stream().map(User::getUserId).anyMatch(Long.valueOf(userId)::equals);
+    }
+
+    /**
+     * JUST FOR TEST THE DATA
+     * just for simulation the data form DB
+     * if is the real development scene, no need to convert the Type of arguments userId
+     *
+     * @param userId String
+     * @return boolean
+     */
+    @Override
+    public boolean updateUserInfoByUserId(String userId) {
         return USER_LIST.stream().map(User::getUserId).anyMatch(Long.valueOf(userId)::equals);
     }
 }
