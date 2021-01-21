@@ -26,9 +26,12 @@ public class IUserServiceImpl implements IUserService {
 
     private static final List<User> USER_LIST = new ArrayList<>(Constant.SIXTEEN.getInt());
 
+    /**
+     * password are all self username
+     */
     static {
-        USER_LIST.add(new User(66666L, "kapcb", "", "eircccallroot@163.com", LocalDateTime.of(2021, 3, 11, 23, 59, 59), "Y"));
-        USER_LIST.add(new User(88888L, "eirc", "", "eircccallroot@126.com", LocalDateTime.of(2022, 3, 11, 23, 59, 59), "Y"));
+        USER_LIST.add(new User(66666L, "kapcb", "a41587a431d850b599202e277550600cee431c39", "eircccallroot@163.com", LocalDateTime.of(2021, 3, 11, 23, 59, 59), "Y"));
+        USER_LIST.add(new User(88888L, "eirc", "b3375cff8041d5ce62104ecd74e2b253afbe437c", "eircccallroot@126.com", LocalDateTime.of(2022, 3, 11, 23, 59, 59), "Y"));
     }
 
     @Override

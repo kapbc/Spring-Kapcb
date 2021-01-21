@@ -3,6 +3,7 @@ package com.kapcb.ccc.commons.utils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.util.ByteSource;
 
 /**
  * <a>Title: JwtPasswordEncrpyUtil </a>
@@ -42,6 +43,14 @@ public class JwtEncryptUtil {
         String encrypt = new SimpleHash(PWD_ALGORITHM_NAME, password, salt, PWD_HASH_ITERATIONS).toString();
         log.warn("the encrypt password is : " + encrypt);
         return encrypt;
+    }
+
+    public static void main(String[] args) {
+        String password = "eirc";
+        String encryptSalt = ByteSource.Util.bytes(password).toString();
+
+        String encryptPassword = passwordEncrypt(password, encryptSalt);
+        System.out.println("encryptPassword = " + encryptPassword);
     }
 
 }
