@@ -2,6 +2,7 @@ package com.kapcb.ccc.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -15,6 +16,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Slf4j
 @Controller
-@RequestMapping("/kapcb")
+@RequestMapping(path = "/kapcb/sys")
 public class SystemController {
+
+    @GetMapping(path = "/login")
+    public String toLoginPage() {
+        log.warn("begin to login page");
+        return "login";
+    }
+
+    @GetMapping(path = "/success")
+    public String toSuccessPage() {
+        log.warn("begin to login success page");
+        return "success";
+    }
+
+    @GetMapping(path = "/fail")
+    public String toFailPage() {
+        log.warn("begin to login fail page");
+        return "loginFail";
+    }
 }
