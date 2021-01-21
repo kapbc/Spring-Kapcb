@@ -111,6 +111,9 @@ public class ShiroConfiguration {
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         filterChainDefinitionMap.put("/kapcb/login", "anon");
         filterChainDefinitionMap.put("/kapcb/logout", "anon");
+        filterChainDefinitionMap.put("/kapcb/sys/fail", "anon");
+        filterChainDefinitionMap.put("/kapcb/sys/login", "anon");
+        filterChainDefinitionMap.put("/kapcb/sys/success", "anon");
         filterChainDefinitionMap.put("/kapcb/**", "jwtFilter,authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
