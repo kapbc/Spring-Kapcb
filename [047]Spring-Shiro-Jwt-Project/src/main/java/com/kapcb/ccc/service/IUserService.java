@@ -2,6 +2,8 @@ package com.kapcb.ccc.service;
 
 import com.kapcb.ccc.commons.domain.User;
 
+import java.util.List;
+
 /**
  * <a>Title: IUserService </a>
  * <a>Author: kapcb <a>
@@ -20,4 +22,19 @@ public interface IUserService {
      * @return User
      */
     User getUserByUsername(String username);
+
+    /**
+     * get user info list
+     *
+     * @return List<User>
+     */
+    List<User> getUserInfoList();
+
+    /**
+     * delete user by user id
+     *
+     * @param userId String
+     * @return boolean
+     */
+    boolean deleteUserByUserId(String userId);
 }
