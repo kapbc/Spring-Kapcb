@@ -36,6 +36,8 @@
     <file type="web" url="file://$PROJECT_DIR$/[045]Spring-Shiro-Jwt-Project/[045]Spring-Shiro-Jwt-Project" />
     <file type="web" url="file://$PROJECT_DIR$/[046]Spring-Jwt" />
     <file type="web" url="file://$PROJECT_DIR$/[047]Spring-Shiro-Jwt-Project" />
+    <file type="web" url="file://$PROJECT_DIR$/[048]Spring-Shiro-Jwt-1/[048]Spring-Shiro-Jwt-1" />
+    <file type="web" url="file://$PROJECT_DIR$/[049]SpringMVC-Shiro-Jwt" />
     <file type="web" url="file://$PROJECT_DIR$/[099]Spring-Utils" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-IoC-XmlBean" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Jwt" />
@@ -133,6 +135,8 @@
         <option value="$PROJECT_DIR$/[046]Spring-Jwt/pom.xml" />
         <option value="$PROJECT_DIR$/[045]Spring-Shiro-Jwt-Project/[045]Spring-Shiro-Jwt-Project/pom.xml" />
         <option value="$PROJECT_DIR$/[047]Spring-Shiro-Jwt-Project/pom.xml" />
+        <option value="$PROJECT_DIR$/[048]Spring-Shiro-Jwt-1/[048]Spring-Shiro-Jwt-1/pom.xml" />
+        <option value="$PROJECT_DIR$/[049]SpringMVC-Shiro-Jwt/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
