@@ -27,8 +27,8 @@ public enum ResultInfo {
     UN_LOGIN_LOGOUT("un login request the logout", "208");
 
 
-    private String message;
-    private String code;
+    private final String message;
+    private final String code;
 
     ResultInfo(String message, String code) {
         this.message = message;
