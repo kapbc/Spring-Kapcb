@@ -29,6 +29,7 @@ public class IRoleServiceImpl implements IRoleService {
     static {
         ROLE_MAP.put("kapcb", new HashSet<String>() {
             {
+                add("user");
                 add("admin");
                 add("author");
             }
