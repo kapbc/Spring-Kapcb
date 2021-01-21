@@ -31,11 +31,11 @@ public class JwtToken implements AuthenticationToken {
     @Override
 
     public Object getPrincipal() {
-        return null;
+        return this.username;
     }
 
     @Override
     public Object getCredentials() {
-        return null;
+        return this.token;
     }
 }

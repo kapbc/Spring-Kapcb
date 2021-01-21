@@ -79,8 +79,6 @@ public class JwtRealm extends AuthorizingRealm {
             log.error("the account is locked");
             throw new LockedAccountException("The username of : " + username + "'s account is locked");
         }
-        ByteSource encryptSalt = ByteSource.Util.bytes(username);
-        log.warn("the encryptSalt is : " + encryptSalt);
-        return new SimpleAuthenticationInfo(user, user.getPassword(), encryptSalt, getName());
+        return new SimpleAuthenticationInfo(user, user.getPassword(), getName());
     }
 }

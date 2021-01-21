@@ -83,7 +83,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
         /**
          * 原用来判断是否是登录请求，在本例中不会拦截登录请求，用来检测Header中是否包含 JWT token 字段
          */
-        if (this.isLoginAttempt(request, response)) {
+        if (this.isLoginRequest(request, response)) {
             return false;
         }
         boolean allowed = false;

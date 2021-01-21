@@ -3,7 +3,6 @@ package com.kapcb.ccc.commons.jwt;
 import com.kapcb.ccc.commons.constants.Constant;
 import com.kapcb.ccc.commons.utils.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.subject.Subject;
@@ -78,12 +77,13 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
      */
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
-        if (isLoginAttempt(request, response)) {
+        if (this.isLoginRequest(request, response)) {
             return false;
         }
         boolean allowed = false;
         try {
             allowed = executeLogin(request, response);
+            log.info("the token execute login result is : " + allowed);
         } catch (IllegalStateException e) {
             log.error("Not found any token, the exception is : " + e.getMessage());
         } catch (Exception e) {
@@ -143,7 +143,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
             throw new IllegalStateException(sb.toString());
         }
         try {
-            Subject subject = SecurityUtils.getSubject();
+            Subject subject = getSubject(request, response);
             subject.login(token);
             return onLoginSuccess(token, subject, request, response);
         } catch (AuthenticationException e) {
@@ -162,6 +162,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     protected AuthenticationToken createToken(ServletRequest request, ServletResponse response) {
         HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
         String header = httpServletRequest.getHeader(Constant.JWT_AUTHORIZATION_HEARD.getString());
+        log.warn("the request heard is : " + header);
         return new JwtToken(header);
     }
 

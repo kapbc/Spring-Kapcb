@@ -36,7 +36,7 @@ public class UserController {
     private final IUserService userService;
 
     @ResponseBody
-    @RequiresRoles("admin,user")
+    @RequiresRoles(value = {"admin", "user"})
     @RequiresPermissions("get:userInfo")
     @GetMapping(path = "/getUserInfoList", produces = "application/json; charset = UTF-8")
     public String getUserInfoList() {
