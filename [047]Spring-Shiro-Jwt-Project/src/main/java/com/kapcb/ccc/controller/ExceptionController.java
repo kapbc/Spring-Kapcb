@@ -1,5 +1,6 @@
 package com.kapcb.ccc.controller;
 
+import com.kapcb.ccc.commons.constants.Constant;
 import com.kapcb.ccc.commons.domain.Result;
 import com.kapcb.ccc.commons.utils.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -24,13 +25,13 @@ public class ExceptionController {
     public String handlerShiroException(ShiroException e) {
         log.warn("handler shiro exception in exception controller");
         log.warn("the exception message is : " + e.getMessage());
-        return JsonUtil.convertToJsonString(new Result<>(e.getMessage(), "401"));
+        return JsonUtil.convertToJsonString(new Result<>(e.getMessage(), Constant.FOUR_ZERO_ONE.getString()));
     }
 
     @ExceptionHandler(value = Exception.class)
     public String handlerSystemException(Exception e) {
         log.warn("handler system exception in exception controller");
         log.warn("the exception message is : " + e.getMessage());
-        return JsonUtil.convertToJsonString(new Result<>(e.getMessage(), "400"));
+        return JsonUtil.convertToJsonString(new Result<>(e.getMessage(), Constant.FOUR_ZERO_ZEO.getString()));
     }
 }
