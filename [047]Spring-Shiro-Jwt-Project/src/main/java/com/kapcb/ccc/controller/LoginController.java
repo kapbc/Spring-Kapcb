@@ -75,7 +75,7 @@ public class LoginController {
     }
 
     @ResponseBody
-    @GetMapping(path = "/logout", produces = "appllication/json; charset=UTF-8")
+    @GetMapping(path = "/logout", produces = "application/json; charset=UTF-8")
     public String logout() {
         log.warn("process the logout");
         Result<Object> result = new Result<>(ResultInfo.UN_LOGIN_LOGOUT);

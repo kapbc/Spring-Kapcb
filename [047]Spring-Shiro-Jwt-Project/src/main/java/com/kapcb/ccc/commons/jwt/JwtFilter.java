@@ -89,7 +89,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
         } catch (Exception e) {
             log.error("login error, the exception is : " + e.getMessage());
         }
-        return allowed || super.isAccessAllowed(request, response, mappedValue);
+        return allowed || super.isPermissive(mappedValue);
     }
 
     /**

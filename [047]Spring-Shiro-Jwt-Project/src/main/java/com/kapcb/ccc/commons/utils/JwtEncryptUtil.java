@@ -47,7 +47,7 @@ public class JwtEncryptUtil {
 
     public static void main(String[] args) {
         String password = "eirc";
-        String encryptSalt = ByteSource.Util.bytes(password).toString();
+        ByteSource encryptSalt = ByteSource.Util.bytes(password);
 
         String encryptPassword = passwordEncrypt(password, encryptSalt);
         System.out.println("encryptPassword = " + encryptPassword);

@@ -27,6 +27,6 @@ public class JwtCredentialsMatchers implements CredentialsMatcher {
         log.warn("the token of jwt credentials is : " + token);
         String username = authenticationToken.getPrincipal().toString();
         log.warn("the username of jwt credentials is : " + username);
-        return JwtUtil.verified(token, username, Constant.JWT_AUTHORIZATION_HEARD.getString());
+        return JwtUtil.verified(token, username, Constant.JWT_SECRET.getString());
     }
 }
