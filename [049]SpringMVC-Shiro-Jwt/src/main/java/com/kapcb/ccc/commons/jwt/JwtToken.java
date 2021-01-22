@@ -1,8 +1,7 @@
 package com.kapcb.ccc.commons.jwt;
 
-import lombok.AllArgsConstructor;
+import com.kapcb.ccc.commons.utils.jwt.JwtUtil;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.apache.shiro.authc.AuthenticationToken;
 
 /**
@@ -15,8 +14,6 @@ import org.apache.shiro.authc.AuthenticationToken;
  * @date 2021/1/21 22:54
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class JwtToken implements AuthenticationToken {
 
     private static final long serialVersionUID = 1187327171772380316L;
@@ -26,7 +23,7 @@ public class JwtToken implements AuthenticationToken {
 
     public JwtToken(String token) {
         this.token = token;
-        this.username =
+        this.username = JwtUtil.getClaim(token, "username");
     }
 
     @Override
