@@ -67,7 +67,7 @@ public class LoginController {
         if (loginSuccess) {
             String sign = JwtUtil.sign(username, Constants.JWT_SECRET.getString());
             log.info("the access token is : " + sign);
-            response.setHeader(Constants.JWT_SECRET.getString(), sign);
+            response.setHeader(Constants.JWT_AUTHORIZATION_HEARD.getString(), sign);
             result = new Result<>(ResultInfo.SUCCESS);
         }
         return JsonUtil.convertResultToJsonString(result);
