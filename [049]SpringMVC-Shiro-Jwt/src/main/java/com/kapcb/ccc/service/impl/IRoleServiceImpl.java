@@ -1,8 +1,12 @@
 package com.kapcb.ccc.service.impl;
 
+import com.kapcb.ccc.commons.pool.DataPool;
 import com.kapcb.ccc.service.IRoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * <a>Title: IRoleServiceImpl </a>
@@ -16,4 +20,12 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service(value = "roleService")
 public class IRoleServiceImpl implements IRoleService {
+
+    @Override
+    public Set<String> getRoleByUsername(String username) {
+        log.info("begin to process the get role by username");
+        Set<String> rolesSet = DataPool.roleMap.getOrDefault(username, new HashSet<>());
+        log.info("the roles of : " + username + " is : " + rolesSet);
+        return rolesSet;
+    }
 }
