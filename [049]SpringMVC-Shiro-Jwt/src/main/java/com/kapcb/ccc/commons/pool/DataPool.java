@@ -1,7 +1,5 @@
 package com.kapcb.ccc.commons.pool;
 
-import com.kapcb.ccc.commons.domain.Permission;
-import com.kapcb.ccc.commons.domain.Role;
 import com.kapcb.ccc.commons.domain.User;
 
 import java.time.LocalDateTime;
@@ -21,9 +19,12 @@ import java.util.Set;
  */
 public class DataPool {
 
-    private static final Map<String, User> userMap = new HashMap<>(16);
-    private static final Map<String, Set<Role>> roleMap = new HashMap<>(16);
-    private static final Map<String, Set<Permission>> permissionMap = new HashMap<>(16);
+    private DataPool() {
+    }
+
+    public static final Map<String, User> userMap = new HashMap<>(16);
+    public static final Map<String, Set<String>> roleMap = new HashMap<>(16);
+    public static final Map<String, Set<String>> permissionMap = new HashMap<>(16);
 
     static {
 
@@ -37,46 +38,46 @@ public class DataPool {
         userMap.put("ccc", new User("ccc", "", "N", "eircccallroot@yeah.net", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
 
 
-        roleMap.put("kapcb", new HashSet<Role>() {
+        roleMap.put("kapcb", new HashSet<String>() {
             {
-                add(new Role("kapcb", "admin"));
-                add(new Role("kapcb", "user"));
+                add("admin");
+                add("user");
             }
         });
 
-        roleMap.put("eirc", new HashSet<Role>() {
+        roleMap.put("eirc", new HashSet<String>() {
             {
-                add(new Role("eirc", "admin"));
+                add("admin");
             }
         });
 
-        roleMap.put("ccc", new HashSet<Role>() {
+        roleMap.put("ccc", new HashSet<String>() {
             {
-                add(new Role("ccc", "user"));
+                add("user");
             }
         });
 
-        permissionMap.put("kapcb", new HashSet<Permission>() {
+        permissionMap.put("kapcb", new HashSet<String>() {
             {
-                add(new Permission("kapcb", "get:userInfo"));
-                add(new Permission("kapcb", "delete:userInfo"));
-                add(new Permission("kapcb", "update:userInfo"));
-                add(new Permission("kapcb", "insert:userInfo"));
+                add("get:userInfo");
+                add("delete:userInfo");
+                add("update:userInfo");
+                add("insert:userInfo");
             }
         });
 
-        permissionMap.put("eirc", new HashSet<Permission>() {
+        permissionMap.put("eirc", new HashSet<String>() {
             {
-                add(new Permission("eirc", "get:userInfo"));
-                add(new Permission("eirc", "update:userInfo"));
-                add(new Permission("eirc", "insert:userInfo"));
+                add("get:userInfo");
+                add("update:userInfo");
+                add("insert:userInfo");
             }
         });
 
-        permissionMap.put("ccc", new HashSet<Permission>() {
+        permissionMap.put("ccc", new HashSet<String>() {
             {
-                add(new Permission("ccc", "get:userInfo"));
-                add(new Permission("ccc", "update:userInfo"));
+                add("get:userInfo");
+                add("update:userInfo");
             }
         });
     }
