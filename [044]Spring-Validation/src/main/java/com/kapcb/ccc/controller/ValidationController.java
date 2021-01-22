@@ -31,12 +31,9 @@ public class ValidationController {
 
     @ResponseBody
     @PostMapping
-    public String signUp(@Valid User user, BindingResult bindingResult) {
+    public String signUp(@Valid User user) {
         List<ObjectError> allErrorsInformation = null;
-        if (bindingResult.hasErrors()) {
-            allErrorsInformation = bindingResult.getAllErrors();
 
-        }
     }
 
 }

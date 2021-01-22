@@ -16,7 +16,9 @@
 
     <!--配置校验器-->
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <!-- 校验器 -->
         <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+        <!-- 指定校验使用的资源文件，如果不指定则默认使用classpath下的ValidationMessages.properties -->
         <property name="validationMessageSource" ref="messageSource"/>
     </bean>
 
@@ -25,12 +27,18 @@
     以及资源文件内容的缓存时间cacheSeconds（单位为s）。可以在beannames配置中添加多个资源文件的配置信息，这里添加的是classpath下的名为“LoginValidationMessage”
     的属性文件。文件编码格式设置为“utf-8”，而内容缓存时间设置为120s。-->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <!-- 资源文件名 -->
         <property name="basenames">
             <list>
-                <value>classpath:properties/validation.properties</value>
+                <value>classpath:properties.validation</value>
             </list>
         </property>
+        <!-- 资源文件编码格式 -->
         <property name="fileEncodings" value="UTF-8"/>
+        <!-- 对资源文件内容缓存时间，单位秒 -->
         <property name="cacheSeconds" value="120"/>
     </bean>
+
+    <!--自定义validationExceptionHandler错误信息返回, 给调用方的信息返回更加友好-->
+    <bean id="validationExceptionResolver" class="com.kapcb.ccc.commons.validation.ValidationExceptionResolver"/>
 </beans>
