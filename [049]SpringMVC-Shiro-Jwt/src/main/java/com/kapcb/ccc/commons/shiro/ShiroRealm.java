@@ -1,5 +1,6 @@
 package com.kapcb.ccc.commons.shiro;
 
+import com.kapcb.ccc.commons.constant.Constants;
 import com.kapcb.ccc.commons.domain.User;
 import com.kapcb.ccc.service.IPermissionService;
 import com.kapcb.ccc.service.IRoleService;
@@ -53,8 +54,8 @@ public class ShiroRealm extends AuthorizingRealm {
     @Bean
     private HashedCredentialsMatcher hashedCredentialsMatcher() {
         HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
-        hashedCredentialsMatcher.setHashAlgorithmName("SHA-1");
-        hashedCredentialsMatcher.setHashIterations(16);
+        hashedCredentialsMatcher.setHashAlgorithmName(Constants.SHIRO_REALM_ALGORITHM.getString());
+        hashedCredentialsMatcher.setHashIterations(Constants.SIXTEEN.getInt());
         return hashedCredentialsMatcher;
     }
 
