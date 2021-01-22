@@ -89,10 +89,10 @@ public class ShiroRealm extends AuthorizingRealm {
         User user = userService.getUserInfoByUsername(username);
         log.info("current user of username: " + username + " is : " + user);
         if (!StringUtils.equals(username, user.getUsername())) {
-            log.error("the username of " + username + " is not exist in sysytem");
-            throw new UnknownAccountException("username of " + username + " is not exist in sysytem");
+            log.error("the username of " + username + " is not exist in system");
+            throw new UnknownAccountException("username of " + username + " is not exist in system");
         }
-        if (StringUtils.equalsIgnoreCase("Y", user.getStatus())) {
+        if (StringUtils.equalsIgnoreCase(Constants.Y.getString(), user.getStatus())) {
             log.error("the account of " + username + "'s is locked");
             throw new LockedAccountException("the account is locked");
         }

@@ -15,9 +15,9 @@ import org.apache.shiro.crypto.hash.SimpleHash;
  * @date 2021/1/22-15:19
  */
 @Slf4j
-public class PasswrodEncryptUtil {
+public class PasswordEcryptUtil {
 
-    private PasswrodEncryptUtil() {
+    private PasswordEcryptUtil() {
     }
 
     public static String generateSaltEncrypt(String password) {

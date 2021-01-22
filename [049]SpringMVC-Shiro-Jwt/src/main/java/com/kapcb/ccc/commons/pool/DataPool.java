@@ -1,5 +1,6 @@
 package com.kapcb.ccc.commons.pool;
 
+import com.kapcb.ccc.commons.constant.Constants;
 import com.kapcb.ccc.commons.domain.User;
 
 import java.time.LocalDateTime;
@@ -17,14 +18,15 @@ import java.util.Set;
  * @version 1.0.0
  * @date 2021/1/22-9:48
  */
+@SuppressWarnings("serial")
 public class DataPool {
 
     private DataPool() {
     }
 
-    public static final Map<String, User> userMap = new HashMap<>(16);
-    public static final Map<String, Set<String>> roleMap = new HashMap<>(16);
-    public static final Map<String, Set<String>> permissionMap = new HashMap<>(16);
+    public static final Map<String, User> userMap = new HashMap<>(Constants.SIXTEEN.getInt());
+    public static final Map<String, Set<String>> roleMap = new HashMap<>(Constants.SIXTEEN.getInt());
+    public static final Map<String, Set<String>> permissionMap = new HashMap<>(Constants.SIXTEEN.getInt());
 
     static {
 

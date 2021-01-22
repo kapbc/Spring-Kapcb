@@ -9,6 +9,7 @@ import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.kapcb.ccc.commons.constant.Constants;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
@@ -49,7 +50,7 @@ public class JwtUtil {
         Algorithm algorithm = Algorithm.HMAC256(secret);
         Date expireDate = new Date(System.currentTimeMillis() + EXPIRE_TIME);
         log.info("the expire time is : " + expireDate);
-        String token = JWT.create().withClaim("usernam", username).withExpiresAt(expireDate).sign(algorithm);
+        String token = JWT.create().withClaim(Constants.JWT_USERNAME.getString(), username).withExpiresAt(expireDate).sign(algorithm);
         log.warn("the token is : " + token);
         return token;
     }
@@ -64,10 +65,9 @@ public class JwtUtil {
      */
     @SneakyThrows(value = {JWTVerificationException.class, JWTDecodeException.class})
     public static boolean verified(String username, String token, String secret) {
-        DecodedJWT jwt = JWT.decode(token);
         Algorithm algorithm = Algorithm.HMAC256(secret);
-        JWTVerifier jwtVerifier = JWT.require(algorithm).withClaim("username", username).build();
-        jwtVerifier.verify(jwt);
+        JWTVerifier jwtVerifier = JWT.require(algorithm).withClaim(Constants.JWT_USERNAME.getString(), username).build();
+        jwtVerifier.verify(token);
         return true;
     }
 
@@ -101,9 +101,7 @@ public class JwtUtil {
         Date expireDate = new Date(System.currentTimeMillis() + EXPIRE_TIME);
         log.info("the refresh expire time token's new expire time is : " + expireDate);
         Builder builder = JWT.create().withExpiresAt(expireDate);
-        claims.forEach((k, v) -> {
-            builder.withClaim(k, v.asString());
-        });
+        claims.forEach((k, v) -> builder.withClaim(k, v.asString()));
         String newRefreshToken = builder.sign(algorithm);
         log.info("new refresh token is : " + newRefreshToken);
         return newRefreshToken;
@@ -146,7 +144,7 @@ public class JwtUtil {
     public static String generateSalt() {
         SecureRandomNumberGenerator secureRandomNumberGenerator = new SecureRandomNumberGenerator();
         String salt = secureRandomNumberGenerator.nextBytes(16).toHex();
-        log.info("the jwtutil generate password encrypt salt is : " + salt);
+        log.info("the jwt util generate password encrypt salt is : " + salt);
         return salt;
     }
 }

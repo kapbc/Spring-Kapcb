@@ -11,14 +11,18 @@ package com.kapcb.ccc.commons.constant;
  */
 public enum ResultInfo {
 
+    /**
+     * api result
+     */
     SUCCESS("success", "200"),
     FAIL("fail", "201"),
     INVALID("invalid request", "202"),
-    LOCKED("account locked", "203"),
-    UN_LOGIN("need to login", "204");
+    EXCEPTION("system exception", "203"),
+    LOCKED("account locked", "204"),
+    UN_LOGIN("need to login", "205");
 
-    private String message;
-    private String code;
+    private final String message;
+    private final String code;
 
     ResultInfo(String message, String code) {
         this.message = message;

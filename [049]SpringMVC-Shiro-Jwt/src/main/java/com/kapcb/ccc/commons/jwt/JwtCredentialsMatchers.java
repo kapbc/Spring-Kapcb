@@ -1,5 +1,6 @@
 package com.kapcb.ccc.commons.jwt;
 
+import com.kapcb.ccc.commons.constant.Constants;
 import com.kapcb.ccc.commons.utils.jwt.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -24,6 +25,6 @@ public class JwtCredentialsMatchers implements CredentialsMatcher {
     public boolean doCredentialsMatch(AuthenticationToken authenticationToken, AuthenticationInfo authenticationInfo) {
         String token = authenticationToken.getCredentials().toString();
         String username = authenticationToken.getPrincipal().toString();
-        return JwtUtil.verified(username, token, "kapcb");
+        return JwtUtil.verified(username, token, Constants.JWT_SECRET.getString());
     }
 }
