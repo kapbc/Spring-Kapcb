@@ -14,11 +14,13 @@ import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -43,8 +45,17 @@ public class ShiroRealm extends AuthorizingRealm {
     private final IPermissionService permissionService;
 
     @PostConstruct
-    public void initJndi() {
+    public void initConfig() {
         setCachingEnabled(true);
+        setCredentialsMatcher(hashedCredentialsMatcher());
+    }
+
+    @Bean
+    private HashedCredentialsMatcher hashedCredentialsMatcher() {
+        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
+        hashedCredentialsMatcher.setHashAlgorithmName("SHA-1");
+        hashedCredentialsMatcher.setHashIterations(16);
+        return hashedCredentialsMatcher;
     }
 
     /**
