@@ -35,9 +35,10 @@ public class DataPool {
          * eirc: admin
          * ccc: user
          */
-        userMap.put("kapcb", new User(123456L, "kapcb", "", "N", "eircccallroot@163.com", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
-        userMap.put("eirc", new User(66666L, "eirc", "", "N", "eircccallroot@126.com", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
-        userMap.put("ccc", new User(88888L, "ccc", "", "N", "eircccallroot@yeah.net", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
+        userMap.put("kapcb", new User(123456L, "kapcb", "ed66cf5985a4b9d829dc59b9a53a67205b07fb7d", "N", "eircccallroot@163.com", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
+        userMap.put("eirc", new User(66666L, "eirc", "62a16e43eeb70ad6b8b56874fa04055929390b19", "N", "eircccallroot@126.com", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
+        userMap.put("ccc", new User(88888L, "ccc", "d2aecf87f5eb17e80d896d5125a5ea7cf0574f5b", "N", "eircccallroot@yeah.net", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
+        userMap.put("ccc", new User(88888L, "ddd", "defb28d0372e674d71d097238af2fb5a3722be50", "Y", "eircccallroot@yeah.net", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
 
 
         roleMap.put("kapcb", new HashSet<String>() {

@@ -4,6 +4,7 @@ import com.kapcb.ccc.commons.constant.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.util.ByteSource;
 
 /**
  * <a>Title: PasswrodEncryptUtil </a>
@@ -15,9 +16,9 @@ import org.apache.shiro.crypto.hash.SimpleHash;
  * @date 2021/1/22-15:19
  */
 @Slf4j
-public class PasswordEcryptUtil {
+public class PasswordEncryptUtil {
 
-    private PasswordEcryptUtil() {
+    private PasswordEncryptUtil() {
     }
 
     public static String generateSaltEncrypt(String password) {
@@ -43,4 +44,11 @@ public class PasswordEcryptUtil {
         log.info("the generate salt is : " + salt);
         return salt;
     }
+
+//    public static void main(String[] args) {
+//        String password = "ddd";
+//        ByteSource bytes = ByteSource.Util.bytes(password);
+//        String encrypt = encrypt(password, bytes);
+//        System.out.println("encrypt = " + encrypt);
+//    }
 }
