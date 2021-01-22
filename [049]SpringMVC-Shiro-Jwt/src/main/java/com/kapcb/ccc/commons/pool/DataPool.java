@@ -33,9 +33,9 @@ public class DataPool {
          * eirc: admin
          * ccc: user
          */
-        userMap.put("kapcb", new User("kapcb", "", "N", "eircccallroot@163.com", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
-        userMap.put("eirc", new User("eirc", "", "N", "eircccallroot@126.com", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
-        userMap.put("ccc", new User("ccc", "", "N", "eircccallroot@yeah.net", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
+        userMap.put("kapcb", new User(123456L, "kapcb", "", "N", "eircccallroot@163.com", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
+        userMap.put("eirc", new User(66666L, "eirc", "", "N", "eircccallroot@126.com", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
+        userMap.put("ccc", new User(88888L, "ccc", "", "N", "eircccallroot@yeah.net", LocalDateTime.of(1997, 3, 11, 12, 59, 59)));
 
 
         roleMap.put("kapcb", new HashSet<String>() {
