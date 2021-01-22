@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,7 +37,7 @@ public class IUserServiceImpl implements IUserService {
     public List<User> getUserInfo() {
         List<User> userList = DataPool.userMap.values().stream().collect(Collectors.toList());
         log.info("the user list is : " + userList);
-        return userList;
+        return userList == null ? Collections.emptyList() : userList;
     }
 
     @Override
