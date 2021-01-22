@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 /**
  * <a>Title: Uer </a>
  * <a>Author: kapcb <a>
@@ -16,11 +18,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Uer {
+public class User {
 
     private String username;
     private String password;
     private String status;
     private String email;
-    private String
+    private LocalDateTime birthday;
 }
