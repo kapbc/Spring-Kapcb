@@ -33,6 +33,8 @@
     <file url="file://$PROJECT_DIR$/[047]Spring-Shiro-Jwt-Project/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/[049]SpringMVC-Shiro-Jwt/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/[049]SpringMVC-Shiro-Jwt/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/[053]Spring-RateLimiter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/[053]Spring-RateLimiter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/[099]Spring-Utils/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/[099]Spring-Utils/src/main/resources" charset="UTF-8" />
   </component>
