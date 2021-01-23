@@ -34,7 +34,7 @@ public class RateLimitAop {
 
     private final HttpServletResponse response;
 
-    private final RateLimiter rateLimiter = RateLimiter.create(5.0);
+    private final RateLimiter rateLimiter = RateLimiter.create(1);
 
     @Pointcut(value = "@annotation(com.kapcb.ccc.commons.annotation.ApiRateLimit)")
     public void serviceLimit() {
