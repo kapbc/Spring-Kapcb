@@ -1,7 +1,6 @@
 package com.kapcb.ccc.controller;
 
 import com.kapcb.ccc.commons.annotation.ApiRateLimit;
-import com.sun.xml.internal.messaging.saaj.soap.SOAPVersionMismatchException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
