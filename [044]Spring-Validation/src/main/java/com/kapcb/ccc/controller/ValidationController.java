@@ -1,17 +1,16 @@
 package com.kapcb.ccc.controller;
 
 import com.kapcb.ccc.domain.User;
+import com.kapcb.ccc.service.IUserService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
-import java.util.List;
 
 /**
  * <a>Title: ValidationController </a>
@@ -25,15 +24,18 @@ import java.util.List;
 @Slf4j
 @Validated
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/validation")
 public class ValidationController {
 
+    private final IUserService userService;
 
     @ResponseBody
-    @PostMapping
+    @PostMapping(value = "/insert", produces = "application/json;charset = UTF-8")
     public String signUp(@Valid User user) {
-        List<ObjectError> allErrorsInformation = null;
-
+        boolean insert = userService.insert(user);
+        log.info("user insert result is : " + insert);
+        return insert ? "insert success" : "insert fail";
     }
 
 }
