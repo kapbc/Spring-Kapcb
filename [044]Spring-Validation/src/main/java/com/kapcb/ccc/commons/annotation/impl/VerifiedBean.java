@@ -23,8 +23,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class VerifiedBean {
 
-    @Pointcut(value = "@annotation(com.kapcb.ccc.commons.annotation.Verified)")
+    @Pointcut(value = "@annotation(com.kapcb.ccc.commons.annotation.Verified)&&execution(* com.kapcb.ccc.controller.*.*(..))")
     public void verified() {
+        log.info("come into the point cut...");
     }
 
     @Around(value = "verified()")
