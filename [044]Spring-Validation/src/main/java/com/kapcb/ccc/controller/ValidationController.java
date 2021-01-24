@@ -23,6 +23,7 @@ import javax.validation.Valid;
  * @date 2021/1/21-16:27
  */
 @Slf4j
+@Validated
 @Controller
 @ResponseBody
 @RequiredArgsConstructor
