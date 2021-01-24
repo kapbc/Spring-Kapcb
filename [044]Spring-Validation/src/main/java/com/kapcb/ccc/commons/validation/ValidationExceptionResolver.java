@@ -14,7 +14,6 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,7 +53,7 @@ public class ValidationExceptionResolver extends AbstractHandlerExceptionResolve
      * @return An empty ModelAndView indicating the exception that was handler
      */
     @ResponseBody
-    @SneakyThrows(IOException.class)
+    @SneakyThrows(Exception.class)
     protected ModelAndView handlerMethodArgumentNotValidException(HttpServletRequest request, HttpServletResponse response, Object handler, BindingResult bindingResult) {
         /**
          * 获取错误信息
