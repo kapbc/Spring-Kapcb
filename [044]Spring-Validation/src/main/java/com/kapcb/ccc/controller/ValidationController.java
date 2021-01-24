@@ -1,5 +1,6 @@
 package com.kapcb.ccc.controller;
 
+import com.kapcb.ccc.commons.annotation.Verified;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import lombok.RequiredArgsConstructor;
@@ -22,17 +23,16 @@ import javax.validation.Valid;
  * @date 2021/1/21-16:27
  */
 @Slf4j
-@Validated
 @Controller
+@ResponseBody
 @RequiredArgsConstructor
 @RequestMapping("/validation")
 public class ValidationController {
 
     private final IUserService userService;
 
-    @ResponseBody
     @PostMapping(value = "/insert", produces = "application/json;charset = UTF-8")
-    public String signUp(@Valid User user) {
+    public String signUp(@Verified User user) {
         boolean insert = userService.insert(user);
         log.info("user insert result is : " + insert);
         return insert ? "insert success" : "insert fail";

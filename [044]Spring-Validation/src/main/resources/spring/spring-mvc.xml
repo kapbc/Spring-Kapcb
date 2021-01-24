@@ -11,34 +11,34 @@
 
     <mvc:annotation-driven/>
 
-    <!--配置基于注解的处理器适配器与处理器映射器-->
-    <mvc:annotation-driven validator="validator"/>
+<!--    &lt;!&ndash;配置基于注解的处理器适配器与处理器映射器&ndash;&gt;-->
+<!--    <mvc:annotation-driven validator="validator"/>-->
 
-    <!--配置校验器-->
-    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-        <!-- 校验器 -->
-        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
-        <!-- 指定校验使用的资源文件，如果不指定则默认使用classpath下的ValidationMessages.properties -->
-        <property name="validationMessageSource" ref="messageSource"/>
-    </bean>
+<!--    &lt;!&ndash;配置校验器&ndash;&gt;-->
+<!--    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">-->
+<!--        &lt;!&ndash; 校验器 &ndash;&gt;-->
+<!--        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>-->
+<!--        &lt;!&ndash; 指定校验使用的资源文件，如果不指定则默认使用classpath下的ValidationMessages.properties &ndash;&gt;-->
+<!--        <property name="validationMessageSource" ref="messageSource"/>-->
+<!--    </bean>-->
 
-    <!--校验错误信息配置-->
-    <!--加载错误信息定义的资源文件的类为ReloadableResourceBundleMessageSource，需要为其指定资源文件名beannames、资源文件编码格式fileEncodings，
-    以及资源文件内容的缓存时间cacheSeconds（单位为s）。可以在beannames配置中添加多个资源文件的配置信息，这里添加的是classpath下的名为“LoginValidationMessage”
-    的属性文件。文件编码格式设置为“utf-8”，而内容缓存时间设置为120s。-->
-    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <!-- 资源文件名 -->
-        <property name="basenames">
-            <list>
-                <value>classpath:properties.validation</value>
-            </list>
-        </property>
-        <!-- 资源文件编码格式 -->
-        <property name="fileEncodings" value="UTF-8"/>
-        <!-- 对资源文件内容缓存时间，单位秒 -->
-        <property name="cacheSeconds" value="120"/>
-    </bean>
+<!--    &lt;!&ndash;校验错误信息配置&ndash;&gt;-->
+<!--    &lt;!&ndash;加载错误信息定义的资源文件的类为ReloadableResourceBundleMessageSource，需要为其指定资源文件名beannames、资源文件编码格式fileEncodings，-->
+<!--    以及资源文件内容的缓存时间cacheSeconds（单位为s）。可以在beannames配置中添加多个资源文件的配置信息，这里添加的是classpath下的名为“LoginValidationMessage”-->
+<!--    的属性文件。文件编码格式设置为“utf-8”，而内容缓存时间设置为120s。&ndash;&gt;-->
+<!--    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
+<!--        &lt;!&ndash; 资源文件名 &ndash;&gt;-->
+<!--        <property name="basenames">-->
+<!--            <list>-->
+<!--                <value>classpath:properties.validation</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--        &lt;!&ndash; 资源文件编码格式 &ndash;&gt;-->
+<!--        <property name="fileEncodings" value="UTF-8"/>-->
+<!--        &lt;!&ndash; 对资源文件内容缓存时间，单位秒 &ndash;&gt;-->
+<!--        <property name="cacheSeconds" value="120"/>-->
+<!--    </bean>-->
 
     <!--自定义validationExceptionHandler错误信息返回, 给调用方的信息返回更加友好-->
-    <bean id="validationExceptionResolver" class="com.kapcb.ccc.commons.validation.ValidationExceptionResolver"/>
+<!--    <bean id="validationExceptionResolver" class="com.kapcb.ccc.commons.validation.ValidationExceptionResolver"/>-->
 </beans>

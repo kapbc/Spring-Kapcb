@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
@@ -32,21 +33,20 @@ public class User implements Serializable {
     @Size(min = 4, max = 8, message = "{user.id.out.of.bound}")
     private Long userId;
 
-    @NotNull(message = "{user.name.not.null}")
+    @NotBlank(message = "{user.name.not.null}")
     @Size(min = 4, max = 6, message = "{user.name.out.of.bound}")
     private String username;
 
-    @NotNull(message = "{user.password.not.null}")
+    @NotBlank(message = "{user.password.not.null}")
     @Size(max = 4, min = 12, message = "{password.out.of.bound}")
     private String password;
 
-    @NotNull(message = "{user.email.not.null}")
+    @NotBlank(message = "{user.email.not.null}")
     @Email(message = "{email.illegal.formatter}")
     private String email;
 
     @NotNull(message = "{user.age.not.null}")
-    @Size(min = 1, max = 4, message = "{user.age.out.of.bound}")
-    private Integer age;
+    private int age;
 
     @NotNull(message = "{user.status.not.null}")
     @Max(value = 1, message = "{user.status.out.of.bound}")
