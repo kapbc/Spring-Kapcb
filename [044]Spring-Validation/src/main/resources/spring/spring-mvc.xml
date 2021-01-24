@@ -12,7 +12,7 @@
     <mvc:annotation-driven/>
 
     <!--配置基于注解的处理器适配器与处理器映射器-->
-    <mvc:annotation-driven conversion-service="conversionService" validator="validator"/>
+    <mvc:annotation-driven validator="validator"/>
 
     <!--配置校验器-->
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">

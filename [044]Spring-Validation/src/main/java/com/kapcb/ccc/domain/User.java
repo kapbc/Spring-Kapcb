@@ -46,7 +46,7 @@ public class User implements Serializable {
 
     @NotNull(message = "{user.age.not.null}")
     @Size(min = 1, max = 4, message = "{user.age.out.of.bound}")
-    private int age;
+    private Integer age;
 
     @NotNull(message = "{user.status.not.null}")
     @Max(value = 1, message = "{user.status.out.of.bound}")
