@@ -30,4 +30,16 @@ public class TestController {
         log.info("the id is : " + id);
         return "success";
     }
+
+    @RequestMapping("/test/two")
+    public String validation(@RequestParam(value = "aaa", required = false) String aaa, @NotNull(message = "the id is required not null") @RequestParam(value = "id", required = false) String id) {
+        log.info("the aaa is : " + aaa + "the id is : " + id);
+        return "success";
+    }
+
+    @RequestMapping("/test/three")
+    public String validationThree(@NotNull @RequestParam(value = "aaa", required = false) String aaa, @NotNull(message = "the id is required not null") @RequestParam(value = "id", required = false) String id) {
+        log.info("the aaa is : " + aaa + "the id is : " + id);
+        return "success";
+    }
 }
