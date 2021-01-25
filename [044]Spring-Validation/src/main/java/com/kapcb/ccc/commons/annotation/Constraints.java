@@ -22,7 +22,7 @@ import java.lang.annotation.Target;
  */
 @Inherited
 @Documented
-@Target({ElementType.PARAMETER,ElementType.FIELD})
+@Target({ElementType.PARAMETER, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = {ConstraintsValidation.class})
 public @interface Constraints {
@@ -35,7 +35,7 @@ public @interface Constraints {
     String message() default "Kapcb : param value must constrains specified value";
 
     /**
-     * 根据实际需求丁的方法
+     * 根据实际需求而定的方法
      *
      * @return String
      */
