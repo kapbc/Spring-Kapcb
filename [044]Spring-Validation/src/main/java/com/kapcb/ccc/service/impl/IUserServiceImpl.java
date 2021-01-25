@@ -1,6 +1,6 @@
 package com.kapcb.ccc.service.impl;
 
-import com.kapcb.ccc.domain.User;
+import com.kapcb.ccc.commons.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

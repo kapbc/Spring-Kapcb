@@ -2,7 +2,7 @@
 <body>
 <h2>Hello World!</h2>
 
-<form action="${pageContext.request.contextPath}/validation/insert" method="post">
+<form action="${pageContext.request.contextPath}/test/validation" method="post">
     <label>username:</label>
     <input type="text" name="username" placeholder=""/> <br/>
     <label>password:</label>

@@ -1,6 +1,7 @@
 package com.kapcb.ccc.service;
 
-import com.kapcb.ccc.domain.User;
+
+import com.kapcb.ccc.commons.domain.User;
 
 /**
  * <a>Title: IUserService </a>

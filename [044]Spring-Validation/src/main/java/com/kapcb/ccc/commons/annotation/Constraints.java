@@ -22,7 +22,7 @@ import java.lang.annotation.Target;
  */
 @Inherited
 @Documented
-@Target(ElementType.PARAMETER)
+@Target({ElementType.PARAMETER,ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = {ConstraintsValidation.class})
 public @interface Constraints {
