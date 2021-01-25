@@ -17,8 +17,9 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * <a>Title: NotNullValidation </a>
@@ -49,42 +50,37 @@ public class NotNullValidation {
         Method method = methodSignature.getMethod();
         Parameter[] parameters = method.getParameters();
 
+        Object[] arguments = proceedingJoinPoint.getArgs();
+        List<String> messageList = new ArrayList<>();
         if (ArrayUtils.isNotEmpty(parameters)) {
-            for (Parameter parameter : parameters) {
+            for (int i = 0; i < parameters.length; i++) {
                 String message = null;
                 boolean value = false;
-                log.info("the parameter uis : " + parameter.toString());
-                if (parameter.getAnnotatedType() instanceof NotNull) {
-                    NotNull notNull = parameter.getAnnotation(NotNull.class);
-                    message = notNull.message();
-                    value = notNull.value();
-                    log.info("the message is : " + message);
-                    log.info("the value is : " + value);
-                }
-                if (!value) {
-                    continue;
-                }
-                Object[] args = proceedingJoinPoint.getArgs();
-                for (Object arg : args) {
-                    String a = (String) arg;
-                    log.info("the arg is : " + a);
-                    if (StringUtils.isBlank(a) || StringUtils.equals(null, a)) {
-                        return "the required params should not be null or empty or blank";
+
+                Annotation[] annotations = parameters[i].getAnnotations();
+                if (ArrayUtils.isNotEmpty(annotations)) {
+                    for (Annotation annotation : annotations) {
+                        if (annotation instanceof NotNull) {
+                            NotNull notNull = (NotNull) annotation;
+                            message = notNull.message();
+                            value = notNull.value();
+                            log.info("the message is : " + message);
+                            log.info("the value is : " + value);
+                        }
+                    }
+                    if (!value) {
+                        continue;
+                    }
+                    if (Objects.equals(null, arguments[i]) || StringUtils.isBlank(String.valueOf(arguments[i]))) {
+                        messageList.add(message);
                     }
                 }
             }
         }
-
-
-        List<String> list = new ArrayList<>();
-        Object[] args = proceedingJoinPoint.getArgs();
-        String s = Arrays.toString(args);
-        log.info("the args array is : " + s);
-        for (Object arg : proceedingJoinPoint.getArgs()) {
-            String a = (String) arg;
-            if (StringUtils.isBlank(a) || StringUtils.equals(null, a)) {
-                return "the required params should not be null or empty or blank";
-            }
+        if (messageList.size() > 0) {
+            String result = messageList.stream().map(String::trim).collect(Collectors.joining(", "));
+            log.info("the validation result is : " + result);
+            return result;
         }
         log.info("kapcb nb");
         return proceedingJoinPoint.proceed();
