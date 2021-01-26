@@ -18,8 +18,9 @@ import java.util.Objects;
  * <a>Title: JsonUtil </a>
  * <a>Author: kapcb <a>
  * <a>Description：<a>
- *
+ * <p>
  * https://blog.csdn.net/kobejayandy/article/details/45869861?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-11.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-11.control
+ *
  * @author kapcb
  * @version 1.0.0
  * @date 2021/1/26-16:35
@@ -135,6 +136,9 @@ public class JsonUtil {
         }
     }
 
+    /**
+     * Map builder
+     */
     public static class JsonBuilder {
         private final Map<String, Object> builderMap = new HashMap<>(16);
 
