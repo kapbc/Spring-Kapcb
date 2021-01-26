@@ -1,7 +1,9 @@
 package com.kapcb.ccc.commons.utils;
 
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.StringUtils;
@@ -17,7 +19,8 @@ import java.util.Objects;
  * <a>Author: kapcb <a>
  * <a>Description：<a>
  *
- * @author kapcb    https://blog.csdn.net/Huangcsdnjava/article/details/72869206?utm_medium=distribute.pc_relevant.none-task-blog-searchFromBaidu-5.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-searchFromBaidu-5.control
+ * https://blog.csdn.net/kobejayandy/article/details/45869861?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-11.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-11.control
+ * @author kapcb
  * @version 1.0.0
  * @date 2021/1/26-16:35
  */
@@ -26,6 +29,13 @@ public class JsonUtil {
     private static final Logger log = LoggerFactory.getLogger(JsonUtil.class);
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+
+    static {
+        OBJECT_MAPPER.configure(JsonParser.Feature.ALLOW_COMMENTS, true);
+        OBJECT_MAPPER.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
+        OBJECT_MAPPER.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
+        OBJECT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    }
 
     private JsonUtil() {
     }
