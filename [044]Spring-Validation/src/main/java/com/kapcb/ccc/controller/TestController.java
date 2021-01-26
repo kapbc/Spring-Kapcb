@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @version 1.0.0
  * @date 2021/1/25-15:26
  */
-@Validated
 @Controller
 @ResponseBody
 public class TestController {
@@ -37,6 +36,7 @@ public class TestController {
         return "success";
     }
 
+    @Judgement
     @RequestMapping("/test/three")
     public String validationThree(@NotNull(message = "the aaa required not null") @RequestParam(value = "aaa", required = false) String aaa, @NotNull(message = "the id is required not null") @RequestParam(value = "id", required = false) String id) {
         log.info("the aaa is : " + aaa + "the id is : " + id);
