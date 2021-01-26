@@ -40,6 +40,7 @@
     <file type="web" url="file://$PROJECT_DIR$/[049]SpringMVC-Shiro-Jwt" />
     <file type="web" url="file://$PROJECT_DIR$/[053]Spring-RateLimiter" />
     <file type="web" url="file://$PROJECT_DIR$/[054]Spring-Logback" />
+    <file type="web" url="file://$PROJECT_DIR$/[055]Spring-Redis" />
     <file type="web" url="file://$PROJECT_DIR$/[099]Spring-Utils" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-IoC-XmlBean" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Jwt" />
@@ -141,6 +142,7 @@
         <option value="$PROJECT_DIR$/[049]SpringMVC-Shiro-Jwt/pom.xml" />
         <option value="$PROJECT_DIR$/[053]Spring-RateLimiter/pom.xml" />
         <option value="$PROJECT_DIR$/[054]Spring-Logback/pom.xml" />
+        <option value="$PROJECT_DIR$/[055]Spring-Redis/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
