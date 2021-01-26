@@ -37,9 +37,12 @@ public class NotNullValidation {
     private static final Logger log = LoggerFactory.getLogger(NotNullValidation.class);
 
 
-    @Pointcut(value = "execution(public * com.kapcb.ccc.controller.*.*(@com.kapcb.ccc.commons.annotation.NotNull (*), ..))||" +
-            "execution(public * com.kapcb.ccc.controller.*.*(*, @com.kapcb.ccc.commons.annotation.NotNull (*)))||" +
-            "execution(public * com.kapcb.ccc.controller.*.*(@com.kapcb.ccc.commons.annotation.NotNull (*), @com.kapcb.ccc.commons.annotation.NotNull (*)))")
+    /**
+     * @Pointcut(value = "execution(public * com.kapcb.ccc.controller.*.*(@com.kapcb.ccc.commons.annotation.NotNull (*), ..))||" +
+     * "execution(public * com.kapcb.ccc.controller.*.*(*, @com.kapcb.ccc.commons.annotation.NotNull (*)))||" +
+     * "execution(public * com.kapcb.ccc.controller.*.*(@com.kapcb.ccc.commons.annotation.NotNull (*), @com.kapcb.ccc.commons.annotation.NotNull (*)))")
+     */
+    @Pointcut(value = "execution(public * com.kapcb.ccc.controller..*.*(..)) && @annotation(com.kapcb.ccc.commons.annotation.Judgement)")
     public void cut() {
     }
 
@@ -77,7 +80,7 @@ public class NotNullValidation {
                 }
             }
         }
-        if (messageList.size() > 0) {
+        if (!messageList.isEmpty()) {
             String result = messageList.stream().map(String::trim).collect(Collectors.joining(", "));
             log.info("the validation result is : " + result);
             return result;
