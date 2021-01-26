@@ -44,6 +44,7 @@
       <module fileurl="file://$PROJECT_DIR$/[051]Spring-Dubbo-Interface/[051]Spring-Dubbo-Interface.iml" filepath="$PROJECT_DIR$/[051]Spring-Dubbo-Interface/[051]Spring-Dubbo-Interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/[052]Spring-Dubbo-Provider/[052]Spring-Dubbo-Provider.iml" filepath="$PROJECT_DIR$/[052]Spring-Dubbo-Provider/[052]Spring-Dubbo-Provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/[053]Spring-RateLimiter/[053]Spring-RateLimiter.iml" filepath="$PROJECT_DIR$/[053]Spring-RateLimiter/[053]Spring-RateLimiter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[054]Spring-Logback/[054]Spring-Logback.iml" filepath="$PROJECT_DIR$/[054]Spring-Logback/[054]Spring-Logback.iml" />
       <module fileurl="file://$PROJECT_DIR$/[099]Spring-Utils/[099]Spring-Utils.iml" filepath="$PROJECT_DIR$/[099]Spring-Utils/[099]Spring-Utils.iml" />
     </modules>
   </component>

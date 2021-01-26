@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="[010]SpringMVC-HelloWorld" />
+        <module name="[054]Spring-Logback" />
         <module name="[003]Spring-AOP" />
         <module name="[038]Spring-Schedule-Quartz" />
         <module name="[022]Spring-MyBatis-SQL" />
@@ -18,13 +19,14 @@
         <module name="[023]Spring-MyBatis-Configure" />
         <module name="[011]SpringMVC-Params" />
         <module name="[036]Spring-JdbcTemplate" />
+        <module name="[050]Spring-Dubbo-Consumer" />
+        <module name="[034]Spring-Resultful" />
         <module name="[014]SpringMVC-Interceptor" />
         <module name="[039]Spring-Shiro" />
-        <module name="[028]SSM-QuickStart" />
+        <module name="[030]SSM-Test" />
         <module name="[005]Spring-Annotation-Configuration" />
         <module name="[052]Spring-Dubbo-Provider" />
         <module name="[007]Spring-Annotation-Enable" />
-        <module name="[004]Spring-AOP-XML" />
         <module name="[049]SpringMVC-Shiro-Jwt" />
         <module name="[012]SpringMVC-Annotations" />
         <module name="[002]Spring-IoC-XML" />
@@ -40,15 +42,14 @@
         <module name="[006]Spring-Annotation-Value" />
         <module name="[001]Spring-IoC-XML" />
         <module name="[047]Spring-Shiro-Jwt-Project" />
-        <module name="[050]Spring-Dubbo-Consumer" />
-        <module name="[034]Spring-Resultful" />
+        <module name="[004]Spring-AOP-XML" />
+        <module name="[028]SSM-QuickStart" />
         <module name="[035]Spring-Resultful-ThreadPool" />
         <module name="[021]Spring-MyBatis-Param" />
-        <module name="[042]Spring-Log4j2" />
         <module name="[015]SpringMVC-FileUpLoad" />
         <module name="[029]SSM-Base" />
         <module name="[053]Spring-RateLimiter" />
-        <module name="[030]SSM-Test" />
+        <module name="[042]Spring-Log4j2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -97,6 +98,7 @@
       <module name="[051]Spring-Dubbo-Interface" target="1.5" />
       <module name="[052]Spring-Dubbo-Provider" target="1.5" />
       <module name="[053]Spring-RateLimiter" target="8" />
+      <module name="[054]Spring-Logback" target="1.8" />
       <module name="[099]Spring-Utils" target="8" />
       <module name="HttpClient" target="1.5" />
       <module name="Spring-AOP" target="1.5" />
