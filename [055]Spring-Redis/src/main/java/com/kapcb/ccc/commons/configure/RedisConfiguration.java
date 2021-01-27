@@ -3,12 +3,17 @@ package com.kapcb.ccc.commons.configure;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jdk.nashorn.internal.scripts.JD;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPoolConfig;
 
 /**
  * <a>Title: RedisConfiguration </a>
@@ -55,4 +60,52 @@ public class RedisConfiguration {
         template.afterPropertiesSet();
         return template;
     }
+
+    /**
+     * 连接池配置
+     *
+     * @return JedisPoolConfig
+     */
+    @Bean
+    public JedisPoolConfig jedisPoolConfig() {
+        JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
+        /**
+         * 最大连接数
+         */
+        jedisPoolConfig.setMaxTotal(30);
+        /**
+         * 设置最大空闲数
+         */
+        jedisPoolConfig.setMaxIdle(10);
+        /**
+         * 设置每次释放连接的最大数目
+         */
+        jedisPoolConfig.setNumTestsPerEvictionRun(1024);
+        /**
+         * 设置释放连接的扫描间隔（毫秒）
+         */
+        jedisPoolConfig.setTimeBetweenEvictionRunsMillis(30000);
+        /**
+         * 连接最小空闲时间
+         */
+        jedisPoolConfig.setMinEvictableIdleTimeMillis(1800000);
+        /**
+         * 连接空闲多久后释放, 当空闲时间>该值 且 空闲连接>最大空闲连接数 时直接释放
+         */
+        jedisPoolConfig.setSoftMinEvictableIdleTimeMillis(10000);
+        /**
+         * 设置获取连接时的最大等待毫秒数,小于零:阻塞不确定的时间,默认-1
+         */
+        jedisPoolConfig.setMaxWaitMillis(15000);
+        /**
+         * 在获取连接的时候检查有效性, 默认false
+         */
+        jedisPoolConfig.setTestOnBorrow(true);
+        /**
+         * 在空闲时检查有效性, 默认false
+         */
+        jedisPoolConfig.setTestWhileIdle(true);
+        return jedisPoolConfig;
+    }
+
 }
