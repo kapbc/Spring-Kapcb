@@ -28,8 +28,12 @@ public class RedisService {
 
     private static final Logger log = LoggerFactory.getLogger(RedisService.class);
 
-    @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
+    private final RedisTemplate redisTemplate;
+
+    public RedisService(RedisTemplate<String, Object> redisTemplate){
+        this.redisTemplate = redisTemplate;
+    }
+
 
     /**
      * 指定缓存失效的时间

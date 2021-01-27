@@ -7,6 +7,7 @@ import jdk.nashorn.internal.scripts.JD;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -106,6 +107,16 @@ public class RedisConfiguration {
          */
         jedisPoolConfig.setTestWhileIdle(true);
         return jedisPoolConfig;
+    }
+    
+    @Bean
+    public JedisConnectionFactory jedisConnectionFactory(){
+        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
+        redisStandaloneConfiguration.setPort(1);
+        redisStandaloneConfiguration.setHostName("");
+        redisStandaloneConfiguration.setDatabase(0);
+        redisStandaloneConfiguration.setPassword("");
+        return new JedisConnectionFactory(redisStandaloneConfiguration);
     }
 
 }
