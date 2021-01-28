@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+
+<table>
+    <tr th:each="user:${result}">
+        <td th:text="${user.userId}"/>
+        <td th:text="${user.age}"/>
+        <td th:text="${user.username}"/>
+        <td th:text="${user.password}"/>
+        <td th:text="${user.birthday}"/>
+    </tr>
+</table>
+
+</body>
+</html>
