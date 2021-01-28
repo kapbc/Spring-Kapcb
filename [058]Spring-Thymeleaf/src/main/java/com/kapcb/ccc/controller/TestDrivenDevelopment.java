@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -23,7 +22,6 @@ import java.util.List;
  */
 @Slf4j
 @Controller
-@ResponseBody
 @RequiredArgsConstructor
 @RequestMapping(path = "/test")
 public class TestDrivenDevelopment {
@@ -37,6 +35,4 @@ public class TestDrivenDevelopment {
         model.addAttribute("result", userList);
         return "kapcb";
     }
-
-
 }

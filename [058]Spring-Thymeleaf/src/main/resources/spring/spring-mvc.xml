@@ -11,7 +11,7 @@
     <!--thymeleaf模板解析器-->
     <bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
         <!--前缀配置-->
-        <property name="prefix" value="/WEB-INF/page/"/>
+        <property name="prefix" value="/WEB-INF/template/"/>
         <!--后缀配置-->
         <property name="suffix" value=".html"/>
         <!--模板类型-->
