@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <context:component-scan base-package="com.kapcb.ccc">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--thymeleaf模板解析器-->
+    <bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+        <!--前缀配置-->
+        <property name="prefix" value="/WEB-INF/page/"/>
+        <!--后缀配置-->
+        <property name="suffix" value=".html"/>
+        <!--模板类型-->
+        <property name="templateMode" value="HTML"/>
+        <!--不使用缓存-->
+        <property name="cacheable" value="false"/>
+        <!--编码类型-->
+        <property name="characterEncoding" value="utf-8"/>
+    </bean>
+
+    <!--模板引擎配置-->
+    <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver"/>
+    </bean>
+
+    <!--视图处理器-->
+    <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine"/>
+        <property name="characterEncoding" value="utf-8"/>
+    </bean>
+
+    <mvc:annotation-driven/>
+
+</beans>
