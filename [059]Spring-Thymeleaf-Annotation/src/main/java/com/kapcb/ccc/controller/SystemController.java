@@ -30,6 +30,7 @@ public class SystemController {
 
     @GetMapping(path = "/one", produces = "application/json;charset=utf-8")
     public String one(Model model) {
+        log.warn("come into the test code .... ");
         List<User> userInfo = userService.getUserInfo();
         model.addAttribute("userList", userInfo);
         return "kapcb";

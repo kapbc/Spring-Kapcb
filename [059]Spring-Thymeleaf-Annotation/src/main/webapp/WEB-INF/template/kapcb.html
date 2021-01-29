@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf-Annotation</title>
+</head>
+<body>
+<table>
+    <tr th:each="result:${userList}">
+        <td th:text="${resilt.userId}"/>
+        <td th:text="${resilt.age}"/>
+        <td th:text="${resilt.status}"/>
+        <td th:text="${resilt.username}"/>
+        <td th:text="${resilt.password}"/>
+        <td th:text="${resilt.birthday}"/>
+    </tr>
+</table>
+</body>
+</html>
