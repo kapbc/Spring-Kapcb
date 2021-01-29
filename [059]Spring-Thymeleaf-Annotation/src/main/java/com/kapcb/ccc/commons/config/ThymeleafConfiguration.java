@@ -2,6 +2,7 @@ package com.kapcb.ccc.commons.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
@@ -20,7 +21,7 @@ import java.util.HashSet;
  * @date 2021/1/29 21:53
  */
 @Slf4j
-@Component
+@Configuration
 @SuppressWarnings(value = "serial")
 public class ThymeleafConfiguration {
 
