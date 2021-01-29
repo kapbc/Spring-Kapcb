@@ -28,7 +28,7 @@ public class TestDrivenDevelopment {
 
     private final IUserService userService;
 
-    @GetMapping(path = "/one", produces = "application/json;chaset=utf-8")
+    @GetMapping(path = "/one", produces = "application/json;charset=utf-8")
     public String one(Model model) {
         log.warn("process the request in the controller");
         List<User> userList = userService.getUserList();

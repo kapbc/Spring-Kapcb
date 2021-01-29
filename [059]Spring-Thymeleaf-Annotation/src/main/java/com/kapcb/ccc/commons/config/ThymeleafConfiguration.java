@@ -32,13 +32,8 @@ public class ThymeleafConfiguration {
         templateResolver.setPrefix("/WEB-INF/template/");
         templateResolver.setSuffix(".html");
         templateResolver.setCharacterEncoding(StandardCharsets.UTF_8.toString());
-        templateResolver.setHtmlTemplateModePatterns(new HashSet<String>() {
-            {
-                add("HTML");
-            }
-        });
+        templateResolver.setTemplateMode("HTML");
         return templateResolver;
-
     }
 
     @Bean
