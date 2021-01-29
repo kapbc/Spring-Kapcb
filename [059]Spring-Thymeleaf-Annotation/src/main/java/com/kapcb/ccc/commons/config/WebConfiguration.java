@@ -19,4 +19,5 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Import(value = ThymeleafConfiguration.class)
 public class WebConfiguration implements WebMvcConfigurer {
 
+
 }
