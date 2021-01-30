@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- xml方式创建对象 -->
+    <bean id="user" class="com.kapcb.ccc.domain.User">
+        <!-- set方式注入属性 -->
+        <property name="age" value="17"/>
+        <property name="userId" value="123456"/>
+        <property name="username" value="ccc"/>
+    </bean>
+
+    <!-- 构造器方式注入属性 -->
+    <bean id="kapcb" class="com.kapcb.ccc.domain.User">
+        <constructor-arg name="age" type="int" value="17" index="0"/>
+        <constructor-arg name="userId" type="java.lang.Long" value="123456789" index="1"/>
+        <constructor-arg name="username" type="java.lang.String" value="kapcb" index="2"/>
+    </bean>
+</beans>

@@ -35,6 +35,7 @@
         <module name="[049]SpringMVC-Shiro-Jwt" />
         <module name="[012]SpringMVC-Annotations" />
         <module name="[002]Spring-IoC-XML" />
+        <module name="[004]Spring-IOC-Bean-DI" />
         <module name="[046]Spring-Jwt" />
         <module name="[025]Spring-MyBatis-CRUD" />
         <module name="[029]SSM-Base" />
@@ -67,6 +68,7 @@
       <module name="[003]Spring-AOP" target="1.5" />
       <module name="[003]Spring-IOC-ApplicationContext" target="8" />
       <module name="[004]Spring-AOP-XML" target="1.5" />
+      <module name="[004]Spring-IOC-Bean-DI" target="8" />
       <module name="[005]Spring-Annotation-Configuration" target="1.5" />
       <module name="[006]Spring-Annotation-Value" target="1.5" />
       <module name="[007]Spring-Annotation-Enable" target="1.5" />
