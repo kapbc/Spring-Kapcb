@@ -58,7 +58,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="[001]Spring-IOC-Principle" target="1.5" />
+      <module name="[001]Spring-IOC-Principle" target="8" />
       <module name="[001]Spring-IoC-XML" target="8" />
       <module name="[002]Spring-IoC-XML" target="1.5" />
       <module name="[003]Spring-AOP" target="1.5" />

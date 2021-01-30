@@ -7,15 +7,22 @@
     <groupId>com.kapcb.ccc</groupId>
     <artifactId>[001]Spring-IOC-Principle</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <junit.version>4.13.1</junit.version>
+        <spring.version>5.2.10.RELEASE</spring.version>
+        <commons.logging.version>1.2</commons.logging.version>
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <maven.compiler.plugin.configuration.version>8</maven.compiler.plugin.configuration.version>
+    </properties>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>${maven.compiler.plugin.version}</version>
                 <configuration>
-                    <target>8</target>
-                    <source>8</source>
+                    <target>${maven.compiler.plugin.configuration.version}</target>
+                    <source>${maven.compiler.plugin.configuration.version}</source>
                 </configuration>
             </plugin>
         </plugins>
@@ -25,22 +32,28 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>5.2.10.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.2.10.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>5.2.10.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
-            <version>1.2</version>
+            <version>${commons.logging.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
