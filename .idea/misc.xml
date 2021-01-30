@@ -151,6 +151,7 @@
         <option value="$PROJECT_DIR$/[058]Spring-Thymeleaf/pom.xml" />
         <option value="$PROJECT_DIR$/[059]Spring-Thymeleaf-Annotation/pom.xml" />
         <option value="$PROJECT_DIR$/[056]Spring-Redis-Annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/[001]Spring-IOC-Principle/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

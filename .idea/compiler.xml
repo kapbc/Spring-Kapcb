@@ -11,6 +11,7 @@
         <module name="[058]Spring-Thymeleaf" />
         <module name="[054]Spring-Logback" />
         <module name="[003]Spring-AOP" />
+        <module name="[001]Spring-IOC-Principle" />
         <module name="[038]Spring-Schedule-Quartz" />
         <module name="[056]Spring-Redis-Annotation" />
         <module name="[024]Spring-MyBatis-DynamicSQL" />
@@ -57,6 +58,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="[001]Spring-IOC-Principle" target="1.5" />
       <module name="[001]Spring-IoC-XML" target="8" />
       <module name="[002]Spring-IoC-XML" target="1.5" />
       <module name="[003]Spring-AOP" target="1.5" />

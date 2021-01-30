@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Kapcb.iml" filepath="$PROJECT_DIR$/.idea/Spring-Kapcb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[001]Spring-IOC-Principle/[001]Spring-IOC-Principle.iml" filepath="$PROJECT_DIR$/[001]Spring-IOC-Principle/[001]Spring-IOC-Principle.iml" />
       <module fileurl="file://$PROJECT_DIR$/[001]Spring-IoC-XML/[001]Spring-IoC-XML.iml" filepath="$PROJECT_DIR$/[001]Spring-IoC-XML/[001]Spring-IoC-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/[002]Spring-IoC-XML/[002]Spring-IoC-XML.iml" filepath="$PROJECT_DIR$/[002]Spring-IoC-XML/[002]Spring-IoC-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/[003]Spring-AOP/[003]Spring-AOP.iml" filepath="$PROJECT_DIR$/[003]Spring-AOP/[003]Spring-AOP.iml" />
