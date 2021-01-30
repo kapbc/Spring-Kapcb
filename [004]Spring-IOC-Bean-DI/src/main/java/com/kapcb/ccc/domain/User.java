@@ -1,5 +1,6 @@
 package com.kapcb.ccc.domain;
 
+
 /**
  * <a>Title: User </a>
  * <a>Author: kapcb <a>
@@ -11,6 +12,9 @@ package com.kapcb.ccc.domain;
  */
 public class User {
 
+    /**
+     * 基本类型直接使用 property 标签,并且 property 可以自动进行类型转换
+     */
     private int age;
     private Long userId;
     private String username;
@@ -20,10 +24,10 @@ public class User {
     }
 
     public User(int age, Long userId, String username) {
-        System.out.println("User is initial by all args constructor...");
         this.age = age;
         this.userId = userId;
         this.username = username;
+        System.out.println("User is initial by all args constructor, the user's name is : " + username + "\n\n");
     }
 
     public int getAge() {

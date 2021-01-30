@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- 基本类型直接使用 property 标签,并且 property 可以自动进行类型转换 -->
     <!-- xml方式创建对象 -->
     <bean id="user" class="com.kapcb.ccc.domain.User">
         <!-- set方式注入属性 -->
@@ -16,5 +17,14 @@
         <constructor-arg name="age" type="int" value="17" index="0"/>
         <constructor-arg name="userId" type="java.lang.Long" value="123456789" index="1"/>
         <constructor-arg name="username" type="java.lang.String" value="kapcb" index="2"/>
+    </bean>
+
+    <!-- 使用有参构造器注入属性，不使用name属性 -->
+    <!-- 使用有参构造器注入属性的时候, 如果不指定 index, 则注入属性的顺序必须与有参构造器中的参数列表中的顺序一致 -->
+    <!-- 可以使用 type 属性, 对每个属性值的类型进行限定 -->
+    <bean id="eric" class="com.kapcb.ccc.domain.User">
+        <constructor-arg type="int" value="17" index="0"/>
+        <constructor-arg type="java.lang.String" value="eric" index="2"/>
+        <constructor-arg type="java.lang.Long" value="123456789" index="1"/>
     </bean>
 </beans>
