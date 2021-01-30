@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car" class="com.kapcb.ccc.domain.Car">
+        <property name="carName" value="palamela"/>
+        <property name="carColor" value="red"/>
+        <property name="carNumber" value="粤A·88888"/>
+    </bean>
+
+    <!--正确的为各种属性赋值-->
+    <!--默认注册不进行赋值就是属性值为null-->
+    <!--使用set方式进行属性注入-->
+    <bean id="kapcb" class="com.kapcb.ccc.domain.User">
+        <property name="username" value="kapcb"/>
+        <property name="userId" value="999999999"/>
+        <!--为 disadvantage 赋值为 null-->
+        <!--进行复杂的赋值都是在 property 标签体中进行的-->
+        <property name="disadvantage">
+            <null/>
+        </property>
+
+        <!--使用引用类型进行复杂赋值-->
+        <!--当进行引用赋值时，这是一个严格意义上的引用，与上面bean标签中声明的car是同一个对象-->
+        <!--<property name="drivenCar" ref="car">-->
+        <!--或者使用下面这种方式为引用类型注入属性-->
+        <property name="drivenCar">
+            <bean class="com.kapcb.ccc.domain.Car">
+                <property name="carName" value="911"/>
+                <property name="carColor" value="black"/>
+                <property name="carNumber" value="鄂A·88888"/>
+            </bean>
+        </property>
+    </bean>
+
+</beans>
