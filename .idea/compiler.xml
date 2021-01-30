@@ -40,6 +40,7 @@
         <module name="[025]Spring-MyBatis-CRUD" />
         <module name="[029]SSM-Base" />
         <module name="[032]SSM-Email" />
+        <module name="[006]Spring-IOC-Bean-Complex" />
         <module name="[056]Spring-Redis-Annotation" />
         <module name="[041]Spring-Annotation-Shiro" />
         <module name="[013]SpringMVC-Exception" />
@@ -47,7 +48,6 @@
         <module name="[044]Spring-Validation" />
         <module name="[051]Spring-Dubbo-Interface" />
         <module name="[006]Spring-Annotation-Value" />
-        <module name="[001]Spring-IoC-XML" />
         <module name="[047]Spring-Shiro-Jwt-Project" />
         <module name="[037]Spring-Schedule-Task" />
         <module name="[028]SSM-QuickStart" />
@@ -71,6 +71,7 @@
       <module name="[004]Spring-IOC-Bean-DI" target="8" />
       <module name="[005]Spring-Annotation-Configuration" target="1.5" />
       <module name="[006]Spring-Annotation-Value" target="1.5" />
+      <module name="[006]Spring-IOC-Bean-Complex" target="1.5" />
       <module name="[007]Spring-Annotation-Enable" target="1.5" />
       <module name="[010]SpringMVC-HelloWorld" target="1.8" />
       <module name="[011]SpringMVC-Params" target="1.8" />

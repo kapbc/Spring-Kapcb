@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Kapcb.iml" filepath="$PROJECT_DIR$/.idea/Spring-Kapcb.iml" />
       <module fileurl="file://$PROJECT_DIR$/[001]Spring-IOC-Principle/[001]Spring-IOC-Principle.iml" filepath="$PROJECT_DIR$/[001]Spring-IOC-Principle/[001]Spring-IOC-Principle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/[001]Spring-IoC-XML/[001]Spring-IoC-XML.iml" filepath="$PROJECT_DIR$/[001]Spring-IoC-XML/[001]Spring-IoC-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/[002]Spring-IOC-BeanFactory/[002]Spring-IOC-BeanFactory.iml" filepath="$PROJECT_DIR$/[002]Spring-IOC-BeanFactory/[002]Spring-IOC-BeanFactory.iml" />
       <module fileurl="file://$PROJECT_DIR$/[002]Spring-IoC-XML/[002]Spring-IoC-XML.iml" filepath="$PROJECT_DIR$/[002]Spring-IoC-XML/[002]Spring-IoC-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/[003]Spring-AOP/[003]Spring-AOP.iml" filepath="$PROJECT_DIR$/[003]Spring-AOP/[003]Spring-AOP.iml" />
@@ -13,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/[004]Spring-IOC-Bean-DI/[004]Spring-IOC-Bean-DI.iml" filepath="$PROJECT_DIR$/[004]Spring-IOC-Bean-DI/[004]Spring-IOC-Bean-DI.iml" />
       <module fileurl="file://$PROJECT_DIR$/[005]Spring-Annotation-Configuration/[005]Spring-Annotation-Configuration.iml" filepath="$PROJECT_DIR$/[005]Spring-Annotation-Configuration/[005]Spring-Annotation-Configuration.iml" />
       <module fileurl="file://$PROJECT_DIR$/[006]Spring-Annotation-Value/[006]Spring-Annotation-Value.iml" filepath="$PROJECT_DIR$/[006]Spring-Annotation-Value/[006]Spring-Annotation-Value.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[006]Spring-IOC-Bean-Complex/[006]Spring-IOC-Bean-Complex.iml" filepath="$PROJECT_DIR$/[006]Spring-IOC-Bean-Complex/[006]Spring-IOC-Bean-Complex.iml" />
       <module fileurl="file://$PROJECT_DIR$/[007]Spring-Annotation-Enable/[007]Spring-Annotation-Enable.iml" filepath="$PROJECT_DIR$/[007]Spring-Annotation-Enable/[007]Spring-Annotation-Enable.iml" />
       <module fileurl="file://$PROJECT_DIR$/[010]SpringMVC-HelloWorld/[010]SpringMVC-HelloWorld.iml" filepath="$PROJECT_DIR$/[010]SpringMVC-HelloWorld/[010]SpringMVC-HelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/[011]SpringMVC-Params/[011]SpringMVC-Params.iml" filepath="$PROJECT_DIR$/[011]SpringMVC-Params/[011]SpringMVC-Params.iml" />

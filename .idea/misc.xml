@@ -97,7 +97,6 @@
         <option value="$PROJECT_DIR$/Spring-Utils/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Annotation-Configuration/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-task/pom.xml" />
-        <option value="$PROJECT_DIR$/[001]Spring-IoC-XML/pom.xml" />
         <option value="$PROJECT_DIR$/[002]Spring-IoC-XML/pom.xml" />
         <option value="$PROJECT_DIR$/[003]Spring-AOP/pom.xml" />
         <option value="$PROJECT_DIR$/[004]Spring-AOP-XML/pom.xml" />
@@ -155,6 +154,7 @@
         <option value="$PROJECT_DIR$/[002]Spring-IOC-BeanFactory/pom.xml" />
         <option value="$PROJECT_DIR$/[003]Spring-IOC-ApplicationContext/pom.xml" />
         <option value="$PROJECT_DIR$/[004]Spring-IOC-Bean-DI/pom.xml" />
+        <option value="$PROJECT_DIR$/[006]Spring-IOC-Bean-Complex/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
