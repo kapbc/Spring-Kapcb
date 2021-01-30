@@ -52,6 +52,7 @@
         <module name="[028]SSM-QuickStart" />
         <module name="[035]Spring-Resultful-ThreadPool" />
         <module name="[021]Spring-MyBatis-Param" />
+        <module name="[003]Spring-IOC-ApplicationContext" />
         <module name="[015]SpringMVC-FileUpLoad" />
         <module name="[039]Spring-Shiro" />
         <module name="[053]Spring-RateLimiter" />
@@ -64,6 +65,7 @@
       <module name="[002]Spring-IOC-BeanFactory" target="8" />
       <module name="[002]Spring-IoC-XML" target="1.5" />
       <module name="[003]Spring-AOP" target="1.5" />
+      <module name="[003]Spring-IOC-ApplicationContext" target="8" />
       <module name="[004]Spring-AOP-XML" target="1.5" />
       <module name="[005]Spring-Annotation-Configuration" target="1.5" />
       <module name="[006]Spring-Annotation-Value" target="1.5" />

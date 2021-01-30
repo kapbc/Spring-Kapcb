@@ -153,6 +153,7 @@
         <option value="$PROJECT_DIR$/[056]Spring-Redis-Annotation/pom.xml" />
         <option value="$PROJECT_DIR$/[001]Spring-IOC-Principle/pom.xml" />
         <option value="$PROJECT_DIR$/[002]Spring-IOC-BeanFactory/pom.xml" />
+        <option value="$PROJECT_DIR$/[003]Spring-IOC-ApplicationContext/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
