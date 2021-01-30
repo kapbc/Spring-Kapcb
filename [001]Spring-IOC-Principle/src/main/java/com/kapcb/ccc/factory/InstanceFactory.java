@@ -11,7 +11,10 @@ import com.kapcb.ccc.service.IUserService;
  * @version 1.0.0
  * @date 2021/1/30 11:35
  */
-public class InstanceFactory extends AbstractFactory {
+public class InstanceFactory {
+
+    public InstanceFactory() {
+    }
 
     /**
      * user factory pattern to get instance for bean
@@ -19,8 +22,7 @@ public class InstanceFactory extends AbstractFactory {
      * @param clazzPath class path
      * @return IUserService {@link IUserService}
      */
-    @Override
-    public IUserService getUserService(String clazzPath) {
+    public static IUserService getUserService(String clazzPath) {
         try {
             Class<?> aClass = Class.forName(clazzPath);
             return (IUserService) aClass.newInstance();
@@ -29,11 +31,4 @@ public class InstanceFactory extends AbstractFactory {
             return null;
         }
     }
-
-    @Override
-    public IUserService getUserService(Class<? extends IUserService> clazz) {
-        return null;
-    }
-
-
 }

@@ -11,16 +11,11 @@ import com.kapcb.ccc.service.IUserService;
  * @version 1.0.0
  * @date 2021/1/30 12:24
  */
-public class PromotionInstanceFactory extends AbstractPromotionFactory{
+public class PromotionInstanceFactory {
 
+    public PromotionInstanceFactory(){}
 
-    @Override
-    public IUserService getUserService(String clazzPath) {
-        return null;
-    }
-
-    @Override
-    public IUserService getUserService(Class<? extends IUserService> clazz) {
+    public static IUserService getUserService(Class<? extends IUserService> clazz) {
         if (clazz != null) {
             try {
                 IUserService iUserService = clazz.newInstance();
