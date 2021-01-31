@@ -27,7 +27,7 @@ public class UserBeanPostProcessor implements BeanPostProcessor {
      */
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("[" + beanName + "] will transfer initial method postProcessBeforeInitialization, this bean is : [" + bean + "]");
+        System.out.println("[" + beanName + "] bean will transfer initial method postProcessBeforeInitialization, this bean is : [" + bean + "]");
         return bean;
     }
 
