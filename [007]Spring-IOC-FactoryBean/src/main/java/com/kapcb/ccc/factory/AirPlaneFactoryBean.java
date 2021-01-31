@@ -22,6 +22,9 @@ public class AirPlaneFactoryBean implements FactoryBean<AirPlane> {
 
     /**
      * 工厂方法 Spring创建对象
+     * 定义返回Bean的类型, FactoryBean可以返回与定义类型不一样的Bean
+     * 这里向Spring中声明的Bean为AirPlaneFactoryBean, 但是实际返回的Bean为AirPlane
+     * 隐藏Spring创建对象的细节
      *
      * @return AirPlane
      * @throws Exception Exception

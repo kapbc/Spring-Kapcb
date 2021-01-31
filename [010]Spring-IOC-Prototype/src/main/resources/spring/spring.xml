@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        scope
+        1. singleton: 单例
+        2. prototype: 原型模式
+
+        Spring 4
+        3. request: 每次请求都会创建一个新的对象
+        4. session: 一个对象只会创建一次
+
+        设置作用域为singleton或者默认为singleton的时候, 加载Spring配置文件的时候就会创建单实例对象
+
+        设置作用域为prototype的时候, 加载配置文件的时候并不会立即创建这个对象, 而是调用的时候再去创建对象, 并且每次创建的
+        都是新对象
+    -->
+    <bean id="userSingleton" class="com.kapcb.ccc.domain.User"/>
+
+    <bean id="userPrototype" class="com.kapcb.ccc.domain.User" scope="prototype"/>
+</beans>
