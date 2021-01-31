@@ -44,6 +44,7 @@
         <module name="[032]SSM-Email" />
         <module name="[006]Spring-IOC-Bean-Complex" />
         <module name="[056]Spring-Redis-Annotation" />
+        <module name="[013]Spring-IOC-Bean-Annotation" />
         <module name="[041]Spring-Annotation-Shiro" />
         <module name="[013]SpringMVC-Exception" />
         <module name="[099]Spring-Utils" />
@@ -88,6 +89,7 @@
       <module name="[011]SpringMVC-Params" target="1.8" />
       <module name="[012]Spring-IOC-ExternalConfidurationFile" target="8" />
       <module name="[012]SpringMVC-Annotations" target="1.8" />
+      <module name="[013]Spring-IOC-Bean-Annotation" target="8" />
       <module name="[013]SpringMVC-Exception" target="1.8" />
       <module name="[014]SpringMVC-Interceptor" target="1.8" />
       <module name="[015]SpringMVC-FileUpLoad" target="1.8" />
