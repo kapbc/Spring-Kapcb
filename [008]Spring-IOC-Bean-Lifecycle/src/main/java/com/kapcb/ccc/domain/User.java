@@ -26,6 +26,7 @@ public class User {
     }
 
     public User() {
+        System.out.println("the no args constructor is transfer to creat user instance");
     }
 
     public User(Long userId, String username, LocalDateTime birthday) {
@@ -39,6 +40,7 @@ public class User {
     }
 
     public void setUserId(Long userId) {
+        System.out.println("transfer set user id to JNDI the instance's value");
         this.userId = userId;
     }
 

@@ -10,9 +10,17 @@
     我们可以为bean定义一些生命周期的方法：Spring在创建或者在销毁的时候会调用的方法
     自定义初始化方法和销毁方法：要求：The method must have no arguments,but may throw exception
     可以抛异常但是必须不能带参数
-    生命周期
+
+    生命周期:
+        1、通过构造器创建Bean的实例(无参构造器)
+        2、为Bean的属性设置值或者其它Bean的应用(调用set方法)
+        3、调用Bean的初始化方法(需要进行配置初始化的方法)
+        4、Bean创建完成，可以使用(从Spring中获取到了对象)
+        5、在容器关闭之前，调用Bean的销毁方法(需要进行配置的销毁方法)
     -->
-    <bean id="user" class="com.kapcb.ccc.domain.User" init-method="initMethod" destroy-method="destroyMethod"/>
+    <bean id="user" class="com.kapcb.ccc.domain.User" init-method="initMethod" destroy-method="destroyMethod">
+        <property name="userId" value="123456"/>
+    </bean>
 
     <!--后置处理器-->
     <bean id="userBeanPostProcessor" class="com.kapcb.ccc.processor.UserBeanPostProcessor"/>
