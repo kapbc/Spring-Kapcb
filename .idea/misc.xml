@@ -157,6 +157,7 @@
         <option value="$PROJECT_DIR$/[006]Spring-IOC-Bean-Complex/pom.xml" />
         <option value="$PROJECT_DIR$/[007]Spring-IOC-FactoryBean/pom.xml" />
         <option value="$PROJECT_DIR$/[008]Spring-IOC-Bean-Lifecycle/pom.xml" />
+        <option value="$PROJECT_DIR$/[009]Spring-IOC-Singleton/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

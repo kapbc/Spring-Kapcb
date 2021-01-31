@@ -51,6 +51,7 @@
         <module name="[004]Spring-AOP-XML" />
         <module name="[034]Spring-Resultful" />
         <module name="[035]Spring-Resultful-ThreadPool" />
+        <module name="[009]Spring-IOC-Singleton" />
         <module name="[021]Spring-MyBatis-Param" />
         <module name="[008]Spring-IOC-Bean-Lifecycle" />
         <module name="[042]Spring-Log4j2" />
@@ -78,6 +79,7 @@
       <module name="[007]Spring-IOC-Bean-Factory" target="8" />
       <module name="[007]Spring-IOC-FactoryBean" target="8" />
       <module name="[008]Spring-IOC-Bean-Lifecycle" target="8" />
+      <module name="[009]Spring-IOC-Singleton" target="8" />
       <module name="[010]SpringMVC-HelloWorld" target="1.8" />
       <module name="[011]SpringMVC-Params" target="1.8" />
       <module name="[012]SpringMVC-Annotations" target="1.8" />
