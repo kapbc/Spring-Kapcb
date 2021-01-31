@@ -3,12 +3,27 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="car" class="com.kapcb.ccc.domain.Car">
+        <property name="carName" value="porsche"/>
+        <property name="carNumber">
+            <value><![CDATA[>>粤A·888888<<]]></value>
+        </property>
+        <property name="carPrice" value="1234567890"/>
+    </bean>
+
     <bean id="manual" class="com.kapcb.ccc.domain.User">
         <!--手动装配-->
         <property name="userId" value="123456"/>
         <property name="age" value="17"/>
-        <property name="username" value="kapcb"/>
+        <property name="username" value="ccc"/>
+        <!--需要手动为其设置属性-->
+        <property name="car" ref="car"/>
     </bean>
 
-    <bean id="auto" class="com.kapcb.ccc.domain.User"/>
+    <!--会自动去Spring的ioc容器中根据指定的方式去寻找对应的Bean, 并为其注入属性-->
+    <bean id="auto" class="com.kapcb.ccc.domain.User" autowire="byName">
+        <property name="username" value="kapcb"/>
+        <property name="age" value="17"/>
+        <property name="userId" value="1000000001"/>
+    </bean>
 </beans>
