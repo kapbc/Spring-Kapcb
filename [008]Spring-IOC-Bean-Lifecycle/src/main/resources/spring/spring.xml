@@ -14,14 +14,25 @@
     生命周期:
         1、通过构造器创建Bean的实例(无参构造器)
         2、为Bean的属性设置值或者其它Bean的应用(调用set方法)
-        3、调用Bean的初始化方法(需要进行配置初始化的方法)
+        3、调用Bean的初始化方法(需要进行配置初始化的方法, initMethod)
         4、Bean创建完成，可以使用(从Spring中获取到了对象)
-        5、在容器关闭之前，调用Bean的销毁方法(需要进行配置的销毁方法)
+        5、在容器关闭之前，调用Bean的销毁方法(需要进行配置的销毁方法, destroyMethod)
     -->
     <bean id="user" class="com.kapcb.ccc.domain.User" init-method="initMethod" destroy-method="destroyMethod">
         <property name="userId" value="123456"/>
     </bean>
 
     <!--后置处理器-->
+    <!--
+        配置Spring的BeanPostProcessor后置处理器之后,Spring管理Bean的生命周期为:
+        1、通过构造器创建Bean的实例(无参构造器)
+        2、为Bean的属性设置值或者其它Bean的应用(调用set方法)
+        3、将Bean传递给Bean的后置处理器, 调用后置处理器中的postProcessBeforeInitialization方法
+        4、调用Bean的初始化方法(需要进行配置初始化的方法, initMethod)
+        5、将Bean传递给Bean的后置处理器, 调用后置处理器中的postProcessAfterInitialization方法
+        6、Bean创建完成，可以使用(从Spring中获取到了对象)
+        7、在容器关闭之前，调用Bean的销毁方法(需要进行配置的销毁方法, destroyMethod)
+    -->
     <bean id="userBeanPostProcessor" class="com.kapcb.ccc.processor.UserBeanPostProcessor"/>
+
 </beans>
