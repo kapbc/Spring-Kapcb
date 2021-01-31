@@ -148,6 +148,20 @@
         <property name="username" value="abstractPerson"/>
         <property name="userId" value="0000001"/>
         <property name="vip" value="true"/>
+        <property name="drivenCar" ref="car"/>
+        <property name="houses" ref="companyMap"/>
+        <property name="companies" ref="alibaba"/>
+        <property name="properties">
+            <props>
+                <prop key="boss.name">kapcb</prop>
+                <prop key="boss.marketValue">1000000000000</prop>
+            </props>
+        </property>
+        <property name="disadvantage">
+            <null/>
+        </property>
+        <property name="girlFriends" value="secret"/>
+
     </bean>
 
     <!-- 修改父类中的属性值 -->
