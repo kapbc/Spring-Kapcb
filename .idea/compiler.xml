@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="[059]Spring-Thymeleaf-Annotation" />
+        <module name="[012]Spring-IOC-ExternalConfidurationFile" />
         <module name="[058]Spring-Thymeleaf" />
         <module name="[054]Spring-Logback" />
         <module name="[055]Spring-Redis" />
@@ -85,6 +86,7 @@
       <module name="[010]SpringMVC-HelloWorld" target="1.8" />
       <module name="[011]Spring-IOC-Autowired" target="8" />
       <module name="[011]SpringMVC-Params" target="1.8" />
+      <module name="[012]Spring-IOC-ExternalConfidurationFile" target="8" />
       <module name="[012]SpringMVC-Annotations" target="1.8" />
       <module name="[013]SpringMVC-Exception" target="1.8" />
       <module name="[014]SpringMVC-Interceptor" target="1.8" />

@@ -21,6 +21,15 @@
     </bean>
 
     <!--会自动去Spring的ioc容器中根据指定的方式去寻找对应的Bean, 并为其注入属性-->
+    <!--
+        autowire的属性值:
+        1.default: 默认值, 不自动装配
+        2.no: 不自动装配
+        3.byName: 根据名称去进行自动装配, 及匹配Bean的id名称
+        4.byType: 根据类型去进行自动装配, 但是根据类型匹配的话, 如果相同类型存在多个将会出错, 不能辨别到底是需要自动装配哪一个(可以先根据类型匹配, 类型匹配到了在根据名称进行匹配)
+        5.constructor: 根据构造器去进行自动装配
+    -->
+    <!--基本类型使用自动装箱进行自动注入-->
     <bean id="auto" class="com.kapcb.ccc.domain.User" autowire="byName">
         <property name="username" value="kapcb"/>
         <property name="age" value="17"/>
