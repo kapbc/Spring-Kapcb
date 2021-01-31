@@ -24,20 +24,22 @@ public class User {
     private String disadvantage;
     private Car drivenCar;
     private List<String> girlFriends;
+    private List<Company> companies;
     private Properties properties;
-    private Map<String, String> houses;
+    private Map<String, Object> houses;
 
     public User() {
         System.out.println("transfer no args constructor in User...");
     }
 
-    public User(Long userId, boolean isVip, String username, String disadvantage, Car drivenCar, List<String> girlFriends, Properties properties, Map<String, String> houses) {
+    public User(Long userId, boolean isVip, String username, String disadvantage, Car drivenCar, List<String> girlFriends, List<Company> companies, Properties properties, Map<String, Object> houses) {
         this.userId = userId;
         this.isVip = isVip;
         this.username = username;
         this.disadvantage = disadvantage;
         this.drivenCar = drivenCar;
         this.girlFriends = girlFriends;
+        this.companies = companies;
         this.properties = properties;
         this.houses = houses;
         System.out.println("transfer all args constructor , the user's name is : " + username + "\n\n");
@@ -97,6 +99,15 @@ public class User {
         this.girlFriends = girlFriends;
     }
 
+    public List<Company> getCompanies() {
+        return companies;
+    }
+
+    public void setCompanies(List<Company> companies) {
+        System.out.println("transfer setCompanies in user");
+        this.companies = companies;
+    }
+
     public Properties getProperties() {
         return properties;
     }
@@ -106,11 +117,11 @@ public class User {
         this.properties = properties;
     }
 
-    public Map<String, String> getHouses() {
+    public Map<String, Object> getHouses() {
         return houses;
     }
 
-    public void setHouses(Map<String, String> houses) {
+    public void setHouses(Map<String, Object> houses) {
         System.out.println("transfer setHouses in user");
         this.houses = houses;
     }
@@ -124,6 +135,7 @@ public class User {
                 ", disadvantage='" + disadvantage + '\'' +
                 ", drivenCar=" + drivenCar +
                 ", girlFriends=" + girlFriends +
+                ", companies=" + companies +
                 ", properties=" + properties +
                 ", houses=" + houses +
                 '}';

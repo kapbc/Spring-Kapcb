@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
     <bean id="car" class="com.kapcb.ccc.domain.Car">
         <property name="carName" value="palamela"/>
@@ -33,5 +33,114 @@
             </bean>
         </property>
     </bean>
+
+    <!-- 为级联属性赋值 -->
+    <bean id="alibaba" class="com.kapcb.ccc.domain.Company">
+        <property name="boss" value="kapcb"/>
+        <property name="companyName" value="alibaba"/>
+        <property name="marketValue" value="#{T(Integer).MAX_VALUE}"/>
+    </bean>
+
+    <!--为List属性赋值-->
+    <bean id="ccc" class="com.kapcb.ccc.domain.User">
+        <property name="username" value="ccc"/>
+        <!--list = new ArrayLis<T>();-->
+        <property name="companies">
+            <!--在list标签体中添加每一个元素-->
+            <list>
+                <!--相当于重新 book = new ArrayList<Book>();-->
+                <!--内部 bean 标签 写id与不写id效果一样，不会被外界获取到，只能供内部使用-->
+                <bean class="com.kapcb.ccc.domain.Company">
+                    <property name="boss" value="ccc"/>
+                    <property name="companyName" value="tencent"/>
+                    <property name="marketValue" value="100000000000000"/>
+                </bean>
+
+                <!--引用外部一个元素-->
+                <ref bean="alibaba"/>
+            </list>
+        </property>
+    </bean>
+
+    <!--为Map<String,Object>赋值-->
+    <bean id="mike" class="com.kapcb.ccc.domain.User">
+        <property name="username" value="mike"/>
+
+        <property name="houses">
+            <!--相当于 maps = new LinkedHashMap<String,Object>();-->
+            <map>
+                <!--一个entry代表一个键值对-->
+                <entry key="北京" value="四合院" value-type="java.lang.String"/>
+                <entry key="上海" value="汤臣一品"/>
+                <entry key="广州" value="猎德广场"/>
+
+                <!--map引用外部bean-->
+                <entry key="深圳" value-ref="alibaba"/>
+
+                <!--map中有一个Car类型的属性-->
+                <entry key="南山">
+                    <bean class="com.kapcb.ccc.domain.Car">
+                        <property name="carName" value="Lamborghini"/>
+                        <property name="carColor" value="black"/>
+                        <property name="carNumber" value="粤A·999999"/>
+                    </bean>
+                </entry>
+
+                <!--map中还有一个map-->
+                <entry key="盐田">
+                    <map>
+                        <entry key="海山" value="盐田港"/>
+                    </map>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!--为 properties 类型属性赋值-->
+    <bean id="chen" class="com.kapcb.ccc.domain.User">
+        <property name="username" value="chen"/>
+        <property name="properties">
+            <!--相当于 properties = new Properties();-->
+            <props>
+                <prop key="chen.company">Alipay</prop>
+                <prop key="chen.car">Ferrari</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--使用util名称空间为集合属性注入属性-->
+    <bean id="bossChen" class="com.kapcb.ccc.domain.User">
+        <property name="houses" ref="companyMap"/>
+    </bean>
+
+    <!-- util名称空间 -->
+    <!--相当于new LinkedHashMap<>();-->
+    <util:map id="companyMap">
+        <!--直接添加元素即可-->
+        <entry key="companyOne" value-ref="alibaba"/>
+        <entry key="companyTwo" value="tencent"/>
+        <entry key="companyThree" value="alipay"/>
+
+        <!--map中有一个Car类型的属性-->
+        <entry key="cars">
+            <bean class="com.kapcb.ccc.domain.Car">
+                <property name="carName" value="Bugatti Veyron"/>
+                <property name="carColor" value="blue"/>
+                <property name="carNumber" value="粤A·77777"/>
+            </bean>
+        </entry>
+    </util:map>
+
+    <!-- 修改引用属性中的值 -->
+    <bean id="bossKapcb" class="com.kapcb.ccc.domain.User">
+        <property name="username" value="bossKapcb"/>
+
+        <!--为Car属性赋值的时候修改 carName 和 carNumber 的值, 并不会改变原来car中的值-->
+        <property name="drivenCar" ref="car"/>
+        <!--属性名点属性名即可-->
+        <property name="drivenCar.carName" value="Aston Martin"/>
+        <property name="drivenCar.carNumber" value="粤A·66666"/>
+    </bean>
+
 
 </beans>
