@@ -25,6 +25,7 @@
         <module name="[036]Spring-JdbcTemplate" />
         <module name="[099]Spring-Utils" />
         <module name="[014]SpringMVC-Interceptor" />
+        <module name="[007]Spring-IOC-FactoryBean" />
         <module name="[020]Spring-MyBatis-Cascade" />
         <module name="[052]Spring-Dubbo-Provider" />
         <module name="[002]Spring-IOC-BeanFactory" />
@@ -73,6 +74,8 @@
       <module name="[006]Spring-Annotation-Value" target="1.5" />
       <module name="[006]Spring-IOC-Bean-Complex" target="8" />
       <module name="[007]Spring-Annotation-Enable" target="1.5" />
+      <module name="[007]Spring-IOC-Bean-Factory" target="8" />
+      <module name="[007]Spring-IOC-FactoryBean" target="8" />
       <module name="[010]SpringMVC-HelloWorld" target="1.8" />
       <module name="[011]SpringMVC-Params" target="1.8" />
       <module name="[012]SpringMVC-Annotations" target="1.8" />
