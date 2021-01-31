@@ -9,7 +9,6 @@
         <property name="color" value="红色"></property>
     </bean>
 
-    <!--为Person里面的自定义类型赋值-->
     <bean id="person" class="com.kapcb.ccc.bean.Person" autowire="byName"></bean>
 
 

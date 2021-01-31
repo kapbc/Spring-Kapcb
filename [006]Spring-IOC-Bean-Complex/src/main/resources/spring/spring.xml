@@ -9,6 +9,23 @@
         <property name="carNumber" value="粤A·88888"/>
     </bean>
 
+    <!--配置根据 name 去Spring的Map中寻找目与标名称的相同的Bean进行创建-->
+    <bean id="userJndiByType" class="com.kapcb.ccc.domain.User" autowire="byName"/>
+
+    <!--使用SpEL表达式进行属性注入-->
+    <bean id="user" class="com.kapcb.ccc.domain.User">
+        <!--运算符-->
+        <property name="userId" value="#{123+5}"/>
+        <!--引用其他在属性-->
+        <property name="drivenCar" value="#{car}"/>
+        <!--引用其他属性的属性值-->
+        <property name="houses" value="#{mike.houses}"/>
+        <!--调用静态方法-->
+        <property name="disadvantage" value="#{T(java.util.UUID).randomUUID().toString().substring(0, 5)}"/>
+        <!--调用非静态方法-->
+        <property name="username" value="#{car.getCarName()}"/>
+    </bean>
+
     <!--正确的为各种属性赋值-->
     <!--默认注册不进行赋值就是属性值为null-->
     <!--使用set方式进行属性注入-->
@@ -32,6 +49,7 @@
                 <property name="carNumber" value="鄂A·88888"/>
             </bean>
         </property>
+        <property name="vip" value="true"/>
     </bean>
 
     <!-- 为级联属性赋值 -->
