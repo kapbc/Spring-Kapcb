@@ -135,12 +135,24 @@
     <bean id="bossKapcb" class="com.kapcb.ccc.domain.User">
         <property name="username" value="bossKapcb"/>
 
-        <!--为Car属性赋值的时候修改 carName 和 carNumber 的值, 并不会改变原来car中的值-->
+        <!--为Car属性赋值的时候修改 carName 和 carNumber 的值, 并会改变原来car中的值-->
         <property name="drivenCar" ref="car"/>
         <!--属性名点属性名即可-->
         <property name="drivenCar.carName" value="Aston Martin"/>
         <property name="drivenCar.carNumber" value="粤A·66666"/>
     </bean>
 
+    <!-- 抽象对象 -->
+    <!-- 不能实例化获取 -->
+    <bean id="abstractPerson" class="com.kapcb.ccc.domain.User" abstract="true">
+        <property name="username" value="abstractPerson"/>
+        <property name="userId" value="0000001"/>
+        <property name="vip" value="true"/>
+    </bean>
 
+    <!-- 修改父类中的属性值 -->
+    <!-- 可以实例化获取 -->
+    <bean id="bossMike" class="com.kapcb.ccc.domain.User" parent="abstractPerson">
+        <property name="username" value="bossMike"/>
+    </bean>
 </beans>
