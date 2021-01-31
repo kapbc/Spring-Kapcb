@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--引入外部属性文件-->
+    <context:property-placeholder location="properties/system.properties"/>
+
+    <bean id="dataSource" class="com.kapcb.ccc.config.DataSource">
+        <property name="user" value="${data.source.user}"/>
+        <property name="password" value="${data.source.password}"/>
+        <property name="jdbcUrl" value="${data.source.jdbcUrl}"/>
+        <property name="jdbcClass" value="${data.source.jdbcClass}"/>
+    </bean>
+
+    <bean id="car" class="com.kapcb.ccc.domain.Car">
+        <property name="carName" value="porsche"/>
+        <property name="carNumber" value="粤A·88888"/>
+        <property name="calColor" value="red"/>
+    </bean>
+
+    <bean id="user" class="com.kapcb.ccc.domain.User" autowire="byType">
+        <property name="userId" value="12345"/>
+        <property name="age" value="14"/>
+        <property name="username" value="kapcb"/>
+    </bean>
+
+</beans>
