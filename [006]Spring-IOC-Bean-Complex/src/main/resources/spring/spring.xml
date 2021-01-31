@@ -9,6 +9,26 @@
         <property name="carNumber" value="粤A·88888"/>
     </bean>
 
+    <!--
+    注入属性值包含特殊符号
+        1. 使用转义字符 &lt; 小于, &gt; 大于
+        2. 把特殊符号内容写到CDATA标签中去
+     -->
+    <bean id="pagani" class="com.kapcb.ccc.domain.Car">
+        <!--如果注入的值为 <<>> 则是特殊符号, property标签会飘红-->
+        <!--<property name="carName" value="<<Pagani>>"/>-->
+        <!--使用转义字符 &lt; 小于, &gt; 大于-->
+
+        <!--如果不想使用转义字符, 可以使用CDATA-->
+        <!--<property name="carName" value="&lt;&lt;Pagani&gt;&gt;"/>-->
+        <!--IDEA在编写使用CDATA标签时, 使用CD可以type出快捷键-->
+        <property name="carName">
+            <value><![CDATA[<<Pagani>>]]></value>
+        </property>
+        <property name="carNumber" value="粤A·55555"/>
+        <property name="carColor" value="blue"/>
+    </bean>
+
     <!--配置根据 name 去Spring的Map中寻找目与标名称的相同的Bean进行创建-->
     <bean id="userJndiByType" class="com.kapcb.ccc.domain.User" autowire="byName"/>
 

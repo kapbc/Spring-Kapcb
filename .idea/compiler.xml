@@ -43,7 +43,6 @@
         <module name="[056]Spring-Redis-Annotation" />
         <module name="[041]Spring-Annotation-Shiro" />
         <module name="[013]SpringMVC-Exception" />
-        <module name="[002]Spring-IoC-XML" />
         <module name="[044]Spring-Validation" />
         <module name="[050]Spring-Dubbo-Consumer" />
         <module name="[006]Spring-Annotation-Value" />
