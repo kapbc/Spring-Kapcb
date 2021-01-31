@@ -23,6 +23,7 @@
         <module name="[010]SpringMVC-HelloWorld" />
         <module name="[036]Spring-JdbcTemplate" />
         <module name="[050]Spring-Dubbo-Consumer" />
+        <module name="[011]Spring-IOC-Autowired" />
         <module name="[014]SpringMVC-Interceptor" />
         <module name="[007]Spring-IOC-FactoryBean" />
         <module name="[020]Spring-MyBatis-Cascade" />
@@ -82,6 +83,7 @@
       <module name="[009]Spring-IOC-Singleton" target="8" />
       <module name="[010]Spring-IOC-Prototype" target="8" />
       <module name="[010]SpringMVC-HelloWorld" target="1.8" />
+      <module name="[011]Spring-IOC-Autowired" target="8" />
       <module name="[011]SpringMVC-Params" target="1.8" />
       <module name="[012]SpringMVC-Annotations" target="1.8" />
       <module name="[013]SpringMVC-Exception" target="1.8" />

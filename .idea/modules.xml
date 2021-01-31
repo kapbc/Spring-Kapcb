@@ -18,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/[009]Spring-IOC-Singleton/[009]Spring-IOC-Singleton.iml" filepath="$PROJECT_DIR$/[009]Spring-IOC-Singleton/[009]Spring-IOC-Singleton.iml" />
       <module fileurl="file://$PROJECT_DIR$/[010]Spring-IOC-Prototype/[010]Spring-IOC-Prototype.iml" filepath="$PROJECT_DIR$/[010]Spring-IOC-Prototype/[010]Spring-IOC-Prototype.iml" />
       <module fileurl="file://$PROJECT_DIR$/[010]SpringMVC-HelloWorld/[010]SpringMVC-HelloWorld.iml" filepath="$PROJECT_DIR$/[010]SpringMVC-HelloWorld/[010]SpringMVC-HelloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[011]Spring-IOC-Autowired/[011]Spring-IOC-Autowired.iml" filepath="$PROJECT_DIR$/[011]Spring-IOC-Autowired/[011]Spring-IOC-Autowired.iml" />
       <module fileurl="file://$PROJECT_DIR$/[011]SpringMVC-Params/[011]SpringMVC-Params.iml" filepath="$PROJECT_DIR$/[011]SpringMVC-Params/[011]SpringMVC-Params.iml" />
       <module fileurl="file://$PROJECT_DIR$/[012]SpringMVC-Annotations/[012]SpringMVC-Annotations.iml" filepath="$PROJECT_DIR$/[012]SpringMVC-Annotations/[012]SpringMVC-Annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/[013]SpringMVC-Exception/[013]SpringMVC-Exception.iml" filepath="$PROJECT_DIR$/[013]SpringMVC-Exception/[013]SpringMVC-Exception.iml" />
