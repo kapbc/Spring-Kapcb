@@ -10,6 +10,8 @@
     我们可以为bean定义一些生命周期的方法：Spring在创建或者在销毁的时候会调用的方法
     自定义初始化方法和销毁方法：要求：The method must have no arguments,but may throw exception
     可以抛异常但是必须不能带参数
+
+    生命周期
     -->
     <bean id="book01" class="com.kapcb.ccc.bean.Book" init-method="myInit" destroy-method="myDestroy"></bean>
 
