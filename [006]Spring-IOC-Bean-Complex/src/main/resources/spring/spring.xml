@@ -80,6 +80,7 @@
     </bean>
 
     <!--为List属性赋值-->
+    <!-- list标签和array标签同时也支持数组类型的数据结构进行属性值的注入-->
     <bean id="ccc" class="com.kapcb.ccc.domain.User">
         <property name="username" value="ccc"/>
         <!--list = new ArrayLis<T>();-->
