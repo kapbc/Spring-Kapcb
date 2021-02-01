@@ -52,6 +52,7 @@
         <module name="[044]Spring-Validation" />
         <module name="[050]Spring-Dubbo-Consumer" />
         <module name="[006]Spring-Annotation-Value" />
+        <module name="[020]Spring-AOP-Principle" />
         <module name="[047]Spring-Shiro-Jwt-Project" />
         <module name="[029]SSM-Base" />
         <module name="[028]SSM-QuickStart" />
@@ -98,6 +99,7 @@
       <module name="[014]SpringMVC-Interceptor" target="1.8" />
       <module name="[015]Spring-IOC-Anntation" target="8" />
       <module name="[015]SpringMVC-FileUpLoad" target="1.8" />
+      <module name="[020]Spring-AOP-Principle" target="8" />
       <module name="[020]Spring-MyBatis-Cascade" target="1.5" />
       <module name="[021]Spring-MyBatis-Param" target="1.5" />
       <module name="[022]Spring-MyBatis-SQL" target="1.5" />
