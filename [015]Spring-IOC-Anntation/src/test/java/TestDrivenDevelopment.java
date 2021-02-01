@@ -1,3 +1,4 @@
+import com.kapcb.ccc.configs.ContextConfiguration;
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.service.IUserService;
 import com.kapcb.ccc.service.impl.IUserServiceImpl;
@@ -18,7 +19,8 @@ public class TestDrivenDevelopment {
 
     @Test
     public void testAnnotationConfiguration() {
-        ApplicationContext ioc = new AnnotationConfigApplicationContext("com.kapcb.ccc.configs");
+        ApplicationContext ioc = new AnnotationConfigApplicationContext(ContextConfiguration.class);
+        //ApplicationContext ioc = new AnnotationConfigApplicationContext("com.kapcb.ccc");
         IUserService userService = ioc.getBean("userService", IUserServiceImpl.class);
         User user = userService.getUserInfo();
         System.out.println("user = " + user);
