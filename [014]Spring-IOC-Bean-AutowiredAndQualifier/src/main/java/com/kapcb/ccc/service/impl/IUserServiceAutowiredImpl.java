@@ -4,6 +4,7 @@ import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.mapper.UserMapper;
 import com.kapcb.ccc.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,6 +21,9 @@ import java.util.List;
 @Component(value = "userServiceAutowired")
 public class IUserServiceAutowiredImpl implements IUserService {
 
+    @Value(value = "abc")
+    private String name;
+
     /**
      * 根据类型进行依赖注入
      */
@@ -28,6 +32,7 @@ public class IUserServiceAutowiredImpl implements IUserService {
 
     @Override
     public List<User> getUserInfo() {
+        System.out.println(name);
         return userMapper.getUserInfo();
     }
 }

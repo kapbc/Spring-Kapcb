@@ -23,7 +23,7 @@ public class IUserServiceResourceImpl implements IUserService {
     /**
      * 根据名称进行依赖注入
      */
-    @Resource
+    @Resource(name = "userMapper")
     private UserMapper userMapper;
 
     @Override
