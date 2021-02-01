@@ -25,8 +25,8 @@ public class TestDrivenDevelopment {
     @Test
     public void testAutowiredByType() {
         ApplicationContext ioc = new AnnotationConfigApplicationContext(BASE_PACKAGES);
-        IUserService userService = ioc.getBean("userServiceAutowired", IUserServiceAutowiredImpl.class);
-        List<User> userInfo = userService.getUserInfo();
+        IUserService userServiceAutowired = ioc.getBean("userServiceAutowired", IUserServiceAutowiredImpl.class);
+        List<User> userInfo = userServiceAutowired.getUserInfo();
         userInfo.forEach(System.out::println);
     }
 
