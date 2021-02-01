@@ -64,6 +64,7 @@
         <module name="[015]SpringMVC-FileUpLoad" />
         <module name="[039]Spring-Shiro" />
         <module name="[053]Spring-RateLimiter" />
+        <module name="[015]Spring-IOC-Anntation" />
         <module name="[030]SSM-Test" />
       </profile>
     </annotationProcessing>
@@ -95,6 +96,7 @@
       <module name="[014]Spring-Bean-Autowired&amp;Qualifier" target="1.5" />
       <module name="[014]Spring-IOC-Bean-AutowiredAndQualifier" target="8" />
       <module name="[014]SpringMVC-Interceptor" target="1.8" />
+      <module name="[015]Spring-IOC-Anntation" target="8" />
       <module name="[015]SpringMVC-FileUpLoad" target="1.8" />
       <module name="[020]Spring-MyBatis-Cascade" target="1.5" />
       <module name="[021]Spring-MyBatis-Param" target="1.5" />

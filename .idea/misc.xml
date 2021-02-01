@@ -162,6 +162,7 @@
         <option value="$PROJECT_DIR$/[012]Spring-IOC-ExternalConfidurationFile/pom.xml" />
         <option value="$PROJECT_DIR$/[013]Spring-IOC-Bean-Annotation/pom.xml" />
         <option value="$PROJECT_DIR$/[014]Spring-IOC-Bean-AutowiredAndQualifier/pom.xml" />
+        <option value="$PROJECT_DIR$/[015]Spring-IOC-Anntation/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
