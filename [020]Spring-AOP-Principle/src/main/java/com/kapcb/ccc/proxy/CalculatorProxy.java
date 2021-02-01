@@ -46,7 +46,6 @@ public class CalculatorProxy {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
-                System.out.println("this is jdk autoProxy...");
                 /**
                  * object：方法执行的对象
                  * args：参数列表
@@ -58,7 +57,15 @@ public class CalculatorProxy {
                  *
                  * 返回值必须返回出去，外部才能拿到方法的结果
                  */
-                return method.invoke(proxy, args);
+                Object result = null;
+                try {
+                    result = method.invoke(iCalculatorService, args);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    System.out.println("this is jdk autoProxy....");
+                }
+                return result;
             }
         };
 
