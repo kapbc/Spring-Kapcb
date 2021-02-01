@@ -12,6 +12,5 @@ buildNumber.properties
 
 
 .idea
-**/**/test
 **/target
 
