@@ -46,9 +46,9 @@ public class LoginPointCut {
 
         try {
             /**
-             * @Before 前置通知
+             * @Before() 前置通知
              */
-            System.out.println("Around advance, the method is : " + name + " begin to process ...");
+            System.out.println("Around advance, the method : " + name + " begin to process ...");
             /**
              * 执行目标方法
              */
@@ -56,9 +56,24 @@ public class LoginPointCut {
             /**
              * @AfterReturning()
              */
-            System.out.println("Around advance after returning, the method is : " + name + " the return value is : " + proceed);
+            System.out.println("Around advance after returning, the method : " + name + " the return value is : " + proceed);
         } catch (Throwable throwable) {
+            /**
+             * @AfterThrowing()
+             */
+            System.out.println("Around advance, the method : " + name + " throw exception, the exception message is : " + throwable.getMessage());
             throwable.printStackTrace();
+        } finally {
+            /**
+             * @After()
+             */
+            System.out.println("Around advance, the method : " + name + " is end...");
         }
+
+        /**
+         * 反射调用的返回值一定需要返回
+         * 否则外部无法获取
+         */
+        return proceed;
     }
 }
