@@ -1,11 +1,16 @@
 package com.kapcb.ccc.aop;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * <a>Title: LoginPointCut </a>
@@ -75,6 +80,19 @@ public class LoginPointCut {
          * 否则外部无法获取
          */
         return proceed;
+    }
 
+
+    /**
+     * 执行目标方法之前运行
+     * 写切入表达式:"execution(访问权限符 返回值类型 方法签名)"
+     */
+    @Before(value = "pointCut()")
+    public static void beforeAdvance(JoinPoint joinPoint) {
+        Object[] args = joinPoint.getArgs();
+        Signature signature = joinPoint.getSignature();
+        String name = signature.getName();
+        List<Object> arguments = Arrays.asList(args);
+        System.out.println("The method " + name + "is begin to run, the args is : " + arguments);
     }
 }
