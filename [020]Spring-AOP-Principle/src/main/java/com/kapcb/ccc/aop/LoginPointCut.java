@@ -1,8 +1,10 @@
 package com.kapcb.ccc.aop;
 
+import org.aopalliance.intercept.Joinpoint;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -89,9 +91,44 @@ public class LoginPointCut {
      */
     @Before(value = "pointCut()")
     public static void beforeAdvance(JoinPoint joinPoint) {
+        /**
+         * 获取目标方法运行时使用的参数
+         */
         Object[] args = joinPoint.getArgs();
+        /**
+         * 获取方法签名
+         * signature对象可以获取方法的签名，方法名，修饰符，返回值类型
+         */
         Signature signature = joinPoint.getSignature();
+        /**
+         * 获取方法名
+         */
         String name = signature.getName();
+        /**
+         * 参数列表数组转集合
+         */
+        List<Object> arguments = Arrays.asList(args);
+        System.out.println("The method " + name + "is begin to run, the args is : " + arguments);
+    }
+
+    @After(value = "pointCut()")
+    public static void afterAdvance(JoinPoint joinPoint) {
+        /**
+         * 获取目标方法运行时使用的参数
+         */
+        Object[] args = joinPoint.getArgs();
+        /**
+         * 获取方法签名
+         * signature对象可以获取方法的签名，方法名，修饰符，返回值类型
+         */
+        Signature signature = joinPoint.getSignature();
+        /**
+         * 获取方法名
+         */
+        String name = signature.getName();
+        /**
+         * 参数列表数组转集合
+         */
         List<Object> arguments = Arrays.asList(args);
         System.out.println("The method " + name + "is begin to run, the args is : " + arguments);
     }
