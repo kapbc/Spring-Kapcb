@@ -1,10 +1,11 @@
 package com.kapcb.ccc.aop;
 
-import org.aopalliance.intercept.Joinpoint;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -108,7 +109,7 @@ public class LoginPointCut {
          * 参数列表数组转集合
          */
         List<Object> arguments = Arrays.asList(args);
-        System.out.println("The method " + name + "is begin to run, the args is : " + arguments);
+        System.out.println("The method " + name + " is begin to run, the args is : " + arguments);
     }
 
     @After(value = "pointCut()")
@@ -130,6 +131,46 @@ public class LoginPointCut {
          * 参数列表数组转集合
          */
         List<Object> arguments = Arrays.asList(args);
-        System.out.println("The method " + name + "is begin to run, the args is : " + arguments);
+        System.out.println("The method " + name + " is begin to run, the args is : " + arguments);
+    }
+
+    /**
+     * 目标方法执行出现异常的时候运行
+     * <p>
+     * 告诉Spring 哪个参数是异常
+     * 使用throwing = "exception",指定抛出异常
+     */
+    @AfterThrowing(value = "pointCut()", throwing = "exception")
+    public static void afterThrowAdvance(JoinPoint joinPoint, Exception exception) {
+        /**
+         * 获取目标方法运行时使用的参数
+         */
+        Object[] args = joinPoint.getArgs();
+        /**
+         * 获取方法签名
+         * signature对象可以获取方法的签名，方法名，修饰符，返回值类型
+         */
+        Signature signature = joinPoint.getSignature();
+        /**
+         * 获取方法名
+         */
+        String name = signature.getName();
+        /**
+         * 参数列表数组转集合
+         */
+        List<Object> arguments = Arrays.asList(args);
+        System.out.println("The method " + name + " is begin to throw exception, the exception is : " + exception.getMessage() + ", the args is : " + arguments);
+    }
+
+    /**
+     * 目标方法执行结束后运行
+     * 告诉Spring 哪个参数是返回结果
+     * 使用returning = "result",指定返回结果
+     */
+    @AfterReturning(value = "pointCut()", returning = "result")
+    public static void afterReturnAdvance(JoinPoint joinPoint, Object result) {
+        Signature signature = joinPoint.getSignature();
+        String name = signature.getName();
+        System.out.println("The method " + name + " is process success, the return result is : " + result);
     }
 }
