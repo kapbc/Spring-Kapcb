@@ -2,6 +2,8 @@ import com.kapcb.ccc.proxy.CalculatorProxy;
 import com.kapcb.ccc.service.ICalculatorService;
 import com.kapcb.ccc.service.impl.ICalculatorServiceImpl;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,6 +18,8 @@ import java.util.List;
  * @date 2021/2/1 23:06
  */
 public class TestDrivenDevelopment {
+
+    private static final String CONTEXT_CONFIG_LOCATION = "classpath:spring/spring.xml";
 
     @Test
     public void testJDKDynamicAutoProxy() {
@@ -39,5 +43,15 @@ public class TestDrivenDevelopment {
          */
         List<Class<?>> classes = Arrays.asList(proxy.getClass().getInterfaces());
         classes.forEach(System.out::println);
+    }
+
+    @Test
+    public void testAOPPointCut() {
+        ApplicationContext ioc = new ClassPathXmlApplicationContext(CONTEXT_CONFIG_LOCATION);
+        ICalculatorService calculatorService = ioc.getBean(ICalculatorService.class);
+        int add = calculatorService.add(1, 2);
+        System.out.println("add = " + add);
+        System.out.println(calculatorService);
+        System.out.println(calculatorService.getClass());
     }
 }
