@@ -5,9 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Kapcb.iml" filepath="$PROJECT_DIR$/.idea/Spring-Kapcb.iml" />
       <module fileurl="file://$PROJECT_DIR$/[001]Spring-IOC-Principle/[001]Spring-IOC-Principle.iml" filepath="$PROJECT_DIR$/[001]Spring-IOC-Principle/[001]Spring-IOC-Principle.iml" />
       <module fileurl="file://$PROJECT_DIR$/[002]Spring-IOC-BeanFactory/[002]Spring-IOC-BeanFactory.iml" filepath="$PROJECT_DIR$/[002]Spring-IOC-BeanFactory/[002]Spring-IOC-BeanFactory.iml" />
-      <module fileurl="file://$PROJECT_DIR$/[003]Spring-AOP/[003]Spring-AOP.iml" filepath="$PROJECT_DIR$/[003]Spring-AOP/[003]Spring-AOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/[003]Spring-IOC-ApplicationContext/[003]Spring-IOC-ApplicationContext.iml" filepath="$PROJECT_DIR$/[003]Spring-IOC-ApplicationContext/[003]Spring-IOC-ApplicationContext.iml" />
-      <module fileurl="file://$PROJECT_DIR$/[004]Spring-AOP-XML/[004]Spring-AOP-XML.iml" filepath="$PROJECT_DIR$/[004]Spring-AOP-XML/[004]Spring-AOP-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/[004]Spring-IOC-Bean-DI/[004]Spring-IOC-Bean-DI.iml" filepath="$PROJECT_DIR$/[004]Spring-IOC-Bean-DI/[004]Spring-IOC-Bean-DI.iml" />
       <module fileurl="file://$PROJECT_DIR$/[005]Spring-Annotation-Configuration/[005]Spring-Annotation-Configuration.iml" filepath="$PROJECT_DIR$/[005]Spring-Annotation-Configuration/[005]Spring-Annotation-Configuration.iml" />
       <module fileurl="file://$PROJECT_DIR$/[006]Spring-Annotation-Value/[006]Spring-Annotation-Value.iml" filepath="$PROJECT_DIR$/[006]Spring-Annotation-Value/[006]Spring-Annotation-Value.iml" />

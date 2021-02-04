@@ -33,7 +33,6 @@
         <module name="[005]Spring-Annotation-Configuration" />
         <module name="[022]Spring-MyBatis-SQL" />
         <module name="[007]Spring-Annotation-Enable" />
-        <module name="[003]Spring-AOP" />
         <module name="[049]SpringMVC-Shiro-Jwt" />
         <module name="[012]SpringMVC-Annotations" />
         <module name="[010]Spring-IOC-Prototype" />
@@ -55,7 +54,6 @@
         <module name="[020]Spring-AOP-Principle" />
         <module name="[030]SSM-Test" />
         <module name="[047]Spring-Shiro-Jwt-Project" />
-        <module name="[004]Spring-AOP-XML" />
         <module name="[028]SSM-QuickStart" />
         <module name="[035]Spring-Resultful-ThreadPool" />
         <module name="[009]Spring-IOC-Singleton" />
