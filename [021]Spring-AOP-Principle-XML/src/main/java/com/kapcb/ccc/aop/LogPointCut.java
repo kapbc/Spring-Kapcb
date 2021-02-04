@@ -32,9 +32,10 @@ public class LogPointCut {
             System.out.println("the afterThrowing advance method : " + name + " is begin, the arguments is : " + Arrays.toString(args));
             throw new RuntimeException(e.getMessage());
         } finally {
+            // @After()
             System.out.println("the after advance method : " + name + " is begin, the return result is : " + result);
         }
-
+        // 反射后调用的返回值也一定需要返回
         return result;
     }
 }
