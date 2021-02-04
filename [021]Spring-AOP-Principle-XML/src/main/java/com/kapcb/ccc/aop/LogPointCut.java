@@ -1,5 +1,6 @@
 package com.kapcb.ccc.aop;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 
@@ -37,5 +38,33 @@ public class LogPointCut {
         }
         // 反射后调用的返回值也一定需要返回
         return result;
+    }
+
+    public static void before(JoinPoint joinPoint) {
+        Object[] args = joinPoint.getArgs();
+        Signature signature = joinPoint.getSignature();
+        String name = signature.getName();
+        System.out.println("the before advance method : " + name + " is begin to run, the arguments is : " + Arrays.toString(args));
+    }
+
+    public static void after(JoinPoint joinPoint) {
+        Object[] args = joinPoint.getArgs();
+        Signature signature = joinPoint.getSignature();
+        String name = signature.getName();
+        System.out.println("the after advance method : " + name + " is begin to run, the arguments is : " + Arrays.toString(args));
+    }
+
+    public static void afterReturning(JoinPoint joinPoint) {
+        Object[] args = joinPoint.getArgs();
+        Signature signature = joinPoint.getSignature();
+        String name = signature.getName();
+        System.out.println("the afterReturning advance method : " + name + " is begin to run, the arguments is : " + Arrays.toString(args));
+    }
+
+    public static void afterThrowing(JoinPoint joinPoint) {
+        Object[] args = joinPoint.getArgs();
+        Signature signature = joinPoint.getSignature();
+        String name = signature.getName();
+        System.out.println("the afterThrowing advance method : " + name + " is begin to run, the arguments is : " + Arrays.toString(args));
     }
 }
