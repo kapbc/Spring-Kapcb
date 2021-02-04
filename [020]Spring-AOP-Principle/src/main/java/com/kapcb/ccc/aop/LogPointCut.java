@@ -26,7 +26,7 @@ import java.util.List;
  */
 @Aspect
 @Component
-public class LoginPointCut {
+public class LogPointCut {
 
     /**
      * 抽取可重用的切入点表达式
