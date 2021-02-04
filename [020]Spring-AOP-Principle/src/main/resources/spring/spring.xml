@@ -4,7 +4,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!--开启Spring组件saomia-->
+    <!--开启Spring组件扫描-->
     <context:component-scan base-package="com.kapcb.ccc"/>
     <!--开启基于注解的aop事务, aop名称空间-->
     <aop:aspectj-autoproxy/>

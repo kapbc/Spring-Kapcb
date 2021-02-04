@@ -19,8 +19,18 @@ public class LogPointCut {
 
     public Object pointCut(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         Object result = null;
+        /**
+         * 获取目标方法运行时使用的参数
+         */
         Object[] args = proceedingJoinPoint.getArgs();
+        /**
+         * 获取方法签名
+         * signature对象可以获取方法的签名，方法名，修饰符，返回值类型
+         */
         Signature signature = proceedingJoinPoint.getSignature();
+        /**
+         * 获取方法名
+         */
         String name = signature.getName();
         try {
             // @Before()
@@ -54,17 +64,17 @@ public class LogPointCut {
         System.out.println("the after advance method : " + name + " is begin to run, the arguments is : " + Arrays.toString(args));
     }
 
-    public static void afterReturning(JoinPoint joinPoint) {
+    public static void afterReturning(JoinPoint joinPoint, Object result) {
         Object[] args = joinPoint.getArgs();
         Signature signature = joinPoint.getSignature();
         String name = signature.getName();
-        System.out.println("the afterReturning advance method : " + name + " is begin to run, the arguments is : " + Arrays.toString(args));
+        System.out.println("the afterReturning advance method : " + name + " is begin to run, the result is : " + result);
     }
 
-    public static void afterThrowing(JoinPoint joinPoint) {
+    public static void afterThrowing(JoinPoint joinPoint, Exception exception) {
         Object[] args = joinPoint.getArgs();
         Signature signature = joinPoint.getSignature();
         String name = signature.getName();
-        System.out.println("the afterThrowing advance method : " + name + " is begin to run, the arguments is : " + Arrays.toString(args));
+        System.out.println("the afterThrowing advance method : " + name + " is begin to run, the exception is : " + exception.getMessage());
     }
 }
