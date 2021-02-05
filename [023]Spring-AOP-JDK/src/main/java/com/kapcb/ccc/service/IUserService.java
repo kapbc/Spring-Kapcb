@@ -1,6 +1,8 @@
 package com.kapcb.ccc.service;
 
 
+import com.kapcb.ccc.domain.User;
+
 /**
  * <a>Title: IUserService </a>
  * <a>Author: kapcb <a>
@@ -12,5 +14,12 @@ package com.kapcb.ccc.service;
  */
 public interface IUserService {
 
-
+    /**
+     * login
+     *
+     * @param username username {@link User#getUsername()}
+     * @param password password {@link User#getPassword()}
+     * @return User {@link User}
+     */
+    User login(String username, String password);
 }
