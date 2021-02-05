@@ -10,6 +10,7 @@ import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -36,22 +37,42 @@ public class JsonUtil {
     private JsonUtil() {
     }
 
-    @SneakyThrows(JsonProcessingException.class)
+    @SneakyThrows(value = JsonProcessingException.class)
     public static <T> String convertObjectBeanToJsonString(ResultBean<T> resultBean) {
-        ResultBean<T> bean = Optional.ofNullable(resultBean).orElseGet(JsonUtil::getNullableResultBean);
+        resultBean = Optional.ofNullable(resultBean).orElseGet(JsonUtil::getNullableResultBean);
         log.warn("process convert object bean to json string");
-        return OBJECT_MAPPER.writeValueAsString(bean);
+        return OBJECT_MAPPER.writeValueAsString(resultBean);
     }
 
+    @SneakyThrows(value = JsonProcessingException.class)
     public static <T> String convertObjectBeanToJsonString(T data) {
-
+        ResultBean nullableResultBean = getNullableResultBean(data);
+        return OBJECT_MAPPER.writeValueAsString(nullableResultBean);
     }
 
+    @SneakyThrows(value = JsonProcessingException.class)
     public static <T> String convertObjectToStringPretty(ResultBean<T> resultBean) {
+        resultBean = Optional.ofNullable(resultBean).orElseGet(JsonUtil::getNullableResultBean);
+        log.warn("process Object to String Pretty");
+        return OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(resultBean);
+    }
+
+    @SneakyThrows(value = JsonProcessingException.class)
+    public static <T> String convertObjectToStringPretty(T data) {
+        ResultBean nullableResultBean = getNullableResultBean(data);
+        return OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(nullableResultBean);
+    }
+
+    public static <T> String convertStringToObject(String jsonString, Class<T> clazz) {
 
     }
+
 
     private static ResultBean getNullableResultBean() {
         return new ResultBean<>(ResultInfo.FAIL);
+    }
+
+    private static <T> ResultBean getNullableResultBean(T data) {
+        return new ResultBean<>(Objects.equals(null, data) ? ResultInfo.FAIL : ResultInfo.SUCCESS, Objects.equals(null, data) ? "" : data);
     }
 }
