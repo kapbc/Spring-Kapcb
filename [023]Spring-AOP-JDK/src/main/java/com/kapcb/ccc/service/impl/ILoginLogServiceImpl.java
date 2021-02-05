@@ -1,5 +1,6 @@
 package com.kapcb.ccc.service.impl;
 
+import com.kapcb.ccc.commons.util.DateUtil;
 import com.kapcb.ccc.domain.LoginLog;
 import com.kapcb.ccc.service.ILoginLogService;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,6 @@ public class ILoginLogServiceImpl implements ILoginLogService {
         loginLog = Optional.ofNullable(loginLog).orElseGet(LoginLog::new);
         LocalDateTime loginTime = loginLog.getLoginTime();
         loginTime = Optional.ofNullable(loginTime).orElseGet(LocalDateTime::now);
-
         System.out.println("user login's log is : " + loginLog);
         return true;
     }

@@ -22,7 +22,6 @@ public class TestDrivenDevelopment {
     @Test
     public void testJDKDynamicAutoProxy() {
         ApplicationContext ioc = new ClassPathXmlApplicationContext(CONTEXT_CONFIG_LOCATION);
-
         IUserService userService = ioc.getBean("userService", IUserServiceImpl.class);
         IUserService proxy = UserLoginProxy.getProxy(userService);
         User kapcb = proxy.login("kapcb", "123456");

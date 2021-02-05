@@ -27,7 +27,7 @@ public class UserLoginLogInvocationHandler implements InvocationHandler {
 
     @Autowired
     @Qualifier(value = "loginLogService")
-    private ILoginLogService loginLogService;
+    private ILoginLogServiceImpl loginLogService;
 
     @NotNull
     private final Object proxyInterface;
