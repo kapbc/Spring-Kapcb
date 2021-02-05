@@ -11,6 +11,7 @@
         <module name="[058]Spring-Thymeleaf" />
         <module name="[054]Spring-Logback" />
         <module name="[042]Spring-Log4j2" />
+        <module name="[024]Spring-AOP-CGLIB" />
         <module name="[055]Spring-Redis" />
         <module name="[001]Spring-IOC-Principle" />
         <module name="[038]Spring-Schedule-Quartz" />
@@ -106,6 +107,7 @@
       <module name="[022]Spring-MyBatis-SQL" target="1.5" />
       <module name="[023]Spring-AOP-JDK" target="8" />
       <module name="[023]Spring-MyBatis-Configure" target="1.5" />
+      <module name="[024]Spring-AOP-CGLIB" target="8" />
       <module name="[024]Spring-MyBatis-DynamicSQL" target="8" />
       <module name="[025]Spring-MyBatis-CRUD" target="1.5" />
       <module name="[028]SSM-QuickStart" target="1.5" />
