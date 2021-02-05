@@ -24,10 +24,12 @@ public class IUserServiceImpl implements IUserService {
 
     @Override
     public User login(String username, String password) {
+        System.out.println("begin to process the user login in IUserServiceImpl");
         User user = null;
         if (StringUtils.equalsIgnoreCase(username, USER_NAME) && StringUtils.equalsIgnoreCase(password, PASS_WORD)) {
             user = new User("kapcb", "123456");
         }
+        System.out.println("process user login success in IUserServiceImpl");
         return Optional.ofNullable(user).orElseGet(User::new);
     }
 }

@@ -11,16 +11,17 @@ import java.lang.reflect.Proxy;
  * @version 1.0.0
  * @date 2021/2/5 22:13
  */
+@SuppressWarnings("unchecked")
 public class UserLoginProxy {
 
-    public static <T> Object getProxy(final T data) {
-
+    public static <T> T getProxy(final T data) {
+        System.out.println("begin to get proxy...");
         UserLoginLogInvocationHandler userLoginLogInvocationHandler = new UserLoginLogInvocationHandler(data);
 
         ClassLoader classLoader = data.getClass().getClassLoader();
 
         Class<?>[] interfaces = data.getClass().getInterfaces();
 
-        return Proxy.newProxyInstance(classLoader, interfaces, userLoginLogInvocationHandler);
+        return (T) Proxy.newProxyInstance(classLoader, interfaces, userLoginLogInvocationHandler);
     }
 }
