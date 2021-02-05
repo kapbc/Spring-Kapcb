@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kapcb.ccc.commons.constants.ResultInfo;
 import com.kapcb.ccc.commons.domain.ResultBean;
 import lombok.SneakyThrows;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -64,7 +65,8 @@ public class JsonUtil {
     }
 
     public static <T> String convertStringToObject(String jsonString, Class<T> clazz) {
-
+        ResultBean nullableResultBean = getNullableResultBean(jsonString, clazz);
+        OBJECT_MAPPER.readValue()
     }
 
 
@@ -74,5 +76,12 @@ public class JsonUtil {
 
     private static <T> ResultBean getNullableResultBean(T data) {
         return new ResultBean<>(Objects.equals(null, data) ? ResultInfo.FAIL : ResultInfo.SUCCESS, Objects.equals(null, data) ? "" : data);
+    }
+
+    private static <T> ResultBean getNullableResultBean(String jsonString, Class<T> clazz) {
+        if (StringUtils.isBlank(jsonString) || clazz == null) {
+            return new ResultBean<>(ResultInfo.FAIL, "");
+        }
+        return new ResultBean<>(ResultInfo.SUCCESS, jsonString);
     }
 }
