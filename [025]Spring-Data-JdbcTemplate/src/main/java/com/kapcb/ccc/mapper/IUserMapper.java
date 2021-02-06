@@ -14,7 +14,6 @@ import java.util.List;
  * @version 1.0.0
  * @date 2021/2/6 17:19
  */
-@Repository(value = "userMapper")
 public interface IUserMapper {
 
     /**
