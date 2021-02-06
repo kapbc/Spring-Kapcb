@@ -165,6 +165,7 @@
         <option value="$PROJECT_DIR$/[021]Spring-AOP-Principle-XML/pom.xml" />
         <option value="$PROJECT_DIR$/[023]Spring-AOP-JDK/pom.xml" />
         <option value="$PROJECT_DIR$/[024]Spring-AOP-CGLIB/pom.xml" />
+        <option value="$PROJECT_DIR$/[025]Spring-Data-JdbcTemplate/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -35,6 +35,7 @@
       <module fileurl="file://$PROJECT_DIR$/[023]Spring-MyBatis-Configure/[023]Spring-MyBatis-Configure.iml" filepath="$PROJECT_DIR$/[023]Spring-MyBatis-Configure/[023]Spring-MyBatis-Configure.iml" />
       <module fileurl="file://$PROJECT_DIR$/[024]Spring-AOP-CGLIB/[024]Spring-AOP-CGLIB.iml" filepath="$PROJECT_DIR$/[024]Spring-AOP-CGLIB/[024]Spring-AOP-CGLIB.iml" />
       <module fileurl="file://$PROJECT_DIR$/[024]Spring-MyBatis-DynamicSQL/[024]Spring-MyBatis-DynamicSQL.iml" filepath="$PROJECT_DIR$/[024]Spring-MyBatis-DynamicSQL/[024]Spring-MyBatis-DynamicSQL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[025]Spring-Data-JdbcTemplate/[025]Spring-Data-JdbcTemplate.iml" filepath="$PROJECT_DIR$/[025]Spring-Data-JdbcTemplate/[025]Spring-Data-JdbcTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/[025]Spring-MyBatis-CRUD/[025]Spring-MyBatis-CRUD.iml" filepath="$PROJECT_DIR$/[025]Spring-MyBatis-CRUD/[025]Spring-MyBatis-CRUD.iml" />
       <module fileurl="file://$PROJECT_DIR$/[028]SSM-QuickStart/[028]SSM-QuickStart.iml" filepath="$PROJECT_DIR$/[028]SSM-QuickStart/[028]SSM-QuickStart.iml" />
       <module fileurl="file://$PROJECT_DIR$/[029]SSM-Base/[029]SSM-Base.iml" filepath="$PROJECT_DIR$/[029]SSM-Base/[029]SSM-Base.iml" />
