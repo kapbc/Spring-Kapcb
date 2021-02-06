@@ -22,4 +22,12 @@ public interface IUserMapper {
      * @return List<User>
      */
     List<User> getUserInfoList();
+
+    /**
+     * insert user
+     *
+     * @param user {@link User}
+     * @return boolean
+     */
+    boolean insertUser(User user);
 }

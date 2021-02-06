@@ -2,7 +2,6 @@ package com.kapcb.ccc.mapper.impl;
 
 import com.kapcb.ccc.domain.User;
 import com.kapcb.ccc.mapper.IUserMapper;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -35,9 +34,9 @@ public class IUserMapperImpl implements IUserMapper {
 
     @Override
     public List<User> getUserInfoList() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("select * from tb_user");
-        return jdbcTemplate.query(sb.toString(), new RowMapper() {
+        StringBuilder sqlStr = new StringBuilder();
+        sqlStr.append("select * from tb_user");
+        return jdbcTemplate.query(sqlStr.toString(), new RowMapper() {
             @Override
             public Object mapRow(ResultSet resultSet, int i) throws SQLException {
                 User user = new User();
@@ -64,5 +63,17 @@ public class IUserMapperImpl implements IUserMapper {
                 return user;
             }
         });
+    }
+
+    @Override
+    public boolean insertUser(User user) {
+        StringBuilder sqlStr = new StringBuilder();
+        sqlStr.append("insert into tb_user(id,username,password,phone,email,created,updated) values(");
+        sqlStr.append("?,?,?,?,?,?,?").append(")");
+        System.out.println("insert user's sql string is : " + sqlStr.toString());
+        Object[] args = new Object[]{user.getUserId(), user.getUsername(), user.getPassword(), user.getPhone(), user.getEmail(), user.getCreated(), user.getUpdated()};
+        int update = jdbcTemplate.update(sqlStr.toString(), args);
+        System.out.println("update = " + update);
+        return update == 1;
     }
 }

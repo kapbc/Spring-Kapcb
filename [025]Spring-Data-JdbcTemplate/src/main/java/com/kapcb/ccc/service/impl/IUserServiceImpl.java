@@ -30,8 +30,12 @@ public class IUserServiceImpl implements IUserService {
 
     @Override
     public List<User> getUserInfoList() {
+        return userMapper.getUserInfoList();
+    }
 
-        return null;
+    @Override
+    public boolean insertUser(User user) {
+        return userMapper.insertUser(user);
     }
 
 }
