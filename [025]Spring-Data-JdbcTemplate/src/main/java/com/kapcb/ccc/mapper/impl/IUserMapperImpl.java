@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -34,6 +35,15 @@ public class IUserMapperImpl implements IUserMapper {
             @Override
             public Object mapRow(ResultSet resultSet, int i) throws SQLException {
                 User user = new User();
+                int id = resultSet.getInt("id");
+                String username = resultSet.getString("username");
+                String password = resultSet.getString("password");
+                String phone = resultSet.getString("phone");
+                String email = resultSet.getString("email");
+                Timestamp created = resultSet.getTimestamp("created");
+                Timestamp updated = resultSet.getTimestamp("updated");
+
+
                 return null;
             }
         })
