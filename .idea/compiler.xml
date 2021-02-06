@@ -43,6 +43,7 @@
         <module name="[011]Spring-IOC-Autowired" />
         <module name="[025]Spring-MyBatis-CRUD" />
         <module name="[058]Spring-Thymeleaf" />
+        <module name="[026]Spring-Data-Transaction" />
         <module name="[032]SSM-Email" />
         <module name="[006]Spring-IOC-Bean-Complex" />
         <module name="[056]Spring-Redis-Annotation" />
@@ -112,6 +113,7 @@
       <module name="[024]Spring-MyBatis-DynamicSQL" target="8" />
       <module name="[025]Spring-Data-JdbcTemplate" target="8" />
       <module name="[025]Spring-MyBatis-CRUD" target="1.5" />
+      <module name="[026]Spring-Data-Transaction" target="8" />
       <module name="[028]SSM-QuickStart" target="1.5" />
       <module name="[029]SSM-Base" target="8" />
       <module name="[030]SSM-Test" target="1.8" />
