@@ -1,6 +1,9 @@
 package com.kapcb.ccc.mapper;
 
+import com.kapcb.ccc.domain.User;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * <a>Title: IUserMapper </a>
@@ -13,4 +16,11 @@ import org.springframework.stereotype.Repository;
  */
 @Repository(value = "userMapper")
 public interface IUserMapper {
+
+    /**
+     * get user info list
+     *
+     * @return List<User>
+     */
+    List<User> getUserInfoList();
 }

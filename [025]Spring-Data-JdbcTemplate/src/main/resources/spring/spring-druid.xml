@@ -39,8 +39,8 @@
         <property name="testWhileIdle" value="${druid.data.source.testWhileIdle}"/>
         <!-- PreparedStatements -->
         <property name="poolPreparedStatements" value="${druid.data.source.poolPreparedStatements}"/>
-        <!-- 配置监控统计拦截的filters，stat:监控统计、log4j：日志记录、wall：防御sql注入 -->
-        <property name="filters" value="${druid.data.source.filters}"/>
+        <!-- 配置监控统计拦截的filters，stat:监控统计、log4j：日志记录、wall：防御sql注入
+        <property name="filters" value="${druid.data.source.filters}"/> -->
         <!-- maxPoolPreparedStatementPerConnectionSize -->
         <property name="maxPoolPreparedStatementPerConnectionSize"
                   value="${druid.data.source.maxPoolPreparedStatementPerConnectionSize}"/>
