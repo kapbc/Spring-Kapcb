@@ -61,4 +61,9 @@ public class TestDrivenDevelopment {
         user.setUpdated(LocalDateTime.now());
         System.out.println(userService.insertUser(user));
     }
+
+    @Test
+    public void testJdbcTemplateUpdate() {
+
+    }
 }
