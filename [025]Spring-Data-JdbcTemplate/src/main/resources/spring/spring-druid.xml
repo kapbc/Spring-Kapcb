@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 外部配置文件 -->
+    <context:property-placeholder location="classpath:properties/druid.properties"/>
+
+    <!-- druid data source -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <!-- 数据库的用户名 -->
+        <property name="username" value="${druid.data.source.username}"/>
+        <!-- 数据库密码 -->
+        <property name="password" value="${druid.data.source.password}"/>
+        <!-- 数据库url地址 -->
+        <property name="url" value="${druid.data.source.url}"/>
+        <!-- 数据库驱动 -->
+        <property name="driverClassName" value="${druid.data.source.driven}"/>
+        <!-- 进行数据源的指定 -->
+        <property name="dbType" value="${druid.data.source.dbType}"/>
+        <!-- 初始化连接池大小 -->
+        <property name="initialSize" value="${druid.data.source.initialSize}"/>
+        <!-- 最大活跃数 -->
+        <property name="maxActive" value="${druid.data.source.maxActive}"/>
+        <!-- 最大等待时间 -->
+        <property name="maxWait" value="${druid.data.source.maxWait}"/>
+        <!--  -->
+        <property name="timeBetweenEvictionRunsMillis" value="${druid.data.source.timeBetweenEvictionRunsMillis}"/>
+        <!--  -->
+        <property name="minEvictableIdleTimeMillis" value="${druid.data.source.minEvictableIdleTimeMillis}"/>
+        <!-- 验证查询 -->
+        <property name="validationQuery" value="${druid.data.source.validationQuery}"/>
+        <!-- 测试返回 -->
+        <property name="testOnReturn" value="${druid.data.source.testOnReturn}"/>
+        <!-- 借用测试 -->
+        <property name="testOnBorrow" value="${druid.data.source.testOnBorrow}"/>
+        <!-- 空闲时测试 -->
+        <property name="testWhileIdle" value="${druid.data.source.testWhileIdle}"/>
+        <!-- PreparedStatements -->
+        <property name="poolPreparedStatements" value="${druid.data.source.poolPreparedStatements}"/>
+        <!-- 配置监控统计拦截的filters，stat:监控统计、log4j：日志记录、wall：防御sql注入 -->
+        <property name="filters" value="${druid.data.source.filters}"/>
+        <!-- maxPoolPreparedStatementPerConnectionSize -->
+        <property name="maxPoolPreparedStatementPerConnectionSize"
+                  value="${druid.data.source.maxPoolPreparedStatementPerConnectionSize}"/>
+        <!--  -->
+        <property name="useGlobalDataSourceStat" value="${druid.data.source.useGlobalDataSourceStat}"/>
+        <!--  -->
+        <property name="connectionProperties" value="${druid.data.source.connectionProperties}"/>
+    </bean>
+
+</beans>
