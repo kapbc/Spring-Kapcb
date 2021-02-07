@@ -5,8 +5,6 @@ import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 import org.apache.commons.lang3.ArrayUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Method;
 
@@ -20,8 +18,6 @@ import java.lang.reflect.Method;
  * @date 2021/2/7-13:16
  */
 public class CgLibAutoDynamicProxy implements MethodInterceptor {
-
-    private static final Logger log = LoggerFactory.getLogger(CgLibAutoDynamicProxy.class);
 
     /**
      * 根据一个类型产生代理类，此方法不要求一定放在MethodInterceptor中
@@ -69,10 +65,10 @@ public class CgLibAutoDynamicProxy implements MethodInterceptor {
         /**
          * 增强代码
          */
-        log.info("the arguments is : " + ArrayUtils.toString(args));
-        log.info("cglib before");
+        System.out.println("the arguments is : " + ArrayUtils.toString(args));
+        System.out.println("cglib before");
         Object result = methodProxy.invokeSuper(object, args);
-        log.info("cglib after");
+        System.out.println("cglib after");
         return result;
     }
 }
