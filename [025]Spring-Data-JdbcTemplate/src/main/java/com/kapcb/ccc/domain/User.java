@@ -24,14 +24,69 @@ public class User {
     public User() {
     }
 
-    public User(Long userId, String username, String password, String phone, String email, LocalDateTime created, LocalDateTime updated) {
-        this.userId = userId;
-        this.username = username;
-        this.password = password;
-        this.phone = phone;
-        this.email = email;
-        this.created = created;
-        this.updated = updated;
+    public User(Builder builder) {
+        this.userId = builder.userId;
+        this.username = builder.username;
+        this.password = builder.password;
+        this.phone = builder.phone;
+        this.email = builder.email;
+        this.created = builder.created;
+        this.updated = builder.updated;
+    }
+
+    public static class Builder {
+
+        private Long userId;
+        private String username;
+        private String password;
+        private String phone;
+        private String email;
+        private LocalDateTime created;
+        private LocalDateTime updated;
+
+        public Builder() {
+        }
+
+        public User.Builder userId(Long userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        public User.Builder username(String username) {
+            this.username = username;
+            return this;
+        }
+
+        public User.Builder password(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public User.Builder phone(String phone) {
+            this.phone = phone;
+            return this;
+        }
+
+        public User.Builder email(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public User.Builder created(LocalDateTime created) {
+            this.created = created;
+            return this;
+        }
+
+        public User.Builder updated(LocalDateTime updated) {
+            this.updated = updated;
+            return this;
+        }
+
+        public User builder() {
+            return new User(this);
+        }
+
+
     }
 
     public Long getUserId() {
