@@ -8,7 +8,6 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kapcb.ccc.commons.constants.ResultInfo;
 import com.kapcb.ccc.commons.domain.ResultBean;
-import lombok.SneakyThrows;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,11 +51,15 @@ public class JsonUtil {
      * @param <T>        <T>
      * @return String
      */
-    @SneakyThrows(value = JsonProcessingException.class)
     public static <T> String convertObjectBeanToJsonString(ResultBean<T> resultBean) {
         log.warn("process convert object bean to json string");
         resultBean = Optional.ofNullable(resultBean).orElseGet(JsonUtil::getNullableResultBean);
-        return OBJECT_MAPPER.writeValueAsString(resultBean);
+        try {
+            return OBJECT_MAPPER.writeValueAsString(resultBean);
+        } catch (JsonProcessingException e) {
+            log.error("process json process error, the exception is : " + e.getMessage());
+            return DEFAULT_JSON_VALUE;
+        }
     }
 
     /**
@@ -66,11 +69,15 @@ public class JsonUtil {
      * @param <T>  <T>
      * @return String
      */
-    @SneakyThrows(value = JsonProcessingException.class)
     public static <T> String convertObjectBeanToJsonString(T data) {
         log.warn("process convert object bean to json string");
         ResultBean nullableResultBean = getNullableResultBean(data);
-        return OBJECT_MAPPER.writeValueAsString(nullableResultBean);
+        try {
+            return OBJECT_MAPPER.writeValueAsString(nullableResultBean);
+        } catch (JsonProcessingException e) {
+            log.error("process json process error, the exception is : " + e.getMessage());
+            return DEFAULT_JSON_VALUE;
+        }
     }
 
     /**
@@ -80,11 +87,15 @@ public class JsonUtil {
      * @param <T>        <T>
      * @return String
      */
-    @SneakyThrows(value = JsonProcessingException.class)
     public static <T> String convertObjectToStringPretty(ResultBean<T> resultBean) {
         log.warn("process Object to String Pretty");
         resultBean = Optional.ofNullable(resultBean).orElseGet(JsonUtil::getNullableResultBean);
-        return OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(resultBean);
+        try {
+            return OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(resultBean);
+        } catch (JsonProcessingException e) {
+            log.error("process json process error, the exception is : " + e.getMessage());
+            return DEFAULT_JSON_VALUE;
+        }
     }
 
     /**
@@ -94,11 +105,15 @@ public class JsonUtil {
      * @param <T>  <T>
      * @return String
      */
-    @SneakyThrows(value = JsonProcessingException.class)
     public static <T> String convertObjectToStringPretty(T data) {
         log.warn("process Object to String Pretty");
         ResultBean nullableResultBean = getNullableResultBean(data);
-        return OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(nullableResultBean);
+        try {
+            return OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(nullableResultBean);
+        } catch (JsonProcessingException e) {
+            log.error("process json process error, the exception is : " + e.getMessage());
+            return DEFAULT_JSON_VALUE;
+        }
     }
 
     /**
@@ -109,13 +124,17 @@ public class JsonUtil {
      * @param <T>        <T>
      * @return T
      */
-    @SneakyThrows(JsonProcessingException.class)
     public static <T> T convertStringToObject(String jsonString, Class<T> clazz) {
         log.warn("process String to Object Bean");
         if (isNull(jsonString, clazz)) {
             return null;
         }
-        return Objects.equals(String.class, clazz) ? (T) jsonString : OBJECT_MAPPER.readValue(jsonString, clazz);
+        try {
+            return Objects.equals(String.class, clazz) ? (T) jsonString : OBJECT_MAPPER.readValue(jsonString, clazz);
+        } catch (JsonProcessingException e) {
+            log.error("process json process error, the exception is : " + e.getMessage());
+            return (T) DEFAULT_JSON_VALUE;
+        }
     }
 
     /**
@@ -126,13 +145,17 @@ public class JsonUtil {
      * @param <T>           <T>
      * @return T
      */
-    @SneakyThrows(JsonProcessingException.class)
     public static <T> T convertStringToObject(String jsonString, TypeReference<T> typeReference) {
         log.warn("process String to Object Bean");
         if (isNull(jsonString, typeReference)) {
             return null;
         }
-        return Objects.equals(String.class, typeReference) ? (T) jsonString : OBJECT_MAPPER.readValue(jsonString, typeReference);
+        try {
+            return Objects.equals(String.class, typeReference) ? (T) jsonString : OBJECT_MAPPER.readValue(jsonString, typeReference);
+        } catch (JsonProcessingException e) {
+            log.error("process json process error, the exception is : " + e.getMessage());
+            return (T) DEFAULT_JSON_VALUE;
+        }
     }
 
     /**
@@ -144,10 +167,14 @@ public class JsonUtil {
      * @param <T>             <T>
      * @return T
      */
-    @SneakyThrows(JsonProcessingException.class)
     public static <T> T convertStringToObject(String jsonString, Class<?> collectionClass, Class<?>... elementClasses) {
         JavaType javaType = OBJECT_MAPPER.getTypeFactory().constructParametricType(collectionClass, elementClasses);
-        return OBJECT_MAPPER.readValue(jsonString, javaType);
+        try {
+            return OBJECT_MAPPER.readValue(jsonString, javaType);
+        } catch (JsonProcessingException e) {
+            log.error("process json process error, the exception is : " + e.getMessage());
+            return (T) DEFAULT_JSON_VALUE;
+        }
     }
 
     /**
@@ -156,7 +183,7 @@ public class JsonUtil {
     public static class JsonBuilder {
         private final Map<String, Object> builderMap = new HashMap<>(INITIAL_CAPACITY);
 
-        JsonBuilder() {
+        public JsonBuilder() {
         }
 
         public JsonUtil.JsonBuilder put(String key, Object value) {
