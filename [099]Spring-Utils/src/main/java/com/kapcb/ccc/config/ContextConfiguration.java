@@ -31,6 +31,7 @@ public class ContextConfiguration {
 
     private static final String systemPropertiesFile = "system.properties";
     private static final String kapcbPropertiesFile = "kapcb.properties";
+    private static final String path = "src/main/resources/properties/";
     private static final List<String> propertiesList = new ArrayList<>();
     private static final Resource[] resources = new Resource[]{};
 
@@ -71,10 +72,10 @@ public class ContextConfiguration {
                 String propertiesPathString = propertiesList.get(i);
                 log.warn("the properties path String is : " + propertiesPathString);
                 if (!propertiesFileClasspath.endsWith(File.separator)) {
-                    propertiesFileClasspath = propertiesFileClasspath + File.separator + propertiesPathString;
+                    propertiesFileClasspath = propertiesFileClasspath + File.separator + path + propertiesPathString;
                     log.warn("the final resources path is : " + propertiesFileClasspath);
                 } else {
-                    propertiesFileClasspath = propertiesFileClasspath + propertiesPathString;
+                    propertiesFileClasspath = propertiesFileClasspath + path + propertiesPathString;
                     log.warn("the final resources path is : " + propertiesFileClasspath);
                 }
                 Resource resource = new InputStreamResource(new FileInputStream(propertiesFileClasspath));
