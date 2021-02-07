@@ -22,7 +22,7 @@ import java.io.IOException;
 @Slf4j
 public class HttpGetTest {
     private static final String REQUEST_URL = "https://blog.csdn.net/llllllllll4er5ty/article/details/102588420";
-    private static final String REQUEST_URL_TEST="HTTPS://www.baidu.com";
+    private static final String REQUEST_URL_TEST = "HTTPS://www.baidu.com";
 
     private HttpGetTest() {
     }
@@ -49,38 +49,38 @@ public class HttpGetTest {
             }
         }
     }
-    
-        /**
+
+    /**
      * disable ssl
      */
-    private static void disableSSLVerification() {
-        try {
-            TrustManager[] trustManagers = new TrustManager[]{
-                    new X509TrustManager() {
-                        @Override
-                        public void checkClientTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
-
-                        }
-
-                        @Override
-                        public void checkServerTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
-
-                        }
-
-                        @Override
-                        public X509Certificate[] getAcceptedIssuers() {
-                            return null;
-                        }
-                    }
-            };
-
-            SSLContext ssl = SSLContext.getInstance("SSL");
-            ssl.init(null, trustManagers, new SecureRandom());
-            HttpsURLConnection.setDefaultSSLSocketFactory(ssl.getSocketFactory());
-            HostnameVerifier hostnameVerifier = (s, sslSession) -> true;
-            HttpsURLConnection.setDefaultHostnameVerifier(hostnameVerifier);
-        } catch (NoSuchAlgorithmException | KeyManagementException e) {
-            log.error("process disableSSLVerification error, The Exception is : " + e.getMessage());
-        }
-    }
+//    private static void disableSSLVerification() {
+//        try {
+//            TrustManager[] trustManagers = new TrustManager[]{
+//                    new X509TrustManager() {
+//                        @Override
+//                        public void checkClientTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+//
+//                        }
+//
+//                        @Override
+//                        public void checkServerTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+//
+//                        }
+//
+//                        @Override
+//                        public X509Certificate[] getAcceptedIssuers() {
+//                            return null;
+//                        }
+//                    }
+//            };
+//
+//            SSLContext ssl = SSLContext.getInstance("SSL");
+//            ssl.init(null, trustManagers, new SecureRandom());
+//            HttpsURLConnection.setDefaultSSLSocketFactory(ssl.getSocketFactory());
+//            HostnameVerifier hostnameVerifier = (s, sslSession) -> true;
+//            HttpsURLConnection.setDefaultHostnameVerifier(hostnameVerifier);
+//        } catch (NoSuchAlgorithmException | KeyManagementException e) {
+//            log.error("process disableSSLVerification error, The Exception is : " + e.getMessage());
+//        }
+//    }
 }

@@ -29,15 +29,15 @@ public class ContextConfiguration {
 
     private static final Logger log = LoggerFactory.getLogger(ContextConfiguration.class);
 
-    private static final String systemPropertiesFile = "system.properties";
-    private static final String kapcbPropertiesFile = "kapcb.properties";
-    private static final String path = "src/main/resources/properties/";
-    private static final List<String> propertiesList = new ArrayList<>();
-    private static final Resource[] resources = new Resource[]{};
+    private static final String SYSTEM_PROPERTIES_FILE = "system.properties";
+    private static final String KAPCB_PROPERTIES_FILE = "kapcb.properties";
+    private static final String PATH = "src/main/resources/properties/";
+    private static final List<String> PROPERTIES_LIST = new ArrayList<>();
+    private static final Resource[] RESOURCES = new Resource[]{};
 
     static {
-        propertiesList.add(systemPropertiesFile);
-        propertiesList.add(kapcbPropertiesFile);
+        PROPERTIES_LIST.add(SYSTEM_PROPERTIES_FILE);
+        PROPERTIES_LIST.add(KAPCB_PROPERTIES_FILE);
     }
 
     @Bean(value = "propertiesReader")
@@ -68,23 +68,23 @@ public class ContextConfiguration {
              * 例如返回: D:\workspace\myproject01\WEB-INF\classes\config.properties
              */
             log.warn("the subtring path is : " + propertiesFileClasspath);
-            for (int i = 0; i < propertiesList.size(); i++) {
-                String propertiesPathString = propertiesList.get(i);
+            for (int i = 0; i < PROPERTIES_LIST.size(); i++) {
+                String propertiesPathString = PROPERTIES_LIST.get(i);
                 log.warn("the properties path String is : " + propertiesPathString);
                 if (!propertiesFileClasspath.endsWith(File.separator)) {
-                    propertiesFileClasspath = propertiesFileClasspath + File.separator + path + propertiesPathString;
+                    propertiesFileClasspath = propertiesFileClasspath + File.separator + PATH + propertiesPathString;
                     log.warn("the final resources path is : " + propertiesFileClasspath);
                 } else {
-                    propertiesFileClasspath = propertiesFileClasspath + path + propertiesPathString;
+                    propertiesFileClasspath = propertiesFileClasspath + PATH + propertiesPathString;
                     log.warn("the final resources path is : " + propertiesFileClasspath);
                 }
                 Resource resource = new InputStreamResource(new FileInputStream(propertiesFileClasspath));
-                resources[i] = resource;
+                RESOURCES[i] = resource;
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        propertiesFactoryBean.setLocations(resources);
+        propertiesFactoryBean.setLocations(RESOURCES);
         return propertiesFactoryBean;
     }
 
