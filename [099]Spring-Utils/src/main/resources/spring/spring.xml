@@ -6,6 +6,37 @@
 
     <context:component-scan base-package="com.kapcb.ccc">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-        <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
+
+    <!--  @Value表达式的用法是 @Value(value="#{${bean id}['properties key']}")  -->
+    <!--  @Value表达式的用法是 @Value(value="#propertiesReader['properties key']}")  -->
+    <bean id="propertiesReader" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:properties/kapcb.properties</value>
+                <value>classpath:properties/system.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--  @Value表达式的用法是 @Value(value="${properties key}")  -->
+    <!--    <bean id="" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+    <!--        <property name="locations">-->
+    <!--            <list>-->
+    <!--                <value>classpath:properties/kapcb.properties</value>-->
+    <!--                <value>classpath:properties/system.properties</value>-->
+    <!--            </list>-->
+    <!--        </property>-->
+    <!--    </bean>-->
+
+    <!--    <bean id="propertiesConfigurer" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">-->
+    <!--        <property name="locations">-->
+    <!--            <list>-->
+    <!--                <value>classpath:properties/kapcb.properties</value>-->
+    <!--                <value>classpath:properties/system.properties</value>-->
+    <!--            </list>-->
+    <!--        </property>-->
+    <!--    </bean>-->
 </beans>
