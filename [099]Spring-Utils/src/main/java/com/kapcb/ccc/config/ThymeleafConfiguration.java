@@ -2,13 +2,11 @@ package com.kapcb.ccc.commons.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.thymeleaf.spring5.SpringWebFluxTemplateEngine;
+import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 import java.nio.charset.StandardCharsets;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * <a>Title: ThymeleafConfiguration </a>
@@ -22,23 +20,20 @@ import java.util.Set;
 @Configuration
 public class ThymeleafConfiguration {
 
-
     @Bean
     public SpringResourceTemplateResolver springResourceTemplateResolver() {
         SpringResourceTemplateResolver springResourceTemplateResolver = new SpringResourceTemplateResolver();
         springResourceTemplateResolver.setCacheable(false);
-        springResourceTemplateResolver.setSuffix("/WEB-INF/template/");
-        springResourceTemplateResolver.setPrefix(".html");
+        springResourceTemplateResolver.setPrefix("/WEB-INF/template/");
+        springResourceTemplateResolver.setSuffix(".html");
         springResourceTemplateResolver.setCharacterEncoding(StandardCharsets.UTF_8.toString());
-        Set<String> templateMode = new HashSet<>();
-        templateMode.add("HTML");
-        springResourceTemplateResolver.setHtmlTemplateModePatterns(templateMode);
+        springResourceTemplateResolver.setTemplateMode("HTML");
         return springResourceTemplateResolver;
     }
 
     @Bean
-    public SpringWebFluxTemplateEngine springTemplateEngine() {
-        SpringWebFluxTemplateEngine templateEngine = new SpringWebFluxTemplateEngine();
+    public SpringTemplateEngine springTemplateEngine() {
+        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(springResourceTemplateResolver());
         return templateEngine;
     }
