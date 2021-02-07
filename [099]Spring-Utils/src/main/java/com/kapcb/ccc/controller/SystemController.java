@@ -1,7 +1,5 @@
 package com.kapcb.ccc.controller;
 
-import com.kapcb.ccc.commons.domain.User;
-import com.kapcb.ccc.proxy.CgLibAutoDynamicProxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

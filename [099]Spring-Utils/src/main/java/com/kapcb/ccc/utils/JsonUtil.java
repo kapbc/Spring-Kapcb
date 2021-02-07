@@ -1,4 +1,4 @@
-package com.kapcb.ccc.commons.utils;
+package com.kapcb.ccc.utils;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -6,8 +6,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kapcb.ccc.commons.constants.ResultInfo;
-import com.kapcb.ccc.commons.domain.ResultBean;
+import com.kapcb.ccc.domain.ResultBean;
+import com.kapcb.ccc.constants.ResultInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

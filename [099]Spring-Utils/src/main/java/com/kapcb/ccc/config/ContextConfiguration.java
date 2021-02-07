@@ -1,4 +1,4 @@
-package com.kapcb.ccc.commons.config;
+package com.kapcb.ccc.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

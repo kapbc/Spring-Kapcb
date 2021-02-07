@@ -1,6 +1,7 @@
-package com.kapcb.ccc.commons.domain;
+package com.kapcb.ccc.domain;
 
-import com.kapcb.ccc.commons.constants.ResultInfo;
+import com.kapcb.ccc.constants.ResultInfo;
+import com.kapcb.ccc.constants.ResultInfo;
 import lombok.Data;
 
 /**

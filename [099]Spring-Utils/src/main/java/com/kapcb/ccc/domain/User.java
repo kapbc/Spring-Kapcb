@@ -1,4 +1,4 @@
-package com.kapcb.ccc.commons.domain;
+package com.kapcb.ccc.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
