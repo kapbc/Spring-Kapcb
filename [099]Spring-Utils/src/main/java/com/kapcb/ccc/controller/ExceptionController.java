@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
  * @version 1.0.0
  * @date 2021/2/7-9:35
  */
+@ResponseBody
 @ControllerAdvice
 public class ExceptionController {
 
