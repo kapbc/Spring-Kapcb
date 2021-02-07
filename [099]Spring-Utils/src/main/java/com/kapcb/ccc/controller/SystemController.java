@@ -1,5 +1,7 @@
 package com.kapcb.ccc.controller;
 
+import com.kapcb.ccc.commons.domain.User;
+import com.kapcb.ccc.proxy.CgLibAutoDynamicProxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -42,6 +44,12 @@ public class SystemController {
 //        System.out.println("nb = " + nb);
 //        System.out.println("awesome = " + awesome);
         System.out.println("===============test properties================");
-        return "index";
+        throw new RuntimeException("system error");
+
+//        CgLibAutoDynamicProxy cgLibAutoDynamicProxy = new CgLibAutoDynamicProxy();
+//        User user = (User) cgLibAutoDynamicProxy.CreateProxyObject(User.class);
+//        System.out.println("user = " + user);
+//        System.out.println("user.getClass() = " + user.getClass());
+//        return "index";
     }
 }
