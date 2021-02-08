@@ -21,10 +21,11 @@ public class ExceptionController {
 
     @ExceptionHandler(value = Exception.class)
     public String systemExceptionHandler(Exception e) {
+        String message = e.getMessage() == null ? ResultInfo.JSON_RESULT_MESSAGE.getMessage() : e.getMessage();
         JsonUtil.JsonBuilder jsonBuilder = new JsonUtil.JsonBuilder();
         return jsonBuilder
                 .put(ResultInfo.JSON_RESULT_CODE.getCode(), ResultInfo.JSON_RESULT_CODE.getMessage())
-                .put(ResultInfo.JSON_RESULT_MESSAGE.getCode(), ResultInfo.JSON_RESULT_MESSAGE.getMessage())
+                .put(ResultInfo.JSON_RESULT_MESSAGE.getCode(), message)
                 .put(ResultInfo.JSON_RESULT_DATA.getCode(), ResultInfo.JSON_RESULT_NULL_DATA.getCode())
                 .builder();
     }
