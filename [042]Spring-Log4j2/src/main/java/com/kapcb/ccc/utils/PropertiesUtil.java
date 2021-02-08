@@ -1,6 +1,6 @@
-package com.kapcb.ccc.commons.utils;
+package com.kapcb.ccc.utils;
 
-import com.kapcb.ccc.commons.constants.PropertiesPath;
+import com.kapcb.ccc.constants.PropertiesPath;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.InputStreamResource;

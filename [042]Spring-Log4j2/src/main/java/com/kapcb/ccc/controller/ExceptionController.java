@@ -1,6 +1,6 @@
 package com.kapcb.ccc.controller;
 
-import com.kapcb.ccc.commons.constants.ResultInfo;
+import com.kapcb.ccc.constants.ResultInfo;
 import com.kapcb.ccc.commons.utils.JsonUtil;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

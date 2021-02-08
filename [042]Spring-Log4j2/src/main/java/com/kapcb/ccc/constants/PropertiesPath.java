@@ -1,4 +1,4 @@
-package com.kapcb.ccc.commons.constants;
+package com.kapcb.ccc.constants;
 
 
 import org.slf4j.Logger;

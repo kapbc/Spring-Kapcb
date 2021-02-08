@@ -1,4 +1,4 @@
-package com.kapcb.ccc.commons.config;
+package com.kapcb.ccc.config;
 
 import com.kapcb.ccc.commons.utils.PropertiesUtil;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;

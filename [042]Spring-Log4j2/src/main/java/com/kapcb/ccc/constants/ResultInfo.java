@@ -1,4 +1,4 @@
-package com.kapcb.ccc.commons.constants;
+package com.kapcb.ccc.constants;
 
 /**
  * <a>Title: ResultInfo </a>

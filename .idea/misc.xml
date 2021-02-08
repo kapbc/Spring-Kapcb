@@ -45,6 +45,7 @@
     <file type="web" url="file://$PROJECT_DIR$/[056]Spring-Thymeleaf/[056]Spring-Thymeleaf" />
     <file type="web" url="file://$PROJECT_DIR$/[058]Spring-Thymeleaf" />
     <file type="web" url="file://$PROJECT_DIR$/[059]Spring-Thymeleaf-Annotation" />
+    <file type="web" url="file://$PROJECT_DIR$/[098]Spring-Web-Thymeleaf" />
     <file type="web" url="file://$PROJECT_DIR$/[099]Spring-Utils" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-IoC-XmlBean" />
     <file type="web" url="file://$PROJECT_DIR$/Spring-Jwt" />
@@ -167,6 +168,7 @@
         <option value="$PROJECT_DIR$/[024]Spring-AOP-CGLIB/pom.xml" />
         <option value="$PROJECT_DIR$/[025]Spring-Data-JdbcTemplate/pom.xml" />
         <option value="$PROJECT_DIR$/[026]Spring-Data-Transaction/pom.xml" />
+        <option value="$PROJECT_DIR$/[098]Spring-Web-Thymeleaf/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

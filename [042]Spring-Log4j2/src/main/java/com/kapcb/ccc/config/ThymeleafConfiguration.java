@@ -1,4 +1,4 @@
-package com.kapcb.ccc.commons.config;
+package com.kapcb.ccc.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
