@@ -29,12 +29,18 @@ public class SystemController {
     @Value(value = "#{propertiesReader['system.kapcb.nb']}")
     private String system;
 
-    @GetMapping
     @ResponseBody
+    @GetMapping(produces = "application/json;charset=utf-8")
     public String execute() {
         log.info("come into the index page");
         log.info("the kapcb from kapcb properties is : {} ", kapcb);
         log.info("the system from system properties is : {}", system);
         return "index";
+    }
+
+    @ResponseBody
+    @GetMapping(value = "exception", produces = "application/json;charset=utf-8")
+    public String systemHandler() {
+        throw new RuntimeException("your error, please check yourself! Thanks!");
     }
 }
