@@ -1,5 +1,7 @@
 package com.kapcb.ccc.controller;
 
+import com.kapcb.ccc.commons.constants.ResultInfo;
+import com.kapcb.ccc.commons.utils.JsonUtil;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,8 +19,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ControllerAdvice
 public class ExceptionController {
 
-    @ExceptionHandler
-    public String SystemExceptionHandler(Exception e) {
-        return e.getMessage();
+    @ExceptionHandler(value = Exception.class)
+    public String systemExceptionHandler(Exception e) {
+        JsonUtil.JsonBuilder jsonBuilder = new JsonUtil.JsonBuilder();
+        return jsonBuilder
+                .put(ResultInfo.JSON_RESULT_CODE.getCode(), ResultInfo.JSON_RESULT_CODE.getMessage())
+                .put(ResultInfo.JSON_RESULT_MESSAGE.getCode(), ResultInfo.JSON_RESULT_MESSAGE.getMessage())
+                .put(ResultInfo.JSON_RESULT_DATA.getCode(), ResultInfo.JSON_RESULT_NULL_DATA.getCode())
+                .builder();
     }
 }
