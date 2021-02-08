@@ -1,19 +1,13 @@
 package com.kapcb.ccc.config;
 
+import com.kapcb.ccc.commons.utils.PropertiesUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <a>Title: ContextConfiguration </a>
@@ -29,63 +23,11 @@ public class ContextConfiguration {
 
     private static final Logger log = LoggerFactory.getLogger(ContextConfiguration.class);
 
-    private static final String SYSTEM_PROPERTIES_FILE = "system.properties";
-    private static final String KAPCB_PROPERTIES_FILE = "kapcb.properties";
-    private static final String PATH = "src/main/resources/properties/";
-    private static final List<String> PROPERTIES_LIST = new ArrayList<>();
-    private static final Resource[] RESOURCES = new Resource[]{};
-
-    static {
-        PROPERTIES_LIST.add(SYSTEM_PROPERTIES_FILE);
-        PROPERTIES_LIST.add(KAPCB_PROPERTIES_FILE);
-    }
-
     @Bean(value = "propertiesReader")
     public PropertiesFactoryBean propertiesFactoryBean() {
         PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
-        Resource resourceSystem = null;
-        Resource resourceKapcb = null;
-        try {
-            URL classPath = ContextConfiguration.class.getClassLoader().getResource("");
-            /**
-             * file:/D:/develop/IDE-WorkSpace/Spring-Thymeleaf/out/production/Spring-Thymeleaf/
-             */
-            log.warn("the class path is : " + classPath);
-            String propertiesFileClasspath = classPath.toString();
-            log.warn("the class path is : " + propertiesFileClasspath);
-            /**
-             * 移除开头的 file:
-             */
-            propertiesFileClasspath = propertiesFileClasspath.substring(6);
-
-            log.warn("the subtring path is : " + propertiesFileClasspath);
-            /**
-             * 如果为window系统下,则把路径中的路径分隔符替换为window系统的文件路径分隔符
-             */
-            propertiesFileClasspath = propertiesFileClasspath.replaceAll("/", File.separator);
-            /**
-             * 兼容处理最后一个字符是否为 window系统的文件路径分隔符,同时建立 properties 文件路径
-             * 例如返回: D:\workspace\myproject01\WEB-INF\classes\config.properties
-             */
-            log.warn("the subtring path is : " + propertiesFileClasspath);
-            for (int i = 0; i < PROPERTIES_LIST.size(); i++) {
-                String propertiesPathString = PROPERTIES_LIST.get(i);
-                log.warn("the properties path String is : " + propertiesPathString);
-                if (!propertiesFileClasspath.endsWith(File.separator)) {
-                    propertiesFileClasspath = propertiesFileClasspath + File.separator + PATH + propertiesPathString;
-                    log.warn("the final resources path is : " + propertiesFileClasspath);
-                } else {
-                    propertiesFileClasspath = propertiesFileClasspath + PATH + propertiesPathString;
-                    log.warn("the final resources path is : " + propertiesFileClasspath);
-                }
-                Resource resource = new InputStreamResource(new FileInputStream(propertiesFileClasspath));
-                RESOURCES[i] = resource;
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        propertiesFactoryBean.setLocations(RESOURCES);
+        Resource[] propertiesResources = PropertiesUtil.getPropertiesResources();
+        propertiesFactoryBean.setLocations(propertiesResources);
         return propertiesFactoryBean;
     }
-
 }
