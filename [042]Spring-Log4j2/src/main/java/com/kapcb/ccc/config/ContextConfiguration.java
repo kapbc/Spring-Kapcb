@@ -1,6 +1,6 @@
 package com.kapcb.ccc.config;
 
-import com.kapcb.ccc.commons.utils.PropertiesUtil;
+import com.kapcb.ccc.utils.PropertiesUtil;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
