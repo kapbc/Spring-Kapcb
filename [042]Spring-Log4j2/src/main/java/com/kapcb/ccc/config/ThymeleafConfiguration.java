@@ -1,6 +1,7 @@
 package com.kapcb.ccc.commons.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
@@ -17,17 +18,17 @@ import java.nio.charset.StandardCharsets;
  * @version 1.0.0
  * @date 2021/2/7-16:39
  */
-@Component
+@Configuration
 public class ThymeleafConfiguration {
 
     @Bean
     public SpringResourceTemplateResolver springResourceTemplateResolver() {
         SpringResourceTemplateResolver springResourceTemplateResolver = new SpringResourceTemplateResolver();
-        springResourceTemplateResolver.setSuffix(".html");
+        springResourceTemplateResolver.setCacheable(false);
         springResourceTemplateResolver.setPrefix("/WEB-INF/template/");
+        springResourceTemplateResolver.setSuffix(".html");
         springResourceTemplateResolver.setTemplateMode("HTML");
         springResourceTemplateResolver.setCharacterEncoding(StandardCharsets.UTF_8.toString());
-        springResourceTemplateResolver.setCacheable(false);
         return springResourceTemplateResolver;
     }
 
