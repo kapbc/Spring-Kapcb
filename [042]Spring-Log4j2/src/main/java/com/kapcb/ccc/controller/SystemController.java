@@ -24,15 +24,25 @@ public class SystemController {
     private static final Logger log = LoggerFactory.getLogger(SystemController.class);
 
     @Value(value = "#{propertiesReader['kapcb.awesome.man']}")
-    private String kapcb;
+    private String kapcb1;
 
     @Value(value = "#{propertiesReader['system.kapcb.nb']}")
+    private String system1;
+
+    @Value("${kapcb.awesome.man}")
+    private String kapcb;
+
+    @Value("${system.kapcb.nb}")
     private String system;
 
     @ResponseBody
     @GetMapping(produces = "application/json;charset=utf-8")
     public String execute() {
         log.info("come into the index page");
+        log.info("====================={}========================", "@Value(\"#{propertiesReader['xxx.xxx.xxx']})\")");
+        log.info("the kapcb from kapcb properties is : {} ", kapcb1);
+        log.info("the system from system properties is : {}", system1);
+        log.info("====================={}========================", "@Value(\"${xxx.xxx.xxx}\")");
         log.info("the kapcb from kapcb properties is : {} ", kapcb);
         log.info("the system from system properties is : {}", system);
         return "index";
