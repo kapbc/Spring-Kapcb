@@ -20,7 +20,7 @@ import org.springframework.core.io.Resource;
 @Import(value = {ThymeleafConfiguration.class})
 public class ContextConfiguration {
 
-    @Bean
+    @Bean(value = "propertiesReader")
     public PropertiesFactoryBean propertiesFactoryBean(){
         PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
         Resource[] systemPropertiesFileResources = PropertiesUtil.getSystemPropertiesFileResources();
