@@ -41,6 +41,7 @@ public class SystemController {
     @ResponseBody
     @GetMapping(value = "exception", produces = "application/json;charset=utf-8")
     public String systemHandler() {
+        log.info("test the controller overall situation advance exception handler");
         throw new RuntimeException("your error, please check yourself! Thanks!");
     }
 }
