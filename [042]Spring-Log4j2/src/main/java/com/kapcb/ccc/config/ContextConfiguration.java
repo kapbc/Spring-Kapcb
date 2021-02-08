@@ -30,6 +30,7 @@ public class ContextConfiguration {
     public PropertiesFactoryBean propertiesFactoryBean() {
         PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
         Resource[] systemPropertiesFileResources = PropertiesUtil.getSystemPropertiesFileResources();
+        propertiesFactoryBean.setIgnoreResourceNotFound(true);
         propertiesFactoryBean.setLocations(systemPropertiesFileResources);
         return propertiesFactoryBean;
     }
