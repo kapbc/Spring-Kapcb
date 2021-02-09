@@ -22,11 +22,11 @@
         <module name="[037]Spring-Schedule-Task" />
         <module name="[010]SpringMVC-HelloWorld" />
         <module name="[022]Spring-MyBatis-SQL" />
-        <module name="[021]Spring-MyBatis-Param" />
-        <module name="[012]Spring-IOC-ExternalConfidurationFile" />
+        <module name="[025]Spring-MyBatis-CRUD" />
+        <module name="[003]Spring-IOC-ApplicationContext" />
         <module name="[014]Spring-IOC-Bean-AutowiredAndQualifier" />
         <module name="[008]Spring-IOC-Bean-Lifecycle" />
-        <module name="[025]Spring-MyBatis-CRUD" />
+        <module name="[021]Spring-MyBatis-Param" />
         <module name="[006]Spring-IOC-Bean-Complex" />
         <module name="[004]Spring-IOC-Bean-DI" />
         <module name="[002]Spring-IOC-BeanFactory" />
@@ -43,6 +43,7 @@
         <module name="[035]Spring-Resultful-ThreadPool" />
         <module name="[049]SpringMVC-Shiro-Jwt" />
         <module name="[053]Spring-RateLimiter" />
+        <module name="[89]Spring-Web-Thymeleaf" />
         <module name="[031]SSM-Demo" />
         <module name="[024]Spring-AOP-CGLIB" />
         <module name="[023]Spring-AOP-JDK" />
@@ -59,12 +60,12 @@
         <module name="[026]Spring-Data-Transaction" />
         <module name="[034]Spring-Resultful" />
         <module name="[030]SSM-Test" />
-        <module name="[032]SSM-Email" />
+        <module name="[012]Spring-IOC-ExternalConfidurationFile" />
         <module name="[028]SSM-QuickStart" />
         <module name="[007]Spring-Annotation-Enable" />
-        <module name="[044]Spring-Validation" />
-        <module name="[003]Spring-IOC-ApplicationContext" />
         <module name="[023]Spring-MyBatis-Configure" />
+        <module name="[044]Spring-Validation" />
+        <module name="[032]SSM-Email" />
         <module name="[029]SSM-Base" />
         <module name="[011]Spring-IOC-Autowired" />
         <module name="[006]Spring-Annotation-Value" />
@@ -149,6 +150,7 @@
       <module name="[059]Spring-Thymeleaf-Annotation" target="1.8" />
       <module name="[098]Spring-Web-Thymeleaf" target="1.8" />
       <module name="[099]Spring-Utils" target="8" />
+      <module name="[89]Spring-Web-Thymeleaf" target="1.7" />
       <module name="HttpClient" target="1.5" />
       <module name="Spring-AOP" target="1.5" />
       <module name="Spring-AOP-XML" target="1.5" />
