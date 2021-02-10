@@ -10,4 +10,5 @@ package com.kapcb.ccc.service;
  * @date 2021/2/10 11:13
  */
 public interface IUserService {
+
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 /**
  * <a>Title: IAccountServiceImpl </a>
  * <a>Author: kapcb <a>
@@ -22,4 +24,13 @@ public class IAccountServiceImpl implements IAccountService {
     @Qualifier(value = "accountMapper")
     private AccountMapper accountMapper;
 
+    @Override
+    public boolean transferOutFromAccount(String userId, String username, BigDecimal transferMoney) {
+        return accountMapper.transferOutFromAccount(userId, username, transferMoney);
+    }
+
+    @Override
+    public boolean transferInFromAccount(String userId, String username, BigDecimal transferIn) {
+        return accountMapper.transferOutFromAccount(userId, username, transferIn);
+    }
 }
