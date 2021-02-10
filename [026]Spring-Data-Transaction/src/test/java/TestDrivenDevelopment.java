@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.math.BigDecimal;
+
 /**
  * <a>Title: TestDrivenDevelopment </a>
  * <a>Author: kapcb <a>
@@ -21,9 +23,9 @@ public class TestDrivenDevelopment {
     public void DataTransaction() {
         ApplicationContext ioc = new ClassPathXmlApplicationContext(CONTEXT_CONFIG_LOCATION);
         IAccountService accountService = ioc.getBean("accountService", IAccountServiceImpl.class);
-        boolean b = accountService.transferOutFromAccount();
+        boolean b = accountService.transferOutFromAccount("0001", "mike", BigDecimal.valueOf(10000));
         System.out.println("b = " + b);
-        boolean b1 = accountService.transferInFromAccount();
+        boolean b1 = accountService.transferInFromAccount("0002", "kapcb", BigDecimal.valueOf(10000));
         System.out.println("b1 = " + b1);
     }
 }
