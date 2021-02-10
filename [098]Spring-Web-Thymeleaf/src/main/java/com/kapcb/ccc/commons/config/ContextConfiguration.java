@@ -34,7 +34,7 @@ public class ContextConfiguration {
     public PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
         PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
         propertySourcesPlaceholderConfigurer.setFileEncoding(StandardCharsets.UTF_8.toString());
-        propertySourcesPlaceholderConfigurer().setIgnoreResourceNotFound(true);
+        propertySourcesPlaceholderConfigurer.setIgnoreResourceNotFound(true);
         propertySourcesPlaceholderConfigurer.setIgnoreUnresolvablePlaceholders(true);
         propertySourcesPlaceholderConfigurer.setLocations(PropertiesUtil.getPropertiesResources());
         return propertySourcesPlaceholderConfigurer;

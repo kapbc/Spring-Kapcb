@@ -1,6 +1,6 @@
 package com.kapcb.ccc.config;
 
-import com.kapcb.ccc.commons.utils.PropertiesUtil;
+import com.kapcb.ccc.utils.PropertiesUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
