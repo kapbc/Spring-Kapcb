@@ -1,6 +1,9 @@
 package com.kapcb.ccc.service.impl;
 
+import com.kapcb.ccc.mapper.AccountMapper;
 import com.kapcb.ccc.service.IAccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,4 +17,9 @@ import org.springframework.stereotype.Component;
  */
 @Component(value = "accountService")
 public class IAccountServiceImpl implements IAccountService {
+
+    @Autowired
+    @Qualifier(value = "accountMapper")
+    private AccountMapper accountMapper;
+
 }

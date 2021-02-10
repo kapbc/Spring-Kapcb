@@ -15,7 +15,7 @@ public class Account {
 
     private String accountId;
     private String username;
-    private BigDecimal money;
+    private BigDecimal balance;
 
     public Account() {
     }
@@ -23,7 +23,7 @@ public class Account {
     public Account(String accountId, String username, BigDecimal money) {
         this.accountId = accountId;
         this.username = username;
-        this.money = money;
+        this.balance = money;
     }
 
     public String getAccountId() {
@@ -42,12 +42,12 @@ public class Account {
         this.username = username;
     }
 
-    public BigDecimal getMoney() {
-        return money;
+    public BigDecimal getBalance() {
+        return balance;
     }
 
-    public void setMoney(BigDecimal money) {
-        this.money = money;
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
     }
 
     @Override
@@ -55,7 +55,7 @@ public class Account {
         return "Account{" +
                 "accountId='" + accountId + '\'' +
                 ", username='" + username + '\'' +
-                ", money=" + money +
+                ", money=" + balance +
                 '}';
     }
 }
