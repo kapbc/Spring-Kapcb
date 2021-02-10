@@ -5,6 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+
+import java.nio.charset.StandardCharsets;
 
 /**
  * <a>Title: ContextConfiguration </a>
@@ -19,12 +22,21 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ContextConfiguration {
 
-    @Bean
-    public PropertiesFactoryBean propertiesFactoryBean(){
+    @Bean(value = "propertiesReader")
+    public PropertiesFactoryBean propertiesFactoryBean() {
         PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
         propertiesFactoryBean.setIgnoreResourceNotFound(true);
         propertiesFactoryBean.setLocations(PropertiesUtil.getPropertiesResources());
         return propertiesFactoryBean;
     }
 
+    @Bean
+    public PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+        propertySourcesPlaceholderConfigurer.setFileEncoding(StandardCharsets.UTF_8.toString());
+        propertySourcesPlaceholderConfigurer().setIgnoreResourceNotFound(true);
+        propertySourcesPlaceholderConfigurer.setIgnoreUnresolvablePlaceholders(true);
+        propertySourcesPlaceholderConfigurer.setLocations(PropertiesUtil.getPropertiesResources());
+        return propertySourcesPlaceholderConfigurer;
+    }
 }
