@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 /**
  * <a>Title: TestDrivenDevelopment </a>
  * <a>Author: kapcb <a>
@@ -8,4 +10,9 @@
  * @date 2021/2/7 22:46
  */
 public class TestDrivenDevelopment {
+
+    @Test
+    public void DataTransaction() {
+
+    }
 }
