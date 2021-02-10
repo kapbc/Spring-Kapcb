@@ -71,33 +71,57 @@ public class AccountMapperImpl implements AccountMapper {
 
     @Override
     public boolean transferOutFromAccount(String userId, String username, BigDecimal transferMoney) {
-        BigDecimal accountBalance = this.getAccountBalance(userId, username);
-        if (accountBalance.equals(BigDecimal.ZERO) || accountBalance.compareTo(transferMoney) < 0) {
-            return false;
-        }
-        BigDecimal subtract = accountBalance.subtract(transferMoney);
-        System.out.println("subtract = " + subtract);
         StringBuilder sqlString = new StringBuilder();
         sqlString.append("UPDATE ").append(BD_NAME);
-        sqlString.append(" SET ").append(DB_BALANCE).append(" = ").append(subtract);
-        sqlString.append(" WHERE ").append(DB_USERNAME).append(" = ").append(username);
-        sqlString.append(" AND ").append(DB_ID).append(" = ").append(DB_ID);
+        sqlString.append(" SET ").append(DB_BALANCE).append(" = ").append(DB_BALANCE);
+        sqlString.append(" - ").append("?").append(" WHERE ").append(DB_USERNAME).append(" = ?");
+        sqlString.append(" AND ").append(DB_ID).append(" =?");
         System.out.println("the sql String is : " + sqlString.toString());
-        int update = jdbcTemplate.update(sqlString.toString());
+        int update = jdbcTemplate.update(sqlString.toString(), transferMoney, username, userId);
         return update == 1;
     }
 
     @Override
     public boolean transferInFromAccount(String userId, String username, BigDecimal transferIn) {
-        BigDecimal accountBalance = getAccountBalance(userId, username);
-        BigDecimal add = accountBalance.add(transferIn);
-        System.out.println("add = " + add);
         StringBuilder sqlString = new StringBuilder();
         sqlString.append("UPDATE ").append(BD_NAME);
-        sqlString.append(" SET ").append(DB_BALANCE).append(" = ").append(add);
-        sqlString.append(" WHERE ").append(DB_USERNAME).append(" = ").append(username);
-        sqlString.append(" AND ").append(DB_ID).append(" = ").append(DB_ID);
-        int update = jdbcTemplate.update(sqlString.toString());
+        sqlString.append(" SET ").append(DB_BALANCE).append(" = ").append(DB_BALANCE);
+        sqlString.append(" + ").append("?").append(" WHERE ").append(DB_USERNAME).append(" = ?");
+        sqlString.append(" AND ").append(DB_ID).append(" =?");
+        System.out.println("the sql String is : " + sqlString.toString());
+        int update = jdbcTemplate.update(sqlString.toString(), transferIn, username, userId);
         return update == 1;
     }
+
+//    @Override
+//    public boolean transferOutFromAccount(String userId, String username, BigDecimal transferMoney) {
+//        BigDecimal accountBalance = this.getAccountBalance(userId, username);
+//        if (accountBalance.equals(BigDecimal.ZERO) || accountBalance.compareTo(transferMoney) < 0) {
+//            return false;
+//        }
+//        BigDecimal subtract = accountBalance.subtract(transferMoney);
+//        System.out.println("subtract = " + subtract);
+//        StringBuilder sqlString = new StringBuilder();
+//        sqlString.append("UPDATE ").append(BD_NAME);
+//        sqlString.append(" SET ").append(DB_BALANCE).append(" = ").append(subtract);
+//        sqlString.append(" WHERE ").append(DB_USERNAME).append(" = ").append(username);
+//        sqlString.append(" AND ").append(DB_ID).append(" = ").append(DB_ID);
+//        System.out.println("the sql String is : " + sqlString.toString());
+//        int update = jdbcTemplate.update(sqlString.toString());
+//        return update == 1;
+//    }
+//
+//    @Override
+//    public boolean transferInFromAccount(String userId, String username, BigDecimal transferIn) {
+//        BigDecimal accountBalance = getAccountBalance(userId, username);
+//        BigDecimal add = accountBalance.add(transferIn);
+//        System.out.println("add = " + add);
+//        StringBuilder sqlString = new StringBuilder();
+//        sqlString.append("UPDATE ").append(BD_NAME);
+//        sqlString.append(" SET ").append(DB_BALANCE).append(" = ").append(add);
+//        sqlString.append(" WHERE ").append(DB_USERNAME).append(" = ").append(username);
+//        sqlString.append(" AND ").append(DB_ID).append(" = ").append(DB_ID);
+//        int update = jdbcTemplate.update(sqlString.toString());
+//        return update == 1;
+//    }
 }
