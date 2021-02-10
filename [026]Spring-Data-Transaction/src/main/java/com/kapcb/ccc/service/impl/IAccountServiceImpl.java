@@ -31,6 +31,6 @@ public class IAccountServiceImpl implements IAccountService {
 
     @Override
     public boolean transferInFromAccount(String userId, String username, BigDecimal transferIn) {
-        return accountMapper.transferOutFromAccount(userId, username, transferIn);
+        return accountMapper.transferInFromAccount(userId, username, transferIn);
     }
 }
