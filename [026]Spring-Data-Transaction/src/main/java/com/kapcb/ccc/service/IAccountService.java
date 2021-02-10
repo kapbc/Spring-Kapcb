@@ -14,23 +14,16 @@ import java.math.BigDecimal;
 public interface IAccountService {
 
     /**
-     * transfer out from the account
+     * transfer balance from to
      *
-     * @param userId        String
-     * @param username      String
-     * @param transferMoney BigDecimal
+     * @param fromUserId         String
+     * @param fromUsername       String
+     * @param transferOutBalance BigDecimal
+     * @param toUserId           String
+     * @param toUsername         String
+     * @param transferToBalance  BigDecimal
      * @return boolean
      */
-    boolean transferOutFromAccount(String userId, String username, BigDecimal transferMoney);
-
-    /**
-     * transfer in from the account
-     *
-     * @param userId     String
-     * @param username   String
-     * @param transferIn BigDecimal
-     * @return boolean
-     */
-    boolean transferInFromAccount(String userId, String username, BigDecimal transferIn);
+    boolean transferBalance(String fromUserId, String fromUsername, BigDecimal transferOutBalance, String toUserId, String toUsername, BigDecimal transferToBalance);
 
 }

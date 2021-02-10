@@ -25,12 +25,7 @@ public class IAccountServiceImpl implements IAccountService {
     private AccountMapper accountMapper;
 
     @Override
-    public boolean transferOutFromAccount(String userId, String username, BigDecimal transferMoney) {
-        return accountMapper.transferOutFromAccount(userId, username, transferMoney);
-    }
-
-    @Override
-    public boolean transferInFromAccount(String userId, String username, BigDecimal transferIn) {
-        return accountMapper.transferInFromAccount(userId, username, transferIn);
+    public boolean transferBalance(String fromUserId, String fromUsername, BigDecimal transferOutBalance, String toUserId, String toUsername, BigDecimal transferToBalance) {
+        return accountMapper.transferOutFromAccount(fromUserId, fromUsername, transferOutBalance) && accountMapper.transferInFromAccount(toUserId, toUsername, transferToBalance);
     }
 }
