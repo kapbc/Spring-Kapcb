@@ -20,10 +20,41 @@ public class Account {
     public Account() {
     }
 
-    public Account(String accountId, String username, BigDecimal money) {
+    public Account(Builder builder) {
+        this.accountId = builder.accountId;
+        this.username = builder.username;
+        this.balance = builder.balance;
+    }
+
+    public Account(String accountId, String username, BigDecimal balance) {
         this.accountId = accountId;
         this.username = username;
-        this.balance = money;
+        this.balance = balance;
+    }
+
+    public static class Builder {
+        private String accountId;
+        private String username;
+        private BigDecimal balance;
+
+        public Account.Builder accountId(String accountId) {
+            this.accountId = accountId;
+            return this;
+        }
+
+        public Account.Builder username(String username) {
+            this.username = username;
+            return this;
+        }
+
+        public Account.Builder balance(BigDecimal balance) {
+            this.balance = balance;
+            return this;
+        }
+
+        public Account build() {
+            return new Account(this);
+        }
     }
 
     public String getAccountId() {
