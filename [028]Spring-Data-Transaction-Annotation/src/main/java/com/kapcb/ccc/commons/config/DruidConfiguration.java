@@ -1,7 +1,6 @@
 package com.kapcb.ccc.commons.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.sun.jndi.toolkit.ctx.StringHeadTail;
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -12,8 +11,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 import java.util.Arrays;
 import java.util.Properties;
-import java.util.function.Function;
-import java.util.function.Supplier;
 
 /**
  * <a>Title: DruidConfiguration </a>
@@ -84,7 +81,6 @@ public class DruidConfiguration {
 
     @Bean(value = "dataSource")
     public DruidDataSource druidDataSource() {
-        System.out.println("dataSourceInitialSize = " + dataSourceInitialSize);
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setUsername(dataSourceName);
         druidDataSource.setPassword(dataSourcePassword);
@@ -106,21 +102,13 @@ public class DruidConfiguration {
         Properties properties = new Properties();
         String[] split = dataSourceConnectionProperties.split(";");
         String s3 = ArrayUtils.toString(split);
-        System.out.println("s3 = " + s3);
         Arrays.stream(split).forEach(s -> {
             String[] split1 = s.split("=");
-            String s1 = split1[0];
-            System.out.println("s1 = " + s1);
-            String s2 = split1[1];
-            System.out.println("s2 = " + s2);
             properties.setProperty(split1[0], split1[1]);
         });
-
-        getDruidConnectProperties(dataSourceConnectionProperties, S)
         druidDataSource.setConnectProperties(properties);
         return druidDataSource;
     }
-
 
     @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
@@ -129,9 +117,4 @@ public class DruidConfiguration {
         jdbcTemplate.setLazyInit(true);
         return jdbcTemplate;
     }
-
-    private static <T> String getDruidConnectProperties(String propertiesString, Function<String, String> function) {
-        return propertiesString == null ? "" : function.apply(propertiesString);
-    }
-
 }

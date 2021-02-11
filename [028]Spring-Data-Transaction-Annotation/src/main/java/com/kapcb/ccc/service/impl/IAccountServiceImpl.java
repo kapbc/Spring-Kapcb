@@ -31,7 +31,7 @@ public class IAccountServiceImpl implements IAccountService {
     @Override
     public boolean transferBalance(String fromUserId, String fromUsername, BigDecimal balanceOut, String toUserId, String toUsername) {
         boolean transferOut = accountMapper.transferOutBalance(fromUserId, fromUsername, balanceOut);
-        int i = 10 / 0;
+        // int i = 10 / 0;
         boolean transferIn = accountMapper.transferInBalance(toUserId, toUsername, balanceOut);
         return transferOut && transferIn;
     }
