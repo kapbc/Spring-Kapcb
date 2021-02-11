@@ -13,7 +13,21 @@ import java.math.BigDecimal;
  */
 public interface IAccountMapper {
 
+    /**
+     * transfer balance out
+     *
+     * @param userId      String
+     * @param username    String
+     * @param transferOut BigDecimal
+     * @return boolean
+     */
     boolean transferOutBalance(String userId, String username, BigDecimal transferOut);
 
+    /**
+     * @param userId     String
+     * @param username   String
+     * @param transferIn BigDecimal
+     * @return boolean
+     */
     boolean transferInBalance(String userId, String username, BigDecimal transferIn);
 }

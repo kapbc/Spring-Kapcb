@@ -38,6 +38,7 @@
       <module fileurl="file://$PROJECT_DIR$/[025]Spring-Data-JdbcTemplate/[025]Spring-Data-JdbcTemplate.iml" filepath="$PROJECT_DIR$/[025]Spring-Data-JdbcTemplate/[025]Spring-Data-JdbcTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/[025]Spring-MyBatis-CRUD/[025]Spring-MyBatis-CRUD.iml" filepath="$PROJECT_DIR$/[025]Spring-MyBatis-CRUD/[025]Spring-MyBatis-CRUD.iml" />
       <module fileurl="file://$PROJECT_DIR$/[026]Spring-Data-Transaction/[026]Spring-Data-Transaction.iml" filepath="$PROJECT_DIR$/[026]Spring-Data-Transaction/[026]Spring-Data-Transaction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[027]Spring-Data-Transaction-XML/[027]Spring-Data-Transaction-XML.iml" filepath="$PROJECT_DIR$/[027]Spring-Data-Transaction-XML/[027]Spring-Data-Transaction-XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/[028]SSM-QuickStart/[028]SSM-QuickStart.iml" filepath="$PROJECT_DIR$/[028]SSM-QuickStart/[028]SSM-QuickStart.iml" />
       <module fileurl="file://$PROJECT_DIR$/[029]SSM-Base/[029]SSM-Base.iml" filepath="$PROJECT_DIR$/[029]SSM-Base/[029]SSM-Base.iml" />
       <module fileurl="file://$PROJECT_DIR$/[030]SSM-Test/[030]SSM-Test.iml" filepath="$PROJECT_DIR$/[030]SSM-Test/[030]SSM-Test.iml" />
