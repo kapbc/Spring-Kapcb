@@ -173,6 +173,7 @@
         <option value="$PROJECT_DIR$/[89]Spring-Web-Thymeleaf/pom.xml" />
         <option value="$PROJECT_DIR$/[027]Spring-Data-Transaction-XML/pom.xml" />
         <option value="$PROJECT_DIR$/[028]Spring-Data-Transaction-Annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/[030]Spring-Log-Log4j/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

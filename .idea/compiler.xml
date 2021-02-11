@@ -39,6 +39,7 @@
         <module name="[052]Spring-Dubbo-Provider" />
         <module name="[056]Spring-Redis-Annotation" />
         <module name="[013]SpringMVC-Exception" />
+        <module name="[030]Spring-Log-Log4j" />
         <module name="[020]Spring-MyBatis-Cascade" />
         <module name="[020]Spring-AOP-Principle" />
         <module name="[035]Spring-Resultful-ThreadPool" />
@@ -123,6 +124,7 @@
       <module name="[028]Spring-Data-Transaction-Annotation" target="8" />
       <module name="[028]SSM-QuickStart" target="1.5" />
       <module name="[029]SSM-Base" target="8" />
+      <module name="[030]Spring-Log-Log4j" target="1.5" />
       <module name="[030]SSM-Test" target="1.8" />
       <module name="[031]SSM-Demo" target="1.8" />
       <module name="[032]SSM-Email" target="8" />

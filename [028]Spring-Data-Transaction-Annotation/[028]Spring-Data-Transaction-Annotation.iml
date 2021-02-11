@@ -39,6 +39,5 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.2.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.2.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:5.2.10.RELEASE" level="project" />
-    <orderEntry type="module" module-name="[027]Spring-Data-Transaction-XML" />
   </component>
 </module>
