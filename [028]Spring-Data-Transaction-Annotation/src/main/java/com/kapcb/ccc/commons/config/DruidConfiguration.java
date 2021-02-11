@@ -9,7 +9,10 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
+import java.util.Arrays;
 import java.util.Properties;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * <a>Title: DruidConfiguration </a>
@@ -34,49 +37,49 @@ public class DruidConfiguration {
     private String dataSourceUrl;
 
     @Value("${druid.data.source.driven}")
-    private Driver dataSourceDriven;
+    private String dataSourceDriven;
 
     @Value("${druid.data.source.dbType}")
     private String dataSourceDBType;
 
     @Value("${druid.data.source.initialSize}")
-    private int dataSourceInitialSize;
+    private String dataSourceInitialSize;
 
     @Value("${druid.data.source.maxActive}")
-    private int dataSourceMaxActive;
+    private String dataSourceMaxActive;
 
     @Value("${druid.data.source.maxWait}")
-    private long dataSourceMaxWait;
+    private String dataSourceMaxWait;
 
     @Value("${druid.data.source.timeBetweenEvictionRunsMillis}")
-    private long dataSourceTimeBetweenEvictionRunsMillis;
+    private String dataSourceTimeBetweenEvictionRunsMillis;
 
     @Value("${druid.data.source.minEvictableIdleTimeMillis}")
-    private long dataSourceMinEvictableIdleTimeMillis;
+    private String dataSourceMinEvictableIdleTimeMillis;
 
     @Value("${druid.data.source.validationQuery}")
     private String dataSourceValidationQuery;
 
     @Value("${druid.data.source.testOnReturn}")
-    private boolean dataSourceTestOnReturn;
+    private String dataSourceTestOnReturn;
 
     @Value("${druid.data.source.testOnBorrow}")
-    private boolean dataSourceTestOnBorrow;
+    private String dataSourceTestOnBorrow;
 
-    @Value("${druid.data.source.testWhileIdle}")
-    private boolean dataSourceTestWhileIdle;
+    @Value("${druid.data.source.testWhileIdle")
+    private String dataSourceTestWhileIdle;
 
     @Value("${druid.data.source.poolPreparedStatements}")
-    private boolean dataSourcePoolPreparedStatements;
+    private String dataSourcePoolPreparedStatements;
 
     @Value("${druid.data.source.maxPoolPreparedStatementPerConnectionSize}")
-    private int dataSourceMaxPoolPreparedStatementPerConnectionSize;
+    private String dataSourceMaxPoolPreparedStatementPerConnectionSize;
 
     @Value("${druid.data.source.useGlobalDataSourceStat}")
-    private boolean dataSourceUseGlobalDataSourceStat;
+    private String dataSourceUseGlobalDataSourceStat;
 
     @Value("${druid.data.source.connectionProperties}")
-    private Properties dataSourceConnectionProperties;
+    private String dataSourceConnectionProperties;
 
     @Bean(value = "dataSource")
     public DataSource druidDataSource() {
@@ -84,23 +87,28 @@ public class DruidConfiguration {
         druidDataSource.setUsername(dataSourceName);
         druidDataSource.setPassword(dataSourcePassword);
         druidDataSource.setUrl(dataSourceUrl);
-        druidDataSource.setDriver(dataSourceDriven);
+        druidDataSource.setDriverClassName(dataSourceDriven);
         druidDataSource.setDbType(dataSourceDBType);
-        druidDataSource.setInitialSize(dataSourceInitialSize);
-        druidDataSource.setMaxActive(dataSourceMaxActive);
-        druidDataSource.setMaxWait(dataSourceMaxWait);
-        druidDataSource.setTimeBetweenEvictionRunsMillis(dataSourceTimeBetweenEvictionRunsMillis);
-        druidDataSource.setMinEvictableIdleTimeMillis(dataSourceMinEvictableIdleTimeMillis);
+        druidDataSource.setInitialSize(Integer.parseInt(dataSourceInitialSize));
+        druidDataSource.setMaxActive(Integer.parseInt(dataSourceMaxActive));
+        druidDataSource.setMaxWait(Long.parseLong(dataSourceMaxWait));
+        druidDataSource.setTimeBetweenEvictionRunsMillis(Long.parseLong(dataSourceTimeBetweenEvictionRunsMillis));
+        druidDataSource.setMinEvictableIdleTimeMillis(Long.parseLong(dataSourceMinEvictableIdleTimeMillis));
         druidDataSource.setValidationQuery(dataSourceValidationQuery);
-        druidDataSource.setTestOnReturn(dataSourceTestOnReturn);
-        druidDataSource.setTestOnBorrow(dataSourceTestOnBorrow);
-        druidDataSource.setTestWhileIdle(dataSourceTestWhileIdle);
-        druidDataSource.setPoolPreparedStatements(dataSourcePoolPreparedStatements);
-        druidDataSource.setMaxPoolPreparedStatementPerConnectionSize(dataSourceMaxPoolPreparedStatementPerConnectionSize);
-        druidDataSource.setUseGlobalDataSourceStat(dataSourceUseGlobalDataSourceStat);
-        druidDataSource.setConnectProperties(dataSourceConnectionProperties);
+        druidDataSource.setTestOnReturn(Boolean.parseBoolean(dataSourceTestOnReturn));
+        druidDataSource.setTestOnBorrow(Boolean.parseBoolean(dataSourceTestOnBorrow));
+        druidDataSource.setTestWhileIdle(Boolean.parseBoolean(dataSourceTestWhileIdle));
+        druidDataSource.setPoolPreparedStatements(Boolean.parseBoolean(dataSourcePoolPreparedStatements));
+        druidDataSource.setMaxPoolPreparedStatementPerConnectionSize(Integer.parseInt(dataSourceMaxPoolPreparedStatementPerConnectionSize));
+        druidDataSource.setUseGlobalDataSourceStat(Boolean.parseBoolean(dataSourceUseGlobalDataSourceStat));
+        Properties properties = new Properties();
+        String[] split = dataSourceConnectionProperties.split(", ");
+        Arrays.stream(split).map(DruidConfiguration::getDruidConnectProperties);
+        properties.setProperty()
+        druidDataSource.setConnectProperties(new Properties().setProperty());
         return druidDataSource;
     }
+
 
     @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
@@ -108,5 +116,9 @@ public class DruidConfiguration {
         jdbcTemplate.setDataSource(dataSource);
         jdbcTemplate.setLazyInit(true);
         return jdbcTemplate;
+    }
+
+    public static <T> String getDruidConnectProperties(Function<T, String> function) {
+
     }
 }
