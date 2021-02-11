@@ -3,6 +3,7 @@ import com.kapcb.ccc.service.impl.IAccountServiceImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.transaction.PlatformTransactionManager;
 
 import java.math.BigDecimal;
 

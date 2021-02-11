@@ -5,6 +5,8 @@ import com.kapcb.ccc.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 
@@ -18,14 +20,31 @@ import java.math.BigDecimal;
  * @date 2021/2/10 11:20
  */
 @Component(value = "accountService")
+@Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class IAccountServiceImpl implements IAccountService {
 
     @Autowired
     @Qualifier(value = "accountMapper")
     private AccountMapper accountMapper;
 
+    /**
+     * test spring transaction
+     *
+     * @param fromUserId         String
+     * @param fromUsername       String
+     * @param transferOutBalance BigDecimal
+     * @param toUserId           String
+     * @param toUsername         String
+     * @param transferToBalance  BigDecimal
+     * @return boolean
+     */
     @Override
     public boolean transferBalance(String fromUserId, String fromUsername, BigDecimal transferOutBalance, String toUserId, String toUsername, BigDecimal transferToBalance) {
-        return accountMapper.transferOutFromAccount(fromUserId, fromUsername, transferOutBalance) && accountMapper.transferInFromAccount(toUserId, toUsername, transferToBalance);
+        boolean transferOut = accountMapper.transferOutFromAccount(fromUserId, fromUsername, transferOutBalance);
+        int i = 10 / 0;
+        boolean transferIn = accountMapper.transferInFromAccount(toUserId, toUsername, transferToBalance);
+
+        return transferOut && transferIn;
+        //return accountMapper.transferOutFromAccount(fromUserId, fromUsername, transferOutBalance) && accountMapper.transferInFromAccount(toUserId, toUsername, transferToBalance);
     }
 }
