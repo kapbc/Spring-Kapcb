@@ -21,8 +21,7 @@ public interface IAccountService {
      * @param balanceOut   BigDecimal
      * @param toUserId     String
      * @param toUsername   String
-     * @param balanceIn    BigDecimal
      * @return boolean
      */
-    boolean transferBalance(String fromUserId, String fromUsername, BigDecimal balanceOut, String toUserId, String toUsername, BigDecimal balanceIn);
+    boolean transferBalance(String fromUserId, String fromUsername, BigDecimal balanceOut, String toUserId, String toUsername);
 }
