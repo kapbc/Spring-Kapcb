@@ -11,25 +11,28 @@
 
     <import resource="spring-druid.xml"/>
 
-    <tx:annotation-driven transaction-manager="dataSourceTransactionManager"/>
-
     <!-- XML配置方式实现声明式事务 -->
-    <!-- 配置事务通知 -->
+    <!-- 1、创建事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 2、配置事务通知 -->
     <tx:advice id="txAdvance">
         <!-- 配置事务参数 -->
         <tx:attributes>
             <!-- 指定在那种规则的方法上添加事务 -->
             <tx:method name="transferBalance" propagation="REQUIRED" isolation="REPEATABLE_READ" read-only="false"
-                       rollback-for="Exception.class"/>
+                       rollback-for="Exception"/>
             <!-- <tx:method name="transfer*"/> -->
         </tx:attributes>
     </tx:advice>
 
-    <!-- 配置切入点和切面 -->
+    <!-- 3、配置切入点和切面 -->
     <aop:config>
         <!-- 配置切入点 -->
         <aop:pointcut id="pointCut"
-                      expression="execution(public * com.kapcb.ccc.service.impl.IAccountServiceImpl.*(..))"/>
+                      expression="execution(* com.kapcb.ccc.service.impl.IAccountServiceImpl.*(..))"/>
         <!-- 配置切面 -->
         <!-- 将事务通知txAdvance设置到pointCut所切的切入点上 -->
         <aop:advisor advice-ref="txAdvance" pointcut-ref="pointCut"/>
