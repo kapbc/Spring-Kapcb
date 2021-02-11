@@ -128,7 +128,7 @@
       <module name="[029]SSM-Base" target="8" />
       <module name="[030]Spring-Log-Log4j" target="1.5" />
       <module name="[030]SSM-Test" target="1.8" />
-      <module name="[031]Spring-Log-Log4j2" target="1.5" />
+      <module name="[031]Spring-Log-Log4j2" target="8" />
       <module name="[031]SSM-Demo" target="1.8" />
       <module name="[032]Spring-Log-Logback" target="1.5" />
       <module name="[032]SSM-Email" target="8" />
