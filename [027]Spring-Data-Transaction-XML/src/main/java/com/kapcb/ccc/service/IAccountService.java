@@ -1,5 +1,7 @@
 package com.kapcb.ccc.service;
 
+import java.math.BigDecimal;
+
 /**
  * <a>Title: IAccountService </a>
  * <a>Author: kapcb <a>
@@ -10,4 +12,17 @@ package com.kapcb.ccc.service;
  * @date 2021/2/11 11:24
  */
 public interface IAccountService {
+
+    /**
+     * transfer balance from -> to
+     *
+     * @param fromUserId   String
+     * @param fromUsername String
+     * @param balanceOut   BigDecimal
+     * @param toUserId     String
+     * @param toUsername   String
+     * @param balanceIn    BigDecimal
+     * @return boolean
+     */
+    boolean transferBalance(String fromUserId, String fromUsername, BigDecimal balanceOut, String toUserId, String toUsername, BigDecimal balanceIn);
 }
