@@ -55,17 +55,14 @@ public class AccountMapperImpl implements AccountMapper {
         sqlString.append(" WHERE ").append(DB_USERNAME).append(" = ");
         sqlString.append(username).append(" AND ").append(DB_ID).append(" = ").append(userId);
         System.out.println("the sql String is : " + sqlString.toString());
-        return jdbcTemplate.queryForObject(sqlString.toString(), new RowMapper<Account>() {
-            @Override
-            public Account mapRow(ResultSet resultSet, int i) throws SQLException {
-                Account account = new Builder()
-                        .accountId(resultSet.getString(DB_ID))
-                        .username(resultSet.getString(DB_USERNAME))
-                        .balance(resultSet.getBigDecimal(DB_BALANCE))
-                        .build();
+        return jdbcTemplate.queryForObject(sqlString.toString(), (resultSet, i) -> {
+            Account account = new Builder()
+                    .accountId(resultSet.getString(DB_ID))
+                    .username(resultSet.getString(DB_USERNAME))
+                    .balance(resultSet.getBigDecimal(DB_BALANCE))
+                    .build();
 
-                return account == null ? new Account() : account;
-            }
+            return account == null ? new Account() : account;
         });
     }
 

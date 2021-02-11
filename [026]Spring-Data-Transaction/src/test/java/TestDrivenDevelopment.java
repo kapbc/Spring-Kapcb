@@ -23,7 +23,7 @@ public class TestDrivenDevelopment {
     @Test
     public void DataTransaction() {
         ApplicationContext ioc = new ClassPathXmlApplicationContext(CONTEXT_CONFIG_LOCATION);
-        IAccountService accountService = ioc.getBean("accountService", IAccountServiceImpl.class);
+        IAccountService accountService = ioc.getBean("accountService", IAccountService.class);
         boolean b = accountService.transferBalance("0001", "mike", BigDecimal.valueOf(10000), "0002", "kapcb", BigDecimal.valueOf(10000));
         System.out.println("b = " + b);
     }
