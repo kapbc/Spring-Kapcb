@@ -60,6 +60,7 @@
         <module name="[046]Spring-Jwt" />
         <module name="[021]Spring-AOP-Principle-XML" />
         <module name="[013]Spring-IOC-Bean-Annotation" />
+        <module name="[032]Spring-Log-Logback" />
         <module name="[026]Spring-Data-Transaction" />
         <module name="[034]Spring-Resultful" />
         <module name="[030]SSM-Test" />
@@ -129,6 +130,7 @@
       <module name="[030]SSM-Test" target="1.8" />
       <module name="[031]Spring-Log-Log4j2" target="1.5" />
       <module name="[031]SSM-Demo" target="1.8" />
+      <module name="[032]Spring-Log-Logback" target="1.5" />
       <module name="[032]SSM-Email" target="8" />
       <module name="[034]Spring-Resultful" target="8" />
       <module name="[035]Spring-Resultful-ThreadPool" target="8" />

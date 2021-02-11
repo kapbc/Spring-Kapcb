@@ -47,6 +47,7 @@
       <module fileurl="file://$PROJECT_DIR$/[031]SSM-Demo/[031]SSM-Demo.iml" filepath="$PROJECT_DIR$/[031]SSM-Demo/[031]SSM-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/[031]Spring-Log-Log4j2/[031]Spring-Log-Log4j2.iml" filepath="$PROJECT_DIR$/[031]Spring-Log-Log4j2/[031]Spring-Log-Log4j2.iml" />
       <module fileurl="file://$PROJECT_DIR$/[032]SSM-Email/[032]SSM-Email.iml" filepath="$PROJECT_DIR$/[032]SSM-Email/[032]SSM-Email.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[032]Spring-Log-Logback/[032]Spring-Log-Logback.iml" filepath="$PROJECT_DIR$/[032]Spring-Log-Logback/[032]Spring-Log-Logback.iml" />
       <module fileurl="file://$PROJECT_DIR$/[034]Spring-Resultful/[034]Spring-Resultful.iml" filepath="$PROJECT_DIR$/[034]Spring-Resultful/[034]Spring-Resultful.iml" />
       <module fileurl="file://$PROJECT_DIR$/[035]Spring-Resultful-ThreadPool/[035]Spring-Resultful-ThreadPool.iml" filepath="$PROJECT_DIR$/[035]Spring-Resultful-ThreadPool/[035]Spring-Resultful-ThreadPool.iml" />
       <module fileurl="file://$PROJECT_DIR$/[036]Spring-JdbcTemplate/[036]Spring-JdbcTemplate.iml" filepath="$PROJECT_DIR$/[036]Spring-JdbcTemplate/[036]Spring-JdbcTemplate.iml" />
