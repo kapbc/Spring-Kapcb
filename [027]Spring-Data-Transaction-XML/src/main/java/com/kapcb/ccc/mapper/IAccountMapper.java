@@ -24,6 +24,8 @@ public interface IAccountMapper {
     boolean transferOutBalance(String userId, String username, BigDecimal transferOut);
 
     /**
+     * transfer balance in
+     *
      * @param userId     String
      * @param username   String
      * @param transferIn BigDecimal

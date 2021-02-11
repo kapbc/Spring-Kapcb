@@ -103,9 +103,9 @@ public class DruidConfiguration {
     }
 
     @Bean
-    public JdbcTemplate jdbcTemplate() {
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
-        jdbcTemplate.setDataSource(druidDataSource());
+        jdbcTemplate.setDataSource(dataSource);
         jdbcTemplate.setLazyInit(true);
         return jdbcTemplate;
     }
