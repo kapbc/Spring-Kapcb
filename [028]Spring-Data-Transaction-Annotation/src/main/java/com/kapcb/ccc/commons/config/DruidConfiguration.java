@@ -1,7 +1,6 @@
 package com.kapcb.ccc.commons.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -101,7 +100,6 @@ public class DruidConfiguration {
         druidDataSource.setUseGlobalDataSourceStat(dataSourceUseGlobalDataSourceStat);
         Properties properties = new Properties();
         String[] split = dataSourceConnectionProperties.split(";");
-        String s3 = ArrayUtils.toString(split);
         Arrays.stream(split).forEach(s -> {
             String[] split1 = s.split("=");
             properties.setProperty(split1[0], split1[1]);
