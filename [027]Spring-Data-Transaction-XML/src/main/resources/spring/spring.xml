@@ -2,7 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <context:component-scan base-package="com.kapcb.ccc">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
@@ -11,4 +12,26 @@
     <import resource="spring-druid.xml"/>
 
     <tx:annotation-driven transaction-manager="dataSourceTransactionManager"/>
+
+    <!-- XML配置方式实现声明式事务 -->
+    <!-- 配置事务通知 -->
+    <tx:advice id="txAdvance">
+        <!-- 配置事务参数 -->
+        <tx:attributes>
+            <!-- 指定在那种规则的方法上添加事务 -->
+            <tx:method name="transferBalance" propagation="REQUIRED" isolation="REPEATABLE_READ" read-only="false"
+                       rollback-for="Exception.class"/>
+            <!-- <tx:method name="transfer*"/> -->
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 配置切入点和切面 -->
+    <aop:config>
+        <!-- 配置切入点 -->
+        <aop:pointcut id="pointCut"
+                      expression="execution(public * com.kapcb.ccc.service.impl.IAccountServiceImpl.*(..))"/>
+        <!-- 配置切面 -->
+        <!-- 将事务通知txAdvance设置到pointCut所切的切入点上 -->
+        <aop:advisor advice-ref="txAdvance" pointcut-ref="pointCut"/>
+    </aop:config>
 </beans>
