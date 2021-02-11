@@ -23,7 +23,7 @@
         <tx:attributes>
             <!-- 指定在那种规则的方法上添加事务 -->
             <tx:method name="transferBalance" propagation="REQUIRED" isolation="REPEATABLE_READ" read-only="false"
-                       rollback-for="Exception"/>
+                       rollback-for="Exception.class"/>
             <!-- <tx:method name="transfer*"/> -->
         </tx:attributes>
     </tx:advice>
