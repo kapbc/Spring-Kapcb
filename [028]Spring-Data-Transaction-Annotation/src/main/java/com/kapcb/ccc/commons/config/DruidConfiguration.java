@@ -1,7 +1,8 @@
 package com.kapcb.ccc.commons.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.mysql.cj.jdbc.Driver;
+import com.sun.jndi.toolkit.ctx.StringHeadTail;
+import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,8 +12,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 import java.util.Arrays;
 import java.util.Properties;
-import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 /**
  * <a>Title: DruidConfiguration </a>
@@ -24,7 +25,7 @@ import java.util.function.Function;
  * @date 2021/2/11 12:41
  */
 @Configuration
-@PropertySource(value = {"druid.properties"}, ignoreResourceNotFound = true)
+@PropertySource(value = {"classpath:properties/druid.properties"}, ignoreResourceNotFound = true)
 public class DruidConfiguration {
 
     @Value("${druid.data.source.username}")
@@ -43,69 +44,80 @@ public class DruidConfiguration {
     private String dataSourceDBType;
 
     @Value("${druid.data.source.initialSize}")
-    private String dataSourceInitialSize;
+    private int dataSourceInitialSize;
 
     @Value("${druid.data.source.maxActive}")
-    private String dataSourceMaxActive;
+    private int dataSourceMaxActive;
 
     @Value("${druid.data.source.maxWait}")
-    private String dataSourceMaxWait;
+    private long dataSourceMaxWait;
 
     @Value("${druid.data.source.timeBetweenEvictionRunsMillis}")
-    private String dataSourceTimeBetweenEvictionRunsMillis;
+    private long dataSourceTimeBetweenEvictionRunsMillis;
 
     @Value("${druid.data.source.minEvictableIdleTimeMillis}")
-    private String dataSourceMinEvictableIdleTimeMillis;
+    private long dataSourceMinEvictableIdleTimeMillis;
 
     @Value("${druid.data.source.validationQuery}")
     private String dataSourceValidationQuery;
 
     @Value("${druid.data.source.testOnReturn}")
-    private String dataSourceTestOnReturn;
+    private boolean dataSourceTestOnReturn;
 
     @Value("${druid.data.source.testOnBorrow}")
-    private String dataSourceTestOnBorrow;
+    private boolean dataSourceTestOnBorrow;
 
-    @Value("${druid.data.source.testWhileIdle")
-    private String dataSourceTestWhileIdle;
+    @Value("${druid.data.source.testWhileIdle}")
+    private boolean dataSourceTestWhileIdle;
 
     @Value("${druid.data.source.poolPreparedStatements}")
-    private String dataSourcePoolPreparedStatements;
+    private boolean dataSourcePoolPreparedStatements;
 
     @Value("${druid.data.source.maxPoolPreparedStatementPerConnectionSize}")
-    private String dataSourceMaxPoolPreparedStatementPerConnectionSize;
+    private int dataSourceMaxPoolPreparedStatementPerConnectionSize;
 
     @Value("${druid.data.source.useGlobalDataSourceStat}")
-    private String dataSourceUseGlobalDataSourceStat;
+    private boolean dataSourceUseGlobalDataSourceStat;
 
     @Value("${druid.data.source.connectionProperties}")
     private String dataSourceConnectionProperties;
 
     @Bean(value = "dataSource")
-    public DataSource druidDataSource() {
+    public DruidDataSource druidDataSource() {
+        System.out.println("dataSourceInitialSize = " + dataSourceInitialSize);
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setUsername(dataSourceName);
         druidDataSource.setPassword(dataSourcePassword);
         druidDataSource.setUrl(dataSourceUrl);
         druidDataSource.setDriverClassName(dataSourceDriven);
         druidDataSource.setDbType(dataSourceDBType);
-        druidDataSource.setInitialSize(Integer.parseInt(dataSourceInitialSize));
-        druidDataSource.setMaxActive(Integer.parseInt(dataSourceMaxActive));
-        druidDataSource.setMaxWait(Long.parseLong(dataSourceMaxWait));
-        druidDataSource.setTimeBetweenEvictionRunsMillis(Long.parseLong(dataSourceTimeBetweenEvictionRunsMillis));
-        druidDataSource.setMinEvictableIdleTimeMillis(Long.parseLong(dataSourceMinEvictableIdleTimeMillis));
+        druidDataSource.setInitialSize(dataSourceInitialSize);
+        druidDataSource.setMaxActive(dataSourceMaxActive);
+        druidDataSource.setMaxWait(dataSourceMaxWait);
+        druidDataSource.setTimeBetweenEvictionRunsMillis(dataSourceTimeBetweenEvictionRunsMillis);
+        druidDataSource.setMinEvictableIdleTimeMillis(dataSourceMinEvictableIdleTimeMillis);
         druidDataSource.setValidationQuery(dataSourceValidationQuery);
-        druidDataSource.setTestOnReturn(Boolean.parseBoolean(dataSourceTestOnReturn));
-        druidDataSource.setTestOnBorrow(Boolean.parseBoolean(dataSourceTestOnBorrow));
-        druidDataSource.setTestWhileIdle(Boolean.parseBoolean(dataSourceTestWhileIdle));
-        druidDataSource.setPoolPreparedStatements(Boolean.parseBoolean(dataSourcePoolPreparedStatements));
-        druidDataSource.setMaxPoolPreparedStatementPerConnectionSize(Integer.parseInt(dataSourceMaxPoolPreparedStatementPerConnectionSize));
-        druidDataSource.setUseGlobalDataSourceStat(Boolean.parseBoolean(dataSourceUseGlobalDataSourceStat));
+        druidDataSource.setTestOnReturn(dataSourceTestOnReturn);
+        druidDataSource.setTestOnBorrow(dataSourceTestOnBorrow);
+        druidDataSource.setTestWhileIdle(dataSourceTestWhileIdle);
+        druidDataSource.setPoolPreparedStatements(dataSourcePoolPreparedStatements);
+        druidDataSource.setMaxPoolPreparedStatementPerConnectionSize(dataSourceMaxPoolPreparedStatementPerConnectionSize);
+        druidDataSource.setUseGlobalDataSourceStat(dataSourceUseGlobalDataSourceStat);
         Properties properties = new Properties();
-        String[] split = dataSourceConnectionProperties.split(", ");
-        Arrays.stream(split).map(DruidConfiguration::getDruidConnectProperties);
-        properties.setProperty()
-        druidDataSource.setConnectProperties(new Properties().setProperty());
+        String[] split = dataSourceConnectionProperties.split(";");
+        String s3 = ArrayUtils.toString(split);
+        System.out.println("s3 = " + s3);
+        Arrays.stream(split).forEach(s -> {
+            String[] split1 = s.split("=");
+            String s1 = split1[0];
+            System.out.println("s1 = " + s1);
+            String s2 = split1[1];
+            System.out.println("s2 = " + s2);
+            properties.setProperty(split1[0], split1[1]);
+        });
+
+        getDruidConnectProperties(dataSourceConnectionProperties, S)
+        druidDataSource.setConnectProperties(properties);
         return druidDataSource;
     }
 
@@ -118,7 +130,8 @@ public class DruidConfiguration {
         return jdbcTemplate;
     }
 
-    public static <T> String getDruidConnectProperties(Function<T, String> function) {
-
+    private static <T> String getDruidConnectProperties(String propertiesString, Function<String, String> function) {
+        return propertiesString == null ? "" : function.apply(propertiesString);
     }
+
 }
