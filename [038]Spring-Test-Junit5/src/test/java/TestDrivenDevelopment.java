@@ -11,6 +11,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
  * <a>Title: TestDrivenDevelopment </a>
  * <a>Author: kapcb <a>
  * <a>Description: <a>
+ * 下面的注解还可以使用SpringJunitConfig一个注解代替完成
  *
  * @author kapcb
  * @version 1.0.0
