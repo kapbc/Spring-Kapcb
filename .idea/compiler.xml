@@ -54,6 +54,7 @@
         <module name="[024]Spring-AOP-CGLIB" />
         <module name="[023]Spring-AOP-JDK" />
         <module name="[007]Spring-IOC-FactoryBean" />
+        <module name="[039]Spring-Test-Junit5-Simplify" />
         <module name="[025]Spring-Data-JdbcTemplate" />
         <module name="[051]Spring-Dubbo-Interface" />
         <module name="[099]Spring-Utils" />
@@ -147,6 +148,8 @@
       <module name="[038]Spring-Schedule-Quartz" target="8" />
       <module name="[038]Spring-Test-Junit5" target="8" />
       <module name="[039]Spring-Shiro" target="8" />
+      <module name="[039]Spring-Test-Junit5" target="1.5" />
+      <module name="[039]Spring-Test-Junit5-Simplify" target="1.5" />
       <module name="[040]Spring-Log4j2" target="1.5" />
       <module name="[041]Spring-Annotation-Shiro" target="8" />
       <module name="[042]Spring-Log4j2" target="8" />

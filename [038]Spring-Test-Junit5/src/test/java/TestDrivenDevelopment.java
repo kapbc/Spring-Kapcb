@@ -21,6 +21,24 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ContextConfiguration(locations = {"classpath:spring/spring.xml"})
 public class TestDrivenDevelopment {
 
+    /**
+     * Spring5 整合 Junit5 所需的依赖
+     *         <!-- Spring-Test-Junit Begin -->
+     *         <dependency>
+     *             <groupId>org.springframework</groupId>
+     *             <artifactId>spring-test</artifactId>
+     *             <version>${spring.version}</version>
+     *         </dependency>
+     *         <!-- junit5 Begin -->
+     *         <dependency>
+     *             <groupId>org.junit.jupiter</groupId>
+     *             <artifactId>junit-jupiter-api</artifactId>
+     *             <version>${junit5.version}</version>
+     *             <scope>test</scope>
+     *         </dependency>
+     *         <!-- junit5 End -->
+     *         <!-- Spring-Test-Junit End -->
+     */
     private static final String HELLO_WORLD = "World";
 
     @Autowired
