@@ -149,7 +149,7 @@
       <module name="[038]Spring-Test-Junit5" target="8" />
       <module name="[039]Spring-Shiro" target="8" />
       <module name="[039]Spring-Test-Junit5" target="1.5" />
-      <module name="[039]Spring-Test-Junit5-Simplify" target="1.5" />
+      <module name="[039]Spring-Test-Junit5-Simplify" target="8" />
       <module name="[040]Spring-Log4j2" target="1.5" />
       <module name="[041]Spring-Annotation-Shiro" target="8" />
       <module name="[042]Spring-Log4j2" target="8" />
