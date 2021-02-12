@@ -54,8 +54,9 @@
       <module fileurl="file://$PROJECT_DIR$/[036]Spring-Function-GenericApplicationContext/[036]Spring-Function-GenericApplicationContext.iml" filepath="$PROJECT_DIR$/[036]Spring-Function-GenericApplicationContext/[036]Spring-Function-GenericApplicationContext.iml" />
       <module fileurl="file://$PROJECT_DIR$/[036]Spring-JdbcTemplate/[036]Spring-JdbcTemplate.iml" filepath="$PROJECT_DIR$/[036]Spring-JdbcTemplate/[036]Spring-JdbcTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/[037]Spring-Schedule-Task/[037]Spring-Schedule-Task.iml" filepath="$PROJECT_DIR$/[037]Spring-Schedule-Task/[037]Spring-Schedule-Task.iml" />
-      <module fileurl="file://$PROJECT_DIR$/[037]Spring-Test-Junit/[037]Spring-Test-Junit.iml" filepath="$PROJECT_DIR$/[037]Spring-Test-Junit/[037]Spring-Test-Junit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[037]Spring-Test-Junit4/[037]Spring-Test-Junit4.iml" filepath="$PROJECT_DIR$/[037]Spring-Test-Junit4/[037]Spring-Test-Junit4.iml" />
       <module fileurl="file://$PROJECT_DIR$/[038]Spring-Schedule-Quartz/[038]Spring-Schedule-Quartz.iml" filepath="$PROJECT_DIR$/[038]Spring-Schedule-Quartz/[038]Spring-Schedule-Quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[038]Spring-Test-Junit5/[038]Spring-Test-Junit5.iml" filepath="$PROJECT_DIR$/[038]Spring-Test-Junit5/[038]Spring-Test-Junit5.iml" />
       <module fileurl="file://$PROJECT_DIR$/[039]Spring-Shiro/[039]Spring-Shiro.iml" filepath="$PROJECT_DIR$/[039]Spring-Shiro/[039]Spring-Shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/[041]Spring-Annotation-Shiro/[041]Spring-Annotation-Shiro.iml" filepath="$PROJECT_DIR$/[041]Spring-Annotation-Shiro/[041]Spring-Annotation-Shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/[042]Spring-Log4j2/[042]Spring-Log4j2.iml" filepath="$PROJECT_DIR$/[042]Spring-Log4j2/[042]Spring-Log4j2.iml" />

@@ -12,11 +12,11 @@
         <module name="[039]Spring-Shiro" />
         <module name="[055]Spring-Redis" />
         <module name="[028]Spring-Data-Transaction-Annotation" />
-        <module name="[037]Spring-Test-Junit" />
         <module name="[050]Spring-Dubbo-Consumer" />
         <module name="[011]SpringMVC-Params" />
         <module name="[015]Spring-IOC-Anntation" />
         <module name="[015]SpringMVC-FileUpLoad" />
+        <module name="[037]Spring-Test-Junit4" />
         <module name="[047]Spring-Shiro-Jwt-Project" />
         <module name="[012]Spring-IOC-ExternalConfidurationFile" />
         <module name="[012]SpringMVC-Annotations" />
@@ -31,6 +31,7 @@
         <module name="[021]Spring-MyBatis-Param" />
         <module name="[006]Spring-IOC-Bean-Complex" />
         <module name="[004]Spring-IOC-Bean-DI" />
+        <module name="[038]Spring-Test-Junit5" />
         <module name="[002]Spring-IOC-BeanFactory" />
         <module name="[005]Spring-Annotation-Configuration" />
         <module name="[041]Spring-Annotation-Shiro" />
@@ -142,7 +143,9 @@
       <module name="[036]Spring-JdbcTemplate" target="8" />
       <module name="[037]Spring-Schedule-Task" target="8" />
       <module name="[037]Spring-Test-Junit" target="8" />
+      <module name="[037]Spring-Test-Junit4" target="8" />
       <module name="[038]Spring-Schedule-Quartz" target="8" />
+      <module name="[038]Spring-Test-Junit5" target="8" />
       <module name="[039]Spring-Shiro" target="8" />
       <module name="[040]Spring-Log4j2" target="1.5" />
       <module name="[041]Spring-Annotation-Shiro" target="8" />
