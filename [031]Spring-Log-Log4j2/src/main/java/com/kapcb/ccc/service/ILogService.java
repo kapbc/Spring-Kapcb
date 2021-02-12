@@ -10,4 +10,13 @@ package com.kapcb.ccc.service;
  * @date 2021/2/12 13:22
  */
 public interface ILogService {
+
+    /**
+     * login
+     *
+     * @param username String
+     * @param password String
+     * @return boolean
+     */
+    boolean login(String username, String password);
 }
