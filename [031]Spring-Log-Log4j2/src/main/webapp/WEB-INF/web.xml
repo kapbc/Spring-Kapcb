@@ -21,6 +21,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!--log4j2 begin-->
     <listener>
         <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
     </listener>
@@ -41,6 +42,7 @@
         <dispatcher>ERROR</dispatcher>
         <dispatcher>ASYNC</dispatcher>
     </filter-mapping>
+    <!--log4j2 end-->
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

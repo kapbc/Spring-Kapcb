@@ -176,6 +176,8 @@
         <option value="$PROJECT_DIR$/[030]Spring-Log-Log4j/pom.xml" />
         <option value="$PROJECT_DIR$/[031]Spring-Log-Log4j2/pom.xml" />
         <option value="$PROJECT_DIR$/[032]Spring-Log-Logback/pom.xml" />
+        <option value="$PROJECT_DIR$/[035]Spring-Function-Nullable/pom.xml" />
+        <option value="$PROJECT_DIR$/[036]Spring-Function-GenericApplicationContext/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
