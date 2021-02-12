@@ -4,7 +4,9 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="[028]Spring-Data-Transaction-Annotation" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
