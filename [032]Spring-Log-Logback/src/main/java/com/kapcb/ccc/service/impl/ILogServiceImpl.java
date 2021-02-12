@@ -3,6 +3,7 @@ package com.kapcb.ccc.service.impl;
 import com.kapcb.ccc.service.ILogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +18,7 @@ import java.util.Objects;
  * @version 1.0.0
  * @date 2021/2/12 13:48
  */
+@Component(value = "logService")
 public class ILogServiceImpl implements ILogService {
 
     private static final Logger log = LoggerFactory.getLogger(ILogServiceImpl.class);

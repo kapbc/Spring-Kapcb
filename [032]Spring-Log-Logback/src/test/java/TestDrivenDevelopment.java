@@ -18,7 +18,7 @@ public class TestDrivenDevelopment {
     private static final String CONTEXT_CONFIG_LOCATION = "classpath:spring/spring.xml";
 
     @Test
-    public void testTheLog4j2() {
+    public void testTheLogback() {
         ApplicationContext ioc = new ClassPathXmlApplicationContext(CONTEXT_CONFIG_LOCATION);
         ILogService logService = ioc.getBean("logService", ILogServiceImpl.class);
         boolean kapcb = logService.login("kapcb", "123456");
