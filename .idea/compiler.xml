@@ -12,6 +12,7 @@
         <module name="[039]Spring-Shiro" />
         <module name="[055]Spring-Redis" />
         <module name="[028]Spring-Data-Transaction-Annotation" />
+        <module name="[037]Spring-Test-Junit" />
         <module name="[050]Spring-Dubbo-Consumer" />
         <module name="[011]SpringMVC-Params" />
         <module name="[015]Spring-IOC-Anntation" />
@@ -140,6 +141,7 @@
       <module name="[036]Spring-Function-GenericApplicationContext" target="8" />
       <module name="[036]Spring-JdbcTemplate" target="8" />
       <module name="[037]Spring-Schedule-Task" target="8" />
+      <module name="[037]Spring-Test-Junit" target="8" />
       <module name="[038]Spring-Schedule-Quartz" target="8" />
       <module name="[039]Spring-Shiro" target="8" />
       <module name="[040]Spring-Log4j2" target="1.5" />
