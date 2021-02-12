@@ -135,9 +135,9 @@
       <module name="[032]Spring-Log-Logback" target="8" />
       <module name="[032]SSM-Email" target="8" />
       <module name="[034]Spring-Resultful" target="8" />
-      <module name="[035]Spring-Function-Nullable" target="1.5" />
+      <module name="[035]Spring-Function-Nullable" target="8" />
       <module name="[035]Spring-Resultful-ThreadPool" target="8" />
-      <module name="[036]Spring-Function-GenericApplicationContext" target="1.5" />
+      <module name="[036]Spring-Function-GenericApplicationContext" target="8" />
       <module name="[036]Spring-JdbcTemplate" target="8" />
       <module name="[037]Spring-Schedule-Task" target="8" />
       <module name="[038]Spring-Schedule-Quartz" target="8" />
