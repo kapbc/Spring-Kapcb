@@ -17,6 +17,8 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 @SpringJUnitConfig(locations = {"classpath:spring/spring.xml"})
 public class TestDrivenDevelopment {
 
+    private static final String HELLO_WORLD = "World";
+
     @Autowired
     @Qualifier(value = "kapcb")
     private User kapcb;
@@ -27,5 +29,10 @@ public class TestDrivenDevelopment {
     @Test
     public void testSpringJunitConfigByXml() {
         System.out.println("kapcb = " + kapcb);
+    }
+
+    @Test
+    public void testSpringJunitConfig() {
+        userService.testSpringJunitConfig(HELLO_WORLD);
     }
 }
