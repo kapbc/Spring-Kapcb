@@ -1,8 +1,11 @@
 package com.kapcb.ccc.commons.config;
 
+import com.kapcb.ccc.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 /**
  * <a>Title: ContextConfiguration </a>
@@ -20,5 +23,15 @@ public class ContextConfiguration {
 
     public ContextConfiguration() {
         log.warn("the spring ioc context is initial....");
+    }
+
+    @Scope(value = "singleton")
+    @Bean(value = "kapcb", initMethod = "start", destroyMethod = "cleanUp")
+    public User user() {
+        User user = new User();
+        user.setUrl("www.kapcb.com");
+        user.setUsername("kapcb");
+        user.setPassword("123456");
+        return user;
     }
 }
