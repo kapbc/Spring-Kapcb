@@ -1,11 +1,11 @@
 import com.kapcb.ccc.commons.config.SpringContextConfiguration;
+import com.kapcb.ccc.domain.KpacbDataSource;
 import com.kapcb.ccc.domain.SystemProperties;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-import sun.rmi.runtime.Log;
 
 /**
  * <a>Title: TestDrivenDevelopment </a>
@@ -24,6 +24,9 @@ public class TestDrivenDevelopment {
     @Autowired
     private SystemProperties systemProperties;
 
+    @Autowired
+    private KpacbDataSource kpacbDataSource;
+
     @Test
     public void testAnnotationApplicationPropertyConfiguration() {
         log.warn("begin to test annotation application property configuration....");
@@ -32,5 +35,12 @@ public class TestDrivenDevelopment {
         String password = systemProperties.getPassword();
         System.out.println("password = " + password);
         log.warn("process annotation property success...");
+    }
+
+    @Test
+    public void testAnnotationApplicationPropertyConfigurationFromIOC() {
+        log.warn("begin to test the properties from ioc....");
+        System.out.println("kpacbDataSource = " + kpacbDataSource);
+        log.warn("process success...");
     }
 }
