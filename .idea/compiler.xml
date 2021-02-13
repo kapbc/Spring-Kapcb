@@ -79,7 +79,6 @@
         <module name="[023]Spring-MyBatis-Configure" />
         <module name="[029]SSM-Base" />
         <module name="[011]Spring-IOC-Autowired" />
-        <module name="[006]Spring-Annotation-Value" />
         <module name="[027]Spring-Data-Transaction-XML" />
         <module name="[054]Spring-Logback" />
         <module name="[059]Spring-Thymeleaf-Annotation" />

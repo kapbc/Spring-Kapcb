@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/[002]Spring-IOC-BeanFactory/[002]Spring-IOC-BeanFactory.iml" filepath="$PROJECT_DIR$/[002]Spring-IOC-BeanFactory/[002]Spring-IOC-BeanFactory.iml" />
       <module fileurl="file://$PROJECT_DIR$/[003]Spring-IOC-ApplicationContext/[003]Spring-IOC-ApplicationContext.iml" filepath="$PROJECT_DIR$/[003]Spring-IOC-ApplicationContext/[003]Spring-IOC-ApplicationContext.iml" />
       <module fileurl="file://$PROJECT_DIR$/[004]Spring-IOC-Bean-DI/[004]Spring-IOC-Bean-DI.iml" filepath="$PROJECT_DIR$/[004]Spring-IOC-Bean-DI/[004]Spring-IOC-Bean-DI.iml" />
-      <module fileurl="file://$PROJECT_DIR$/[006]Spring-Annotation-Value/[006]Spring-Annotation-Value.iml" filepath="$PROJECT_DIR$/[006]Spring-Annotation-Value/[006]Spring-Annotation-Value.iml" />
       <module fileurl="file://$PROJECT_DIR$/[006]Spring-IOC-Bean-Complex/[006]Spring-IOC-Bean-Complex.iml" filepath="$PROJECT_DIR$/[006]Spring-IOC-Bean-Complex/[006]Spring-IOC-Bean-Complex.iml" />
       <module fileurl="file://$PROJECT_DIR$/[007]Spring-Annotation-Enable/[007]Spring-Annotation-Enable.iml" filepath="$PROJECT_DIR$/[007]Spring-Annotation-Enable/[007]Spring-Annotation-Enable.iml" />
       <module fileurl="file://$PROJECT_DIR$/[007]Spring-IOC-FactoryBean/[007]Spring-IOC-FactoryBean.iml" filepath="$PROJECT_DIR$/[007]Spring-IOC-FactoryBean/[007]Spring-IOC-FactoryBean.iml" />
