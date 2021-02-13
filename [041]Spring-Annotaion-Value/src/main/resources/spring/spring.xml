@@ -15,6 +15,15 @@
         </property>
     </bean>
 
+    <!--    <bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+    <!--        <property name="locations">-->
+    <!--            <list>-->
+    <!--                <value>classpath:properties/kapcb.properties</value>-->
+    <!--                <value>classpath:properties/system.properties</value>-->
+    <!--            </list>-->
+    <!--        </property>-->
+    <!--    </bean>-->
+
     <!--  @Value表达式的用法是 @Value(value="#{${bean id}['properties key']}")  -->
     <!--  @Value表达式的用法是 @Value(value="#{propertiesFactoryBean['properties key']}")  -->
     <bean id="propertiesFactoryBean" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
@@ -25,4 +34,5 @@
             </list>
         </property>
     </bean>
+
 </beans>
