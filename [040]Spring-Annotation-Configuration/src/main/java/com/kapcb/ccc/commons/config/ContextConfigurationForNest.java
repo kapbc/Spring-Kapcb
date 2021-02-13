@@ -1,7 +1,9 @@
 package com.kapcb.ccc.commons.config;
 
+import com.kapcb.ccc.domain.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -27,6 +29,10 @@ public class ContextConfigurationForNest {
     @Configuration
     public static class DataSourceConfiguration {
 
-
+        @Bean(value = "kapcbDataSource")
+        public DataSource dataSource() {
+            log.warn("nest context config begin to initial....");
+            return new DataSource();
+        }
     }
 }
