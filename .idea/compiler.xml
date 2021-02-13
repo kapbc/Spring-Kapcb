@@ -72,7 +72,6 @@
         <module name="[032]SSM-Email" />
         <module name="[028]SSM-QuickStart" />
         <module name="[044]Spring-Validation" />
-        <module name="[007]Spring-Annotation-Enable" />
         <module name="[042]Spring-Annotaion-Value2" />
         <module name="[040]Spring-Annotation-Configuration" />
         <module name="[003]Spring-IOC-ApplicationContext" />
