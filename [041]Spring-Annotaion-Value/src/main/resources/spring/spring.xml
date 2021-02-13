@@ -4,8 +4,20 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--  @Value表达式的用法是 @Value(value="${properties key}")  -->
     <bean id="propertiesReader" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
         <property name="ignoreResourceNotFound" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:properties/kapcb.properties</value>
+                <value>classpath:properties/system.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--  @Value表达式的用法是 @Value(value="#{${bean id}['properties key']}")  -->
+    <!--  @Value表达式的用法是 @Value(value="#{propertiesFactoryBean['properties key']}")  -->
+    <bean id="propertiesFactoryBean" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations">
             <list>
                 <value>classpath:properties/kapcb.properties</value>
