@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/[002]Spring-IOC-BeanFactory/[002]Spring-IOC-BeanFactory.iml" filepath="$PROJECT_DIR$/[002]Spring-IOC-BeanFactory/[002]Spring-IOC-BeanFactory.iml" />
       <module fileurl="file://$PROJECT_DIR$/[003]Spring-IOC-ApplicationContext/[003]Spring-IOC-ApplicationContext.iml" filepath="$PROJECT_DIR$/[003]Spring-IOC-ApplicationContext/[003]Spring-IOC-ApplicationContext.iml" />
       <module fileurl="file://$PROJECT_DIR$/[004]Spring-IOC-Bean-DI/[004]Spring-IOC-Bean-DI.iml" filepath="$PROJECT_DIR$/[004]Spring-IOC-Bean-DI/[004]Spring-IOC-Bean-DI.iml" />
-      <module fileurl="file://$PROJECT_DIR$/[005]Spring-Annotation-Configuration/[005]Spring-Annotation-Configuration.iml" filepath="$PROJECT_DIR$/[005]Spring-Annotation-Configuration/[005]Spring-Annotation-Configuration.iml" />
       <module fileurl="file://$PROJECT_DIR$/[006]Spring-Annotation-Value/[006]Spring-Annotation-Value.iml" filepath="$PROJECT_DIR$/[006]Spring-Annotation-Value/[006]Spring-Annotation-Value.iml" />
       <module fileurl="file://$PROJECT_DIR$/[006]Spring-IOC-Bean-Complex/[006]Spring-IOC-Bean-Complex.iml" filepath="$PROJECT_DIR$/[006]Spring-IOC-Bean-Complex/[006]Spring-IOC-Bean-Complex.iml" />
       <module fileurl="file://$PROJECT_DIR$/[007]Spring-Annotation-Enable/[007]Spring-Annotation-Enable.iml" filepath="$PROJECT_DIR$/[007]Spring-Annotation-Enable/[007]Spring-Annotation-Enable.iml" />
@@ -60,6 +59,7 @@
       <module fileurl="file://$PROJECT_DIR$/[039]Spring-Shiro/[039]Spring-Shiro.iml" filepath="$PROJECT_DIR$/[039]Spring-Shiro/[039]Spring-Shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/[039]Spring-Test-Junit5-Simplify/[039]Spring-Test-Junit5-Simplify.iml" filepath="$PROJECT_DIR$/[039]Spring-Test-Junit5-Simplify/[039]Spring-Test-Junit5-Simplify.iml" />
       <module fileurl="file://$PROJECT_DIR$/[040]Spring-Annotation-Configuration/[040]Spring-Annotation-Configuration.iml" filepath="$PROJECT_DIR$/[040]Spring-Annotation-Configuration/[040]Spring-Annotation-Configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[041]Spring-Annotaion-Value/[041]Spring-Annotaion-Value.iml" filepath="$PROJECT_DIR$/[041]Spring-Annotaion-Value/[041]Spring-Annotaion-Value.iml" />
       <module fileurl="file://$PROJECT_DIR$/[041]Spring-Annotation-Shiro/[041]Spring-Annotation-Shiro.iml" filepath="$PROJECT_DIR$/[041]Spring-Annotation-Shiro/[041]Spring-Annotation-Shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/[042]Spring-Log4j2/[042]Spring-Log4j2.iml" filepath="$PROJECT_DIR$/[042]Spring-Log4j2/[042]Spring-Log4j2.iml" />
       <module fileurl="file://$PROJECT_DIR$/[043]Spring-Shiro-Jwt/[043]Spring-Shiro-Jwt.iml" filepath="$PROJECT_DIR$/[043]Spring-Shiro-Jwt/[043]Spring-Shiro-Jwt.iml" />

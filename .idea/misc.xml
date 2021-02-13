@@ -99,7 +99,6 @@
         <option value="$PROJECT_DIR$/Spring-Utils/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Annotation-Configuration/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-task/pom.xml" />
-        <option value="$PROJECT_DIR$/[005]Spring-Annotation-Configuration/pom.xml" />
         <option value="$PROJECT_DIR$/[006]Spring-Annotation-Value/pom.xml" />
         <option value="$PROJECT_DIR$/[007]Spring-Annotation-Enable/pom.xml" />
         <option value="$PROJECT_DIR$/[010]SpringMVC-HelloWorld/pom.xml" />
@@ -182,6 +181,7 @@
         <option value="$PROJECT_DIR$/[037]Spring-Test-Junit4/pom.xml" />
         <option value="$PROJECT_DIR$/[039]Spring-Test-Junit5-Simplify/pom.xml" />
         <option value="$PROJECT_DIR$/[040]Spring-Annotation-Configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/[041]Spring-Annotaion-Value/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
