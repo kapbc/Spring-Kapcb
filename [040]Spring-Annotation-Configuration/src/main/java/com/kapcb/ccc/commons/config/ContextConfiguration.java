@@ -4,6 +4,7 @@ import com.kapcb.ccc.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
@@ -17,6 +18,8 @@ import org.springframework.context.annotation.Scope;
  * @date 2021/2/13 9:51
  */
 @Configuration
+// 添加自动扫描注解，basePackages为Person包路径
+@ComponentScan(basePackages = {"com.kapcb.ccc.domain"})
 public class ContextConfiguration {
 
     private static final Logger log = LoggerFactory.getLogger(ContextConfiguration.class);
