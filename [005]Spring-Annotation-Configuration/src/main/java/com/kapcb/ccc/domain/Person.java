@@ -32,4 +32,12 @@ public class Person {
     public void destroy() {
         System.out.println("Person Begin To Destroy...");
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
