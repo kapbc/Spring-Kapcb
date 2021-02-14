@@ -7,13 +7,13 @@
 </head>
 <body>
 <table>
-    <tr th:each="result:${userList}">
-        <td th:text="${result.userId}"/>
-        <td th:text="${result.age}"/>
-        <td th:text="${result.status}"/>
-        <td th:text="${result.username}"/>
-        <td th:text="${result.password}"/>
-        <td th:text="${result.birthday}"/>
+    <td th:each="result:${userList}">
+    <td th:text="${result.userId}"></td>
+    <td th:text="${result.age}"></td>
+    <td th:text="${result.status}"></td>
+    <td th:text="${result.username}"></td>
+    <td th:text="${result.password}"></td>
+    <td th:text="${result.birthday}"></td>
     </tr>
 </table>
 </body>

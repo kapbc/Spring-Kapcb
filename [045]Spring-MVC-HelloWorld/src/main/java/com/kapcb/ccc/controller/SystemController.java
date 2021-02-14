@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * <a>Title: SystemController </a>
@@ -25,12 +26,14 @@ public class SystemController {
     @GetMapping(produces = "application/json; charset=UTF-8")
     public String index(Model model) {
         log.warn("come into index page....");
-        model.addAttribute("kapcb","kapcb");
+        model.addAttribute("kapcb", "kapcb");
         return "index";
     }
 
-    @GetMapping(produces = "application/json; charset=UTF-8")
+    @ResponseBody
+    @GetMapping(path = "kapcb", produces = "application/json; charset=UTF-8")
     public String helloSpringMVC() {
-
+        log.warn("process hello spring mvc...");
+        return "Hello Kapcb";
     }
 }
