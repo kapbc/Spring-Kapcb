@@ -33,6 +33,7 @@
     <file type="web" url="file://$PROJECT_DIR$/[042]Spring-Log4j2" />
     <file type="web" url="file://$PROJECT_DIR$/[043]Spring-Shiro-Jwt" />
     <file type="web" url="file://$PROJECT_DIR$/[044]Spring-Validation" />
+    <file type="web" url="file://$PROJECT_DIR$/[045]Spring-MVC-HelloWorld" />
     <file type="web" url="file://$PROJECT_DIR$/[045]Spring-Shiro-Jwt-Project/[045]Spring-Shiro-Jwt-Project" />
     <file type="web" url="file://$PROJECT_DIR$/[046]Spring-Jwt" />
     <file type="web" url="file://$PROJECT_DIR$/[047]Spring-Shiro-Jwt-Project" />
@@ -181,6 +182,7 @@
         <option value="$PROJECT_DIR$/[040]Spring-Annotation-Configuration/pom.xml" />
         <option value="$PROJECT_DIR$/[041]Spring-Annotaion-Value/pom.xml" />
         <option value="$PROJECT_DIR$/[042]Spring-Annotaion-Value2/pom.xml" />
+        <option value="$PROJECT_DIR$/[045]Spring-MVC-HelloWorld/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
