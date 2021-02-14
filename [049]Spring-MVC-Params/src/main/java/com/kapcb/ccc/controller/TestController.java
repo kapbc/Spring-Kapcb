@@ -26,7 +26,6 @@ public class TestController {
 
     private static final Logger log = LoggerFactory.getLogger(JsonController.class);
 
-
     @RequestMapping("test")
     public String test(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws ServletException, IOException {
         System.out.println("执行了test方法");
