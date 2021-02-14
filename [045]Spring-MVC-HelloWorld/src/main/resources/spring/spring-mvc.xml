@@ -3,9 +3,30 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
     <context:component-scan base-package="com.kapcb.ccc">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
         <context:include-filter type="annotation"
                                 expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
+
+    <!-- Spring5整合Thymeleaf-XML begin -->
+    <bean id="springResourceTemplateResolver"
+          class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+        <property name="characterEncoding" value="UTF=8"/>
+        <property name="templateMode" value="HTML"/>
+        <property name="prefix" value="/WEB-INF/template/"/>
+        <property name="suffix" value=".html"/>
+        <property name="cacheable" value="false"/>
+    </bean>
+
+    <bean id="springTemplateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
+        <property name="templateResolver" ref="springResourceTemplateResolver"/>
+    </bean>
+
+    <bean id="thymeleafViewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="springTemplateEngine"/>
+        <property name="characterEncoding" value="UTF-8"/>
+    </bean>
+    <!-- Spring5整合Thymeleaf-XML end -->
 </beans>
