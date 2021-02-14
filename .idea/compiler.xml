@@ -70,6 +70,7 @@
         <module name="[013]SpringMVC-Exception" />
         <module name="[032]SSM-Email" />
         <module name="[028]SSM-QuickStart" />
+        <module name="[046]Spring-MVC-HelloWord2" />
         <module name="[024]Spring-MyBatis-DynamicSQL" />
         <module name="[042]Spring-Annotaion-Value2" />
         <module name="[023]Spring-MyBatis-Configure" />
@@ -162,6 +163,7 @@
       <module name="[045]Spring-MVC-HelloWorld" target="8" />
       <module name="[045]Spring-Shiro-Jwt-Project" target="8" />
       <module name="[046]Spring-Jwt" target="8" />
+      <module name="[046]Spring-MVC-HelloWord2" target="8" />
       <module name="[047]Spring-Shiro-Jwt-Project" target="8" />
       <module name="[048]Spring-Shiro-Jwt-1" target="8" />
       <module name="[049]SpringMVC-Shiro-Jwt" target="8" />

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/[010]SpringMVC-HelloWorld/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/[010]SpringMVC-HelloWorld/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/[011]SpringMVC-Params/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/[011]SpringMVC-Params/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/[012]SpringMVC-Annotations/src/main/java" charset="UTF-8" />
