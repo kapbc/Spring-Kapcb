@@ -15,6 +15,7 @@
         <logback.version>1.2.3</logback.version>
         <maven.source.version>8</maven.source.version>
         <spring.version>5.2.10.RELEASE</spring.version>
+        <commons.lang3.version>3.10</commons.lang3.version>
         <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
         <commons.logging.version>1.2</commons.logging.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
@@ -110,6 +111,11 @@
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf-spring5</artifactId>
             <version>${thymeleaf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.lang3.version}</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,6 +1,9 @@
 package com.kapcb.ccc.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -16,5 +19,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path = "/")
 public class SystemController {
 
+    private static final Logger log = LoggerFactory.getLogger(SystemController.class);
 
+    @GetMapping(produces = "application/json; charset=UTF-8")
+    public String index() {
+        log.warn("begin to access index page...");
+        return "index";
+    }
 }
