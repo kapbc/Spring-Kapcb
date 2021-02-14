@@ -19,8 +19,8 @@ import org.springframework.web.servlet.support.AbstractDispatcherServletInitiali
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer {
 
-    @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-        configurer.enable();
-    }
+//    @Override
+//    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+//        configurer.enable();
+//    }
 }
