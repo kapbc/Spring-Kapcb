@@ -24,7 +24,6 @@
         <module name="[012]SpringMVC-Annotations" />
         <module name="[014]SpringMVC-Interceptor" />
         <module name="[037]Spring-Schedule-Task" />
-        <module name="[010]SpringMVC-HelloWorld" />
         <module name="[041]Spring-Annotaion-Value" />
         <module name="[022]Spring-MyBatis-SQL" />
         <module name="[025]Spring-MyBatis-CRUD" />
