@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * <a>Title: SystemController </a>
@@ -27,5 +28,12 @@ public class SystemController {
         log.warn("begin to to access index page...");
         model.addAttribute("kapcb", "kapcb");
         return "index";
+    }
+
+    @ResponseBody
+    @GetMapping(produces = "application/json; charset=UTF-8")
+    public String process() {
+        log.warn("begin to process the json string return value");
+        return "Hello Kapcb!";
     }
 }
