@@ -26,6 +26,55 @@ public class User implements Serializable {
     public User() {
     }
 
+    public User(Builder builder) {
+        this.username = builder.username;
+        this.password = builder.password;
+        this.age = builder.age;
+        this.accounts = builder.accounts;
+        this.accountMap = builder.accountMap;
+    }
+
+    public static class Builder {
+
+        private String username;
+        private String password;
+        private Integer age;
+        private List<Account> accounts;
+        private Map<String, Account> accountMap;
+
+        public Builder() {
+        }
+
+        public User.Builder username(String username) {
+            this.username = username;
+            return this;
+        }
+
+        public User.Builder password(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public User.Builder age(Integer age) {
+            this.age = age;
+            return this;
+        }
+
+        public User.Builder account(List<Account> accounts) {
+            this.accounts = accounts;
+            return this;
+        }
+
+        public User.Builder accountMap(Map<String, Account> accountMap) {
+            this.accountMap = accountMap;
+            return this;
+        }
+
+        public User build() {
+            return new User(this);
+        }
+    }
+
     public String getUsername() {
         return username;
     }
