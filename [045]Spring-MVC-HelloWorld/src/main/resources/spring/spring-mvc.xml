@@ -13,7 +13,7 @@
     <!-- Spring5整合Thymeleaf-XML begin -->
     <bean id="springResourceTemplateResolver"
           class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
-        <property name="characterEncoding" value="UTF=8"/>
+        <property name="characterEncoding" value="UTF-8"/>
         <property name="templateMode" value="HTML"/>
         <property name="prefix" value="/WEB-INF/template/"/>
         <property name="suffix" value=".html"/>
