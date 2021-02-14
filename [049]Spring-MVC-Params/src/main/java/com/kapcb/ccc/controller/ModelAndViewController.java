@@ -44,7 +44,14 @@ public class ModelAndViewController {
                 .accountMap(null)
                 .build();
 
+        /**
+         * 将user对象村粗到modelAndView中，它会将user对象存入到request对象中
+         */
         modelAndView.addObject("kapcb", kapcb);
+
+        /**
+         * 指定需要返回的视图
+         */
         modelAndView.setViewName("kapcb");
         log.warn("process success...");
         return modelAndView;
