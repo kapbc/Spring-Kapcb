@@ -14,6 +14,7 @@
         <module name="[055]Spring-Redis" />
         <module name="[028]Spring-Data-Transaction-Annotation" />
         <module name="[031]Spring-Log-Log4j2" />
+        <module name="[049]Spring-MVC-Params" />
         <module name="[050]Spring-Dubbo-Consumer" />
         <module name="[011]SpringMVC-Params" />
         <module name="[015]Spring-IOC-Anntation" />
@@ -168,6 +169,7 @@
       <module name="[047]Spring-MVC-HelloWorld3" target="8" />
       <module name="[047]Spring-Shiro-Jwt-Project" target="8" />
       <module name="[048]Spring-Shiro-Jwt-1" target="8" />
+      <module name="[049]Spring-MVC-Params" target="8" />
       <module name="[049]SpringMVC-Shiro-Jwt" target="8" />
       <module name="[050]Spring-Dubbo-Consumer" target="1.5" />
       <module name="[051]Spring-Dubbo-Interface" target="1.5" />
