@@ -9,4 +9,21 @@
         <context:include-filter type="annotation"
                                 expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
+
+    <bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+        <property name="characterEncoding" value="UTF-8"/>
+        <property name="cacheable" value="false"/>
+        <property name="suffix" value=".html"/>
+        <property name="prefix" value="/WEB-INF/template/"/>
+        <property name="templateMode" value="HTML"/>
+    </bean>
+
+    <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver"/>
+    </bean>
+
+    <bean id="thymeleafViewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+        <property name="characterEncoding" value="UTF-8"/>
+        <property name="templateEngine" ref="templateEngine"/>
+    </bean>
 </beans>
