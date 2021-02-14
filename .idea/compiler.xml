@@ -75,6 +75,7 @@
         <module name="[042]Spring-Annotaion-Value2" />
         <module name="[023]Spring-MyBatis-Configure" />
         <module name="[040]Spring-Annotation-Configuration" />
+        <module name="[047]Spring-MVC-HelloWorld3" />
         <module name="[003]Spring-IOC-ApplicationContext" />
         <module name="[044]Spring-Validation" />
         <module name="[029]SSM-Base" />
@@ -164,6 +165,7 @@
       <module name="[045]Spring-Shiro-Jwt-Project" target="8" />
       <module name="[046]Spring-Jwt" target="8" />
       <module name="[046]Spring-MVC-HelloWord2" target="8" />
+      <module name="[047]Spring-MVC-HelloWorld3" target="8" />
       <module name="[047]Spring-Shiro-Jwt-Project" target="8" />
       <module name="[048]Spring-Shiro-Jwt-1" target="8" />
       <module name="[049]SpringMVC-Shiro-Jwt" target="8" />
