@@ -24,7 +24,6 @@ import java.io.IOException;
 @RequestMapping(path = "/")
 public class TestController {
 
-
     private static final Logger log = LoggerFactory.getLogger(JsonController.class);
 
     @RequestMapping("test")
