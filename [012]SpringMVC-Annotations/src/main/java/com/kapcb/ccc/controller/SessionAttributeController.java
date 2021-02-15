@@ -21,7 +21,6 @@ import org.springframework.web.bind.support.SessionStatus;
 @SessionAttributes(value = {"username", "password"}, types = {Integer.class})
 public class SessionAttributeController {
 
-
     /**
      * 把数据存入 SessionAttribute
      * Model 是 spring 提供的一个接口，该接口有一个实现类 ExtendedModelMap
