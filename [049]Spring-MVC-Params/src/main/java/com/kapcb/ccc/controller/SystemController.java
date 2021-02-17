@@ -27,7 +27,7 @@ public class SystemController {
         return "index";
     }
 
-    @GetMapping
+    @GetMapping(value = "test")
     public String test() {
         log.warn("begin to access test page...");
         return "test/test";
