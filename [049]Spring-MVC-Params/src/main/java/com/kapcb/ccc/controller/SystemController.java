@@ -30,6 +30,6 @@ public class SystemController {
     @GetMapping(value = "test")
     public String test() {
         log.warn("begin to access test page...");
-        return "test/test";
+        return "test/testMvcParamsController";
     }
 }
