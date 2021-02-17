@@ -41,7 +41,7 @@ public class TestController {
         response.setContentType("application/json;charset=utf-8");
         response.getWriter().write("JSON串");*/
 
-        return "success";
+        return "/test/success";
     }
 
 

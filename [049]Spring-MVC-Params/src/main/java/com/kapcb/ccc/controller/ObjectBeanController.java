@@ -33,7 +33,7 @@ public class ObjectBeanController {
     private static final Logger log = LoggerFactory.getLogger(ObjectBeanController.class);
 
     private static final String FAIl = "fail";
-    private static final String SUCCESS = "success";
+    private static final String SUCCESS = "/test/success";
 
     /**
      * 型绑定--ObjectBean测试

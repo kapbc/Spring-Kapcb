@@ -21,9 +21,15 @@ public class SystemController {
 
     private static final Logger log = LoggerFactory.getLogger(SystemController.class);
 
-    @GetMapping(produces = "application/json; charset=UTF-8")
+    @GetMapping
     public String index() {
         log.warn("begin to access index page...");
         return "index";
+    }
+
+    @GetMapping
+    public String test() {
+        log.warn("begin to access test page...");
+        return "test/test";
     }
 }
