@@ -53,15 +53,15 @@ public class ObjectBeanController {
     /**
      * ObjectBean 类中包含集合类型参数
      *
-     * @param user User
+     * @param account Account
      * @return String
      */
-    @PostMapping(path = "updateUser", produces = "application/json; charset=UTF-8")
-    public String updateUser(User user) {
-        if (Objects.equals(null, user)) {
+    @PostMapping(path = "updateAccount", produces = "application/json; charset=UTF-8")
+    public String updateUser(Account account) {
+        if (Objects.equals(null, account)) {
             return FAIl;
         }
-        System.out.println("user = " + user);
+        System.out.println("Account = " + account);
         return SUCCESS;
     }
 

@@ -27,9 +27,15 @@ public class SystemController {
         return "index";
     }
 
-    @GetMapping(value = "test")
-    public String test() {
-        log.warn("begin to access test page...");
+    @GetMapping(value = "testMvcParams")
+    public String testMvcParams() {
+        log.warn("begin to access test mvc params page...");
         return "test/testMvcParamsController";
+    }
+
+    @GetMapping(value = "testObjectBean")
+    public String testObjectBean() {
+        log.warn("begin to access test object bean page...");
+        return "test/testObjectBeanController";
     }
 }

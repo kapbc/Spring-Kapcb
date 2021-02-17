@@ -2,17 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
+    <title>Test Mvc params</title>
 </head>
 <body>
-<h5>This is test page!</h5>
+<h5>This is test Mvc params page!</h5>
 <hr/>
 <h4>Test MvcParamsController</h4>
+
+<%--基本类型的请求参数绑定测试--%>
 <a href="/param/findAccountBalance?accountId=1314" style="text-decoration: none">test find account balance</a><br/>
+
+<%--基本类型和 String 类型作为参数 --%>
 <a href="/param/findAccountBalanceByUsername?accountId=1314&accountName=kapcb" style="text-decoration: none">test find
     account balance by accountId and username</a><br/>
+
+
 <a href="/param/map" style="text-decoration: none">test Spring MVC param's map</a><br/>
+
+
 <a href="/param/model" style="text-decoration: none">test Spring MVC param's model</a><br/>
+
+
 <a href="/param/modelMap" style="text-decoration: none">test Spring MVC param's modelMap</a><br/>
 <hr>
 </body>
