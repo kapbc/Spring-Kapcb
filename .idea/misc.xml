@@ -7,7 +7,6 @@
     <file type="web" url="file://$PROJECT_DIR$/[006]Spring-Annotation-Value" />
     <file type="web" url="file://$PROJECT_DIR$/[007]Spring-Annotation-Enable" />
     <file type="web" url="file://$PROJECT_DIR$/[010]SpringMVC-HelloWorld" />
-    <file type="web" url="file://$PROJECT_DIR$/[011]SpringMVC-Params" />
     <file type="web" url="file://$PROJECT_DIR$/[012]SpringMVC-Annotations" />
     <file type="web" url="file://$PROJECT_DIR$/[013]SpringMVC-Exception" />
     <file type="web" url="file://$PROJECT_DIR$/[014]SpringMVC-Interceptor" />
@@ -42,6 +41,7 @@
     <file type="web" url="file://$PROJECT_DIR$/[048]Spring-Shiro-Jwt-1/[048]Spring-Shiro-Jwt-1" />
     <file type="web" url="file://$PROJECT_DIR$/[049]Spring-MVC-Params" />
     <file type="web" url="file://$PROJECT_DIR$/[049]SpringMVC-Shiro-Jwt" />
+    <file type="web" url="file://$PROJECT_DIR$/[050]Spring-MVC-Params-Jsp" />
     <file type="web" url="file://$PROJECT_DIR$/[053]Spring-RateLimiter" />
     <file type="web" url="file://$PROJECT_DIR$/[054]Spring-Logback" />
     <file type="web" url="file://$PROJECT_DIR$/[055]Spring-Redis" />

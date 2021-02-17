@@ -11,7 +11,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="[011]SpringMVC-Params" />
+          <element id="module-output" name="[050]Spring-MVC-Params-Jsp" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.6.RELEASE" />
@@ -27,9 +27,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/[011]SpringMVC-Params/target/SpringMVC-Kapcb-Params/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/[050]Spring-MVC-Params-Jsp/target/SpringMVC-Kapcb-Params/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="[011]SpringMVC-Params/web/Web" />
+      <element id="javaee-facet-resources" facet="[050]Spring-MVC-Params-Jsp/web/Web" />
     </root>
   </artifact>
 </component>
