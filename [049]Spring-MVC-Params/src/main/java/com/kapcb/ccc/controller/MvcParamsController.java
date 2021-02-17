@@ -89,7 +89,7 @@ public class MvcParamsController {
     @GetMapping(value = "model", produces = "application/json; charset=UTF-8")
     public String testModel(Model model) {
         log.warn("process model...");
-        model.addAttribute("kapcb", "kapcb nb!");
+        model.addAttribute("message", "kapcb nb!");
         return SUCCESS;
     }
 
@@ -102,7 +102,7 @@ public class MvcParamsController {
     @GetMapping(value = "modelMap", produces = "application/json; charset=UTF-8")
     public String testModelMap(ModelMap modelMap) {
         log.warn("process modelMap...");
-        modelMap.addAttribute("kapcb", "kapcb really nb!");
+        modelMap.addAttribute("message", "kapcb really nb!");
         return SUCCESS;
     }
 }

@@ -10,10 +10,7 @@
 
 request scope:<span th:text="${#request.getAttribute('message')}"></span><br/>
 session scope:<span th:text="${session.message}"><br/>
-session scope:<span th:text="${#request.getAttribute('message')}"><br/>
-session scope:<span th:text="${#session.getAttribute('message')}"><br/>
-session scope:<span th:text="${#httpSession.getAttribute('message')}"><br/>
-pageContext scope:${pageScope.message}<br/>
-application scope:${applicationScope.message}<br/>
+#session scope:<span th:text="${#session.getAttribute('message')}"><br/>
+httpSession scope:<span th:text="${#httpSession.getAttribute('message')}"><br/>
 </body>
 </html>
