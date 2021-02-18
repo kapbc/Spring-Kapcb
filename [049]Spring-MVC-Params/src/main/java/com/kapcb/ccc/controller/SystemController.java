@@ -20,28 +20,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SystemController {
 
     private static final Logger log = LoggerFactory.getLogger(SystemController.class);
+    private static final String VIEW_NAME_FOR_INDEX = "index";
+    private static final String VIEW_NAME_FOR_MVC_PARAMS = "test/testMvcParamsController";
+    private static final String VIEW_NAME_FOR_OBJECT_BEAN = "test/testObjectBeanController";
+    private static final String VIEW_NAME_FOR_MODEL_AND_VIEW = "test/testModelAndViewController";
 
     @GetMapping
     public String index() {
         log.warn("begin to access index page...");
-        return "index";
+        return VIEW_NAME_FOR_INDEX;
     }
 
     @GetMapping(value = "testMvcParams")
     public String testMvcParams() {
         log.warn("begin to access test mvc params page...");
-        return "test/testMvcParamsController";
+        return VIEW_NAME_FOR_MVC_PARAMS;
     }
 
     @GetMapping(value = "testObjectBean")
     public String testObjectBean() {
         log.warn("begin to access test object bean page...");
-        return "test/testObjectBeanController";
+        return VIEW_NAME_FOR_OBJECT_BEAN;
     }
 
     @GetMapping(path = "testModelAndView")
     public String testModelAndView() {
-        log.warn("brgin to access test model and view page...");
-        return "test/testModelAndViewController";
+        log.warn("begin to access test model and view page...");
+        return VIEW_NAME_FOR_MODEL_AND_VIEW;
     }
 }
