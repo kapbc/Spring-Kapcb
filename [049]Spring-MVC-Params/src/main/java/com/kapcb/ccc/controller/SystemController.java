@@ -38,4 +38,10 @@ public class SystemController {
         log.warn("begin to access test object bean page...");
         return "test/testObjectBeanController";
     }
+
+    @GetMapping(path = "testModelAndView")
+    public String testModelAndView() {
+        log.warn("brgin to access test model and view page...");
+        return "test/testModelAndViewController";
+    }
 }
