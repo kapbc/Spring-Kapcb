@@ -25,13 +25,14 @@ import java.io.IOException;
 public class TestController {
 
     private static final Logger log = LoggerFactory.getLogger(JsonController.class);
+    private static final String SUCCESS_VIEW_NAME = "/test/successs";
 
     @RequestMapping("test")
     public String test(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws ServletException, IOException {
-        System.out.println("执行了test方法");
-        System.out.println(request);
-        System.out.println(response);
-        System.out.println(session);
+        log.warn("begin to process test method in TestController...");
+        log.warn("the request is : {}", request);
+        log.warn("the response is : {}", response);
+        log.warn("the session is : {}", session);
 
 /*        request.getRequestDispatcher("/WEN-INF/views/success.jsp").forward(request, response);
 
@@ -41,7 +42,7 @@ public class TestController {
         response.setContentType("application/json;charset=utf-8");
         response.getWriter().write("JSON串");*/
 
-        return "/test/success";
+        return SUCCESS_VIEW_NAME;
     }
 
 
@@ -53,7 +54,7 @@ public class TestController {
      */
     @RequestMapping(value = "forWard")
     public String forWard() {
-        System.out.println("forWard方法执行了");
+        log.warn("begin to process forWord method in TestController...");
         return "forward:/ModeAndView/ModeAndViewTest";
     }
 
@@ -64,7 +65,7 @@ public class TestController {
      */
     @RequestMapping(path = "redirect")
     public String redirectTest() {
-        System.out.println("redirectTest方法执行了");
+        log.warn("begin to process redirectTest method in TestContrller...");
         return "redirect:index.jsp";
     }
 }
