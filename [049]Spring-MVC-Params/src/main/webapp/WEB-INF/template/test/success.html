@@ -8,9 +8,9 @@
 <body>
 <h4>Test The Request Success!</h4>
 
-request scope:<span th:text="${#request.getAttribute('message')}"></span><br/>
-session scope:<span th:text="${session.message}"><br/>
-#session scope:<span th:text="${#session.getAttribute('message')}"><br/>
-httpSession scope:<span th:text="${#httpSession.getAttribute('message')}"><br/>
+<h5>request scope:<span th:text="${#request.getAttribute('message')}"></span></h5><br/>
+<h5>session scope:<span th:text="${session.message}"></span></h5><br/>
+<h5>#session scope:<span th:text="${#session.getAttribute('message')}"></span></h5><br/>
+<h5>httpSession scope:<span th:text="${#httpSession.getAttribute('message')}"></span></h5><br/>
 </body>
 </html>
