@@ -25,6 +25,7 @@ import java.util.Collections;
 public class ModelAndViewController {
 
     private static final Logger log = LoggerFactory.getLogger(ModelAndViewController.class);
+    private static final String SUCCESS_VIEW_NAME = "/test/success";
 
     /**
      * 返回 ModeAndView
@@ -35,7 +36,7 @@ public class ModelAndViewController {
     public ModelAndView modelAndViewTest() {
         log.warn("come into model and view");
         ModelAndView modelAndView = new ModelAndView();
-
+        log.warn("begin to build the return User Bean...");
         User kapcb = new Builder()
                 .username("kapcb")
                 .password("123456")
@@ -43,7 +44,7 @@ public class ModelAndViewController {
                 .account(Collections.emptyList())
                 .accountMap(null)
                 .build();
-
+        log.warn("build User Bean for return value success");
         /**
          * 将user对象村粗到modelAndView中，它会将user对象存入到request对象中
          */
@@ -52,7 +53,7 @@ public class ModelAndViewController {
         /**
          * 指定需要返回的视图
          */
-        modelAndView.setViewName("/test/success");
+        modelAndView.setViewName(SUCCESS_VIEW_NAME);
         log.warn("process success...");
         return modelAndView;
     }
