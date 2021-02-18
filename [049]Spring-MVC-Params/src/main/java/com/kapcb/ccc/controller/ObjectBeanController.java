@@ -32,7 +32,7 @@ public class ObjectBeanController {
 
     private static final Logger log = LoggerFactory.getLogger(ObjectBeanController.class);
 
-    private static final String FAIl = "fail";
+    private static final String FAIl = "/test/fail";
     private static final String SUCCESS = "/test/success";
 
     /**
