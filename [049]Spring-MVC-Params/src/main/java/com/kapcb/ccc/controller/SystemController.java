@@ -21,6 +21,7 @@ public class SystemController {
 
     private static final Logger log = LoggerFactory.getLogger(SystemController.class);
     private static final String VIEW_NAME_FOR_INDEX = "index";
+    private static final String VIEW_NAME_FOR_JSON = "test/testJsonController";
     private static final String VIEW_NAME_FOR_MVC_PARAMS = "test/testMvcParamsController";
     private static final String VIEW_NAME_FOR_OBJECT_BEAN = "test/testObjectBeanController";
     private static final String VIEW_NAME_FOR_MODEL_AND_VIEW = "test/testModelAndViewController";
@@ -47,5 +48,11 @@ public class SystemController {
     public String testModelAndView() {
         log.warn("begin to access test model and view page...");
         return VIEW_NAME_FOR_MODEL_AND_VIEW;
+    }
+
+    @GetMapping(value = "testJson")
+    public String testJson() {
+        log.warn("begin to access test json page...");
+        return VIEW_NAME_FOR_JSON;
     }
 }

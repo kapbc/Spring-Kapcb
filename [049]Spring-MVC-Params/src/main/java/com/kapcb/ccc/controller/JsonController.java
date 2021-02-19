@@ -23,8 +23,8 @@ public class JsonController {
 
     private static final Logger log = LoggerFactory.getLogger(JsonController.class);
 
-    private static final String FAIL = "/test/fail";
-    private static final String SUCCESS = "/test/success";
+    private static final String FAIL = "test/fail";
+    private static final String SUCCESS = "test/success";
 
     /**
      * 获取请求体的数据

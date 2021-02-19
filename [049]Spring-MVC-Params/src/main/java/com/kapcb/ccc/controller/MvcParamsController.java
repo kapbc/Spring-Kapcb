@@ -28,7 +28,7 @@ public class MvcParamsController {
     private static final Logger log = LoggerFactory.getLogger(MvcParamsController.class);
 
     private static final String FAIL = "fail";
-    private static final String SUCCESS = "/test/success";
+    private static final String SUCCESS = "test/success";
 
     /**
      * 请求参数绑定 基于 k-v

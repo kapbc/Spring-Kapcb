@@ -25,7 +25,7 @@ import java.util.Collections;
 public class ModelAndViewController {
 
     private static final Logger log = LoggerFactory.getLogger(ModelAndViewController.class);
-    private static final String SUCCESS_VIEW_NAME = "/test/success";
+    private static final String SUCCESS_VIEW_NAME = "test/success";
 
     /**
      * 返回 ModeAndView

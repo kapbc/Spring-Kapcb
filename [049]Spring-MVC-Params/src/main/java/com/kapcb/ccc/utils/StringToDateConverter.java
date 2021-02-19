@@ -32,6 +32,7 @@ public class StringToDateConverter implements Converter<String, Date> {
                 throw new NullPointerException("请输入待转换日期");
             }
             Date date = DATE_FORMAT.parse(source);
+            log.warn("the convert data is : " + date);
             return date;
         } catch (Exception e) {
             throw new RuntimeException("输入日期有误");

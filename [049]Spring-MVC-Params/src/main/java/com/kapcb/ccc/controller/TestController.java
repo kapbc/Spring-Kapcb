@@ -25,7 +25,7 @@ import java.io.IOException;
 public class TestController {
 
     private static final Logger log = LoggerFactory.getLogger(JsonController.class);
-    private static final String SUCCESS_VIEW_NAME = "/test/success";
+    private static final String SUCCESS_VIEW_NAME = "test/success";
 
     @RequestMapping("test")
     public String test(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws ServletException, IOException {
