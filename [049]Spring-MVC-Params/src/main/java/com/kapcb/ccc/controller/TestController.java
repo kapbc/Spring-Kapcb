@@ -65,7 +65,7 @@ public class TestController {
      */
     @RequestMapping(path = "redirect")
     public String redirectTest() {
-        log.warn("begin to process redirectTest method in TestContrller...");
+        log.warn("begin to process redirectTest method in TestController...");
         return "redirect:index.jsp";
     }
 }
