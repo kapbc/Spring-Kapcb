@@ -14,24 +14,37 @@
 </body>
 <script>
 
-    $(function () {
-        /**
-         * 为kapcb绑定点击事件
-         */
-        $('#kapcb').onclick(function () {
-            $.ajax({
-                url: "json/testJson",
-                contentType: "application/json;charset=UTF-8",
-                data: '{"addressName":"aa","addressNum":100}',
-                dataType: "json",
-                type: "post",
-                success: function (data) {
-                    alert(data);
-                    alert(data.addressName);
-                }
-            });
-        });
-    });
+    let button = document.getElementById('kapcb');
+    let type = "post";
+    let url = "json/testJson";
+    /**
+     * content type
+     */
+    let contentType = "application/x-www-form-urlencoded";
+
+    /**
+     * json params data
+     * @type {string}
+     */
+    let data = '{"addressName":"kapcb","addressNum":88888888}';
+
+    /**
+     * onclick function
+     */
+    button.onclick = function () {
+        let ajax = new XMLHttpRequest();
+        ajax.open(type, url, true);
+        ajax.setRequestHeader("Content-type", contentType)
+        ajax.send(data);
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState === 4 && ajax.status === 200) {
+                console.log("ajax request success...");
+                let result = ajax.responseXML;
+                console.log(result);
+                console.log(result.addressName);
+            }
+        };
+    };
 
 </script>
 </html>
