@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * <a>Title: JsonController </a>
@@ -24,7 +25,6 @@ public class JsonController {
     private static final Logger log = LoggerFactory.getLogger(JsonController.class);
 
     private static final String FAIL = "test/fail";
-    private static final String SUCCESS = "test/success";
 
     /**
      * 获取请求体的数据
@@ -33,6 +33,7 @@ public class JsonController {
      * @param user Json String
      * @return String
      */
+    @ResponseBody
     @PostMapping(path = "testJson", produces = "application/json;charset=UTF-8")
     public String testJson(@RequestBody String user) {
         if (StringUtils.isBlank(user)) {
@@ -40,6 +41,6 @@ public class JsonController {
         }
         log.warn("test json request body...");
         System.out.println("user = " + user);
-        return SUCCESS;
+        return user;
     }
 }

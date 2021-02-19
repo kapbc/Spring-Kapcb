@@ -15,12 +15,21 @@
 <script>
 
     let button = document.getElementById('kapcb');
+
+    /**
+     * request method
+     */
     let type = "post";
+
+    /**
+     * request url
+     */
     let url = "json/testJson";
+
     /**
      * content type
      */
-    let contentType = "application/x-www-form-urlencoded";
+    let contentType = "application/json;charset=UTF-8";
 
     /**
      * json params data
@@ -39,9 +48,12 @@
         ajax.onreadystatechange = function () {
             if (ajax.readyState === 4 && ajax.status === 200) {
                 console.log("ajax request success...");
-                let result = ajax.responseXML;
-                console.log(result);
-                console.log(result.addressName);
+                let result = ajax.responseText;
+                console.log("the request result is : " + result);
+                let parse = JSON.parse(result);
+                console.log("the parse result is : " + parse);
+                console.log("the parse result's addressName is : " + parse.addressName);
+                alert("Hello " + parse.addressName);
             }
         };
     };
