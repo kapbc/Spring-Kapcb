@@ -10,5 +10,28 @@
 <h4>Test JsonController</h4>
 
 <!--使用@RequestBody获取请求体数据-->
+<button type="submit" id="kapcb">点击测试JsonController</button>
 </body>
+<script>
+
+    $(function () {
+        /**
+         * 为kapcb绑定点击事件
+         */
+        $('#kapcb').onclick(function () {
+            $.ajax({
+                url: "json/testJson",
+                contentType: "application/json;charset=UTF-8",
+                data: '{"addressName":"aa","addressNum":100}',
+                dataType: "json",
+                type: "post",
+                success: function (data) {
+                    alert(data);
+                    alert(data.addressName);
+                }
+            });
+        });
+    });
+
+</script>
 </html>
