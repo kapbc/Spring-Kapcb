@@ -5,7 +5,6 @@ import com.kapcb.ccc.utils.StringToDateConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +30,7 @@ public class ObjectBeanController {
 
     private static final Logger log = LoggerFactory.getLogger(ObjectBeanController.class);
 
-    private static final String FAIl = "/test/fail";
+    private static final String FAIl = "test/fail";
     private static final String SUCCESS = "test/success";
 
     /**
@@ -70,7 +69,7 @@ public class ObjectBeanController {
      * @param date String
      * @return String
      */
-    @DeleteMapping(path = "delete", produces = "application/json; charset=UTF-8")
+    @GetMapping(path = "delete", produces = "application/json; charset=UTF-8")
     public String delete(String date) {
         log.warn("the date is : " + date);
         StringToDateConverter stringToDateConverter = new StringToDateConverter();
