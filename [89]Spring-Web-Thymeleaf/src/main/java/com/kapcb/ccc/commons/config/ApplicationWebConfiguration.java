@@ -48,7 +48,7 @@ public class ApplicationWebConfiguration implements WebMvcConfigurer {
     }
 
     /**
-     * Spring 5 的模板引擎
+     * Spring 5 模板引擎
      *
      * @param springResourceTemplateResolver SpringResourceTemplateResolver
      * @return SpringTemplateEngine
@@ -61,7 +61,7 @@ public class ApplicationWebConfiguration implements WebMvcConfigurer {
     }
 
     /**
-     * Thymeleaf 的试图解析
+     * Thymeleaf 视图解析
      *
      * @param springTemplateEngine springTemplateEngine
      * @return ThymeleafViewResolver
@@ -86,6 +86,4 @@ public class ApplicationWebConfiguration implements WebMvcConfigurer {
          */
         defaultServletHandlerConfigurer.enable();
     }
-
-
 }
