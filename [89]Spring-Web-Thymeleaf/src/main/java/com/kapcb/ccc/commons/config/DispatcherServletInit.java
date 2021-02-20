@@ -26,7 +26,7 @@ public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherSer
      */
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[0];
+        return new Class[]{ApplicationRootConfiguration.class};
     }
 
     /**
@@ -36,7 +36,7 @@ public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherSer
      */
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[0];
+        return new Class[]{ApplicationWebConfiguration.class};
     }
 
     /**
