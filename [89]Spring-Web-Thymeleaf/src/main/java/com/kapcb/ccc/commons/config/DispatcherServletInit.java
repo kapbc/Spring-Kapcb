@@ -1,6 +1,5 @@
 package com.kapcb.ccc.commons.config;
 
-import ch.qos.logback.classic.servlet.LogbackServletContextListener;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
