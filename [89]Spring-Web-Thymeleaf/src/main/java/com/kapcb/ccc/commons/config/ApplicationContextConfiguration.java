@@ -31,7 +31,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
         /**
          * 设置不扫描的文件，这里会排除springMVC扫描过的包
         */
-        excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class))
+        excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, value = {EnableWebMvc.class}))
 /**
  * @EnableTransactionManagement 启用注解事务管理，等同于xml配置方式的 <tx:annotation-driven />
  */
@@ -48,4 +48,6 @@ public class ApplicationContextConfiguration {
     public BeanPostProcessor postProcessor() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
+
+
 }

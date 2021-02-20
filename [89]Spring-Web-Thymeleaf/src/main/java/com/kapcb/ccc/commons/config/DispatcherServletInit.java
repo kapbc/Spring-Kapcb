@@ -1,5 +1,6 @@
 package com.kapcb.ccc.commons.config;
 
+import ch.qos.logback.classic.servlet.LogbackServletContextListener;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -54,6 +55,6 @@ public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherSer
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding(CHARACTER_ENCODING);
         characterEncodingFilter.setForceEncoding(true);
-        return new Filter[]{characterEncodingFilter};
+        return new Filter[]{characterEncodingFilter,};
     }
 }

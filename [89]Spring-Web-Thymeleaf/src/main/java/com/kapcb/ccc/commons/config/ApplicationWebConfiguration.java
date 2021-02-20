@@ -3,6 +3,9 @@ package com.kapcb.ccc.commons.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -22,7 +25,8 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
  */
 @EnableWebMvc       //启用Spring MVC组件
 @Configuration      //配置类
-@ComponentScan(basePackages = {"com.kapcb.ccc"})        //配置包扫描
+@ComponentScan(basePackages = {"com.kapcb.ccc"},
+        includeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, value = {Controller.class, ControllerAdvice.class}))     //配置包扫描
 public class ApplicationWebConfiguration implements WebMvcConfigurer {
 
 
