@@ -20,13 +20,13 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * @date 2021/2/20-15:28
  */
 @Configuration
+@EnableScheduling       // 通过@EnableScheduling注解开启对计划任务的支持
 /**
  * @EnableAspectJAutoProxy:开启AOP代理自动配置
  * proxyTargetClass=true:表示使用CGLib动态代理技术织入增强，决定是基于接口的还是基于类的代理被创建。默认为false（JDK代理）
  * 即<aop:aspectj-autoproxy proxy-target-class="true"/>
  */
 @EnableAspectJAutoProxy(proxyTargetClass = true)    // 解决实现接口后，spring不能创建类实例的问题
-@EnableScheduling       // 通过@EnableScheduling注解开启对计划任务的支持
 @ComponentScan(basePackages = {"com.kapcb.ccc"},
         /**
          * 设置不扫描的文件，这里会排除springMVC扫描过的包

@@ -22,6 +22,7 @@ public class SystemController {
     private static final Logger log = LoggerFactory.getLogger(SystemController.class);
 
     private static final String RESOURCES_VIEW_INDEX = "index";
+    private static final String RESOURCES_VIEW_KAPCB = "kapcb";
     private static final String COMMON_LOG_ROUTE = "begin to access {} page...";
 
 
@@ -29,5 +30,11 @@ public class SystemController {
     public String index() {
         log.warn(COMMON_LOG_ROUTE, RESOURCES_VIEW_INDEX);
         return RESOURCES_VIEW_INDEX;
+    }
+
+    @GetMapping(value = "kapcb")
+    public String kapcb() {
+        log.warn(COMMON_LOG_ROUTE, RESOURCES_VIEW_KAPCB);
+        return RESOURCES_VIEW_KAPCB;
     }
 }
