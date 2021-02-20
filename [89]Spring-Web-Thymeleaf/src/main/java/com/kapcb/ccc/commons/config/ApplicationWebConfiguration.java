@@ -3,6 +3,7 @@ package com.kapcb.ccc.commons.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
@@ -68,4 +69,18 @@ public class ApplicationWebConfiguration implements WebMvcConfigurer {
         thymeleafViewResolver.setCharacterEncoding(StandardCharsets.UTF_8.toString());
         return thymeleafViewResolver;
     }
+
+    /**
+     * 配置静态资源的处理
+     * @param defaultServletHandlerConfigurer DefaultServletHandlerConfigurer
+     */
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer defaultServletHandlerConfigurer) {
+        /**
+         * 把针对静态资源的请求转交给servlert容器的default servlet处理
+         */
+        defaultServletHandlerConfigurer.enable();
+    }
+
+
 }
