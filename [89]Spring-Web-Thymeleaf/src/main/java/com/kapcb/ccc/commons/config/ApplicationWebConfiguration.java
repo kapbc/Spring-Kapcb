@@ -10,7 +10,6 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
-import java.nio.charset.StandardCharsets;
 
 /**
  * <a>Title: ApplicationWebConfiguration </a>
@@ -23,9 +22,14 @@ import java.nio.charset.StandardCharsets;
  */
 @EnableWebMvc       //启用Spring MVC组件
 @Configuration      //配置类
-@ComponentScan(basePackages = {"com.kapcb.ccc"})        //配置扫描的ctrl层
+@ComponentScan(basePackages = {"com.kapcb.ccc"})        //配置包扫描
 public class ApplicationWebConfiguration implements WebMvcConfigurer {
 
+
+    private static final String TEMPLATE_MODE = "HTML";
+    private static final String TEMPLATE_SUFFIX = ".html";
+    private static final String TEMPLATE_CHARACTER_ENCODING = "UTF-8";
+    private static final String TEMPLATE_PREFIX = "/WEB-INF/template/";
 
     /**
      * Spring 5 的静态资源解析器
@@ -36,10 +40,10 @@ public class ApplicationWebConfiguration implements WebMvcConfigurer {
     public SpringResourceTemplateResolver springResourceTemplateResolver() {
         SpringResourceTemplateResolver springResourceTemplateResolver = new SpringResourceTemplateResolver();
         springResourceTemplateResolver.setCacheable(false);
-        springResourceTemplateResolver.setTemplateMode("HTML");
-        springResourceTemplateResolver.setCharacterEncoding(StandardCharsets.UTF_8.toString());
-        springResourceTemplateResolver.setPrefix("/WEB-INF/template/");
-        springResourceTemplateResolver.setSuffix(".html");
+        springResourceTemplateResolver.setPrefix(TEMPLATE_PREFIX);
+        springResourceTemplateResolver.setSuffix(TEMPLATE_SUFFIX);
+        springResourceTemplateResolver.setTemplateMode(TEMPLATE_MODE);
+        springResourceTemplateResolver.setCharacterEncoding(TEMPLATE_CHARACTER_ENCODING);
         return springResourceTemplateResolver;
     }
 
@@ -66,12 +70,13 @@ public class ApplicationWebConfiguration implements WebMvcConfigurer {
     public ThymeleafViewResolver thymeleafViewResolver(SpringTemplateEngine springTemplateEngine) {
         ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
         thymeleafViewResolver.setTemplateEngine(springTemplateEngine);
-        thymeleafViewResolver.setCharacterEncoding(StandardCharsets.UTF_8.toString());
+        thymeleafViewResolver.setCharacterEncoding(TEMPLATE_CHARACTER_ENCODING);
         return thymeleafViewResolver;
     }
 
     /**
      * 配置静态资源的处理
+     *
      * @param defaultServletHandlerConfigurer DefaultServletHandlerConfigurer
      */
     @Override
