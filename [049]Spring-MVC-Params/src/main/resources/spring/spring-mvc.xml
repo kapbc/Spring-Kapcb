@@ -2,7 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="com.kapcb.ccc">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
@@ -10,6 +11,7 @@
                                 expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
 
+    <!-- spring整合thymeleaf start -->
     <bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
         <property name="characterEncoding" value="UTF-8"/>
         <property name="cacheable" value="false"/>
@@ -26,4 +28,20 @@
         <property name="characterEncoding" value="UTF-8"/>
         <property name="templateEngine" ref="templateEngine"/>
     </bean>
+    <!-- spring整合thymeleaf end -->
+
+    <!-- 配置类型转换器工厂 -->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <!-- 给工厂注入一个新的类型转换器 -->
+        <property name="converters">
+            <!-- 配置自定义类型转换器 -->
+            <set>
+                <bean class="com.kapcb.ccc.utils.StringToDateConverter"/>
+            </set>
+        </property>
+    </bean>
+
+    <!--SpringMVC注解支持-->
+    <!-- 引用自定义类型转换器 -->
+    <mvc:annotation-driven conversion-service="conversionService"/>
 </beans>
