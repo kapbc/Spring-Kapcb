@@ -49,6 +49,7 @@
     <file type="web" url="file://$PROJECT_DIR$/[056]Spring-Thymeleaf/[056]Spring-Thymeleaf" />
     <file type="web" url="file://$PROJECT_DIR$/[058]Spring-Thymeleaf" />
     <file type="web" url="file://$PROJECT_DIR$/[059]Spring-Thymeleaf-Annotation" />
+    <file type="web" url="file://$PROJECT_DIR$/[088]Spring-All-Annotation" />
     <file type="web" url="file://$PROJECT_DIR$/[098]Spring-Web-Thymeleaf" />
     <file type="web" url="file://$PROJECT_DIR$/[099]Spring-Utils" />
     <file type="web" url="file://$PROJECT_DIR$/[89]Spring-Web-Thymeleaf" />
@@ -189,6 +190,7 @@
         <option value="$PROJECT_DIR$/[047]Spring-MVC-HelloWorld3/pom.xml" />
         <option value="$PROJECT_DIR$/[049]Spring-MVC-Params/pom.xml" />
         <option value="$PROJECT_DIR$/[050]Spring-MVC-Params/pom.xml" />
+        <option value="$PROJECT_DIR$/[088]Spring-All-Annotation/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
