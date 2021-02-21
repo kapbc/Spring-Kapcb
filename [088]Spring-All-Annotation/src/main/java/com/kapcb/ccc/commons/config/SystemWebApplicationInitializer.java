@@ -1,6 +1,8 @@
 package com.kapcb.ccc.commons.config;
 
 import ch.qos.logback.classic.servlet.LogbackServletContextListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
@@ -22,6 +24,8 @@ import javax.servlet.ServletRegistration;
  */
 public class SystemWebApplicationInitializer implements WebApplicationInitializer {
 
+    private static final Logger log = LoggerFactory.getLogger(SystemWebApplicationInitializer.class);
+
     /**
      * 1、WebApplicationInitializer 是Spring 提供用来配置 Servlet 3.1+配置的接口，
      * 从而实现了替代web.xml的位置。实现此接口将会自动被 SpringServletContainerInitializer(用来启动 Servlet3.1容器）获取到。
@@ -40,6 +44,8 @@ public class SystemWebApplicationInitializer implements WebApplicationInitialize
      */
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
+
+        log.info("come into onStartup method...");
         /**
          * 加载父子容器
          * 注解配置的SpringContext
@@ -49,18 +55,23 @@ public class SystemWebApplicationInitializer implements WebApplicationInitialize
         /**
          * webApplicationContext.register()加载配置文件,需要加入容器的就一个一个注册即可
          */
+        log.info("begin to register context application configuration...");
+        /**
+         * 相当于 spring.xml
+         */
+        webApplicationContext.register(ContextApplicationConfiguration.class);
+
+        log.info("begin to register web application configuration...");
 
         /**
          * 相当于 spring-mvc.xml
          */
         webApplicationContext.register(WebApplicationConfiguration.class);
 
-        /**
-         * 相当于 spring.xml
-         */
-        webApplicationContext.register(ContextApplicationConfiguration.class);
         webApplicationContext.setServletContext(servletContext);
 
+
+        log.info("begin to add filter into spring application context...");
         /**
          * Filter 处理乱码
          */
@@ -70,6 +81,7 @@ public class SystemWebApplicationInitializer implements WebApplicationInitialize
         FilterRegistration.Dynamic encodingFilter = servletContext.addFilter("characterEncodingFilter", characterEncodingFilter);
         encodingFilter.addMappingForUrlPatterns(null, true, "/*");
 
+        log.info("begin to add listener into spring application context...");
         /**
          * Listener logback
          */
@@ -77,17 +89,19 @@ public class SystemWebApplicationInitializer implements WebApplicationInitialize
         servletContext.addListener(logbackServletContextListener);
         servletContext.setInitParameter("logbackConfigLocation", "classpath:logback-spring.xml");
 
-
+        log.info("begin to add dispatcherServlet into spring application context...");
         /**
          * 创建dispatcherServlet
          */
         ServletRegistration.Dynamic dispatcherServlet = servletContext.addServlet("dispatcherServlet", new DispatcherServlet(webApplicationContext));
 
+        log.info("begin to set mapping into dispatcherServlet...");
         /**
          * 添加上下文路径地址
          */
         dispatcherServlet.addMapping("/");
 
+        log.info("begin to set load on start up to 1...");
         /**
          * 最优先启动
          */
