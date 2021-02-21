@@ -1,9 +1,11 @@
 package com.kapcb.ccc.commons.config;
 
+import ch.qos.logback.classic.servlet.LogbackServletContextListener;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.Filter;
+import javax.servlet.ServletContext;
 
 /**
  * <a>Title: DispatcherServletInit </a>
@@ -63,5 +65,17 @@ public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherSer
         characterEncodingFilter.setEncoding(CHARACTER_ENCODING);
         characterEncodingFilter.setForceEncoding(true);
         return new Filter[]{characterEncodingFilter,};
+    }
+
+    /**
+     * 添加启动监听
+     *
+     * @param servletContext ServletContext
+     */
+    @Override
+    protected void registerContextLoaderListener(ServletContext servletContext) {
+        LogbackServletContextListener logbackServletContextListener = new LogbackServletContextListener();
+        servletContext.addListener(logbackServletContextListener);
+        servletContext.setInitParameter("logbackConfigLocation", "classpath:logback-spring.xml");
     }
 }
