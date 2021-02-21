@@ -70,8 +70,8 @@
       <module fileurl="file://$PROJECT_DIR$/[049]SpringMVC-Shiro-Jwt/[049]SpringMVC-Shiro-Jwt.iml" filepath="$PROJECT_DIR$/[049]SpringMVC-Shiro-Jwt/[049]SpringMVC-Shiro-Jwt.iml" />
       <module fileurl="file://$PROJECT_DIR$/[050]Spring-Dubbo-Consumer/[050]Spring-Dubbo-Consumer.iml" filepath="$PROJECT_DIR$/[050]Spring-Dubbo-Consumer/[050]Spring-Dubbo-Consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/[050]Spring-MVC-Params/[050]Spring-MVC-Params.iml" filepath="$PROJECT_DIR$/[050]Spring-MVC-Params/[050]Spring-MVC-Params.iml" />
-      <module fileurl="file://$PROJECT_DIR$/[050]Spring-MVC-Params-Jsp/[050]Spring-MVC-Params-Jsp.iml" filepath="$PROJECT_DIR$/[050]Spring-MVC-Params-Jsp/[050]Spring-MVC-Params-Jsp.iml" />
       <module fileurl="file://$PROJECT_DIR$/[051]Spring-Dubbo-Interface/[051]Spring-Dubbo-Interface.iml" filepath="$PROJECT_DIR$/[051]Spring-Dubbo-Interface/[051]Spring-Dubbo-Interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[051]Spring-MVC-Annotation/[051]Spring-MVC-Annotation.iml" filepath="$PROJECT_DIR$/[051]Spring-MVC-Annotation/[051]Spring-MVC-Annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/[052]Spring-Dubbo-Provider/[052]Spring-Dubbo-Provider.iml" filepath="$PROJECT_DIR$/[052]Spring-Dubbo-Provider/[052]Spring-Dubbo-Provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/[053]Spring-RateLimiter/[053]Spring-RateLimiter.iml" filepath="$PROJECT_DIR$/[053]Spring-RateLimiter/[053]Spring-RateLimiter.iml" />
       <module fileurl="file://$PROJECT_DIR$/[054]Spring-Logback/[054]Spring-Logback.iml" filepath="$PROJECT_DIR$/[054]Spring-Logback/[054]Spring-Logback.iml" />
