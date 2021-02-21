@@ -1,5 +1,7 @@
 package com.kapcb.ccc.commons.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
@@ -24,5 +26,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @ComponentScan(basePackages = {"com.kapcb.ccc"}, includeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class, ControllerAdvice.class})})
 public class WebApplicationConfiguration implements WebMvcConfigurer {
 
+    private static final Logger log = LoggerFactory.getLogger(WebApplicationConfiguration.class);
 
+    public WebApplicationConfiguration() {
+        log.info("================begin to initial WebApplicationConfiguration......================");
+    }
 }
