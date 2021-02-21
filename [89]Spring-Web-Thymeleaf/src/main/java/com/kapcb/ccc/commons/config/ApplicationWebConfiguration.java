@@ -80,7 +80,7 @@ public class ApplicationWebConfiguration implements WebMvcConfigurer {
 
     /**
      * 配置静态资源的处理
-     *
+     * 对静态资源的请求转发到容器缺省的servlet，而不使用DispatcherServlet
      * @param defaultServletHandlerConfigurer DefaultServletHandlerConfigurer
      */
     @Override

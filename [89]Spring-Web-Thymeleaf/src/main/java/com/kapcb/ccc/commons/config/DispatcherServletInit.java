@@ -22,6 +22,7 @@ public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherSer
 
     /**
      * 根容器，用于获取Spring应用容器的配置文件
+     * 这个就是用来加载SpringContext的，类似于之前的spring.xml
      *
      * @return Class<?>[]
      */
@@ -32,6 +33,7 @@ public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherSer
 
     /**
      * Spring mvc容器，是根容器的子容器
+     * 这个就是用来加载WebContext的，类似于之前的spring-mvc.xml
      *
      * @return Class<?>[]
      */
@@ -42,6 +44,7 @@ public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherSer
 
     /**
      * "/"表示由DispatcherServlet处理所有向该应用发起的请求。
+     * 这个是设置DispatcherServlet的映射路径
      *
      * @return String[]
      */
