@@ -9,13 +9,15 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <properties>
+        <jstl.version>1.2</jstl.version>
         <slf4j.version>1.7.30</slf4j.version>
-        <javax.servlet.version>4.0.1</javax.servlet.version>
+        <standard.version>1.1.2</standard.version>
         <junit5.version>5.6.2</junit5.version>
         <logback.version>1.2.3</logback.version>
         <maven.source.version>8</maven.source.version>
         <spring.version>5.2.10.RELEASE</spring.version>
         <commons.lang3.version>3.10</commons.lang3.version>
+        <javax.servlet.version>4.0.1</javax.servlet.version>
         <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
         <commons.logging.version>1.2</commons.logging.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
@@ -116,6 +118,16 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons.lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>${standard.version}</version>
         </dependency>
     </dependencies>
 
