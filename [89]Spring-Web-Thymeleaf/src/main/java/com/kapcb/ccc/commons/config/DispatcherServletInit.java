@@ -4,7 +4,6 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.Filter;
-import javax.servlet.ServletContext;
 
 /**
  * <a>Title: DispatcherServletInit </a>
@@ -53,6 +52,11 @@ public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherSer
         return new String[]{URL_PATTERN};
     }
 
+    /**
+     * 配置过滤器
+     *
+     * @return Filter[]
+     */
     @Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
