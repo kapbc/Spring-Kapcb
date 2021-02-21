@@ -20,6 +20,8 @@ public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherSer
 
     private static final String URL_PATTERN = "/";
     private static final String CHARACTER_ENCODING = "UTF-8";
+    private static final String LOGBACK_LISTENER_INIT_PARAMS_KEY = "logbackConfigLocation";
+    private static final String LOGBACK_LISTENER_INIT_PARAMS_VALUE = "classpath:logback-spring.xml";
 
     /**
      * 根容器，用于获取Spring应用容器的配置文件
@@ -76,6 +78,6 @@ public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherSer
     protected void registerContextLoaderListener(ServletContext servletContext) {
         LogbackServletContextListener logbackServletContextListener = new LogbackServletContextListener();
         servletContext.addListener(logbackServletContextListener);
-        servletContext.setInitParameter("logbackConfigLocation", "classpath:logback-spring.xml");
+        servletContext.setInitParameter(LOGBACK_LISTENER_INIT_PARAMS_KEY, LOGBACK_LISTENER_INIT_PARAMS_VALUE);
     }
 }

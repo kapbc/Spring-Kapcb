@@ -20,7 +20,7 @@ import javax.servlet.ServletRegistration;
  * @version 1.0.0
  * @date 2021/2/21 13:26
  */
-public class ApplicationContextConfiguration implements WebApplicationInitializer {
+public class SystemWebApplicationInitializer implements WebApplicationInitializer {
 
     /**
      * 1、WebApplicationInitializer 是Spring 提供用来配置 Servlet 3.1+配置的接口，
@@ -47,9 +47,18 @@ public class ApplicationContextConfiguration implements WebApplicationInitialize
         AnnotationConfigWebApplicationContext webApplicationContext = new AnnotationConfigWebApplicationContext();
 
         /**
-         * 加载配置文件,需要加入容器的就一个一个注册即可
+         * webApplicationContext.register()加载配置文件,需要加入容器的就一个一个注册即可
          */
-        webApplicationContext.register(ApplicationContextConfiguration.class);
+
+        /**
+         * 相当于 spring-mvc.xml
+         */
+        webApplicationContext.register(WebApplicationConfiguration.class);
+
+        /**
+         * 相当于 spring.xml
+         */
+        webApplicationContext.register(ContextApplicationConfiguration.class);
         webApplicationContext.setServletContext(servletContext);
 
         /**
