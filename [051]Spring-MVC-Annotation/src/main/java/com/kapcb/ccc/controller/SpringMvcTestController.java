@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * <a>Title: SpringMvcTestController </a>
@@ -110,6 +112,19 @@ public class SpringMvcTestController {
         log.info("the path variable's id is : " + id);
         log.info("the path variable's username is : " + username);
         log.info("the path variable's password is : " + password);
+        return COMMON_VIEW_NAME;
+    }
+
+    /**
+     * post 请求：保存
+     *
+     * @param user String
+     * @return String
+     */
+    @RequestMapping(value = "restfulPost", method = RequestMethod.POST)
+    public String restfulPostTest(@RequestBody String user) {
+        log.info("come into restful post test...");
+        log.info("the path variable's id is : " + user);
         return COMMON_VIEW_NAME;
     }
 
