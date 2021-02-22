@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -42,6 +44,20 @@ public class SpringMvcTestController {
         log.info("the password is : " + password);
         log.info("the age is : " + age);
         log.info("=================================");
+        return COMMON_VIEW_NAME;
+    }
+
+    /**
+     * RequestBody 测试
+     * 接受 json 参数
+     *
+     * @param user String
+     * @return String
+     */
+    @PostMapping(value = "userRequestBody")
+    public String userRequestBodyTest(@RequestBody String user) {
+        log.info("come into user request body...");
+        log.info("the request body user is : " + user);
         return COMMON_VIEW_NAME;
     }
 
