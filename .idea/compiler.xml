@@ -62,6 +62,7 @@
         <module name="[030]SSM-Test" />
         <module name="[042]Spring-Log4j2" />
         <module name="[035]Spring-Resultful-ThreadPool" />
+        <module name="[095]Spring-Empty-Demo2" />
         <module name="[043]Spring-Shiro-Jwt" />
         <module name="[097]Spring-Empty-Demo" />
         <module name="[046]Spring-Jwt" />
@@ -188,6 +189,7 @@
       <module name="[058]Spring-Thymeleaf" target="1.8" />
       <module name="[059]Spring-Thymeleaf-Annotation" target="1.8" />
       <module name="[088]Spring-All-Annotation" target="1.8" />
+      <module name="[095]Spring-Empty-Demo2" target="1.5" />
       <module name="[096]Spring-Empty-Demo1" target="1.5" />
       <module name="[097]Spring-Empty-Demo" target="1.5" />
       <module name="[098]Spring-Web-Thymeleaf" target="1.8" />
