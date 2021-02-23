@@ -21,7 +21,6 @@
         <module name="[015]SpringMVC-FileUpLoad" />
         <module name="[047]Spring-Shiro-Jwt-Project" />
         <module name="[001]Spring-IOC-Principle" />
-        <module name="[012]SpringMVC-Annotations" />
         <module name="[014]SpringMVC-Interceptor" />
         <module name="[037]Spring-Schedule-Task" />
         <module name="[028]SSM-QuickStart" />
