@@ -35,6 +35,7 @@
         <module name="[006]Spring-IOC-Bean-Complex" />
         <module name="[004]Spring-IOC-Bean-DI" />
         <module name="[038]Spring-Test-Junit5" />
+        <module name="[052]Spring-MVC-Exception" />
         <module name="[002]Spring-IOC-BeanFactory" />
         <module name="[098]Spring-Web-Thymeleaf" />
         <module name="[041]Spring-Annotation-Shiro" />
@@ -180,6 +181,7 @@
       <module name="[051]Spring-Dubbo-Interface" target="1.5" />
       <module name="[051]Spring-MVC-Annotation" target="8" />
       <module name="[052]Spring-Dubbo-Provider" target="1.5" />
+      <module name="[052]Spring-MVC-Exception" target="1.5" />
       <module name="[053]Spring-RateLimiter" target="8" />
       <module name="[054]Spring-Logback" target="1.8" />
       <module name="[055]Spring-Redis" target="1.8" />
