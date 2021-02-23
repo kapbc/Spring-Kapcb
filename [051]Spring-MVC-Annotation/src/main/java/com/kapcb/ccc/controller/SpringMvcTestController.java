@@ -128,5 +128,116 @@ public class SpringMvcTestController {
         return COMMON_VIEW_NAME;
     }
 
+    /**
+     * test restful put
+     *
+     * @param id String
+     * @return String
+     */
+    @PutMapping(path = "/restfulPut/{id}")
+    public String restfulPut(@PathVariable(value = "id") String id) {
+        log.info("the path variable of restfulPut method's id is : " + id);
+        return "success";
+    }
 
+    /**
+     * test restful delete
+     *
+     * @param id String
+     * @return String
+     */
+    @DeleteMapping(value = "/restfulDelete/{id}")
+    public String restfulDelete(@PathVariable(name = "id") String id) {
+        log.info("the path variable of restfulDelete method's id is : " + id);
+        return "success";
+    }
+
+    /**
+     * test restful get
+     *
+     * @param id String
+     * @return String
+     */
+    @GetMapping(path = "/restfulGet/{id}")
+    public String restfulGet(@PathVariable(name = "id") String id) {
+        log.info("the path variable of restfulGet method's id is : " + id);
+        return "success";
+    }
+
+    /**
+     * test @RequestHeader to get request heard
+     *
+     * @param requestHeard String
+     * @return String
+     */
+    @GetMapping(path = "/userRequestHeard")
+    public String userRequestHeardTest(@RequestHeader(value = "Accept-Language", required = false) String requestHeard) {
+        log.info("the value of userRequestHeardTest method's requestHeard is : " + requestHeard);
+        return "success";
+    }
+
+    /**
+     * test @CookieValue to get JSESSIONID
+     *
+     * @param jSessionId String
+     * @return String
+     */
+    @GetMapping(value = "userCookieValue")
+    public String userCookieValueTest(@CookieValue(value = "JSESSIONID", required = false) String jSessionId) {
+        log.info("the value of userCookieValueTest method's jSessionId is : " + jSessionId);
+        return "success";
+    }
+
+    /**
+     * test @ModelAttribute point on have return value's method
+     *
+     * @param user User
+     * @return String
+     */
+    @ModelAttribute
+    public String showModel(User user) {
+        log.info("come into SpringMvcTestController's showModel method, the variable of user is : " + user.toString());
+        user.setUsername("kapcb");
+        log.info("the user after set properties is : " + user.toString());
+        return "success";
+    }
+
+    /**
+     * @param user User
+     * @return String
+     */
+    @RequestMapping(value = "testModelAttribute")
+    public String testModelAttribute(User user) {
+        log.info("come into SpringMvcTestController's testModelAttribute method, the variable of user is : " + user);
+        return "success";
+    }
+
+    /**
+     * test @ModelAttribute point on no return value's method
+     *
+     * @param username String
+     * @param map      Map<String, Object>
+     */
+    @ModelAttribute
+    public void showUser(String username, Map<String, Object> map) {
+        log.info("come into SpringMvcTestController's showUser method");
+        User user = new User();
+        user.setUsername("kapcb");
+        user.setPassword("123456");
+        map.put("kapcb", user);
+        log.info("process SpringMvcTestController's showUser method success!");
+    }
+
+    /**
+     * test @ModelAttribute point on arguments
+     *
+     * @param user User
+     * @return String
+     */
+    @RequestMapping(path = "updateUser")
+    public String updateUserTest(@ModelAttribute(value = "user") User user) {
+        log.info("come into SpringMvcTestController's updateUserTest method");
+        log.info("the user is : " + user);
+        return "success";
+    }
 }
