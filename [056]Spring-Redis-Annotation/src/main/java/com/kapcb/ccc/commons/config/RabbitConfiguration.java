@@ -1,4 +1,4 @@
-package com.globalsource.rabbitmq.commons.config;
+package com.kapcb.ccc.commons.config;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListenerConfigurer;
 import org.springframework.amqp.rabbit.listener.RabbitListenerEndpointRegistrar;
