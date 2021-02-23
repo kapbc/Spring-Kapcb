@@ -181,7 +181,7 @@
       <module name="[051]Spring-Dubbo-Interface" target="1.5" />
       <module name="[051]Spring-MVC-Annotation" target="8" />
       <module name="[052]Spring-Dubbo-Provider" target="1.5" />
-      <module name="[052]Spring-MVC-Exception" target="1.5" />
+      <module name="[052]Spring-MVC-Exception" target="8" />
       <module name="[053]Spring-RateLimiter" target="8" />
       <module name="[054]Spring-Logback" target="1.8" />
       <module name="[055]Spring-Redis" target="1.8" />
