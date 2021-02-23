@@ -14,6 +14,7 @@
         <module name="[055]Spring-Redis" />
         <module name="[028]Spring-Data-Transaction-Annotation" />
         <module name="[031]Spring-Log-Log4j2" />
+        <module name="[096]Spring-Empty-Demo1" />
         <module name="[050]Spring-Dubbo-Consumer" />
         <module name="[023]Spring-AOP-JDK" />
         <module name="[015]Spring-IOC-Anntation" />
@@ -187,6 +188,7 @@
       <module name="[058]Spring-Thymeleaf" target="1.8" />
       <module name="[059]Spring-Thymeleaf-Annotation" target="1.8" />
       <module name="[088]Spring-All-Annotation" target="1.8" />
+      <module name="[096]Spring-Empty-Demo1" target="1.5" />
       <module name="[097]Spring-Empty-Demo" target="1.5" />
       <module name="[098]Spring-Web-Thymeleaf" target="1.8" />
       <module name="[099]Spring-Utils" target="8" />
