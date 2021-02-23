@@ -14,7 +14,8 @@ import org.springframework.messaging.handler.annotation.support.MessageHandlerMe
  * <a>Title: RabbitMQConfiguration </a>
  * <a>Author: kapcb <a>
  * <a>Description：<a>
- *
+ * 优雅解决消息序列化
+ * https://blog.csdn.net/future_spring/article/details/106690434?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-2&spm=1001.2101.3001.4242
  * @author kapcb
  * @version 1.0.0
  * @date 2021/2/23-10:45
