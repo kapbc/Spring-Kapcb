@@ -16,6 +16,9 @@ import org.springframework.messaging.handler.annotation.support.MessageHandlerMe
  * <a>Description：<a>
  * 优雅解决消息序列化
  * https://blog.csdn.net/future_spring/article/details/106690434?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-2&spm=1001.2101.3001.4242
+ * 
+ * Jenkins自动打包部署
+ * https://blog.csdn.net/ming19951224/article/details/80958761?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&dist_request_id=e7375d82-2218-49ba-8a0b-7097ad7cd820&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control
  * @author kapcb
  * @version 1.0.0
  * @date 2021/2/23-10:45
