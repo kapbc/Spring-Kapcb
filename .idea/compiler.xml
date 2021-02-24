@@ -64,6 +64,7 @@
         <module name="[095]Spring-Empty-Demo2" />
         <module name="[035]Spring-Function-Nullable" />
         <module name="[043]Spring-Shiro-Jwt" />
+        <module name="[053]Spring-MVC-Interceptor" />
         <module name="[097]Spring-Empty-Demo" />
         <module name="[046]Spring-Jwt" />
         <module name="[021]Spring-AOP-Principle-XML" />
@@ -181,6 +182,7 @@
       <module name="[051]Spring-MVC-Annotation" target="8" />
       <module name="[052]Spring-Dubbo-Provider" target="1.5" />
       <module name="[052]Spring-MVC-Exception" target="8" />
+      <module name="[053]Spring-MVC-Interceptor" target="8" />
       <module name="[053]Spring-RateLimiter" target="8" />
       <module name="[054]Spring-Logback" target="1.8" />
       <module name="[055]Spring-Redis" target="1.8" />
