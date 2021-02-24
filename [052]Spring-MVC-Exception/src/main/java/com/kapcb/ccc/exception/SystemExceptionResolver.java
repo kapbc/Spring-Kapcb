@@ -24,14 +24,36 @@ public class SystemExceptionResolver implements HandlerExceptionResolver {
     /**
      * 转到具体的错误页面的方法
      *
-     * @param httpServletRequest
-     * @param httpServletResponse
-     * @param o
-     * @param e
-     * @return
+     * @param httpServletRequest  HttpServletRequest
+     * @param httpServletResponse HttpServletResponse
+     * @param o                   Object
+     * @param e                   Exception
+     * @return ModelAndView
      */
     @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
-        return null;
+
+        e.printStackTrace();
+
+        SystemException systemException = null;
+
+        if (systemException instanceof SystemException) {
+            systemException = (SystemException) e;
+        } else {
+            systemException = new SystemException("System error. Please connect with Admin");
+        }
+
+        ModelAndView modelAndView = new ModelAndView();
+
+        /**
+         * 提示错误信息
+         */
+        modelAndView.addObject("message", systemException.getMessage());
+
+        /**
+         * 指定跳转的错误 (error) 页面
+         */
+        modelAndView.setViewName("error");
+        return modelAndView;
     }
 }
