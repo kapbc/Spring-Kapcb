@@ -18,7 +18,9 @@ import org.springframework.messaging.handler.annotation.support.MessageHandlerMe
  * RabbitMQ
  * 反序列化： https://blog.csdn.net/sswltt/article/details/108868480?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161426374816780264026615%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=161426374816780264026615&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~times_rank-4-108868480.pc_search_result_hbase_insert&utm_term=RabbitMQ%E4%BC%A0%E9%80%92Bean
  * 
- *
+ * 接受消息 https://blog.csdn.net/wuhuayangs/article/details/84861773?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161426374816780264026615%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=161426374816780264026615&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~times_rank-5-84861773.pc_search_result_hbase_insert&utm_term=RabbitMQ%E4%BC%A0%E9%80%92Bean
+ * 
+ * 
  * 优雅解决消息序列化
  * https://blog.csdn.net/future_spring/article/details/106690434?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-2&spm=1001.2101.3001.4242
  * 
