@@ -25,9 +25,9 @@
         <!--第一个拦截器-->
         <mvc:interceptor>
             <!--哪些请求路径不进行拦截-->
-            <mvc:mapping path="/test/test01"/>
+            <mvc:mapping path="/test/testWithInterceptor"/>
             <!--哪些请求路径不进行拦截-->
-            <mvc:exclude-mapping path="/test/test02"/>
+            <mvc:exclude-mapping path="/test/testWithoutInterceptor"/>
             <!--注册拦截器对象-->
             <bean class="com.kapcb.ccc.interceptor.MyFirstInterceptor"/>
         </mvc:interceptor>

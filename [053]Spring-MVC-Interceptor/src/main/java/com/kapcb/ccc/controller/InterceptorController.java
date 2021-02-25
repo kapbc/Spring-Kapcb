@@ -21,6 +21,8 @@ public class InterceptorController {
 
     private static final Logger log = LoggerFactory.getLogger(InterceptorController.class);
 
+    private static final String SUCCESS_VIEW_NAME = "/view/success";
+
     /**
      * test with interceptor
      *
@@ -29,16 +31,17 @@ public class InterceptorController {
     @GetMapping(path = "testWithInterceptor")
     public String testInterceptor() {
         log.info("come into test with interceptor...");
-        return "success";
+        return SUCCESS_VIEW_NAME;
     }
 
     /**
      * test without interceptor
+     *
      * @return
      */
     @GetMapping(value = "testWithoutInterceptor")
     public String testWithoutInterceptor() {
         log.info("come into test without interceptor...");
-        return "success";
+        return SUCCESS_VIEW_NAME;
     }
 }

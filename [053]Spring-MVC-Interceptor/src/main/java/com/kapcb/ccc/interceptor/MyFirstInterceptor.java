@@ -55,7 +55,7 @@ public class MyFirstInterceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         log.info("come into postHandler in Interceptor....");
         log.info("the postHandler is after Controller before internalViewResolver...");
-        request.getRequestDispatcher("/WEB-INF/views/test.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/template/view/InterceptorHandlerPage.jsp").forward(request, response);
     }
 
     /**
