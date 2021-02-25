@@ -48,6 +48,7 @@
     <file type="web" url="file://$PROJECT_DIR$/[053]Spring-MVC-Interceptor" />
     <file type="web" url="file://$PROJECT_DIR$/[053]Spring-RateLimiter" />
     <file type="web" url="file://$PROJECT_DIR$/[054]Spring-Logback" />
+    <file type="web" url="file://$PROJECT_DIR$/[054]Spring-MVC-FileUpload" />
     <file type="web" url="file://$PROJECT_DIR$/[055]Spring-Redis" />
     <file type="web" url="file://$PROJECT_DIR$/[056]Spring-Redis-Annotation" />
     <file type="web" url="file://$PROJECT_DIR$/[056]Spring-Thymeleaf/[056]Spring-Thymeleaf" />
@@ -198,6 +199,7 @@
         <option value="$PROJECT_DIR$/[095]Spring-Empty-Demo2/pom.xml" />
         <option value="$PROJECT_DIR$/[052]Spring-MVC-Exception/pom.xml" />
         <option value="$PROJECT_DIR$/[053]Spring-MVC-Interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/[054]Spring-MVC-FileUpload/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
