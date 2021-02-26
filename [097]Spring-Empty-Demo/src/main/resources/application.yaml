@@ -2,13 +2,13 @@ server:
   port: 8081
 spring:
   application:
-    name: SpringBoot-Test-RabbitMQ-Producter
+    name: 
   rabbitmq:
-    host: 192.168.117.130
-    username: admin
-    password: 123456
+    host: 
+    username: 
+    password: 
     port: 5672
-    virtual-host: my_vhost
+    virtual-host: 
     # 确认消息已发送到交换机(Exchange)
     publisher-confirm-type: CORRELATED
     # 确认消息已发送到队列(Queue)
