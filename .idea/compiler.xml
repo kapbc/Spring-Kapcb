@@ -11,6 +11,7 @@
         <module name="[038]Spring-Schedule-Quartz" />
         <module name="[039]Spring-Shiro" />
         <module name="[055]Spring-Redis" />
+        <module name="[080]Spring-AMQP-RabbitMQ-Consumer" />
         <module name="[028]Spring-Data-Transaction-Annotation" />
         <module name="[031]Spring-Log-Log4j2" />
         <module name="[050]Spring-Dubbo-Consumer" />
@@ -193,6 +194,7 @@
       <module name="[058]Spring-Thymeleaf" target="1.8" />
       <module name="[059]Spring-Thymeleaf-Annotation" target="1.8" />
       <module name="[079]Spring-AMQP-RabbitMQ-Producer" target="8" />
+      <module name="[080]Spring-AMQP-RabbitMQ-Consumer" target="8" />
       <module name="[088]Spring-All-Annotation" target="1.8" />
       <module name="[095]Spring-Empty-Demo2" target="1.5" />
       <module name="[096]Spring-Empty-Demo1" target="1.5" />

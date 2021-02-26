@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+    <description>Spring-RabbitMQ</description>
+
+    <context:property-placeholder location="classpath:properties/rabbit.properties"/>
+
+    <!-- 连接配置 -->
+    <!-- 配置rabbit的地址，用户，密码，和virtualHost 从properties中取参数 -->
+    <bean id="cachingConnectionFactory" class="org.springframework.amqp.rabbit.connection.CachingConnectionFactory">
+        <property name="username" value="${rabbit.mq.username}"/>
+        <property name="password" value="${rabbit.mq.password}"/>
+        <property name="port" value="${rabbit.mq.port}"/>
+        <property name="host" value="${rabbit.mq.host}"/>
+        <property name="virtualHost" value="${rabbit.mq.virtual}"/>
+    </bean>
+
+    <!-- 配置一个admin 多个admin ，启用不同的id即可 -->
+    <rabbit:admin id="rabbitAdminOne" connection-factory="cachingConnectionFactory"/>
+
+    <!-- 配置队列的名称，以及队列的一些属性 -->
+    <rabbit:queue id="rabbit:direct" name="rabbit:direct" durable="true" auto-declare="false" auto-delete="false"
+                  declared-by="rabbitAdminOne"/>
+
+    <!-- 配置一个交换器 ，一个交换器可以绑定多个队列 队列旁边的key需要在发送的时候用到-->
+    <rabbit:direct-exchange id="rabbitDirectExchange" name="rabbitDirectExchange" durable="true" auto-declare="false"
+                            auto-delete="false" declared-by="admin">
+        <rabbit:bindings>
+            <rabbit:binding queue="rabbit:direct" key="rabbit:direct"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <!-- 消息转换器 -->
+    <bean id="jackson2JsonMessageConverter"
+          class="org.springframework.amqp.support.converter.Jackson2JsonMessageConverter"/>
+
+    <!-- 生成template，把交换器，连接工厂，消息转换器设置进去，就可以直接使用了 -->
+    <rabbit:template exchange="rabbitDirectExchange" id="rabbitTemplate" connection-factory="cachingConnectionFactory"
+                     message-converter="jackson2JsonMessageConverter"/>
+
+</beans>
