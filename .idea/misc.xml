@@ -54,6 +54,7 @@
     <file type="web" url="file://$PROJECT_DIR$/[056]Spring-Thymeleaf/[056]Spring-Thymeleaf" />
     <file type="web" url="file://$PROJECT_DIR$/[058]Spring-Thymeleaf" />
     <file type="web" url="file://$PROJECT_DIR$/[059]Spring-Thymeleaf-Annotation" />
+    <file type="web" url="file://$PROJECT_DIR$/[079]Spring-AMQP-RabbitMQ-Producer" />
     <file type="web" url="file://$PROJECT_DIR$/[088]Spring-All-Annotation" />
     <file type="web" url="file://$PROJECT_DIR$/[098]Spring-Web-Thymeleaf" />
     <file type="web" url="file://$PROJECT_DIR$/[099]Spring-Utils" />
@@ -200,6 +201,7 @@
         <option value="$PROJECT_DIR$/[052]Spring-MVC-Exception/pom.xml" />
         <option value="$PROJECT_DIR$/[053]Spring-MVC-Interceptor/pom.xml" />
         <option value="$PROJECT_DIR$/[054]Spring-MVC-FileUpload/pom.xml" />
+        <option value="$PROJECT_DIR$/[079]Spring-AMQP-RabbitMQ-Producer/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

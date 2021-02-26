@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.print.attribute.standard.MediaSize;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
