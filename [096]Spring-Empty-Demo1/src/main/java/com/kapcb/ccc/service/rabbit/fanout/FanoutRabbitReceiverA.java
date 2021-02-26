@@ -25,7 +25,7 @@ public class FanoutRabbitReceiverA {
     public void processFanoutMessagesRabbitReceiveMessage(Map message) {
         log.info("=======This is Fanout A Exchange======");
         log.info("receive message from rabbit");
-        log.info("The message received from route key 'globalsource.fanout.a' is : " + message);
+        log.info("The message received from route key is : " + message);
         log.info("=======================================");
     }
 }
