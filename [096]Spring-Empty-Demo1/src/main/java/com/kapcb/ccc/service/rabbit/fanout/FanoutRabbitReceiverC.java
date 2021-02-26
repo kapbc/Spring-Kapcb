@@ -25,7 +25,7 @@ public class FanoutRabbitReceiverC {
     public void processTopicMessagesRabbitReceiveMessage(Map message) {
         log.info("=======This is Fanout C Exchange======");
         log.info("receive message from rabbit");
-        log.info("The message received from route key 'globalsource.fanout.b' is : " + message);
+        log.info("The message received from route key is : " + message);
         log.info("=======================================");
     }
 }
