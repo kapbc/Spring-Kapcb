@@ -35,6 +35,7 @@ public class RabbitConfiguration {
     public RabbitTemplate createRabbitTemplate(ConnectionFactory connectionFactory){
         RabbitTemplate rabbitTemplate = new RabbitTemplate();
         CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory();
+        return rabbitTemplate;
     }
 
 }
