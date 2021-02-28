@@ -26,7 +26,7 @@ import java.util.Map;
 public class findUserByIdAndEmailTest {
 
     public static void main(String[] args) throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-context.xml");
+        InputStream inputStream = Resources.getResourceAsStream("spring/mybatis-config.xml");
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession(true);
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);

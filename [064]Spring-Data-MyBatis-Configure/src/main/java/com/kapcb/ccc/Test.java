@@ -29,7 +29,7 @@ public class Test {
          * Resources:org.apache.ibatis.io.Resources包下的
          */
 
-        String resource = "mybatis-config.xml";
+        String resource = "spring/mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 

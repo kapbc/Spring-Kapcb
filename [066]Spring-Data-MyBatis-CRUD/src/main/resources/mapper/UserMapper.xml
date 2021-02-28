@@ -1,0 +1,34 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace写接口的全类名，相当于告诉MyBatis是实现哪个接口的-->
+<mapper namespace="com.kapcb.ccc.mapper.UserMapper">
+    <!--#{属性名}:代表取出穿过来的某个参数的值-->
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="com.kapcb.ccc.domain.User">
+        select * from t_user where id = #{id}
+    </select>
+
+    <!--增删改不用谢返回值类型，增删改返回是影响多少行-->
+    <!--MyBatis会自动判断，如果是数字就会返回多少行,如果是boolean(影响0行就封装为false，否则true)-->
+    <insert id="addUser" parameterType="com.kapcb.ccc.domain.User">
+        INSERT INTO
+        t_user(username,gender,email)
+        VALUES(#{username},#{gender},#{email})
+    </insert>
+
+    <!--#{属性名}：从传入的参数中对象中中取出对应的属性的值-->
+    <update id="updateUser">
+        UPDATE t_user SET
+        username = #{username},
+        gender = #{gender},
+        email = #{email}
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="deleteUser">
+        DELETE FROM t_user WHERE id = #{id}
+    </delete>
+
+
+</mapper>

@@ -22,7 +22,7 @@ import java.io.InputStream;
 public class RandomKeyTest {
 
     public static void main(String[] args) throws IOException {
-        String resource = "mybatis-context.xml";
+        String resource = "spring/mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession(true);

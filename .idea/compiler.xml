@@ -86,7 +86,6 @@
         <module name="[047]Spring-MVC-HelloWorld3" />
         <module name="[003]Spring-IOC-ApplicationContext" />
         <module name="[037]Spring-Schedule-Task" />
-        <module name="[023]Spring-MyBatis-Configure" />
         <module name="[060]Spring-Data-MyBatis" />
         <module name="[011]Spring-IOC-Autowired" />
         <module name="[032]Spring-Log-Logback" />
@@ -96,7 +95,6 @@
         <module name="[054]Spring-Logback" />
         <module name="[059]Spring-Thymeleaf-Annotation" />
         <module name="[080]Spring-AMQP-RabbitMQ-Consumer" />
-        <module name="[024]Spring-MyBatis-DynamicSQL" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -204,8 +202,8 @@
       <module name="[062]Spring-Data-MyBatis-Params" target="8" />
       <module name="[063]Spring-Data-MyBatis-SQL" target="8" />
       <module name="[064]Spring-Data-MyBatis-Configure" target="8" />
-      <module name="[065]Spring-Data-MyBatis-DynamicSQL" target="1.5" />
-      <module name="[066]Spring-Data-MyBatis-CRUD" target="1.5" />
+      <module name="[065]Spring-Data-MyBatis-DynamicSQL" target="8" />
+      <module name="[066]Spring-Data-MyBatis-CRUD" target="8" />
       <module name="[070]Spring-SpringMVC-MyBatis" target="1.5" />
       <module name="[079]Spring-AMQP-RabbitMQ-Producer" target="8" />
       <module name="[080]Spring-AMQP-RabbitMQ-Consumer" target="8" />
