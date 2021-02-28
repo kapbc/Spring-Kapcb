@@ -10,10 +10,9 @@
         <module name="[009]Spring-IOC-Singleton" />
         <module name="[038]Spring-Schedule-Quartz" />
         <module name="[039]Spring-Shiro" />
+        <module name="[010]Spring-IOC-Prototype" />
         <module name="[055]Spring-Redis" />
-        <module name="[060]Spring-Data-MyBatis" />
         <module name="[028]Spring-Data-Transaction-Annotation" />
-        <module name="[061]Spring-Data-MyBatis-Cascade" />
         <module name="[031]Spring-Log-Log4j2" />
         <module name="[070]Spring-SpringMVC-MyBatis" />
         <module name="[050]Spring-Dubbo-Consumer" />
@@ -22,8 +21,9 @@
         <module name="[047]Spring-Shiro-Jwt-Project" />
         <module name="[001]Spring-IOC-Principle" />
         <module name="[042]Spring-Annotaion-Value2" />
-        <module name="[063]Spring-Data-MyBatis-SQL" />
-        <module name="[037]Spring-Schedule-Task" />
+        <module name="[064]Spring-Data-MyBatis-Configure" />
+        <module name="[021]Spring-AOP-Principle-XML" />
+        <module name="[053]Spring-RateLimiter" />
         <module name="[028]SSM-QuickStart" />
         <module name="[041]Spring-Annotaion-Value" />
         <module name="[022]Spring-MyBatis-SQL" />
@@ -31,7 +31,6 @@
         <module name="[012]Spring-IOC-ExternalConfidurationFile" />
         <module name="[014]Spring-IOC-Bean-AutowiredAndQualifier" />
         <module name="[062]Spring-Data-MyBatis-Params" />
-        <module name="[064]Spring-Data-MyBatis-Configure" />
         <module name="[008]Spring-IOC-Bean-Lifecycle" />
         <module name="[051]Spring-MVC-Annotation" />
         <module name="[021]Spring-MyBatis-Param" />
@@ -46,26 +45,25 @@
         <module name="[058]Spring-Thymeleaf" />
         <module name="[079]Spring-AMQP-RabbitMQ-Producer" />
         <module name="[052]Spring-Dubbo-Provider" />
-        <module name="[007]Spring-IOC-FactoryBean" />
         <module name="[056]Spring-Redis-Annotation" />
         <module name="[030]Spring-Log-Log4j" />
-        <module name="[020]Spring-MyBatis-Cascade" />
+        <module name="[020]Spring-AOP-Principle" />
         <module name="[039]Spring-Test-Junit5-Simplify" />
         <module name="[036]Spring-Function-GenericApplicationContext" />
-        <module name="[035]Spring-Resultful-ThreadPool" />
         <module name="[049]SpringMVC-Shiro-Jwt" />
-        <module name="[053]Spring-RateLimiter" />
         <module name="[89]Spring-Web-Thymeleaf" />
         <module name="[031]SSM-Demo" />
         <module name="[024]Spring-AOP-CGLIB" />
+        <module name="[063]Spring-Data-MyBatis-SQL" />
         <module name="[037]Spring-Test-Junit4" />
-        <module name="[020]Spring-AOP-Principle" />
+        <module name="[007]Spring-IOC-FactoryBean" />
         <module name="[050]Spring-MVC-Params" />
         <module name="[025]Spring-Data-JdbcTemplate" />
-        <module name="[051]Spring-Dubbo-Interface" />
+        <module name="[061]Spring-Data-MyBatis-Cascade" />
+        <module name="[030]SSM-Test" />
+        <module name="[099]Spring-Utils" />
         <module name="[042]Spring-Log4j2" />
-        <module name="[010]Spring-IOC-Prototype" />
-        <module name="[029]SSM-Base" />
+        <module name="[035]Spring-Resultful-ThreadPool" />
         <module name="[055]Spring-MVC-Filter" />
         <module name="[095]Spring-Empty-Demo2" />
         <module name="[035]Spring-Function-Nullable" />
@@ -73,24 +71,25 @@
         <module name="[053]Spring-MVC-Interceptor" />
         <module name="[097]Spring-Empty-Demo" />
         <module name="[046]Spring-Jwt" />
-        <module name="[021]Spring-AOP-Principle-XML" />
+        <module name="[029]SSM-Base" />
         <module name="[013]Spring-IOC-Bean-Annotation" />
         <module name="[065]Spring-Data-MyBatis-DynamicSQL" />
+        <module name="[045]Spring-MVC-HelloWorld" />
         <module name="[096]Spring-Empty-Demo1" />
         <module name="[026]Spring-Data-Transaction" />
         <module name="[034]Spring-Resultful" />
-        <module name="[030]SSM-Test" />
+        <module name="[051]Spring-Dubbo-Interface" />
         <module name="[032]SSM-Email" />
         <module name="[088]Spring-All-Annotation" />
         <module name="[049]Spring-MVC-Params" />
-        <module name="[024]Spring-MyBatis-DynamicSQL" />
+        <module name="[044]Spring-Validation" />
         <module name="[046]Spring-MVC-HelloWord2" />
-        <module name="[023]Spring-MyBatis-Configure" />
         <module name="[040]Spring-Annotation-Configuration" />
         <module name="[047]Spring-MVC-HelloWorld3" />
         <module name="[003]Spring-IOC-ApplicationContext" />
-        <module name="[044]Spring-Validation" />
-        <module name="[045]Spring-MVC-HelloWorld" />
+        <module name="[037]Spring-Schedule-Task" />
+        <module name="[023]Spring-MyBatis-Configure" />
+        <module name="[060]Spring-Data-MyBatis" />
         <module name="[011]Spring-IOC-Autowired" />
         <module name="[032]Spring-Log-Logback" />
         <module name="[066]Spring-Data-MyBatis-CRUD" />
@@ -99,7 +98,7 @@
         <module name="[054]Spring-Logback" />
         <module name="[059]Spring-Thymeleaf-Annotation" />
         <module name="[080]Spring-AMQP-RabbitMQ-Consumer" />
-        <module name="[099]Spring-Utils" />
+        <module name="[024]Spring-MyBatis-DynamicSQL" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -202,7 +201,7 @@
       <module name="[056]Spring-Thymeleaf" target="1.8" />
       <module name="[058]Spring-Thymeleaf" target="1.8" />
       <module name="[059]Spring-Thymeleaf-Annotation" target="1.8" />
-      <module name="[060]Spring-Data-MyBatis" target="1.5" />
+      <module name="[060]Spring-Data-MyBatis" target="8" />
       <module name="[061]Spring-Data-MyBatis-Cascade" target="1.5" />
       <module name="[062]Spring-Data-MyBatis-Params" target="1.5" />
       <module name="[063]Spring-Data-MyBatis-SQL" target="1.5" />

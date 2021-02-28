@@ -4,13 +4,13 @@ import com.kapcb.ccc.domain.Key;
 import com.kapcb.ccc.domain.Lock;
 
 /**
- * <a>Title:KeyMapper</a>
- * <a>Author：ccc<a>
- * <a>Description：<a>
+ * <a>Title: KeyMapper </a>
+ * <a>Author: kapcb <a>
+ * <a>Description: <a>
  *
- * @author ccc
+ * @author kapcb
  * @version 1.0.0
- * @date 2020/6/5 16:30
+ * @date 2021/2/28 10:15
  */
 public interface KeyMapper {
 

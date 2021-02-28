@@ -1,13 +1,15 @@
 package com.kapcb.ccc.domain;
 
+import java.util.concurrent.locks.Lock;
+
 /**
- * <a>Title:Key</a>
- * <a>Author：ccc<a>
- * <a>Description：<a>
+ * <a>Title: Key </a>
+ * <a>Author: kapcb <a>
+ * <a>Description: <a>
  *
- * @author ccc
+ * @author kapcb
  * @version 1.0.0
- * @date 2020/6/5 16:17
+ * @date 2021/2/28 10:12
  */
 public class Key {
 
@@ -15,13 +17,13 @@ public class Key {
     private String keyName;
     private Lock lock;
 
-    @Override
-    public String toString() {
-        return "Key{" +
-                "id=" + id +
-                ", keyName='" + keyName + '\'' +
-                ", lock=" + lock +
-                '}';
+    public Key() {
+    }
+
+    public Key(Integer id, String keyName, Lock lock) {
+        this.id = id;
+        this.keyName = keyName;
+        this.lock = lock;
     }
 
     public Integer getId() {
@@ -46,5 +48,14 @@ public class Key {
 
     public void setLock(Lock lock) {
         this.lock = lock;
+    }
+
+    @Override
+    public String toString() {
+        return "Key{" +
+                "id=" + id +
+                ", keyName='" + keyName + '\'' +
+                ", lock=" + lock +
+                '}';
     }
 }
