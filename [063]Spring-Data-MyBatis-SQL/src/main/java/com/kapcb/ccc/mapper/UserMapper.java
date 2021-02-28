@@ -3,15 +3,16 @@ package com.kapcb.ccc.mapper;
 import com.kapcb.ccc.domain.User;
 
 /**
- * <a>Title:UserMapper</a>
- * <a>Author：ccc<a>
- * <a>Description：<a>
+ * <a>Title: UserMapper </a>
+ * <a>Author: kapcb <a>
+ * <a>Description: <a>
  *
- * @author ccc
+ * @author kapcb
  * @version 1.0.0
- * @date 2020/6/3 22:05
+ * @date 2021/2/28 10:46
  */
 public interface UserMapper {
+
     /**
      * 根据id查询用户
      *
@@ -36,5 +37,4 @@ public interface UserMapper {
      * @return boolean
      */
     public boolean insertRandomIdUser(User user);
-
 }

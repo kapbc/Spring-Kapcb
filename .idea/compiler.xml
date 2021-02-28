@@ -26,7 +26,6 @@
         <module name="[053]Spring-RateLimiter" />
         <module name="[028]SSM-QuickStart" />
         <module name="[041]Spring-Annotaion-Value" />
-        <module name="[022]Spring-MyBatis-SQL" />
         <module name="[025]Spring-MyBatis-CRUD" />
         <module name="[012]Spring-IOC-ExternalConfidurationFile" />
         <module name="[014]Spring-IOC-Bean-AutowiredAndQualifier" />
@@ -203,7 +202,7 @@
       <module name="[060]Spring-Data-MyBatis" target="8" />
       <module name="[061]Spring-Data-MyBatis-Cascade" target="1.5" />
       <module name="[062]Spring-Data-MyBatis-Params" target="8" />
-      <module name="[063]Spring-Data-MyBatis-SQL" target="1.5" />
+      <module name="[063]Spring-Data-MyBatis-SQL" target="8" />
       <module name="[064]Spring-Data-MyBatis-Configure" target="1.5" />
       <module name="[065]Spring-Data-MyBatis-DynamicSQL" target="1.5" />
       <module name="[066]Spring-Data-MyBatis-CRUD" target="1.5" />
