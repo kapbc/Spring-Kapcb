@@ -8,15 +8,16 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <a>Title:UserMapper</a>
- * <a>Author：ccc<a>
- * <a>Description：<a>
+ * <a>Title: UserMapper </a>
+ * <a>Author: kapcb <a>
+ * <a>Description: <a>
  *
- * @author ccc
+ * @author kapcb
  * @version 1.0.0
- * @date 2020/6/3 23:17
+ * @date 2021/2/28 10:34
  */
 public interface UserMapper {
+
     /**
      * 模糊查询
      *

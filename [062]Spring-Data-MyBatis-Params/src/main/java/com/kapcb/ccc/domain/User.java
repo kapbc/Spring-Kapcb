@@ -1,36 +1,21 @@
 package com.kapcb.ccc.domain;
 
-import java.io.Serializable;
-
 /**
- * <a>Title:User</a>
- * <a>Author：ccc<a>
- * <a>Description：<a>
+ * <a>Title: User </a>
+ * <a>Author: kapcb <a>
+ * <a>Description: <a>
  *
- * @author ccc
+ * @author kapcb
  * @version 1.0.0
- * @date 2020/6/3 23:16
+ * @date 2021/2/28 10:33
  */
-public class User implements Serializable {
-
-    private static final long serialVersionUID = 1159926533414225220L;
+public class User{
 
     private Integer id;
     private String username;
     private String gender;
     private String email;
     private String loginAccount;
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", gender='" + gender + '\'' +
-                ", email='" + email + '\'' +
-                ", loginAccount='" + loginAccount + '\'' +
-                '}';
-    }
 
     public User() {
     }
@@ -81,5 +66,16 @@ public class User implements Serializable {
 
     public void setLoginAccount(String loginAccount) {
         this.loginAccount = loginAccount;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", gender='" + gender + '\'' +
+                ", email='" + email + '\'' +
+                ", loginAccount='" + loginAccount + '\'' +
+                '}';
     }
 }

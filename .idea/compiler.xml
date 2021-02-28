@@ -33,7 +33,6 @@
         <module name="[062]Spring-Data-MyBatis-Params" />
         <module name="[008]Spring-IOC-Bean-Lifecycle" />
         <module name="[051]Spring-MVC-Annotation" />
-        <module name="[021]Spring-MyBatis-Param" />
         <module name="[006]Spring-IOC-Bean-Complex" />
         <module name="[004]Spring-IOC-Bean-DI" />
         <module name="[038]Spring-Test-Junit5" />
@@ -203,7 +202,7 @@
       <module name="[059]Spring-Thymeleaf-Annotation" target="1.8" />
       <module name="[060]Spring-Data-MyBatis" target="8" />
       <module name="[061]Spring-Data-MyBatis-Cascade" target="1.5" />
-      <module name="[062]Spring-Data-MyBatis-Params" target="1.5" />
+      <module name="[062]Spring-Data-MyBatis-Params" target="8" />
       <module name="[063]Spring-Data-MyBatis-SQL" target="1.5" />
       <module name="[064]Spring-Data-MyBatis-Configure" target="1.5" />
       <module name="[065]Spring-Data-MyBatis-DynamicSQL" target="1.5" />
