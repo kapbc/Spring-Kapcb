@@ -118,7 +118,6 @@
         <option value="$PROJECT_DIR$/[032]SSM-Email/pom.xml" />
         <option value="$PROJECT_DIR$/[034]Spring-Resultful/pom.xml" />
         <option value="$PROJECT_DIR$/[035]Spring-Resultful-ThreadPool/pom.xml" />
-        <option value="$PROJECT_DIR$/[036]Spring-JdbcTemplate/pom.xml" />
         <option value="$PROJECT_DIR$/[037]Spring-Schedule-Task/pom.xml" />
         <option value="$PROJECT_DIR$/[038]Spring-Schedule-Quartz/pom.xml" />
         <option value="$PROJECT_DIR$/[050]Spring-Dubbo-Consumer/pom.xml" />

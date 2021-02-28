@@ -37,7 +37,6 @@
         <module name="[002]Spring-IOC-BeanFactory" />
         <module name="[098]Spring-Web-Thymeleaf" />
         <module name="[041]Spring-Annotation-Shiro" />
-        <module name="[036]Spring-JdbcTemplate" />
         <module name="[058]Spring-Thymeleaf" />
         <module name="[079]Spring-AMQP-RabbitMQ-Producer" />
         <module name="[052]Spring-Dubbo-Provider" />

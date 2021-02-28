@@ -2,8 +2,8 @@ package com.kapcb.ccc.utils;
 
 import com.kapcb.ccc.annotation.Column;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.lang.NonNull;
 
@@ -21,11 +21,10 @@ import java.util.Objects;
  *
  * @author kapcb
  * @version 1.0.0
- * @date 2020/12/28 - 21:29
+ * @date 2021/2/28 11:35
  */
+@Slf4j
 public class JdbcRowMapper<T> implements RowMapper<T> {
-
-    private static final Logger logger = Logger.getLogger(JdbcRowMapper.class);
 
     private final Class<? extends T> clazz;
 
@@ -37,7 +36,7 @@ public class JdbcRowMapper<T> implements RowMapper<T> {
     @NonNull
     @Override
     public T mapRow(ResultSet resultSet, int i) throws SQLException {
-        logger.warn("---Come Into The JdbcRowMapper mapRow---");
+        log.warn("---Come Into The JdbcRowMapper mapRow---");
         T bean = null;
         try {
             bean = clazz.getConstructor().newInstance();
@@ -49,23 +48,23 @@ public class JdbcRowMapper<T> implements RowMapper<T> {
                     if (annotation instanceof Column) {
                         Column column = (Column) annotation;
                         annotationName = column.name();
-                        logger.warn("annotationName ::: " + annotationName);
+                        log.warn("annotationName ::: " + annotationName);
                     }
                 }
 
                 String fieldType = field.getType().getSimpleName();
-                logger.warn("fieldType ::: " + fieldType);
+                log.warn("fieldType ::: " + fieldType);
                 String fieldName = field.getName();
-                logger.warn("fieldName ::: " + fieldName);
+                log.warn("fieldName ::: " + fieldName);
                 String setMethodName = parseSetMethodName(fieldName);
-                logger.warn("setMethodName ::: " + setMethodName);
+                log.warn("setMethodName ::: " + setMethodName);
                 Method setMethod = clazz.getMethod(fieldName, field.getType());
-                logger.warn("setMethod ::: " + setMethodName);
+                log.warn("setMethod ::: " + setMethodName);
                 setValue(bean, setMethod, annotationName, fieldType, resultSet);
-                logger.warn("---Process The Data Mapping Convert Success---");
+                log.warn("---Process The Data Mapping Convert Success---");
             }
         } catch (InstantiationException e) {
-            logger.error("JdbcRowMapper Convert Data Error ::: " + e.getMessage(), e);
+            log.error("JdbcRowMapper Convert Data Error ::: " + e.getMessage(), e);
         }
         return Objects.equals(bean, null) ? clazz.newInstance() : bean;
     }
@@ -73,7 +72,7 @@ public class JdbcRowMapper<T> implements RowMapper<T> {
     private void setValue(Object bean, Method method, String annotationName, String simpleName, ResultSet resultSet) {
         try {
             if (Objects.equals(null, resultSet.getObject(annotationName))) {
-                logger.warn("The Column ::: " + annotationName + " from resultMap is null");
+                log.warn("The Column ::: " + annotationName + " from resultMap is null");
                 return;
             }
             switch (simpleName) {
@@ -101,19 +100,19 @@ public class JdbcRowMapper<T> implements RowMapper<T> {
                     break;
             }
         } catch (Exception e) {
-            logger.error("Convert The Data From ResultMap error ::: " + e.getMessage(), e);
+            log.error("Convert The Data From ResultMap error ::: " + e.getMessage(), e);
         }
     }
 
     private static String parseSetMethodName(String fieldName) {
         if (StringUtils.isBlank(fieldName)) {
-            logger.warn("The FieldName is null!!!!");
+            log.warn("The FieldName is null!!!!");
             return null;
         }
         StringBuilder set = new StringBuilder("set");
         set.append(Character.toUpperCase(fieldName.charAt(0)));
         set.append(fieldName.substring(1));
-        logger.warn("The paresSetMethodName is ::: " + set.toString());
+        log.warn("The paresSetMethodName is ::: " + set.toString());
         return set.toString();
     }
 }

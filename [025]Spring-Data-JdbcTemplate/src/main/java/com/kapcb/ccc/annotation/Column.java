@@ -12,11 +12,12 @@ import java.lang.annotation.Target;
  *
  * @author kapcb
  * @version 1.0.0
- * @date 2020/12/28 - 21:26
+ * @date 2021/2/28 11:33
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Column {
 
     String name() default "";
+
 }
