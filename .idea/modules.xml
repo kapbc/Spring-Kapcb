@@ -22,10 +22,8 @@
       <module fileurl="file://$PROJECT_DIR$/[023]Spring-AOP-JDK/[023]Spring-AOP-JDK.iml" filepath="$PROJECT_DIR$/[023]Spring-AOP-JDK/[023]Spring-AOP-JDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/[024]Spring-AOP-CGLIB/[024]Spring-AOP-CGLIB.iml" filepath="$PROJECT_DIR$/[024]Spring-AOP-CGLIB/[024]Spring-AOP-CGLIB.iml" />
       <module fileurl="file://$PROJECT_DIR$/[025]Spring-Data-JdbcTemplate/[025]Spring-Data-JdbcTemplate.iml" filepath="$PROJECT_DIR$/[025]Spring-Data-JdbcTemplate/[025]Spring-Data-JdbcTemplate.iml" />
-      <module fileurl="file://$PROJECT_DIR$/[025]Spring-MyBatis-CRUD/[025]Spring-MyBatis-CRUD.iml" filepath="$PROJECT_DIR$/[025]Spring-MyBatis-CRUD/[025]Spring-MyBatis-CRUD.iml" />
       <module fileurl="file://$PROJECT_DIR$/[026]Spring-Data-Transaction/[026]Spring-Data-Transaction.iml" filepath="$PROJECT_DIR$/[026]Spring-Data-Transaction/[026]Spring-Data-Transaction.iml" />
       <module fileurl="file://$PROJECT_DIR$/[027]Spring-Data-Transaction-XML/[027]Spring-Data-Transaction-XML.iml" filepath="$PROJECT_DIR$/[027]Spring-Data-Transaction-XML/[027]Spring-Data-Transaction-XML.iml" />
-      <module fileurl="file://$PROJECT_DIR$/[028]SSM-QuickStart/[028]SSM-QuickStart.iml" filepath="$PROJECT_DIR$/[028]SSM-QuickStart/[028]SSM-QuickStart.iml" />
       <module fileurl="file://$PROJECT_DIR$/[028]Spring-Data-Transaction-Annotation/[028]Spring-Data-Transaction-Annotation.iml" filepath="$PROJECT_DIR$/[028]Spring-Data-Transaction-Annotation/[028]Spring-Data-Transaction-Annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/[029]SSM-Base/[029]SSM-Base.iml" filepath="$PROJECT_DIR$/[029]SSM-Base/[029]SSM-Base.iml" />
       <module fileurl="file://$PROJECT_DIR$/[030]SSM-Test/[030]SSM-Test.iml" filepath="$PROJECT_DIR$/[030]SSM-Test/[030]SSM-Test.iml" />
@@ -81,6 +79,7 @@
       <module fileurl="file://$PROJECT_DIR$/[064]Spring-Data-MyBatis-Configure/[064]Spring-Data-MyBatis-Configure.iml" filepath="$PROJECT_DIR$/[064]Spring-Data-MyBatis-Configure/[064]Spring-Data-MyBatis-Configure.iml" />
       <module fileurl="file://$PROJECT_DIR$/[065]Spring-Data-MyBatis-DynamicSQL/[065]Spring-Data-MyBatis-DynamicSQL.iml" filepath="$PROJECT_DIR$/[065]Spring-Data-MyBatis-DynamicSQL/[065]Spring-Data-MyBatis-DynamicSQL.iml" />
       <module fileurl="file://$PROJECT_DIR$/[066]Spring-Data-MyBatis-CRUD/[066]Spring-Data-MyBatis-CRUD.iml" filepath="$PROJECT_DIR$/[066]Spring-Data-MyBatis-CRUD/[066]Spring-Data-MyBatis-CRUD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/[067]Spring-Data-MyBatis-Base/[067]Spring-Data-MyBatis-Base.iml" filepath="$PROJECT_DIR$/[067]Spring-Data-MyBatis-Base/[067]Spring-Data-MyBatis-Base.iml" />
       <module fileurl="file://$PROJECT_DIR$/[070]Spring-SpringMVC-MyBatis/[070]Spring-SpringMVC-MyBatis.iml" filepath="$PROJECT_DIR$/[070]Spring-SpringMVC-MyBatis/[070]Spring-SpringMVC-MyBatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/[079]Spring-AMQP-RabbitMQ-Producer/[079]Spring-AMQP-RabbitMQ-Producer.iml" filepath="$PROJECT_DIR$/[079]Spring-AMQP-RabbitMQ-Producer/[079]Spring-AMQP-RabbitMQ-Producer.iml" />
       <module fileurl="file://$PROJECT_DIR$/[080]Spring-AMQP-RabbitMQ-Consumer/[080]Spring-AMQP-RabbitMQ-Consumer.iml" filepath="$PROJECT_DIR$/[080]Spring-AMQP-RabbitMQ-Consumer/[080]Spring-AMQP-RabbitMQ-Consumer.iml" />

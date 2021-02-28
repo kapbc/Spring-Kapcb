@@ -35,7 +35,5 @@ public class ParamsTest {
         } finally {
             sqlSession.close();
         }
-
     }
-
 }

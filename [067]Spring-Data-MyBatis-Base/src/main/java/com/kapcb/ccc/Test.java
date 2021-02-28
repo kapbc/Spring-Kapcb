@@ -18,15 +18,15 @@ public class Test {
     public static void main(String[] args) {
         ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Object bookDao = ioc.getBean("bookDao");
-        Object bookDao01 = ioc.getBean("bookDao");
-        Object bookService = ioc.getBean("bookService");
-        Object bookServlet = ioc.getBean("bookServlet");
+        Object IServiceDaoImpl1 = ioc.getBean("IServiceDaoImpl");
+        Object IServiceDaoImpl = ioc.getBean("IServiceDaoImpl");
+        Object IServiceImpl = ioc.getBean("IServiceImpl");
+        Object SystemController = ioc.getBean("SystemController");
 
-        System.out.println("bookDao = " + bookDao);
-        System.out.println(bookDao == bookDao01);
-        System.out.println("bookService = " + bookService);
-        System.out.println("bookServlet = " + bookServlet);
+        System.out.println("IServiceDaoImpl1 = " + IServiceDaoImpl1);
+        System.out.println(IServiceDaoImpl1 == IServiceDaoImpl);
+        System.out.println("IServiceImpl = " + IServiceImpl);
+        System.out.println("SystemController = " + SystemController);
 
     }
 }

@@ -112,8 +112,6 @@
         <option value="$PROJECT_DIR$/Spring-Annotation-Configuration/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-task/pom.xml" />
         <option value="$PROJECT_DIR$/[011]SpringMVC-Params/pom.xml" />
-        <option value="$PROJECT_DIR$/[025]Spring-MyBatis-CRUD/pom.xml" />
-        <option value="$PROJECT_DIR$/[028]SSM-QuickStart/pom.xml" />
         <option value="$PROJECT_DIR$/[029]SSM-Base/pom.xml" />
         <option value="$PROJECT_DIR$/[030]SSM-Test/pom.xml" />
         <option value="$PROJECT_DIR$/[031]SSM-Demo/pom.xml" />
@@ -207,6 +205,7 @@
         <option value="$PROJECT_DIR$/[065]Spring-Data-MyBatis-DynamicSQL/pom.xml" />
         <option value="$PROJECT_DIR$/[066]Spring-Data-MyBatis-CRUD/pom.xml" />
         <option value="$PROJECT_DIR$/[070]Spring-SpringMVC-MyBatis/pom.xml" />
+        <option value="$PROJECT_DIR$/[067]Spring-Data-MyBatis-Base/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -24,9 +24,7 @@
         <module name="[064]Spring-Data-MyBatis-Configure" />
         <module name="[021]Spring-AOP-Principle-XML" />
         <module name="[053]Spring-RateLimiter" />
-        <module name="[028]SSM-QuickStart" />
         <module name="[041]Spring-Annotaion-Value" />
-        <module name="[025]Spring-MyBatis-CRUD" />
         <module name="[012]Spring-IOC-ExternalConfidurationFile" />
         <module name="[014]Spring-IOC-Bean-AutowiredAndQualifier" />
         <module name="[062]Spring-Data-MyBatis-Params" />
@@ -68,6 +66,7 @@
         <module name="[043]Spring-Shiro-Jwt" />
         <module name="[053]Spring-MVC-Interceptor" />
         <module name="[097]Spring-Empty-Demo" />
+        <module name="[067]Spring-Data-MyBatis-Base" />
         <module name="[046]Spring-Jwt" />
         <module name="[029]SSM-Base" />
         <module name="[013]Spring-IOC-Bean-Annotation" />
@@ -204,6 +203,7 @@
       <module name="[064]Spring-Data-MyBatis-Configure" target="8" />
       <module name="[065]Spring-Data-MyBatis-DynamicSQL" target="8" />
       <module name="[066]Spring-Data-MyBatis-CRUD" target="8" />
+      <module name="[067]Spring-Data-MyBatis-Base" target="8" />
       <module name="[070]Spring-SpringMVC-MyBatis" target="1.5" />
       <module name="[079]Spring-AMQP-RabbitMQ-Producer" target="8" />
       <module name="[080]Spring-AMQP-RabbitMQ-Consumer" target="8" />
