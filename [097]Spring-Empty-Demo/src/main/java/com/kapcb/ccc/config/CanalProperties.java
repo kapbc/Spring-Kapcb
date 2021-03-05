@@ -77,7 +77,7 @@ public class CanalProperties {
         if (clusterEnabled && !clusterAddress.isEmpty()) {
             return clusterAddress;
         } else {
-            throw new GlobalSourceSystemException("must enable cluster and config the server address!");
+            throw new RuntimeException("must enable cluster and config the server address!");
         }
     }
 }
