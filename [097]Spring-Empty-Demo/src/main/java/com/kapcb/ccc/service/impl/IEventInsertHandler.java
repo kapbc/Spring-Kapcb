@@ -15,8 +15,16 @@ import org.springframework.stereotype.Component;
 @Component("iEventInsertHandler")
 public class IEventInsertHandler implements IEventHandler {
 
+    private final RedisHandler redisHandler;
+
+    @Autowired
+    public IEventInsertHandler(@Qualifier("redisHandler") RedisHandler redisHandler) {
+        this.redisHandler = redisHandler;
+    }
+
     @Override
     public void handler(CanalEntry.RowData rowData) {
-
+        String key = "";
+        redisHandler.insert(rowData, key);
     }
 }
