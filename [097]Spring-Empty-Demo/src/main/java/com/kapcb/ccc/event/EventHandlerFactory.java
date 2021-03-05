@@ -33,6 +33,10 @@ public class EventHandlerFactory {
         return createUnionKey(tableInfo.getDatabaseName(), tableInfo.getTableName(), eventType);
     }
 
+    public static String createUnionKey(CanalEntry.EventType eventType) {
+        return createUnionKey(CanalConstants.UNITY_SCHEMA, CanalConstants.UNITY_TABLE, eventType);
+    }
+
     private static String createUnionKey(String databaseName, String tableName, CanalEntry.EventType eventType) {
         log.info("begin to create union key");
         StringBuilder unionKey = new StringBuilder();
@@ -42,5 +46,4 @@ public class EventHandlerFactory {
         log.info("union key create success, the unionKey is : " + unionKey.toString());
         return unionKey.toString();
     }
-
 }
