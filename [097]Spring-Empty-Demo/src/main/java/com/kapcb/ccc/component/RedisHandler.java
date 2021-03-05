@@ -1,17 +1,3 @@
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-import service.RedisService;
-
-/**
- * <a>Title: RedisHandlerComponent </a>
- * <a>Author: Mike Chen <a>
- * <a>Description：<a>
- *
- * @author Mike Chen
- * @date 2021/3/5-13:27
- */
 @Slf4j
 @RequiredArgsConstructor
 @Component(value = "redisHandler")
@@ -22,9 +8,24 @@ public class RedisHandler {
     @Value(value = "canal.redis.key")
     public String canalRedisServerKey;
 
-    private void firstAdd(Object addObject) {
-        redisService.set(canalRedisServerKey, addObject);
-        log.info("first add data to redis success the data is : " + addObject.toString());
+    private void firstAdd(CanalEntry.RowData rowData) {
+        Map<String, String> resultData = DataParser.parse(rowData, true);
+        redisService.setMultipleHashString(canalRedisServerKey, resultData);
+        log.info("first time insert data into redis success, the data is : " + resultData);
     }
+
+    private void updateOrDeleteFromList(boolean update, boolean after,CanalEntry.RowData rowData, String updateColumn) {
+        if (hasKey()) {
+            List<Object> result = redisService.getList(canalRedisServerKey, 0L, -1L);
+            log.info("before update or delete operation's data is : " + result);
+            Map<String, String> parse = DataParser.parse(rowData, after);
+            String s = parse.get(updateColumn);
+        }
+    }
+
+    private boolean hasKey() {
+        return redisService.hasKey(canalRedisServerKey);
+    }
+
 
 }
