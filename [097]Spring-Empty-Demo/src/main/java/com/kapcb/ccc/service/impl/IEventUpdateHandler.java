@@ -14,8 +14,17 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component("iEventUpdateHandler")
 public class IEventUpdateHandler implements IEventHandler {
+
+    private final RedisHandler redisHandler;
+
+    @Autowired
+    public IEventUpdateHandler(@Qualifier("redisHandler") RedisHandler redisHandler) {
+        this.redisHandler = redisHandler;
+    }
+
     @Override
     public void handler(CanalEntry.RowData rowData) {
-
+        String key = "";
+        redisHandler.update(rowData, key);
     }
 }
