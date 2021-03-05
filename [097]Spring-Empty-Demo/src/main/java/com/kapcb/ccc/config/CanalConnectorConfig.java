@@ -12,7 +12,7 @@ import java.net.InetSocketAddress;
  * <a>Title: CancalConnectorConfig </a>
  * <a>Author: Mike Chen <a>
  * <a>Description：<a>
- *
+ * https://gitee.com/maowei1996/canal-data-sync
  * @author Mike Chen
  * @date 2021/3/5-12:45
  */
