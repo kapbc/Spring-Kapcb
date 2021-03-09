@@ -2,13 +2,16 @@ package com.kapcb.ccc.balance.robin.factory;
 
 import com.kapcb.ccc.balance.Invoker;
 import com.kapcb.ccc.balance.robin.RoundRobin;
+import com.kapcb.ccc.balance.robin.impl.NormalRoundRobin;
 import com.kapcb.ccc.balance.robin.impl.WeightedRoundRobin;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 /**
  * <a>Title: RoundRobinFactory </a>
@@ -35,7 +38,7 @@ public class RoundRobinFactory {
         switch (type) {
             case WEIGHTED:
                 Map<Invoker, Integer> invokerMap = new HashMap<>(properties.size());
-                properties.stream().forEach(element->{
+                properties.stream().forEach(element -> {
                     invokerMap.put(new Invoker() {
                         @Override
                         public Boolean isAvailable() {
@@ -46,9 +49,24 @@ public class RoundRobinFactory {
                         public String id() {
                             return element.getProperty("mail.id");
                         }
-                    },Integer.valueOf(element.getProperty("mail.weight")));
+                    }, Integer.valueOf(element.getProperty("mail.weight")));
                 });
                 return new WeightedRoundRobin(invokerMap);
+            case NORMAL:
+                List<Invoker> invokerList = properties.stream().map(element -> new Invoker() {
+                    @Override
+                    public Boolean isAvailable() {
+                        return Boolean.valueOf(element.getProperty("mail.isAvailable"));
+                    }
+
+                    @Override
+                    public String id() {
+                        return element.getProperty("mail.id");
+                    }
+                }).collect(Collectors.toList());
+                return new NormalRoundRobin(invokerList);
+            default:
+                return null;
         }
     }
 }
