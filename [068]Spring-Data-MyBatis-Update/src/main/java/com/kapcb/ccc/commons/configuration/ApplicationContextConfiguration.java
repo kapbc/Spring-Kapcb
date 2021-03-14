@@ -22,4 +22,5 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 @EnableTransactionManagement
 @ComponentScan(basePackages = {"com.kapcb.ccc"}, excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class, ControllerAdvice.class})})
 public class ApplicationContextConfiguration {
+
 }
