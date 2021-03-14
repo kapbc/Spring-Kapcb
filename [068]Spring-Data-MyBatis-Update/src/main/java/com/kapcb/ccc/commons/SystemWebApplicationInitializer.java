@@ -2,7 +2,6 @@ package com.kapcb.ccc.commons;
 
 import ch.qos.logback.classic.servlet.LogbackServletContextListener;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
