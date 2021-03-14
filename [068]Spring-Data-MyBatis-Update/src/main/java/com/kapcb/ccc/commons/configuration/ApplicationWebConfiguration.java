@@ -1,4 +1,4 @@
-package com.kapcb.ccc.commons;
+package com.kapcb.ccc.commons.configuration;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package com.kapcb.ccc.commons;
+package com.kapcb.ccc.commons.configuration;
 
 import ch.qos.logback.classic.servlet.LogbackServletContextListener;
 import lombok.extern.slf4j.Slf4j;
