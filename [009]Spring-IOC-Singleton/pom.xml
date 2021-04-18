@@ -7,6 +7,7 @@
     <groupId>com.kapcb.ccc</groupId>
     <artifactId>[009]Spring-IOC-Singleton</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <properties>
         <c3p0.version>0.9.5.5</c3p0.version>
         <junit.version>4.13.1</junit.version>
@@ -15,6 +16,7 @@
         <commons.logging.version>1.2</commons.logging.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
     </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -62,5 +64,4 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
-
 </project>
