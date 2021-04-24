@@ -10,4 +10,5 @@ package com.kapcb.ccc.domain;
  * @date 2021/2/12 23:08
  */
 public class User {
+
 }
