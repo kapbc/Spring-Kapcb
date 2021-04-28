@@ -6,10 +6,10 @@ import org.springframework.context.ApplicationContextAware;
 
 /**
  * <a>Title: ApplicationContext </a>
- * <a>Author: Mike Chen <a>
+ * <a>Author: Kapcb <a>
  * <a>Description：<a>
  *
- * @author Mike Chen
+ * @author Kapcb
  * @date 2021/3/9-9:18
  */
 public class MailApplicationContext implements ApplicationContextAware {

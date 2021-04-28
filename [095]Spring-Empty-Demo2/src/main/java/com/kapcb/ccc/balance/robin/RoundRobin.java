@@ -4,10 +4,10 @@ import com.kapcb.ccc.balance.Invoker;
 
 /**
  * <a>Title: RoundRobin </a>
- * <a>Author: Mike Chen <a>
+ * <a>Author: Kapcb <a>
  * <a>Description：<a>
  *
- * @author Mike Chen
+ * @author Kapcb
  * @date 2021/3/8-19:03
  */
 public interface RoundRobin {

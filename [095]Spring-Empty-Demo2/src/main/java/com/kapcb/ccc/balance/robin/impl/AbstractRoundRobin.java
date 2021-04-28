@@ -8,10 +8,10 @@ import java.util.List;
 
 /**
  * <a>Title: AbstractRoundRobin </a>
- * <a>Author: Mike Chen <a>
+ * <a>Author: Kapcb <a>
  * <a>Description：<a>
  *
- * @author Mike Chen
+ * @author Kapcb
  * @date 2021/3/8-19:14
  */
 @Slf4j
