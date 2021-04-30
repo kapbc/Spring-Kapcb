@@ -1,6 +1,5 @@
 package com.kapcb.ccc.commons.config.exchange;
 
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -64,5 +63,4 @@ public class RabbitFanoutExchange {
         log.info("begin to binding queue fanoutQueueThree to fanoutExchangeOne...");
         return BindingBuilder.bind(fanoutQueueThree).to(fanoutExchangeOne);
     }
-
 }
