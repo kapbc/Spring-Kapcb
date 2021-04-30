@@ -1,6 +1,5 @@
 package com.kapcb.ccc.commons.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rabbitmq.client.ConnectionFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
@@ -37,5 +36,4 @@ public class RabbitConfiguration {
         CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory();
         return rabbitTemplate;
     }
-
 }

@@ -23,7 +23,7 @@
         <spring.rabbit.version>2.2.7.RELEASE</spring.rabbit.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
     </properties>
-    
+
     <build>
         <plugins>
             <plugin>
