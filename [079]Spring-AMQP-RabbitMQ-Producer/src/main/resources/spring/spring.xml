@@ -10,5 +10,5 @@
                                 expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
 
-    <import resource="classpath:spring/spring-rabbit.xml"/>
+<!--    <import resource="classpath:spring/spring-rabbit.xml"/>-->
 </beans>

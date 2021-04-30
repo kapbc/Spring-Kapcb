@@ -8,7 +8,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.util.concurrent.SettableListenableFuture;
@@ -41,7 +40,9 @@ public class RabbitConfiguration {
         rabbitTemplate.setConnectionFactory(connectionFactory);
         rabbitTemplate.setMandatory(true);
 
-
+        /**
+         * 手动ack配置
+         */
         rabbitTemplate.setConfirmCallback(((correlationData, ack, cause) -> {
             if (ack) {
                 if (Objects.nonNull(correlationData)) {
@@ -71,7 +72,7 @@ public class RabbitConfiguration {
             log.info("RabbitReturnCallback        exchange : " + exchange);
             log.info("RabbitReturnCallback        routingKey : " + routingKey);
             log.info("the message consumer have received the message!");
-        }); 
+        });
 
         rabbitTemplate.setMessageConverter(messageConverter());
         return rabbitTemplate;
