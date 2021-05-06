@@ -109,6 +109,9 @@ public class RedisConfiguration {
         return jedisPoolConfig;
     }
     
+//         @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+//     @JsonSerialize(using = LocalDateTimeSerializer.class)
+    
 //     @Bean
 //     public JedisConnectionFactory jedisConnectionFactory(){
 //         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
