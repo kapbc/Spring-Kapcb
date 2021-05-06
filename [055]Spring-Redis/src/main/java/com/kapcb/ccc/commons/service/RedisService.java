@@ -33,6 +33,24 @@ public class RedisService {
     public RedisService(RedisTemplate<String, Object> redisTemplate){
         this.redisTemplate = redisTemplate;
     }
+    
+    
+    /**
+     * dynamic select redis db table
+     *
+     * @param redis databases index
+     */
+    private synchronized void select(int index) {
+        if (Objects.nonNull(index) && (index >= 0) && (index <= 15)) {
+            LettuceConnectionFactory connectionFactory = (LettuceConnectionFactory) redisTemplate.getConnectionFactory();
+            if (connectionFactory != null) {
+                connectionFactory.setDatabase(index);
+                redisTemplate.setConnectionFactory(connectionFactory);
+                connectionFactory.afterPropertiesSet();
+                connectionFactory.resetConnection();
+            }
+        }
+    }
 
 
     /**
