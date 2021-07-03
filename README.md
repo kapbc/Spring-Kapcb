@@ -6,7 +6,7 @@
 
 Thanks For Jetbrains's All Products Packet Support!
 
-<img src="https://img.shields.io/badge/kapcb-framework-green.svg" style="zoom: 10%;" />
+![https://img.shields.io/badge/kapcb-framework-green.svg]()
 
 
 
