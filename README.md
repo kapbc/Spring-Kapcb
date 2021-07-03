@@ -6,7 +6,7 @@
 
 Thanks For Jetbrains's All Products Packet Support!
 
-<img src=".\jetbrains\jetbrains-blackandwhite.png" style="zoom: 10%;" />
+<img src="https://github.com/kapbc/Spring-Kapcb/blob/master/jetbrains/jetbrains-blackandwhite.png" style="zoom: 10%;" />
 
 
 
