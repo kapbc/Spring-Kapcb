@@ -19,7 +19,7 @@
         <commons.lang3.version>3.10</commons.lang3.version>
         <commons.logging.version>1.2</commons.logging.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
-        <mysql.connection.java.version>8.0.22</mysql.connection.java.version>
+        <mysql.connection.java.version>8.0.28</mysql.connection.java.version>
     </properties>
          
     <build>
