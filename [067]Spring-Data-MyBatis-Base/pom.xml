@@ -8,7 +8,7 @@
     <artifactId>[067]Spring-Data-MyBatis-Base</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <mysql.version>8.0.19</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <slf4j.version>1.7.30</slf4j.version>
         <junit5.version>5.6.2</junit5.version>
         <mybatis.version>3.5.4</mybatis.version>
