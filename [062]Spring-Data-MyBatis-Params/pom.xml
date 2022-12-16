@@ -15,7 +15,7 @@
         <mybatis.version>3.5.4</mybatis.version>
         <logback.version>1.2.3</logback.version>
         <maven.source.version>8</maven.source.version>
-        <spring.version>5.2.10.RELEASE</spring.version>
+        <spring.version>5.2.20.RELEASE</spring.version>
         <commons.logging.version>1.2</commons.logging.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
     </properties>
